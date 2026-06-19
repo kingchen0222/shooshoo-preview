@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir \"C:\\\\Users\\\\USER\\\\.claude\")",
+      "Bash(mkdir -p \"/c/Users/USER/.claude/skills/shooshoo-packing-brand\")",
+      "Bash(cp \"D:/咻咻打包claude/extracted/shooshoopacking/shooshoo-packing-brand/SKILL.md\" \"/c/Users/USER/.claude/skills/shooshoo-packing-brand/SKILL.md\")",
+      "Bash(mkdir -p \"/c/Users/USER/.claude/skills/shooshoo-film-studio/references\")",
+      "Bash(cp \"D:/咻咻打包claude/extracted/shooshoo-film-studio/shooshoo-film-studio/SKILL.md\" \"/c/Users/USER/.claude/skills/shooshoo-film-studio/SKILL.md\")",
+      "Bash(cp D:/咻咻打包claude/extracted/shooshoo-film-studio/shooshoo-film-studio/references/*.md \"/c/Users/USER/.claude/skills/shooshoo-film-studio/references/\")",
+      "Bash(git add *)"
+    ]
+  }
+}
