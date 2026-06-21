@@ -1,1 +1,22 @@
+# 環境設定（含 API 金鑰）
+.env
+storage_state.json
+
+# 暫存除錯檔案
+tmp_*.png
+tmp_*.json
+tmp_*.txt
+tmp_*.html
+
+# Python 快取
+__pycache__/
+*.pyc
+*.pyo
+
+# 影片素材（大檔）
+行銷影片/
+影片素材/
+
+# 舊資料夾
 extracted/
+去背角色圖/
