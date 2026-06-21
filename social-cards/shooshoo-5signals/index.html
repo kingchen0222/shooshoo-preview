@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="zh-TW" data-accent="safety-orange">
+<head>
+  <meta charset="utf-8">
+  <title>5 個訊號告訴你該外包了 · 咻咻打包</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&family=Noto+Sans+SC:wght@200;300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <style>
+    /* ── Accent palettes ── */
+    :root,
+    [data-accent="safety-orange"] {
+      --paper:     #fafaf8;
+      --ink:       #0a0a0a;
+      --grey-1:    #f0f0ee;
+      --grey-2:    #d4d4d2;
+      --grey-3:    #737373;
+      --accent:    #FF6B35;
+      --accent-on: #ffffff;
+    }
+
+    /* ── Typography stack ── */
+    :root {
+      --sans:    "Inter","Helvetica Neue",Helvetica,"Noto Sans SC",-apple-system,"PingFang SC","Microsoft YaHei UI",sans-serif;
+      --sans-zh: "Noto Sans SC",-apple-system,"PingFang SC","Microsoft YaHei UI","Inter",sans-serif;
+      --mono:    "IBM Plex Mono",ui-monospace,"SF Mono",Consolas,monospace;
+    }
+
+    /* ── Spacing tokens ── */
+    :root {
+      --sp-3:   8px; --sp-4:  12px; --sp-5:  16px; --sp-6:  24px;
+      --sp-7:  32px; --sp-8:  40px; --sp-9:  48px; --sp-10: 64px;
+      --sp-11: 80px; --sp-12: 96px; --sp-13:160px;
+    }
+
+    /* ── Reset ── */
+    *,*::before,*::after { box-sizing: border-box; }
+    html,body { margin:0; padding:0; }
+    body {
+      background: #111;
+      font-family: var(--sans);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      padding: 64px 32px;
+    }
+    .sheet { display:flex; flex-direction:column; align-items:center; gap:56px; }
+
+    /* ── Poster boards ── */
+    .poster {
+      position: relative;
+      background: var(--paper);
+      color: var(--ink);
+      overflow: hidden;
+      isolation: isolate;
+    }
+    .poster.xhs    { width:1080px; height:1440px; }
+    .poster figure { margin:0; }
+    .poster .content {
+      position: relative;
+      width: 100%; height: 100%;
+      z-index: 2;
+      padding: var(--sp-12) var(--sp-11);
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Type scale (Swiss — "larger = lighter") ── */
+    .h-statement {
+      font-family: var(--sans); font-weight:200; font-size:180px;
+      line-height:1.05; letter-spacing:-.015em; margin:0; color:var(--ink);
+    }
+    .h-xl {
+      font-family: var(--sans); font-weight:300; font-size:120px;
+      line-height:1.08; letter-spacing:-.01em; margin:0; color:var(--ink);
+    }
+    .h-md {
+      font-family: var(--sans); font-weight:400; font-size:56px;
+      line-height:1.18; margin:0; color:var(--ink);
+    }
+    .lead {
+      font-family: var(--sans-zh); font-weight:400; font-size:30px;
+      line-height:1.6; color:var(--ink); margin:0;
+    }
+    .body {
+      font-family: var(--sans-zh); font-weight:400; font-size:26px;
+      line-height:1.6; color:var(--ink); margin:0;
+    }
+    .t-cat {
+      font-family: var(--sans); font-weight:600; font-size:22px;
+      letter-spacing:.08em; text-transform:uppercase; color:var(--accent); margin:0;
+    }
+    .t-meta {
+      font-family: var(--mono); font-weight:500; font-size:20px;
+      letter-spacing:.14em; text-transform:uppercase; color:var(--grey-3); margin:0;
+    }
+    /* Signal big number — accent orange, ultra-light */
+    .sig-num {
+      font-family: var(--sans); font-weight:200; font-size:200px;
+      line-height:.92; letter-spacing:-.04em; color:var(--accent); margin:0;
+    }
+
+    /* XHS board scale-down */
+    .poster.xhs .h-statement { font-size:124px; }
+    .poster.xhs .h-xl        { font-size:96px; }
+    .poster.xhs .sig-num     { font-size:168px; }
+
+    /* ── Layout primitives ── */
+    .stack  { display:flex; flex-direction:column; }
+    .row    { display:flex; flex-direction:row; }
+    .grow   { flex:1; }
+    .gap-4  { gap:var(--sp-4); }
+    .gap-5  { gap:var(--sp-5); }
+    .gap-6  { gap:var(--sp-6); }
+    .gap-7  { gap:var(--sp-7); }
+    .gap-8  { gap:var(--sp-8); }
+    .gap-9  { gap:var(--sp-9); }
+    .gap-10 { gap:var(--sp-10); }
+
+    .hr-hairline { height:1px; background:var(--grey-2); border:0; margin:0; }
+    .hr-accent   { height:3px; background:var(--accent); border:0; width:96px; margin:0; }
+
+    /* ── Cards ── */
+    .card-fill    { background:var(--grey-1); color:var(--ink); padding:var(--sp-8); }
+    .card-ink     { background:var(--ink); color:var(--paper); padding:var(--sp-8); }
+    .card-accent  { background:var(--accent); color:var(--accent-on); padding:var(--sp-8); }
+    .card-ink .t-cat  { color:var(--accent); }
+    .card-ink .lead   { color:var(--paper); }
+    .card-ink .t-meta { color:rgba(250,250,248,.6); }
+    .card-accent .t-cat  { color:var(--accent-on); }
+    .card-accent .lead   { color:var(--accent-on); }
+    .card-accent .t-meta { color:rgba(255,255,255,.7); }
+
+    /* ── Chrome min header ── */
+    .chrome-min {
+      display:flex; justify-content:space-between; align-items:center;
+      font-family:var(--mono); font-size:18px; letter-spacing:.14em;
+      text-transform:uppercase; color:var(--grey-3);
+      padding-bottom:var(--sp-6); border-bottom:1px solid var(--grey-2);
+    }
+
+    /* ── Bottom signal list (cover) ── */
+    .signal-list { display:flex; flex-direction:column; gap:0; }
+    .signal-list .sl-row {
+      display:flex; align-items:center; gap:32px;
+      padding:20px 0; border-bottom:1px solid var(--grey-2);
+    }
+    .signal-list .sl-row:first-child { border-top:1px solid var(--grey-2); }
+    .signal-list .sl-num {
+      font-family:var(--mono); font-weight:600; font-size:20px;
+      color:var(--accent); letter-spacing:.08em; min-width:36px;
+    }
+    .signal-list .sl-txt {
+      font-family:var(--sans-zh); font-weight:400; font-size:28px; color:var(--ink);
+    }
+
+    /* ── CTA list ── */
+    .cta-block {
+      padding: var(--sp-10) var(--sp-8);
+      background: var(--accent);
+    }
+    .cta-block .cta-label {
+      font-family:var(--mono); font-size:20px; letter-spacing:.14em;
+      text-transform:uppercase; color:rgba(255,255,255,.75); margin-bottom:16px;
+    }
+    .cta-block .cta-title {
+      font-family:var(--sans-zh); font-weight:300; font-size:56px;
+      line-height:1.2; color:#fff; margin:0;
+    }
+    .cta-block .cta-sub {
+      font-family:var(--sans-zh); font-weight:400; font-size:30px;
+      color:rgba(255,255,255,.85); margin-top:12px;
+    }
+
+  </style>
+</head>
+<body>
+<main class="sheet">
+
+  <!-- ════════════════════════════════════
+       P1 · Cover · S01 Accent Cover
+       ════════════════════════════════════ -->
+  <section class="poster xhs" id="xhs-01">
+    <div class="content">
+
+      <div class="chrome-min">
+        <span>電商出貨管理</span>
+        <span>咻咻打包 · 2026</span>
+      </div>
+
+      <div class="stack gap-6" style="margin-top:48px">
+        <p class="t-cat">你有幾個？</p>
+        <h1 class="h-statement">5 個訊號<br>告訴你<br>該外包了</h1>
+      </div>
+
+      <div class="stack gap-7" style="margin-top:48px">
+        <div class="hr-accent"></div>
+        <p class="lead" style="color:var(--grey-3)">還在自己出貨？這 5 個訊號出現，<br>代表你需要三方倉了</p>
+      </div>
+
+      <div class="grow"></div>
+
+      <div class="signal-list">
+        <div class="sl-row"><span class="sl-num">01</span><span class="sl-txt">訂單超過每天 50 單</span></div>
+        <div class="sl-row"><span class="sl-num">02</span><span class="sl-txt">包裝出錯率上升</span></div>
+        <div class="sl-row"><span class="sl-num">03</span><span class="sl-txt">倉儲空間嚴重不足</span></div>
+        <div class="sl-row"><span class="sl-num">04</span><span class="sl-txt">想同時開多平台</span></div>
+        <div class="sl-row"><span class="sl-num">05</span><span class="sl-txt">老闆還在親自出貨</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       P2 · Signal 01 · 訂單量
+       ════════════════════════════════════ -->
+  <section class="poster xhs" id="xhs-02">
+    <div class="content">
+
+      <div class="chrome-min">
+        <span>Signal 01</span>
+        <span>Order Volume</span>
+      </div>
+
+      <div class="stack gap-5" style="margin-top:40px">
+        <p class="t-cat">訂單量 · Order Volume</p>
+        <p class="sig-num">01</p>
+        <h2 class="h-xl">訂單超過<br>每天 50 單</h2>
+      </div>
+
+      <div class="grow"></div>
+
+      <div class="stack gap-7">
+        <hr class="hr-hairline">
+        <p class="lead">一個人開始忙不過來，包裝時間壓縮，出錯機率上升。這是電商賣家最常見的外包轉折點。</p>
+        <div class="card-fill">
+          <p class="t-cat" style="margin-bottom:12px">外包後</p>
+          <p class="lead">出貨量提升到每天 200+ 單，出錯率從 8% 降到 0.3% 以下</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       P3 · Signal 02 · 出錯率
+       ════════════════════════════════════ -->
+  <section class="poster xhs" id="xhs-03">
+    <div class="content">
+
+      <div class="chrome-min">
+        <span>Signal 02</span>
+        <span>Error Rate</span>
+      </div>
+
+      <div class="stack gap-5" style="margin-top:40px">
+        <p class="t-cat">品質問題 · Error Rate</p>
+        <p class="sig-num">02</p>
+        <h2 class="h-xl">包裝出錯<br>客訴增加</h2>
+      </div>
+
+      <div class="grow"></div>
+
+      <div class="stack gap-7">
+        <hr class="hr-hairline">
+        <p class="lead">錯包、漏包、遲寄——每一筆負評都在傷害你的品牌評分，光靠人工很難穩定控制。</p>
+        <div class="card-fill">
+          <p class="t-cat" style="margin-bottom:12px">核心問題</p>
+          <p class="lead">品質問題不是規模問題，是流程問題。WMS 系統 + 標準化流程才能根治</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       P4 · Signal 03 · 空間不足
+       ════════════════════════════════════ -->
+  <section class="poster xhs" id="xhs-04">
+    <div class="content">
+
+      <div class="chrome-min">
+        <span>Signal 03</span>
+        <span>Warehouse Space</span>
+      </div>
+
+      <div class="stack gap-5" style="margin-top:40px">
+        <p class="t-cat">倉儲空間 · Warehouse Space</p>
+        <p class="sig-num">03</p>
+        <h2 class="h-xl">庫存放到<br>客廳車庫</h2>
+      </div>
+
+      <div class="grow"></div>
+
+      <div class="stack gap-7">
+        <hr class="hr-hairline">
+        <p class="lead">把家當倉庫是起步時的選擇。庫存持續擴充，不只空間不夠，揀貨動線也越來越亂。</p>
+        <div class="card-fill">
+          <p class="t-cat" style="margin-bottom:12px">三方倉解決</p>
+          <p class="lead">固定月費倉租，按實際貨量計費，旺季備貨也不怕地方不夠</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       P5 · Signal 04 · 多平台
+       ════════════════════════════════════ -->
+  <section class="poster xhs" id="xhs-05">
+    <div class="content">
+
+      <div class="chrome-min">
+        <span>Signal 04</span>
+        <span>Multi-Channel</span>
+      </div>
+
+      <div class="stack gap-5" style="margin-top:40px">
+        <p class="t-cat">多平台 · Multi-Channel</p>
+        <p class="sig-num">04</p>
+        <h2 class="h-xl">想同時<br>開多平台</h2>
+      </div>
+
+      <div class="grow"></div>
+
+      <div class="stack gap-7">
+        <hr class="hr-hairline">
+        <p class="lead">蝦皮、MOMO、Shopify 各自格式不同，整合出貨靠人工容易出差錯，訂單一多就亂套。</p>
+        <div class="card-fill">
+          <p class="t-cat" style="margin-bottom:12px">咻咻支援</p>
+          <p class="lead">串接多平台訂單系統，統一入庫出貨，不用多一個人管</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       P6 · Signal 05 · 老闆時間
+       ════════════════════════════════════ -->
+  <section class="poster xhs" id="xhs-06">
+    <div class="content">
+
+      <div class="chrome-min">
+        <span>Signal 05</span>
+        <span>Founder Time</span>
+      </div>
+
+      <div class="stack gap-5" style="margin-top:40px">
+        <p class="t-cat">創辦人時間 · Founder Time</p>
+        <p class="sig-num">05</p>
+        <h2 class="h-xl">老闆每天<br>在包包裹</h2>
+      </div>
+
+      <div class="grow"></div>
+
+      <div class="stack gap-7">
+        <hr class="hr-hairline">
+        <p class="lead">你的時間應該花在開發新客戶、談供應商、做行銷，不是每天在貼標籤和封箱。</p>
+        <div class="card-ink">
+          <p class="t-cat" style="margin-bottom:12px">最昂貴的外包理由</p>
+          <p class="lead" style="color:var(--paper)">老闆的一小時，等於你公司最貴的成本</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       P7 · CTA
+       ════════════════════════════════════ -->
+  <section class="poster xhs" id="xhs-07">
+    <div class="content">
+
+      <div class="chrome-min">
+        <span>咻咻打包</span>
+        <span>台灣三方倉 · 台南</span>
+      </div>
+
+      <div class="stack gap-7" style="margin-top:56px">
+        <p class="t-cat">你佔幾個？</p>
+        <h2 class="h-xl">有 1 個<br>就值得聊</h2>
+        <p class="lead" style="color:var(--grey-3)">有 3 個，代表你已經在為出貨問題付出代價了</p>
+      </div>
+
+      <div class="grow"></div>
+
+      <div class="cta-block">
+        <p class="cta-label">免費諮詢</p>
+        <p class="cta-title">加咻咻 LINE<br>聊聊你的狀況</p>
+        <p class="cta-sub">24 小時內回覆 · 不推銷 · 先了解再說</p>
+      </div>
+
+      <div class="stack gap-4" style="margin-top:32px; padding-top:24px; border-top:1px solid var(--grey-2)">
+        <div class="row gap-9">
+          <p class="t-meta">500+ 品牌信賴</p>
+          <p class="t-meta">台南倉儲</p>
+          <p class="t-meta">WMS 系統</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+<script>
+  if (window.lucide && typeof window.lucide.createIcons === 'function') {
+    window.lucide.createIcons();
+  }
+</script>
+</body>
+</html>

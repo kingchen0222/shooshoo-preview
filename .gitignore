@@ -17,6 +17,14 @@ __pycache__/
 行銷影片/
 影片素材/
 
+# Node.js（social-cards 渲染工具）
+node_modules/
+package-lock.json
+
+# Skill 安裝快取（npx skills add 自動產生）
+.agents/
+.claude/skills/
+
 # 舊資料夾
 extracted/
 去背角色圖/
