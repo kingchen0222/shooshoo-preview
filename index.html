@@ -63,7 +63,7 @@ img{display:block;max-width:100%}
 .dropdown{display:none;position:absolute;top:calc(100% + 8px);left:0;background:#fff;border:2px solid var(--crd);border-radius:var(--r2);padding:10px;min-width:180px;box-shadow:var(--s3);z-index:10}
 .dropdown a{display:flex;align-items:center;gap:8px;padding:9px 12px;border-radius:var(--r1);font-size:14px;color:var(--brm);transition:all .2s}
 .dropdown a:hover{background:var(--cr);color:var(--og)}
-.nav-cta{background:var(--og)!important;color:#fff!important;border-radius:var(--rf)!important;padding:9px 20px!important;font-weight:800!important;box-shadow:0 4px 14px rgba(255,107,53,.35)}
+.nav-cta{background:var(--og)!important;color:#fff!important;border-radius:var(--rf)!important;padding:9px 20px!important;font-weight:800!important;box-shadow:0 4px 14px rgba(255,107,53,.35);margin-left:16px!important}
 .nav-cta:hover{background:var(--ogd)!important;transform:translateY(-2px)}
 .ham{display:none;flex-direction:column;gap:5px;padding:9px;background:var(--crd);border-radius:10px;border:none;cursor:pointer}
 .ham span{display:block;width:20px;height:2.5px;background:var(--br);border-radius:3px}
@@ -74,7 +74,7 @@ img{display:block;max-width:100%}
 .mmenu .mc{background:var(--og);color:#fff!important;text-align:center;border-radius:var(--rf)!important;margin-top:6px;font-weight:800!important}
 
 /* HERO */
-.hero{min-height:100vh;padding:100px 20px 80px;background:var(--cr);background-image:radial-gradient(ellipse at 18% 80%,rgba(255,200,69,.18) 0%,transparent 55%),radial-gradient(ellipse at 82% 15%,rgba(255,107,53,.12) 0%,transparent 50%);display:flex;align-items:center;position:relative;overflow:hidden}
+.hero{min-height:100vh;padding:100px 40px 80px;background:var(--cr);background-image:radial-gradient(ellipse at 18% 80%,rgba(255,200,69,.18) 0%,transparent 55%),radial-gradient(ellipse at 82% 15%,rgba(255,107,53,.12) 0%,transparent 50%);display:flex;align-items:center;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,107,53,.1) 1.5px,transparent 1.5px);background-size:30px 30px;pointer-events:none}
 .hero-wave{position:absolute;bottom:0;left:0;right:0;line-height:0;z-index:2}
 /* hero-in: 左文右影 2欄 */
@@ -693,10 +693,6 @@ h2.stitle{font-size:clamp(24px,3.5vw,42px);font-weight:900;color:var(--br);line-
           <video class="vc" muted playsinline preload="metadata" id="vc3">
             <source src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/video-4.mp4" type="video/mp4">
           </video>
-          <!-- overlay label -->
-          <div class="vc-overlay">
-            <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/shooshoo-char-main.png" alt="咻咻" class="vc-mascot fl1">
-          </div>
           <!-- prev / next -->
           <button class="vc-arr vc-prev" onclick="vcMove(-1)">‹</button>
           <button class="vc-arr vc-next" onclick="vcMove(1)">›</button>
@@ -1539,6 +1535,8 @@ if(typeof gsap!=='undefined'){
 </script>
 </body>
 </html>
+
+
 
 
 
