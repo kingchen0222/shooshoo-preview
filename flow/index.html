@@ -318,6 +318,8 @@ h2.stitle{font-size:clamp(24px,3.5vw,42px);font-weight:900;color:var(--br);line-
   .stats{grid-template-columns:1fr 1fr}
   .partner-grid{grid-template-columns:repeat(2,1fr)}
 }
+/* GSAP safety: hero elements visible by default — GSAP animates them in; if CDN fails, content stays readable */
+.badge-live,h1.htitle,.hsub,.hbtns,.hbtns .btn,.htrust,.hero-vis,.hero-chars,.char-wrap{opacity:1;visibility:visible}
 </style>
 </head>
 <body>

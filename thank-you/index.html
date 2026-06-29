@@ -23,6 +23,8 @@
 
 footer{background:#FFF8ED;padding:32px 20px 20px}.foot-in{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}.foot-logo{display:flex;align-items:center;gap:10px}.foot-logo img{width:36px;height:36px;object-fit:contain}.foot-bname{font-size:15px;font-weight:900;color:var(--og)}.tabnum{font-variant-numeric:tabular-nums}.foot-copy{font-size:12px;color:rgba(41,37,15,.4)}.foot-copy span{color:rgba(41,37,15,.6)}.foot-links{display:flex;gap:16px}.foot-links a{font-size:12px;color:rgba(41,37,15,.45);transition:color .2s}.foot-links a:hover{color:var(--og)}
 @media(max-width:560px){.ty-card{padding:40px 24px}.tybtn{flex:1;justify-content:center}.foot-in{flex-direction:column;text-align:center}}
+/* GSAP safety: hero elements visible by default — GSAP animates them in; if CDN fails, content stays readable */
+.badge-live,h1.htitle,.hsub,.hbtns,.hbtns .btn,.htrust,.hero-vis,.hero-chars,.char-wrap{opacity:1;visibility:visible}
 </style>
 </head>
 <body>

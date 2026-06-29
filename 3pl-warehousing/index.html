@@ -31,6 +31,8 @@ footer{background:#FFF8ED;padding:48px 20px 20px}.foot-in{max-width:1200px;margi
 .float-cta{position:fixed;right:20px;bottom:24px;display:flex;flex-direction:column;gap:10px;z-index:100}.fb{display:flex;align-items:center;gap:8px;padding:12px 18px;border-radius:var(--rf);font-size:14px;font-weight:800;color:#fff;box-shadow:var(--s3);transition:all .25s;position:relative}.fb-ln{background:var(--lg)}.fb-ph{background:var(--og)}.fb-pulse{position:absolute;top:-4px;right:-4px;width:12px;height:12px;border-radius:50%;background:var(--yw);border:2px solid #fff;animation:pulse 2s ease-out infinite}.fb [data-lucide]{width:16px;height:16px}.mob-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:100;background:#fff;border-top:1px solid var(--crd);padding:10px 16px 14px}.mob-row{display:flex;gap:10px}.mb-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:13px;border-radius:var(--rf);font-size:14px;font-weight:800;color:#fff}.mb-ln{background:var(--lg)}.mb-ev{background:var(--og)}.mb-btn [data-lucide]{width:16px;height:16px}
 @media(max-width:1024px){.hero-in{grid-template-columns:1fr;text-align:center}.hbtns,.htrust{justify-content:center}.foot-top{grid-template-columns:1fr 1fr}}
 @media(max-width:768px){.nav-links{display:none}.ham{display:flex}.float-cta{display:none}.mob-bar{display:block}.compare-grid{grid-template-columns:1fr}.step-grid{grid-template-columns:1fr 1fr}.foot-top{grid-template-columns:1fr}}
+/* GSAP safety: hero elements visible by default — GSAP animates them in; if CDN fails, content stays readable */
+.badge-live,h1.htitle,.hsub,.hbtns,.hbtns .btn,.htrust,.hero-vis,.hero-chars,.char-wrap{opacity:1;visibility:visible}
 </style>
 </head>
 <body>

@@ -322,6 +322,8 @@ h1.hero-h1 {
   .hub-center-col { order: -1; padding: 20px }
   .overseas-grid { grid-template-columns: 1fr }
 }
+/* GSAP safety: hero elements visible by default — GSAP animates them in; if CDN fails, content stays readable */
+.badge-live,h1.htitle,.hsub,.hbtns,.hbtns .btn,.htrust,.hero-vis,.hero-chars,.char-wrap{opacity:1;visibility:visible}
 </style>
 </head>
 <body>

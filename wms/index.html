@@ -70,7 +70,7 @@ img{display:block;max-width:100%}
 .bdot{position:relative;width:8px;height:8px;flex-shrink:0}
 .bdot-c{position:absolute;inset:1px;background:var(--gn);border-radius:50%}
 .bdot-r{position:absolute;inset:0;border-radius:50%;border:2px solid var(--gn);animation:pulse 1.5s ease-out infinite}
-h1.htitle{font-size:clamp(30px,4.2vw,54px);font-weight:900;line-height:1.18;color:var(--br);margin-bottom:16px}
+h1.htitle{font-size:clamp(28px,3.8vw,48px);font-weight:900;line-height:1.18;color:var(--br);margin-bottom:16px;text-wrap:balance}
 .htitle .hl{color:var(--og);position:relative;display:inline-block}
 .htitle .hl::after{content:'';position:absolute;left:0;right:0;bottom:-3px;height:6px;background:var(--yw);border-radius:4px;opacity:.5;z-index:-1}
 .hsub{font-size:15px;color:var(--brm);line-height:1.75;margin-bottom:22px;text-wrap:pretty}
@@ -225,6 +225,8 @@ footer{background:#FFF8ED;color:rgba(255,248,237,.8);padding:48px 20px 20px}
 @media(max-width:1024px){.hero-in{grid-template-columns:1fr;text-align:center}.htags{justify-content:center}.hbtns{justify-content:center}.htrust{justify-content:center}.char-wrap{width:240px;height:280px}.char-wrap img{height:200px}.feat-grid{grid-template-columns:1fr 1fr}.wms-detail{grid-template-columns:1fr;text-align:center}.step-grid{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}.foot-top{grid-template-columns:1fr 1fr}}
 @media(max-width:768px){.nav-links{display:none}.ham{display:flex}.hero{padding:90px 20px 60px}.feat-grid{grid-template-columns:1fr}.float-cta{display:none}.mob-bar{display:block}.foot-top{grid-template-columns:1fr}}
 @media(max-width:480px){.stats{grid-template-columns:1fr 1fr}.step-grid{grid-template-columns:1fr 1fr}}
+/* GSAP safety: hero elements visible by default — GSAP animates them in; if CDN fails, content stays readable */
+.badge-live,h1.htitle,.hsub,.hbtns,.hbtns .btn,.htrust,.hero-vis,.hero-chars,.char-wrap{opacity:1;visibility:visible}
 </style>
 </head>
 <body>

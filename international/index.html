@@ -298,6 +298,8 @@ h1.hero-h1 {
 .modes-items { display: flex; flex-wrap: wrap; gap: 8px }
 .modes-items span { background: var(--orange-lt); color: var(--orange-dk); border: 1px solid rgba(220,165,74,.35); border-radius: var(--r-pill); padding: 4px 12px; font-size: 12px; font-weight: 700 }
 @media (max-width: 768px) { .bidir-grid { grid-template-columns: 1fr } }
+/* GSAP safety: hero elements visible by default — GSAP animates them in; if CDN fails, content stays readable */
+.badge-live,h1.htitle,.hsub,.hbtns,.hbtns .btn,.htrust,.hero-vis,.hero-chars,.char-wrap{opacity:1;visibility:visible}
 </style>
 </head>
 <body>
