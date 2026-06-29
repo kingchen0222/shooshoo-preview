@@ -30,6 +30,11 @@ footer{background:var(--cr);padding:48px 20px 20px}.foot-in{max-width:1200px;mar
 @media(max-width:1024px){.feat-grid{grid-template-columns:1fr 1fr}.foot-top{grid-template-columns:1fr 1fr}}
 @media(max-width:768px){.nav-links{display:none}.ham{display:flex}.float-cta{display:none}.mob-bar{display:block}.hero-in{grid-template-columns:1fr}.hero-right{display:none}.hero-left{text-align:center}.hero-sub,.hero-cta{margin-left:auto;margin-right:auto;justify-content:center}.feat-grid{grid-template-columns:1fr 1fr}.job-card{flex-direction:column;align-items:flex-start}.foot-top{grid-template-columns:1fr}}
 .hero-left,.hero-right{opacity:1;visibility:visible}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.feat-card{animation:fadeUp .4s ease-out both}
+.feat-card:nth-child(1){animation-delay:.05s}.feat-card:nth-child(2){animation-delay:.1s}.feat-card:nth-child(3){animation-delay:.15s}.feat-card:nth-child(4){animation-delay:.2s}
+.job-card{animation:fadeUp .4s ease-out both}
+.job-card:nth-child(1){animation-delay:.1s}.job-card:nth-child(2){animation-delay:.2s}
 </style>
 </head>
 <body>
@@ -153,12 +158,6 @@ if(typeof gsap!=='undefined'){
   gsap.timeline({defaults:{ease:'power3.out'}})
     .fromTo('.hero-left',{autoAlpha:0,y:28},{autoAlpha:1,y:0,duration:.7},0)
     .fromTo('.hero-right',{autoAlpha:0,x:32},{autoAlpha:1,x:0,duration:.8},.15);
-  document.querySelectorAll('.feat-card').forEach((el,i)=>{
-    gsap.fromTo(el,{opacity:0,y:24},{opacity:1,y:0,duration:.5,delay:i*.07,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 86%',once:true}});
-  });
-  document.querySelectorAll('.job-card').forEach((el,i)=>{
-    gsap.fromTo(el,{opacity:0,y:16},{opacity:1,y:0,duration:.45,delay:i*.1,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 88%',once:true}});
-  });
 }
 </script>
 </body>
