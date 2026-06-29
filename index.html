@@ -588,6 +588,21 @@ h2.stitle{font-size:clamp(24px,3.5vw,42px);font-weight:900;color:var(--br);line-
 /* Integration block header icon */
 .integ-block-icon{display:inline-flex;align-items:center;justify-content:center;font-size:0}
 .integ-block-icon [data-lucide]{width:20px;height:20px;color:var(--og)}
+.integ-stats{display:flex;justify-content:center;align-items:center;gap:0;margin-bottom:40px;background:#fff;border:1px solid rgba(41,37,15,.1);border-radius:var(--r2);padding:28px 48px;flex-wrap:wrap;box-shadow:0 2px 12px rgba(41,37,15,.06)}
+.is-item{text-align:center;flex:1;min-width:120px;padding:8px 0}
+.is-num{font-size:32px;font-weight:900;color:var(--og);line-height:1}
+.is-lbl{font-size:13px;color:var(--brm);margin-top:4px;font-weight:600}
+.is-sep{width:1px;height:40px;background:rgba(41,37,15,.1)}
+.marquee-outer{overflow:hidden;border:1px solid rgba(41,37,15,.1);border-radius:var(--r2);padding:22px 0;background:#fff;box-shadow:0 2px 12px rgba(41,37,15,.06)}
+.marquee-trk{display:flex;gap:48px;align-items:center;animation:mqScroll 30s linear infinite}
+.marquee-trk img{height:32px;width:auto;object-fit:contain;opacity:.65;flex-shrink:0;transition:all .3s}
+.marquee-outer:hover .marquee-trk{animation-play-state:paused}
+.marquee-trk img:hover{opacity:1}
+@keyframes mqScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.integ-ctas{display:flex;justify-content:center;gap:16px;margin-top:36px;flex-wrap:wrap}
+.svc-link{display:inline-flex;align-items:center;gap:4px;font-size:13px;font-weight:700;color:var(--og);margin-top:14px;text-decoration:none;transition:gap .2s}
+.svc-link:hover{gap:7px}
+@media(max-width:768px){.integ-stats{padding:20px 16px}.is-sep{display:none}.is-item{min-width:80px}}
 </style>
 </head>
 <body>
@@ -795,6 +810,7 @@ h2.stitle{font-size:clamp(24px,3.5vw,42px);font-weight:900;color:var(--br);line-
             <li>貨櫃直接拆進倉庫</li>
             <li>定期盤點庫存回報</li>
           </ul>
+          <a href="/shooshoo-preview/3pl-warehousing/" class="svc-link">了解倉儲方案 →</a>
         </div>
       </div>
 
@@ -808,6 +824,7 @@ h2.stitle{font-size:clamp(24px,3.5vw,42px);font-weight:900;color:var(--br);line-
             <li>7-11、全家、萊爾富、蝦皮店到店寄件</li>
             <li>出貨全程錄影可查詢</li>
           </ul>
+          <a href="/shooshoo-preview/flow/" class="svc-link">看完整出貨流程 →</a>
         </div>
       </div>
 
@@ -822,6 +839,7 @@ h2.stitle{font-size:clamp(24px,3.5vw,42px);font-weight:900;color:var(--br);line-
             <li>庫存即時同步多平台</li>
             <li>宅配貨態自動回寫</li>
           </ul>
+          <a href="/shooshoo-preview/api/" class="svc-link">了解 WMS / API →</a>
         </div>
       </div>
 
@@ -836,6 +854,7 @@ h2.stitle{font-size:clamp(24px,3.5vw,42px);font-weight:900;color:var(--br);line-
             <li>促銷套組拆拼組合</li>
             <li>品牌名片、文宣夾入</li>
           </ul>
+          <a href="/shooshoo-preview/flow/" class="svc-link">了解加工服務 →</a>
         </div>
       </div>
 
@@ -850,6 +869,7 @@ h2.stitle{font-size:clamp(24px,3.5vw,42px);font-weight:900;color:var(--br);line-
             <li>合格品重新入庫</li>
             <li>退貨報告定期回報</li>
           </ul>
+          <a href="/shooshoo-preview/flow/" class="svc-link">了解逆物流處理 →</a>
         </div>
       </div>
 
@@ -864,6 +884,7 @@ h2.stitle{font-size:clamp(24px,3.5vw,42px);font-weight:900;color:var(--br);line-
             <li>台南在地快速配送</li>
             <li>貨櫃拆貨直接入倉</li>
           </ul>
+          <a href="/shooshoo-preview/about/" class="svc-link">認識咻咻車隊 →</a>
         </div>
       </div>
 
@@ -896,134 +917,63 @@ h2.stitle{font-size:clamp(24px,3.5vw,42px);font-weight:900;color:var(--br);line-
   </div>
 </section>
 
-<!-- ========== WMS + PLATFORMS ========== -->
-<section class="sec sbg-w2" id="wms">
+<!-- ========== INTEGRATION (compact) ========== -->
+<section class="sec sbg-w2" id="integration">
   <div class="sec-in">
     <div class="sec-hd">
       <div class="slbl reveal">平台串接</div>
       <h2 class="stitle reveal">你賣哪裡，<span class="oc">咻咻就在哪裡</span></h2>
-      <p class="sdesc reveal d1">支援所有主流電商平台 API 串接，訂單自動同步不漏接。</p>
+      <p class="sdesc reveal d1">支援 23+ 電商平台、20+ 物流系統全自動串接，訂單進倉→揀貨→出貨，一條龍不漏接。</p>
     </div>
-    <!-- ① 電商平台串接 (static grid 6-col) -->
-    <div class="integ-block reveal">
-      <div class="integ-block-hd">
-        <span class="integ-block-icon"><i data-lucide="shopping-cart"></i></span>
-        <span class="integ-block-title">電商平台串接</span>
-        <span class="integ-block-badge">23 個平台</span>
-      </div>
-      <div class="partner-grid">
-        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-shopee.webp" alt="蝦皮購物"><span class="partner-name">蝦皮 Shopee</span></div>
-        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-liteshop.webp" alt="LiteShop"><span class="partner-name">LiteShop</span></div>
-        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-momo.webp" alt="MOMO購物"><span class="partner-name">MOMO</span></div>
-        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-shopline-n.webp" alt="Shopline"><span class="partner-name">Shopline<span class="ptag">含 POS</span></span></div>
-        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-shopify.webp" alt="Shopify"><span class="partner-name">Shopify</span></div>
-        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-cyberbiz.png" alt="CYBERBIZ"><span class="partner-name">Cyberbiz</span></div>
-        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-91app.webp" alt="91APP"><span class="partner-name">91APP</span></div>
-        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-yahoo.webp" alt="Yahoo購物中心"><span class="partner-name">Yahoo 購物中心</span></div>
-        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-wordpress.svg" alt="WordPress"><span class="partner-name">WordPress</span></div>
-        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-pcone.webp" alt="松果購物"><span class="partner-name">松果 Pcone</span></div>
-        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-pchome.webp" alt="PChome"><span class="partner-name">PChome<span class="ptag">含甲配、乙配</span></span></div>
-        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-1shop.svg" alt="1shop OneShop"><span class="partner-name">1shop OneShop</span></div>
-        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-onewarehouse.svg" alt="OneWarehouse"><span class="partner-name">OneWarehouse</span></div>
-        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-etmall.webp" alt="東森購物"><span class="partner-name">東森 ETMall</span></div>
-        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-moplus.webp" alt="Mo店+"><span class="partner-name">Mo店+ MoPlus</span></div>
-        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-easystore.svg" alt="EasyStore"><span class="partner-name">EasyStore</span></div>
-        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-bvshop-v2.png" alt="BvShop"><span class="partner-name">BvShop</span></div>
-        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-showmore.webp" alt="Showmore"><span class="partner-name">Showmore</span></div>
-        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-ruten.svg" alt="露天拍賣"><span class="partner-name">露天 Ruten</span></div>
-        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-m2line.png" alt="M2Line"><span class="partner-name">M2Line</span></div>
-        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-coupang.svg" alt="酷澎"><span class="partner-name">酷澎 Coupang</span></div>
-        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-groupbuy.png" alt="團購表單"><span class="partner-name">團購表單</span></div>
-        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-freestore.svg" alt="Freestore"><span class="partner-name">Freestore</span></div>
-      </div>
+    <div class="integ-stats reveal">
+      <div class="is-item"><div class="is-num">23+</div><div class="is-lbl">電商平台串接</div></div>
+      <div class="is-sep"></div>
+      <div class="is-item"><div class="is-num">20+</div><div class="is-lbl">物流系統串接</div></div>
+      <div class="is-sep"></div>
+      <div class="is-item"><div class="is-num">全自動</div><div class="is-lbl">訂單同步</div></div>
+      <div class="is-sep"></div>
+      <div class="is-item"><div class="is-num">即時</div><div class="is-lbl">庫存掌握</div></div>
     </div>
-
-    <!-- ② 物流及ERP系統串接 (static grid 6-col) -->
-    <div class="integ-block reveal d1">
-      <div class="integ-block-hd">
-        <span class="integ-block-icon"><i data-lucide="truck"></i></span>
-        <span class="integ-block-title">物流及ERP系統串接</span>
-        <span class="integ-block-badge">20 個串接</span>
-      </div>
-      <div class="partner-grid">
-        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-hct-new.webp" alt="新竹物流"><span class="partner-name">新竹物流<span class="ptag">含冷藏・冷凍</span></span></div>
-        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-tcat.webp" alt="黑貓宅急便"><span class="partner-name">黑貓<span class="ptag">含冷藏・冷凍</span></span></div>
-        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-pelican-n.webp" alt="宅配通"><span class="partner-name">宅配通<span class="ptag">含冷藏</span></span></div>
-        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-ecpay.webp" alt="綠界ECPay"><span class="partner-name">綠界 ECPay<span class="ptag">7-11・全家・萊</span></span></div>
-        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-srexpress.webp" alt="順豐速運"><span class="partner-name">順豐速運<span class="ptag">含店取7-11・全家</span></span></div>
-        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-kerry.webp" alt="嘉里大榮"><span class="partner-name">嘉里大榮</span></div>
-        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-dpex.webp" alt="DPEX"><span class="partner-name">迪比翼 DPEX</span></div>
-        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-7eleven-new.webp" alt="統一數網"><span class="partner-name">統一數網<span class="ptag">含宅配通・黑貓</span></span></div>
-        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-tong-ying.webp" alt="通盈"><span class="partner-name">通盈</span></div>
-        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-paynow.png" alt="立吉富"><span class="partner-name">立吉富<span class="ptag">7-11・全家</span></span></div>
-        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-shyang-yih.webp" alt="祥億物流"><span class="partner-name">祥億物流</span></div>
-        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-dhl.webp" alt="DHL"><span class="partner-name">DHL</span></div>
-        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-family.webp" alt="日翊物流"><span class="partner-name">日翊物流</span></div>
-        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-post.png" alt="中華郵政"><span class="partner-name">中華郵政<span class="ptag">郵局</span></span></div>
-        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-payuni.svg" alt="PAYUNi"><span class="partner-name">PAYUNi 統一金流</span></div>
-        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-odoo.png" alt="Odoo"><span class="partner-name">Odoo</span></div>
-        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-msdynamics.png" alt="Microsoft Dynamics"><span class="partner-name">Microsoft Dynamics</span></div>
-        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-digiwin.webp" alt="鼎新電腦"><span class="partner-name">鼎新電腦 Digiwin</span></div>
-        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-sap.png" alt="SAP"><span class="partner-name">SAP</span></div>
-        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-jinghong.png" alt="旋泓科技"><span class="partner-name">旋泓科技</span></div>
+    <div class="marquee-outer reveal d1">
+      <div class="marquee-trk">
+        <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-shopee.webp" alt="蝦皮 Shopee">
+        <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-momo.webp" alt="MOMO購物">
+        <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-shopline-n.webp" alt="Shopline">
+        <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-shopify.webp" alt="Shopify">
+        <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-91app.webp" alt="91APP">
+        <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-cyberbiz.png" alt="CYBERBIZ">
+        <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-pchome.webp" alt="PChome">
+        <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-yahoo.webp" alt="Yahoo購物">
+        <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-tcat.webp" alt="黑貓宅急便">
+        <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-hct-new.webp" alt="新竹物流">
+        <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-ecpay.webp" alt="綠界ECPay">
+        <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-srexpress.webp" alt="順豐速運">
+        <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-kerry.webp" alt="嘉里大榮">
+        <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-dhl.webp" alt="DHL">
+        <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-ruten.svg" alt="露天拍賣">
+        <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-pelican-n.webp" alt="宅配通">
+        <!-- duplicate for infinite loop -->
+        <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-shopee.webp" alt="蝦皮 Shopee">
+        <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-momo.webp" alt="MOMO購物">
+        <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-shopline-n.webp" alt="Shopline">
+        <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-shopify.webp" alt="Shopify">
+        <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-91app.webp" alt="91APP">
+        <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-cyberbiz.png" alt="CYBERBIZ">
+        <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-pchome.webp" alt="PChome">
+        <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-yahoo.webp" alt="Yahoo購物">
+        <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-tcat.webp" alt="黑貓宅急便">
+        <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-hct-new.webp" alt="新竹物流">
+        <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-ecpay.webp" alt="綠界ECPay">
+        <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-srexpress.webp" alt="順豐速運">
+        <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-kerry.webp" alt="嘉里大榮">
+        <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-dhl.webp" alt="DHL">
+        <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-ruten.svg" alt="露天拍賣">
+        <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-pelican-n.webp" alt="宅配通">
       </div>
     </div>
-    <div class="wms-grid">
-      <div class="wms-char">
-        <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/shooshoo-char-admin-cat.png" alt="行政喵喵使用WMS系統">
-      </div>
-      <div class="wms-features">
-        <div class="slbl" style="margin-bottom:16px">WMS 功能一覽</div>
-        <div class="wms-feat">
-          <div class="wms-fi"><i data-lucide="bar-chart-2"></i></div>
-          <div><div class="wms-fh">即時庫存查詢</div><p class="wms-fp">隨時查看每個 SKU 的庫存量、在途量、可用量，不再靠猜的。</p></div>
-        </div>
-        <div class="wms-feat">
-          <div class="wms-fi"><i data-lucide="video"></i></div>
-          <div><div class="wms-fh">出貨錄影查詢</div><p class="wms-fp">每筆訂單出貨過程全程錄影，客訴糾紛有憑有據，秒解爭議。</p></div>
-        </div>
-        <div class="wms-feat">
-          <div class="wms-fi"><i data-lucide="truck"></i></div>
-          <div><div class="wms-fh">宅配貨態追蹤</div><p class="wms-fp">各大物流商貨態即時回寫，主動掌握每筆訂單配送狀況。</p></div>
-        </div>
-        <div class="wms-feat">
-          <div class="wms-fi"><i data-lucide="receipt"></i></div>
-          <div><div class="wms-fh">費用明細報表</div><p class="wms-fp">倉租、出貨、加工費用逐筆記錄，月結帳單一目了然。</p></div>
-        </div>
-        <div class="wms-price">
-          <span>💻 WMS 系統費 NT$1,000/月 · 含 API 串接 + 庫存查詢 + 出貨錄影</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== API SECTION ========== -->
-<section class="sec sbg-cr" id="api">
-  <div class="sec-in">
-    <div class="api-grid">
-      <div class="about-text reveal">
-        <div class="slbl">API 訂單串接</div>
-        <h2>訂單自動來，<span>人工不再搬</span></h2>
-        <p>不用每天手動匯出訂單、貼貼貼，咻咻的 API 串接讓電商平台訂單自動跑進 WMS，揀貨開始、庫存扣除、貨態回傳，全部自動化搞定。</p>
-        <p>就算同時開蝦皮、MOMO、Shopify 三個店，全部統一在一個後台管理，再也不用在三個視窗之間跳來跳去。</p>
-        <div class="api-plats">
-          <span class="api-plat"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-shopee.webp" alt="蝦皮" style="height:18px;width:auto;vertical-align:middle;margin-right:4px"> 蝦皮</span>
-          <span class="api-plat"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-momo.webp" alt="MOMO" style="height:18px;width:auto;vertical-align:middle;margin-right:4px"> MOMO</span>
-          <span class="api-plat"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-shopify.webp" alt="Shopify" style="height:18px;width:auto;vertical-align:middle;margin-right:4px"> Shopify</span>
-          <span class="api-plat"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-shopline-n.webp" alt="Shopline" style="height:18px;width:auto;vertical-align:middle;margin-right:4px"> Shopline</span>
-          <span class="api-plat"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-91app.webp" alt="91APP" style="height:18px;width:auto;vertical-align:middle;margin-right:4px"> 91APP</span>
-          <span class="api-plat"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-cyberbiz.png" alt="CYBERBIZ" style="height:18px;width:auto;vertical-align:middle;margin-right:4px"> CYBERBIZ</span>
-        </div>
-        <div style="margin-top:24px">
-          <a href="#contact" class="btn btn-og"><i data-lucide="link-2"></i>我要申請 API 串接</a>
-        </div>
-      </div>
-      <div class="api-char reveal d2">
-        <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/shooshoo-char-admin-cat.png" alt="行政喵喵處理API訂單">
-        <div class="api-bubble ab1">✅ 訂單自動同步！</div>
-        <div class="api-bubble ab2">📦 庫存即時扣除</div>
-      </div>
+    <div class="integ-ctas reveal d2">
+      <a href="/shooshoo-preview/api/" class="btn btn-og"><i data-lucide="link-2"></i>查看完整串接清單</a>
+      <a href="#contact" class="btn btn-bdr"><i data-lucide="message-circle"></i>申請 API 串接</a>
     </div>
   </div>
 </section>
@@ -1095,7 +1045,7 @@ h2.stitle{font-size:clamp(24px,3.5vw,42px);font-weight:900;color:var(--br);line-
           </div>
         </div>
         <div style="margin-top:20px">
-          <a href="#contact" class="btn btn-og"><i data-lucide="handshake"></i>了解合作方案</a>
+          <a href="/shooshoo-preview/influencer/" class="btn btn-og"><i data-lucide="handshake"></i>了解合作方案</a>
         </div>
       </div>
     </div>
