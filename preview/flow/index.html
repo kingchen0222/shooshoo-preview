@@ -1,0 +1,887 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>咻咻打包代出貨完整流程｜從入庫到寄件全程搞定</title>
+<meta name="description" content="咻咻打包提供電商賣家完整代出貨流程：入庫驗收、揀貨包裝、面單列印、物流出貨一站搞定。API 串接自動化，99.8% 準確率，讓你專心賣貨。">
+<meta property="og:title" content="咻咻打包代出貨完整流程｜從入庫到寄件全程搞定">
+<meta property="og:description" content="電商出貨／三方倉儲（3PL）／庫存同步／代包代發。你專心賣，我們專心把貨做對、做快、做漂亮。">
+<meta property="og:url" content="https://www.shooshoo.com.tw/flow/">
+<link rel="canonical" href="https://www.shooshoo.com.tw/flow/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+<style>
+:root{
+  --cr:#FFF8ED;--crl:#FFFCF5;--crd:#FFE9C8;
+  --og:#DCA54A;--ogl:#FF8F5E;--ogd:#B8852E;
+  --yw:#FFC845;--br:#2D1B0E;--brm:#5C3D1E;--brl:#9B7250;
+  --gy:#6B7280;--wh:#FFFFFF;--gn:#2ECC71;--gnl:#E8F9EF;
+  --lg:#06C755;
+  --s1:0 2px 8px rgba(45,27,14,.08);
+  --s2:0 6px 24px rgba(45,27,14,.12);
+  --s3:0 12px 48px rgba(45,27,14,.16);
+  --r1:12px;--r2:20px;--r3:32px;--rf:9999px;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans TC',-apple-system,'PingFang TC',sans-serif;background:var(--crl);color:var(--br);overflow-x:hidden;text-rendering:optimizeLegibility;font-feature-settings:"kern" 1}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@keyframes float2{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-10px) rotate(4deg)}}
+@keyframes float3{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-8px) rotate(-3deg)}}
+@keyframes pulse{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.8);opacity:0}}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.fl1{animation:float 3.2s ease-in-out infinite}
+.fl2{animation:float2 3.8s ease-in-out .6s infinite}
+.fl3{animation:float3 4.4s ease-in-out 1.2s infinite}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,252,245,.93);backdrop-filter:blur(16px);border-bottom:1px solid rgba(45,27,14,.06);transition:box-shadow .3s}
+.nav.sc{box-shadow:var(--s2)}
+.nav-in{max-width:1200px;margin:0 auto;padding:0 20px;height:96px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.logo{display:flex;align-items:center;gap:14px;flex-shrink:0}
+.logo img{width:84px;height:84px;object-fit:contain}
+.logo-name{font-size:26px;font-weight:900;color:var(--og);line-height:1.1}
+.logo-en{font-size:13px;color:var(--brl);letter-spacing:.06em}
+.nav-links{display:flex;align-items:center;gap:2px;list-style:none}
+.nav-links a{padding:7px 14px;border-radius:var(--r1);font-size:17px;font-weight:600;color:var(--brm);transition:all .2s;white-space:nowrap}
+.nav-links a:hover{color:var(--og);background:rgba(255,107,53,.08)}
+.nav-links .has-drop{position:relative}
+.nav-links .has-drop:hover .dropdown{display:block}
+.dropdown{display:none;position:absolute;top:calc(100% + 8px);left:0;background:#fff;border:2px solid var(--crd);border-radius:var(--r2);padding:10px;min-width:180px;box-shadow:var(--s3);z-index:10}
+.dropdown a{display:flex;align-items:center;gap:8px;padding:9px 12px;border-radius:var(--r1);font-size:14px;color:var(--brm);transition:all .2s}
+.dropdown a:hover{background:var(--cr);color:var(--og)}
+.nav-cta{background:var(--og)!important;color:#fff!important;border-radius:var(--rf)!important;padding:9px 20px!important;font-weight:800!important;box-shadow:0 4px 14px rgba(255,107,53,.35)}
+.nav-cta:hover{background:var(--ogd)!important;transform:translateY(-2px)}
+.ham{display:none;flex-direction:column;gap:5px;padding:9px;background:var(--crd);border-radius:10px;border:none;cursor:pointer}
+.ham span{display:block;width:20px;height:2.5px;background:var(--br);border-radius:3px}
+.mmenu{display:none;position:fixed;top:68px;left:0;right:0;z-index:199;background:rgba(255,252,245,.97);backdrop-filter:blur(16px);border-bottom:2px solid var(--crd);padding:12px 20px 20px;flex-direction:column;gap:3px;box-shadow:var(--s3)}
+.mmenu.open{display:flex}
+.mmenu a{padding:12px 14px;border-radius:var(--r1);font-size:15px;font-weight:600;color:var(--brm)}
+.mmenu a:hover{color:var(--og);background:rgba(255,107,53,.08)}
+.mmenu .mc{background:var(--og);color:#fff!important;text-align:center;border-radius:var(--rf)!important;margin-top:6px;font-weight:800!important}
+
+/* HERO */
+.hero{padding:108px 20px 80px;background:var(--cr);background-image:radial-gradient(ellipse at 18% 80%,rgba(255,200,69,.18) 0%,transparent 55%),radial-gradient(ellipse at 82% 15%,rgba(255,107,53,.12) 0%,transparent 50%);display:flex;align-items:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,107,53,.1) 1.5px,transparent 1.5px);background-size:30px 30px;pointer-events:none}
+.hero-wave{position:absolute;bottom:0;left:0;right:0;line-height:0;z-index:2}
+.hero-in{max-width:1280px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1.3fr;gap:24px;align-items:center;position:relative;z-index:1}
+.badge-live{display:inline-flex;align-items:center;gap:8px;background:#fff;border:2px solid var(--yw);border-radius:var(--rf);padding:7px 16px;font-size:12px;font-weight:700;color:var(--brm);box-shadow:var(--s1);margin-bottom:18px}
+.bdot{position:relative;width:9px;height:9px;flex-shrink:0}
+.bdot-c{position:absolute;inset:1px;background:var(--gn);border-radius:50%}
+.bdot-r{position:absolute;inset:0;border-radius:50%;border:2px solid var(--gn);animation:pulse 1.5s ease-out infinite}
+h1.htitle{font-size:clamp(30px,4.2vw,56px);font-weight:900;line-height:1.15;color:var(--br);margin-bottom:18px;max-width:520px}
+.htitle .hl{color:var(--og);position:relative;display:inline-block}
+.htitle .hl::after{content:'';position:absolute;left:0;right:0;bottom:-3px;height:7px;background:var(--yw);border-radius:4px;opacity:.5;z-index:-1}
+.hsub{font-size:16px;color:var(--brm);line-height:1.75;margin-bottom:26px;max-width:480px;text-wrap:pretty}
+.htags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:28px}
+.htag{background:rgba(255,107,53,.08);border:1.5px solid rgba(255,107,53,.22);border-radius:8px;padding:7px 14px;font-size:12px;font-weight:700;color:var(--brm);display:inline-flex;align-items:center;gap:6px;transition:all .22s}
+.htag:hover{background:rgba(255,107,53,.15);border-color:var(--og);color:var(--og);transform:translateY(-2px)}
+.htag [data-lucide]{color:var(--og)}
+.hbtns{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:30px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:var(--rf);font-size:15px;font-weight:800;border:none;cursor:pointer;transition:all .25s cubic-bezier(.34,1.56,.64,1)}
+.btn-lg{background:var(--lg);color:#fff;box-shadow:0 5px 18px rgba(6,199,85,.4)}
+.btn-lg:hover{transform:translateY(-3px);box-shadow:0 9px 26px rgba(6,199,85,.5)}
+.btn-og{background:var(--og);color:#fff;box-shadow:0 5px 18px rgba(255,107,53,.4)}
+.btn-og:hover{transform:translateY(-3px);box-shadow:0 9px 26px rgba(255,107,53,.5)}
+.btn-gh{background:transparent;color:#fff;border:2.5px solid rgba(255,255,255,.4)}
+.btn-gh:hover{background:rgba(255,255,255,.1);border-color:#fff;transform:translateY(-3px)}
+.htrust{display:flex;flex-wrap:wrap;gap:18px}
+.hti{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--brm)}
+.hti [data-lucide]{color:var(--og);width:15px;height:15px;stroke-width:2}
+
+/* Hero visual */
+.hero-vis{display:flex;justify-content:center;align-items:center;position:relative}
+.mascot-wrap{position:relative;width:360px;height:400px}
+.mascot-main{position:absolute;top:50%;left:50%;transform:translate(-50%,-52%);width:260px;filter:drop-shadow(0 20px 40px rgba(45,27,14,.15))}
+.mascot-sm1{position:absolute;top:20px;right:0;width:90px}
+.mascot-sm2{position:absolute;bottom:40px;left:0;width:80px}
+.fc{position:absolute;background:#fff;border-radius:var(--r2);padding:11px 14px;box-shadow:var(--s3);display:flex;align-items:center;gap:10px;white-space:nowrap;border:2px solid var(--crd)}
+.fc1{top:55px;left:-10px;animation:float 3.4s ease-in-out .4s infinite}
+.fc2{bottom:65px;right:-10px;animation:float2 3.2s ease-in-out .8s infinite}
+.fc3{top:46%;right:-18px;transform:translateY(-50%);animation:float3 4s ease-in-out infinite}
+.fc-val{font-size:16px;font-weight:900;color:var(--og);line-height:1}
+.fc-lbl{font-size:11px;color:var(--gy)}
+.fc-icon{width:36px;height:36px;border-radius:10px;background:rgba(255,107,53,.1);display:flex;align-items:center;justify-content:center;color:var(--og);flex-shrink:0}
+.fc-icon [data-lucide]{width:18px;height:18px}
+
+/* MARQUEE */
+.mqbar{background:#DCA54A;padding:14px 0;overflow:hidden}
+.mqtrack{display:flex;width:max-content;animation:marquee 28s linear infinite}
+.mqi{display:flex;align-items:center;gap:9px;padding:0 32px;color:rgba(41,37,15,.85);font-size:13px;font-weight:700;white-space:nowrap}
+.mq-star{color:var(--yw)}
+.mq-sep{color:var(--yw);opacity:.4;font-size:9px}
+
+/* SECTION */
+.sec{padding:80px 20px}
+.sec-in{max-width:1200px;margin:0 auto}
+.sec-hd{text-align:center;margin-bottom:52px}
+.slbl{display:inline-flex;align-items:center;gap:8px;background:transparent;border:none;border-left:3px solid var(--og);border-radius:0;padding:3px 0 3px 12px;font-size:11px;font-weight:800;color:var(--og);letter-spacing:.1em;text-transform:uppercase;margin-bottom:18px}
+h2.stitle{font-size:clamp(24px,3.5vw,42px);font-weight:900;color:var(--br);line-height:1.25;margin-bottom:12px}
+.stitle .oc{color:var(--og)}
+.sdesc{font-size:16px;color:var(--brm);max-width:560px;margin:0 auto;line-height:1.7;text-wrap:pretty}
+
+/* STATS */
+.sbg-w{background:#fff;padding:56px 20px}
+.stats{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.stc{background:var(--cr);border:1px solid rgba(45,27,14,.07);border-radius:var(--r2);padding:28px 16px;text-align:center;box-shadow:0 2px 12px rgba(45,27,14,.06);transition:all .3s cubic-bezier(.34,1.56,.64,1)}
+.stc:hover{transform:translateY(-8px);box-shadow:var(--s2);border-color:var(--og)}
+.stc-icon{width:54px;height:54px;border-radius:16px;background:linear-gradient(135deg,rgba(255,107,53,.12),rgba(255,200,69,.08));display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:var(--og)}
+.stc-icon [data-lucide]{width:26px;height:26px;stroke-width:1.6}
+.stc-n{font-size:clamp(32px,3.5vw,48px);font-weight:900;color:var(--og);line-height:1;margin-bottom:6px}
+.stc-sfx{font-size:.6em}
+.stc-l{font-size:14px;font-weight:700;color:var(--brm)}
+
+/* BACKGROUNDS */
+.sbg-cr{background:var(--cr)}
+.sbg-cl{background:var(--crl)}
+.sbg-dk{background:var(--cr,#FFF8ED)}
+.sbg-dk .stitle{color:#29250F}
+.sbg-dk .slbl{border-left-color:var(--yw);color:var(--yw)}
+.sbg-dk .sdesc{color:rgba(41,37,15,.65)}
+.sbg-w2{background:linear-gradient(150deg,var(--crl) 0%,#FFF0DC 55%,var(--cr) 100%)}
+
+/* SERVICES */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.svc-card{background:#fff;border-radius:var(--r2);padding:0;border:1px solid rgba(45,27,14,.07);box-shadow:0 2px 12px rgba(45,27,14,.06);position:relative;overflow:hidden;transition:all .3s cubic-bezier(.34,1.56,.64,1)}
+.svc-card::after{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--og),var(--yw));transform:scaleX(1);transition:.3s}
+.svc-card:hover{transform:translateY(-8px);border-color:rgba(255,107,53,.3);box-shadow:0 12px 40px rgba(45,27,14,.12)}
+.svc-card:hover::after{background:linear-gradient(90deg,var(--ogd),var(--og),var(--yw))}
+.svc-char-wrap{height:160px;background:linear-gradient(180deg,rgba(255,107,53,.09) 0%,var(--cr) 70%);display:flex;align-items:flex-end;justify-content:center;position:relative;overflow:hidden}
+.svc-char-wrap img{height:150px;width:auto;object-fit:contain;object-position:bottom;filter:drop-shadow(0 6px 12px rgba(45,27,14,.1));transition:transform .3s}
+.svc-card:hover .svc-char-wrap img{transform:scale(1.08) translateY(-4px)}
+.svc-body{padding:20px 22px 22px}
+.svc-badge{position:absolute;top:14px;right:12px;background:var(--yw);color:var(--br);font-size:11px;font-weight:800;padding:3px 9px;border-radius:var(--rf);z-index:2}
+.svc-name{font-size:18px;font-weight:800;color:var(--br);margin-bottom:8px;letter-spacing:-.01em}
+.svc-desc{font-size:13px;color:var(--gy);line-height:1.65;margin-bottom:14px;text-wrap:pretty}
+.svc-list{list-style:none;display:flex;flex-direction:column;gap:5px}
+.svc-list li{font-size:12px;font-weight:600;color:var(--brm);display:flex;align-items:center;gap:7px;line-height:1.5}
+.svc-list li::before{content:'✓';width:16px;height:16px;flex-shrink:0;background:var(--gnl);color:var(--gn);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:900}
+
+/* PROCESS */
+.proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+.proc-grid::before{content:'';position:absolute;top:44px;left:calc(12.5% + 20px);right:calc(12.5% + 20px);height:2px;background:linear-gradient(90deg,rgba(255,200,69,.15),rgba(255,200,69,.45),rgba(255,200,69,.15))}
+.proc-step{text-align:center;padding:0 8px;position:relative;z-index:1}
+.proc-num{width:88px;height:88px;border-radius:50%;background:rgba(255,255,255,.07);border:2.5px solid rgba(255,200,69,.3);display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto 14px;transition:all .3s}
+.proc-step:hover .proc-num{background:var(--yw);border-color:var(--yw);transform:scale(1.1);box-shadow:0 6px 20px rgba(255,200,69,.4)}
+.proc-n{font-size:22px;font-weight:900;color:var(--yw);letter-spacing:-.5px;line-height:1}
+.proc-step:hover .proc-n{color:var(--br)}
+.proc-name{font-size:14px;font-weight:800;color:#29250F;margin-bottom:5px}
+.proc-desc{font-size:12px;color:rgba(41,37,15,.65);line-height:1.6}
+
+/* PHOTO */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.wh-photo{border-radius:var(--r3);overflow:hidden;box-shadow:var(--s3)}
+.wh-photo img{width:100%;height:300px;object-fit:cover;display:block}
+.wh-photo-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.wh-photo-sm{border-radius:var(--r2);overflow:hidden}
+.wh-photo-sm img{width:100%;height:140px;object-fit:cover;display:block}
+.about-text h2{font-size:clamp(24px,3vw,38px);font-weight:900;color:var(--br);margin-bottom:16px;line-height:1.3}
+.about-text h2 span{color:var(--og)}
+.about-text p{font-size:15px;color:var(--brm);line-height:1.75;margin-bottom:14px;text-wrap:pretty}
+.about-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.about-pill{background:#fff;border:1.5px solid rgba(45,27,14,.1);border-radius:var(--rf);padding:7px 14px;font-size:13px;font-weight:700;color:var(--brm)}
+
+/* WHY */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start}
+.why-list{display:flex;flex-direction:column;gap:14px}
+.why-item{display:flex;gap:16px;align-items:flex-start;background:#fff;border-radius:var(--r2);padding:20px;border:1px solid rgba(45,27,14,.07);box-shadow:0 1px 8px rgba(45,27,14,.05);transition:all .3s}
+.why-item:hover{border-color:rgba(255,107,53,.25);transform:translateX(6px)}
+.why-icon{width:48px;height:48px;flex-shrink:0;border-radius:var(--r1);background:rgba(255,107,53,.08);display:flex;align-items:center;justify-content:center}
+.why-icon [data-lucide]{width:22px;height:22px;stroke-width:1.7;color:var(--og)}
+.why-h{font-size:15px;font-weight:800;color:var(--br);margin-bottom:4px}
+.why-p{font-size:14px;color:var(--gy);line-height:1.65;text-wrap:pretty}
+.why-rt{display:flex;flex-direction:column;gap:14px}
+.wbc{background:#fff;border-radius:var(--r3);padding:28px;border:1px solid rgba(45,27,14,.07);text-align:center;transition:all .3s}
+.wbc:hover{box-shadow:var(--s2);border-color:var(--yw)}
+.wbc-v{font-size:38px;font-weight:900;color:var(--og);line-height:1}
+.wbc-l{font-size:14px;font-weight:700;color:var(--brm);margin-top:5px}
+.wbr{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.wsc{background:#fff;border:1px solid rgba(45,27,14,.07);border-radius:var(--r2);padding:20px;text-align:center;transition:all .3s}
+.wsc:hover{box-shadow:var(--s1);border-color:var(--og);transform:translateY(-4px)}
+.wsc-v{font-size:22px;font-weight:900;color:var(--og)}
+.wsc-l{font-size:12px;font-weight:700;color:var(--brm)}
+
+/* PARTNER GRID */
+.partner-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+.partner-item{background:#fff;border:1px solid rgba(45,27,14,.07);border-radius:var(--r1);padding:16px 12px 12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;box-shadow:0 1px 4px rgba(45,27,14,.04);transition:all .22s cubic-bezier(.34,1.56,.64,1);min-height:84px}
+.partner-item:hover{border-color:var(--og);transform:translateY(-2px);box-shadow:var(--s2)}
+.partner-item img{height:28px;width:auto;object-fit:contain;max-width:92px;display:block}
+.partner-name{font-size:10.5px;color:var(--brm);text-align:center;line-height:1.4;font-weight:500}
+.ptag{display:block;font-size:9px;color:#aaa;font-weight:400;margin-top:1px}
+.partner-own{border-color:rgba(255,107,53,.25);background:var(--cr)}
+.partner-own-badge{background:var(--og);color:#fff;font-size:9px;font-weight:800;padding:2px 7px;border-radius:var(--rf)}
+
+/* FAQ */
+.faq-list{max-width:800px;margin:0 auto;display:flex;flex-direction:column;gap:10px}
+.fqi{background:#fff;border-radius:var(--r2);border:1px solid rgba(45,27,14,.07);overflow:hidden;transition:border-color .3s,box-shadow .3s}
+.fqi.open{border-color:rgba(255,107,53,.3);box-shadow:0 2px 12px rgba(255,107,53,.08)}
+.fqq{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;cursor:pointer;user-select:none;gap:12px}
+.fqq-inner{display:flex;align-items:center;gap:10px}
+.fqicon{width:30px;height:30px;flex-shrink:0;border-radius:8px;background:rgba(255,107,53,.08);display:flex;align-items:center;justify-content:center}
+.fqicon [data-lucide]{width:15px;height:15px;color:var(--og);stroke-width:2}
+.fqtext{font-size:15px;font-weight:700;color:var(--br)}
+.fqtog{width:28px;height:28px;flex-shrink:0;border-radius:8px;background:var(--cr);display:flex;align-items:center;justify-content:center;font-size:19px;color:var(--og);font-weight:900;transition:all .3s}
+.fqi.open .fqtog{background:var(--og);color:#fff;transform:rotate(45deg)}
+.fqa{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.fqi.open .fqa{max-height:400px}
+.fqa-in{padding:14px 20px 20px;border-top:2px solid var(--crd);font-size:14px;color:var(--gy);line-height:1.75}
+
+/* CTA DARK */
+.sbg-form{background:linear-gradient(135deg,#2D1B0E 0%,#431E08 100%);position:relative;overflow:hidden}
+.sbg-form::before{content:'';position:absolute;top:-30%;right:-15%;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(255,200,69,.1) 0%,transparent 70%);pointer-events:none}
+.sbg-form .stitle{color:#fff}
+.sbg-form .slbl{border-left-color:var(--yw);color:var(--yw)}
+.sbg-form .sdesc{color:rgba(41,37,15,.65)}
+.cta-btns{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+.cta-trust{display:flex;flex-wrap:wrap;gap:18px;justify-content:center;margin-top:24px}
+.cta-ti{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:rgba(41,37,15,.6)}
+.cta-ti [data-lucide]{color:var(--yw);width:14px;height:14px;stroke-width:2}
+
+/* FOOTER */
+.footer{background:#FFF8ED;color:rgba(41,37,15,.8);padding:56px 20px 0}
+.foot-in{max-width:1200px;margin:0 auto}
+.foot-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:2px solid rgba(255,255,255,.07)}
+.foot-logo{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+.foot-logo img{width:56px;height:56px;object-fit:contain;filter:drop-shadow(0 4px 10px rgba(0,0,0,.3))}
+.foot-brand{font-size:20px;font-weight:900;color:var(--og)}
+.foot-ben{font-size:11px;color:rgba(41,37,15,.5);margin-top:2px}
+.foot-desc{font-size:13px;color:rgba(41,37,15,.55);line-height:1.7;margin-bottom:20px}
+.foot-soc{display:flex;gap:8px}
+.fsoc{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .28s cubic-bezier(.34,1.56,.64,1);flex-shrink:0}
+.fsoc:hover{transform:translateY(-4px) scale(1.1);box-shadow:0 8px 24px rgba(0,0,0,.35)}
+.fsoc-fb{background:#1877F2}
+.fsoc-ig{background:radial-gradient(circle at 30% 107%,#fdf497 0%,#fdf497 5%,#fd5949 45%,#d6249f 60%,#285AEB 90%)}
+.fsoc-yt{background:#FF0000}
+.fsoc-th{background:#000}
+.foot-ct{font-size:13px;font-weight:800;color:#29250F;margin-bottom:12px}
+.foot-lks{list-style:none;display:flex;flex-direction:column;gap:8px}
+.foot-lks a{font-size:15px;color:rgba(41,37,15,.55);transition:color .2s}
+.foot-lks a:hover{color:var(--og)}
+.foot-bot{padding:22px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.tabnum{font-variant-numeric:tabular-nums}.foot-copy{font-size:12px;color:rgba(41,37,15,.4)}
+.foot-copy span{color:var(--og)}
+.foot-seo{display:flex;flex-wrap:wrap;gap:5px}
+.fseo{font-size:11px;color:rgba(41,37,15,.35);background:rgba(41,37,15,.04);padding:3px 8px;border-radius:var(--rf);border:1px solid rgba(41,37,15,.1)}
+
+/* FLOATING */
+.float-cta{position:fixed;bottom:22px;right:22px;z-index:300;display:flex;flex-direction:column;gap:10px;align-items:flex-end}
+.fb{display:flex;align-items:center;gap:9px;padding:12px 18px;border-radius:var(--rf);font-size:13px;font-weight:800;color:#fff;box-shadow:var(--s3);transition:all .3s cubic-bezier(.34,1.56,.64,1);position:relative}
+.fb:hover{transform:scale(1.06) translateY(-3px)}
+.fb-ln{background:var(--lg);box-shadow:0 5px 20px rgba(6,199,85,.45)}
+.fb-ph{background:var(--og);box-shadow:0 5px 20px rgba(255,107,53,.45)}
+.fb-pulse{position:absolute;top:-4px;right:-4px;width:13px;height:13px;border-radius:50%;background:var(--yw);border:2.5px solid #fff}
+.fb-pulse::after{content:'';position:absolute;inset:-3px;border-radius:50%;border:2px solid var(--yw);animation:pulse 1.5s ease-out infinite}
+.mob-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:299;background:#fff;border-top:2px solid var(--crd);padding:10px 14px max(10px,env(safe-area-inset-bottom))}
+.mob-row{display:flex;gap:8px}
+.mb-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:7px;padding:12px;border-radius:var(--rf);font-size:14px;font-weight:800;border:none;cursor:pointer;color:#fff;text-decoration:none}
+.mb-ln{background:var(--lg)}
+.mb-ev{background:var(--og)}
+[data-lucide]{width:20px;height:20px;stroke-width:1.75;display:inline-flex;flex-shrink:0;vertical-align:middle}
+.fb [data-lucide],.mb-btn [data-lucide]{width:18px;height:18px;stroke-width:2;flex-shrink:0}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .svc-grid{grid-template-columns:repeat(2,1fr)}
+  .proc-grid{grid-template-columns:repeat(2,1fr);gap:20px}
+  .proc-grid::before{display:none}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .foot-top{grid-template-columns:1fr 1fr;gap:28px}
+  .partner-grid{grid-template-columns:repeat(4,1fr)}
+  .why-grid,.about-grid{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .ham{display:flex}
+  .hero-in{grid-template-columns:1fr;text-align:center;gap:28px}
+  .hero-vis{order:-1}
+  .hsub,.hbtns,.htrust,.htags{max-width:100%}
+  .hbtns,.htrust,.htags{justify-content:center}
+  .mascot-wrap{width:260px;height:300px}
+  .fc{display:none}
+  .svc-grid{grid-template-columns:1fr}
+  .foot-top{grid-template-columns:1fr}
+  .float-cta{display:none}
+  .mob-bar{display:block}
+  .hero{padding-bottom:90px}
+  .partner-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:480px){
+  .stats{grid-template-columns:1fr 1fr}
+  .partner-grid{grid-template-columns:repeat(2,1fr)}
+}
+/* GSAP safety: hero elements visible by default — GSAP animates them in; if CDN fails, content stays readable */
+.badge-live,h1.htitle,.hsub,.hbtns,.hbtns .btn,.htrust,.hero-vis,.hero-chars,.char-wrap{opacity:1;visibility:visible}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+<div class="nav-in">
+  <a href="../" class="logo">
+    <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/shooshoo-char-logo.png" alt="咻咻打包 Logo">
+    <div><div class="logo-name">咻咻打包</div><div class="logo-en">ShooShoo Packing</div></div>
+  </a>
+  <ul class="nav-links">
+    <li class="has-drop">
+      <a href="../about/">關於我們 ▾</a>
+      <div class="dropdown">
+        <a href="../about/"><i data-lucide="building-2"></i>關於咻咻打包</a>
+        <a href="../join/"><i data-lucide="user-plus"></i>人才招募</a>
+      </div>
+    </li>
+    <li class="has-drop">
+      <a href="../flow/" style="color:var(--og)">倉儲服務 ▾</a>
+      <div class="dropdown">
+        <a href="../flow/"><i data-lucide="workflow"></i>倉儲服務流程</a>
+        <a href="../wms/"><i data-lucide="monitor"></i>智慧倉儲管理系統 WMS</a>
+        <a href="../international/"><i data-lucide="globe"></i>國際貿易代理空海運報關</a>
+        <a href="../api/"><i data-lucide="link-2"></i>倉儲 API 串接</a>
+        <a href="../global/"><i data-lucide="map"></i>全球發展</a>
+        <a href="../cooperate/"><i data-lucide="handshake"></i>廠商合作</a>
+      </div>
+    </li>
+    <li><a href="../custom-boxes-tainan/">紙箱訂製</a></li>
+    <li><a href="../influencer/">網紅合作</a></li>
+    <li><a href="../blog/">電商新聞</a></li>
+    <li><a href="../consult/" class="nav-cta">免費諮詢 →</a></li>
+  </ul>
+  <button class="ham" id="hamBtn" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+</div>
+</nav>
+<div class="mmenu" id="mmenu">
+  <a href="../about/" onclick="toggleMenu()">關於咻咻打包</a>
+  <a href="../join/" onclick="toggleMenu()">人才招募</a>
+  <div style="height:1px;background:var(--crd);margin:4px 0"></div>
+  <a href="../flow/" onclick="toggleMenu()" style="color:var(--og);font-weight:800">▸ 倉儲服務流程</a>
+  <a href="../wms/" onclick="toggleMenu()">智慧倉儲管理系統 WMS</a>
+  <a href="../international/" onclick="toggleMenu()">國際貿易代理空海運報關</a>
+  <a href="../api/" onclick="toggleMenu()">倉儲 API 串接</a>
+  <a href="../global/" onclick="toggleMenu()">全球發展</a>
+  <a href="../cooperate/" onclick="toggleMenu()">廠商合作</a>
+  <div style="height:1px;background:var(--crd);margin:4px 0"></div>
+  <a href="../custom-boxes-tainan/" onclick="toggleMenu()">紙箱訂製</a>
+  <a href="../influencer/" onclick="toggleMenu()">網紅合作</a>
+  <a href="../blog/" onclick="toggleMenu()">電商新聞</a>
+  <a href="../consult/" class="mc" onclick="toggleMenu()">免費諮詢</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <svg class="hero-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60" preserveAspectRatio="none">
+    <path d="M0,60 C360,20 720,60 1080,20 C1260,0 1380,10 1440,10 L1440,60Z" fill="#fff"/>
+  </svg>
+  <div class="hero-in">
+    <div>
+      <div class="badge-live">
+        <span class="bdot"><span class="bdot-c"></span><span class="bdot-r"></span></span>
+        台南在地倉庫・電商出貨專家
+      </div>
+      <h1 class="htitle">代出貨完整流程<br>入庫到寄件，<span class="hl">全程搞定</span></h1>
+      <p class="hsub">電商出貨／三方倉儲（3PL）／庫存同步／代包代發。你專心賣，我們專心把貨做對、做快、做漂亮。</p>
+      <div class="htags">
+        <span class="htag"><i data-lucide="warehouse"></i>入庫驗收</span>
+        <span class="htag"><i data-lucide="scan-line"></i>揀貨掃碼</span>
+        <span class="htag"><i data-lucide="package"></i>打包裝箱</span>
+        <span class="htag"><i data-lucide="truck"></i>多物流整合</span>
+        <span class="htag"><i data-lucide="video"></i>全程錄影</span>
+        <span class="htag"><i data-lucide="rotate-ccw"></i>逆物流處理</span>
+      </div>
+      <div class="hbtns">
+        <a href="https://lin.ee/L9HtuyF" target="_blank" rel="noopener" class="btn btn-lg"><i data-lucide="message-circle"></i>LINE 立即諮詢</a>
+        <a href="../consult/" class="btn btn-og"><i data-lucide="clipboard-check"></i>免費倉儲評估</a>
+      </div>
+      <div class="htrust">
+        <span class="hti"><i data-lucide="target"></i>99.8% 出貨準確率</span>
+        <span class="hti"><i data-lucide="clock"></i>截單當天出貨</span>
+        <span class="hti"><i data-lucide="truck"></i>12+ 物流商整合</span>
+        <span class="hti"><i data-lucide="video"></i>全程出貨錄影</span>
+      </div>
+    </div>
+    <div class="hero-vis">
+      <div class="mascot-wrap">
+        <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/shooshoo-char-pick-cat.png" alt="揀貨喵喵代出貨" class="mascot-main fl1">
+        <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/shooshoo-char-main.png" alt="咻咻" class="mascot-sm1 fl2">
+        <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/shooshoo-char-admin-cat.png" alt="行政喵喵" class="mascot-sm2 fl3">
+        <div class="fc fc1">
+          <div class="fc-icon"><i data-lucide="target"></i></div>
+          <div><div class="fc-val">99.8%</div><div class="fc-lbl">出貨準確率</div></div>
+        </div>
+        <div class="fc fc2">
+          <div class="fc-icon"><i data-lucide="zap"></i></div>
+          <div><div class="fc-val">截單當天</div><div class="fc-lbl">出貨不等隔日</div></div>
+        </div>
+        <div class="fc fc3">
+          <div class="fc-icon"><i data-lucide="truck"></i></div>
+          <div><div class="fc-val">12+</div><div class="fc-lbl">合作物流商</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="mqbar">
+  <div class="mqtrack">
+    <div class="mqi"><span class="mq-star">★</span>入庫驗收・即時建檔<span class="mq-sep">◆</span></div>
+    <div class="mqi"><span class="mq-star">★</span>揀貨掃碼・零漏單<span class="mq-sep">◆</span></div>
+    <div class="mqi"><span class="mq-star">★</span>打包裝箱・防震到位<span class="mq-sep">◆</span></div>
+    <div class="mqi"><span class="mq-star">★</span>宅配・超商・自有車隊<span class="mq-sep">◆</span></div>
+    <div class="mqi"><span class="mq-star">★</span>全程出貨錄影<span class="mq-sep">◆</span></div>
+    <div class="mqi"><span class="mq-star">★</span>逆物流退貨處理<span class="mq-sep">◆</span></div>
+    <div class="mqi"><span class="mq-star">★</span>WMS 庫存即時同步<span class="mq-sep">◆</span></div>
+    <div class="mqi"><span class="mq-star">★</span>多平台 API 串接<span class="mq-sep">◆</span></div>
+    <div class="mqi"><span class="mq-star">★</span>入庫驗收・即時建檔<span class="mq-sep">◆</span></div>
+    <div class="mqi"><span class="mq-star">★</span>揀貨掃碼・零漏單<span class="mq-sep">◆</span></div>
+    <div class="mqi"><span class="mq-star">★</span>打包裝箱・防震到位<span class="mq-sep">◆</span></div>
+    <div class="mqi"><span class="mq-star">★</span>宅配・超商・自有車隊<span class="mq-sep">◆</span></div>
+    <div class="mqi"><span class="mq-star">★</span>全程出貨錄影<span class="mq-sep">◆</span></div>
+    <div class="mqi"><span class="mq-star">★</span>逆物流退貨處理<span class="mq-sep">◆</span></div>
+    <div class="mqi"><span class="mq-star">★</span>WMS 庫存即時同步<span class="mq-sep">◆</span></div>
+    <div class="mqi"><span class="mq-star">★</span>多平台 API 串接<span class="mq-sep">◆</span></div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="sbg-w">
+  <div class="stats">
+    <div class="stc"><div class="stc-icon"><i data-lucide="users"></i></div><div class="stc-n"><span class="cnt" data-t="500">0</span><span class="stc-sfx">+</span></div><div class="stc-l">合作品牌</div></div>
+    <div class="stc"><div class="stc-icon"><i data-lucide="target"></i></div><div class="stc-n"><span class="cnt" data-t="99">0</span><span class="stc-sfx">.8%</span></div><div class="stc-l">出貨準確率</div></div>
+    <div class="stc"><div class="stc-icon"><i data-lucide="truck"></i></div><div class="stc-n"><span class="cnt" data-t="12">0</span><span class="stc-sfx">+</span></div><div class="stc-l">合作物流商</div></div>
+    <div class="stc"><div class="stc-icon"><i data-lucide="clock"></i></div><div class="stc-n"><span class="cnt" data-t="24">0</span><span class="stc-sfx">H</span></div><div class="stc-l">快速出貨</div></div>
+  </div>
+</div>
+
+<!-- 3PL 服務 -->
+<section class="sec sbg-cr" id="services">
+  <div class="sec-in">
+    <div class="sec-hd">
+      <div class="slbl">3PL 倉儲服務</div>
+      <h2 class="stitle">一站式出貨服務，<span class="oc">什麼都包</span></h2>
+      <p class="sdesc">從入倉到出貨，從訂單到退貨，咻咻打包全程代辦，讓你零煩惱衝業績。</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card">
+        <span class="svc-badge">核心服務</span>
+        <div class="svc-char-wrap"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/shooshoo-char-boss.png" alt="倉倉老闆 入庫驗收"></div>
+        <div class="svc-body">
+          <h3 class="svc-name">入庫驗收</h3>
+          <p class="svc-desc">貨到咻咻倉庫，立即點收建檔，品項、數量、效期全確認，入庫資料即時上 WMS。</p>
+          <ul class="svc-list">
+            <li>點收建檔・效期批號管理</li>
+            <li>貨架 / 棧板 / 恆溫儲位</li>
+            <li>定期盤點庫存回報</li>
+            <li>貨櫃拆貨直接入倉</li>
+          </ul>
+        </div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-char-wrap"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/shooshoo-char-pick-cat.png" alt="揀貨喵喵 代包代發"></div>
+        <div class="svc-body">
+          <h3 class="svc-name">代包代發</h3>
+          <p class="svc-desc">訂單進來自動拋單，揀貨、打包、面單列印一氣呵成，截單前下訂當天出貨不拖延。</p>
+          <ul class="svc-list">
+            <li>系統導引揀貨・逐件掃碼</li>
+            <li>防震填充・品牌包裝到位</li>
+            <li>出貨全程錄影可查詢</li>
+          </ul>
+        </div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-char-wrap"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/shooshoo-char-admin-cat.png" alt="行政喵喵 庫存同步"></div>
+        <div class="svc-body">
+          <h3 class="svc-name">庫存同步</h3>
+          <p class="svc-desc">WMS 庫存即時同步多平台，低庫存自動提醒，再也不怕超賣或庫存不準。</p>
+          <ul class="svc-list">
+            <li>蝦皮・MOMO・Shopify・91APP</li>
+            <li>庫存即時查詢・低庫提醒</li>
+            <li>宅配貨態自動回寫</li>
+            <li>月報表自動產出</li>
+          </ul>
+        </div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-char-wrap"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/shooshoo-char-tape.png" alt="咚咚膠帶 加工服務"></div>
+        <div class="svc-body">
+          <h3 class="svc-name">加工服務</h3>
+          <p class="svc-desc">貼標、組裝、重新包裝，讓商品亮麗出貨，提升開箱體驗，品牌形象加分。</p>
+          <ul class="svc-list">
+            <li>商品貼標（吊牌、不乾膠）</li>
+            <li>禮盒組裝・客製包裝</li>
+            <li>品牌名片・文宣夾入</li>
+          </ul>
+        </div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-char-wrap"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/shooshoo-char-cutter.png" alt="卡卡刀刀 逆物流處理"></div>
+        <div class="svc-body">
+          <h3 class="svc-name">逆物流處理</h3>
+          <p class="svc-desc">退貨不再是痛點，咻咻幫你驗貨、整新、重新入庫，保持庫存品質不浪費。</p>
+          <ul class="svc-list">
+            <li>退貨收件・拍照記錄</li>
+            <li>瑕疵篩選・整新處理</li>
+            <li>合格品重新入庫</li>
+          </ul>
+        </div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-char-wrap"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/shooshoo-char-car.png" alt="咻卡 自有車隊"></div>
+        <div class="svc-body">
+          <h3 class="svc-name">自有車隊配送</h3>
+          <p class="svc-desc">公司自有車隊直送，大量出貨、拆貨櫃、台南在地配送都搞定，時間彈性好溝通。</p>
+          <ul class="svc-list">
+            <li>5噸貨車 × 2・11噸・17噸</li>
+            <li>台南在地快速配送</li>
+            <li>貨櫃拆貨直接入倉</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 標準流程 -->
+<section class="sec sbg-dk" id="process">
+  <div class="sec-in">
+    <div class="sec-hd">
+      <div class="slbl">標準流程</div>
+      <h2 class="stitle">下訂到出門，<span style="color:var(--yw)">4步驟</span>咻一下完成</h2>
+      <p class="sdesc">全自動化流程，人工逐件掃碼確認，99.8% 出貨準確率不是說說而已。</p>
+    </div>
+    <div class="proc-grid">
+      <div class="proc-step"><div class="proc-num"><span class="proc-n">01</span></div><div class="proc-name">接收訂單</div><div class="proc-desc">API 自動拋單<br>WMS 系統接單<br>面單自動生成</div></div>
+      <div class="proc-step"><div class="proc-num"><span class="proc-n">02</span></div><div class="proc-name">揀貨核對</div><div class="proc-desc">路徑最短導引<br>逐件掃碼確認<br>效期管理提醒</div></div>
+      <div class="proc-step"><div class="proc-num"><span class="proc-n">03</span></div><div class="proc-name">揀貨覆核</div><div class="proc-desc">打包前二次確認<br>全程出貨錄影<br>品牌包裝到位</div></div>
+      <div class="proc-step"><div class="proc-num"><span class="proc-n">04</span></div><div class="proc-name">出貨交寄</div><div class="proc-desc">對應物流定時收件<br>貨態即時回寫<br>全程可追蹤</div></div>
+    </div>
+    <div style="margin-top:48px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+      <div style="border-radius:var(--r2);overflow:hidden;border:2px solid rgba(255,255,255,.1)"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/b02-ah.png" alt="揀貨效率" style="width:100%;height:150px;object-fit:cover;display:block"></div>
+      <div style="border-radius:var(--r2);overflow:hidden;border:2px solid rgba(255,255,255,.1)"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/shooshoo-b03-packing-team.png" alt="打包分工" style="width:100%;height:150px;object-fit:cover;display:block"></div>
+      <div style="border-radius:var(--r2);overflow:hidden;border:2px solid rgba(255,255,255,.1)"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/b05-utj.png" alt="出貨整齊" style="width:100%;height:150px;object-fit:cover;display:block"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 物流服務商 -->
+<section class="sec sbg-w2" id="logistics">
+  <div class="sec-in">
+    <div class="sec-hd">
+      <div class="slbl">合作物流商</div>
+      <h2 class="stitle">你用哪家，<span class="oc">咻咻都串得到</span></h2>
+      <p class="sdesc">宅配・超商・自有車隊・國際快遞，一次整合，選最適合你的方式出貨。</p>
+    </div>
+    <div class="partner-grid">
+      <div class="partner-item partner-own">
+        <div class="partner-own-badge">自有車隊</div>
+        <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/shooshoo-char-car.png" alt="咻咻專車" style="height:38px;width:auto">
+        <div class="partner-name">咻咻專車<span class="ptag">5噸×2・11噸・17噸</span></div>
+      </div>
+      <div class="partner-item">
+        <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-tcat.webp" alt="黑貓宅急便">
+        <div class="partner-name">黑貓宅急便<span class="ptag">含冷藏・冷凍</span></div>
+      </div>
+      <div class="partner-item">
+        <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-hct-new.webp" alt="新竹物流">
+        <div class="partner-name">新竹物流<span class="ptag">含冷藏・冷凍</span></div>
+      </div>
+      <div class="partner-item">
+        <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-kerry.webp" alt="嘉里大榮">
+        <div class="partner-name">嘉里大榮<span class="ptag">貨運</span></div>
+      </div>
+      <div class="partner-item">
+        <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-srexpress.webp" alt="順豐速運">
+        <div class="partner-name">順豐速運<span class="ptag">含店取</span></div>
+      </div>
+      <div class="partner-item">
+        <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-pelican-n.webp" alt="宅配通">
+        <div class="partner-name">宅配通<span class="ptag">含冷藏</span></div>
+      </div>
+      <div class="partner-item">
+        <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-7eleven-new.webp" alt="7-11">
+        <div class="partner-name">7-11<span class="ptag">超商取件</span></div>
+      </div>
+      <div class="partner-item">
+        <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-family.webp" alt="全家">
+        <div class="partner-name">全家<span class="ptag">超商取件</span></div>
+      </div>
+      <div class="partner-item">
+        <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-shopee.webp" alt="蝦皮店到店">
+        <div class="partner-name">蝦皮店到店<span class="ptag">電商平台</span></div>
+      </div>
+      <div class="partner-item">
+        <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-dhl.webp" alt="DHL">
+        <div class="partner-name">DHL<span class="ptag">國際快遞</span></div>
+      </div>
+      <div class="partner-item">
+        <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/FedEx_Express.svg.png" alt="FedEx">
+        <div class="partner-name">FedEx<span class="ptag">國際快遞</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 倉庫實景 + 為什麼選咻咻 -->
+<section class="sec sbg-cl" id="why">
+  <div class="sec-in">
+    <div class="about-grid">
+      <div>
+        <div class="wh-photo">
+          <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/b01-ho.png" alt="咻咻打包倉庫全景">
+        </div>
+        <div class="wh-photo-row">
+          <div class="wh-photo-sm"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/B04-WMSuq.png" alt="WMS 系統"></div>
+          <div class="wh-photo-sm"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/B07-AecW.png" alt="品質檢驗"></div>
+        </div>
+      </div>
+      <div class="about-text">
+        <div class="slbl">為什麼選咻咻</div>
+        <h2>不只是代出貨，<br><span>是你的出貨夥伴</span></h2>
+        <p>每筆出貨全程錄影・逐件掃碼確認，旺季不加費用不爆倉，無最低訂單限制從零開始都歡迎。</p>
+        <div class="why-list" style="margin-top:20px">
+          <div class="why-item">
+            <div class="why-icon"><i data-lucide="video"></i></div>
+            <div><div class="why-h">全程錄影，客訴有憑有據</div><div class="why-p">每筆出貨錄影存 90 天，爭議秒解不怕無故退貨。</div></div>
+          </div>
+          <div class="why-item">
+            <div class="why-icon"><i data-lucide="zap"></i></div>
+            <div><div class="why-h">截單當天出貨，不等隔日</div><div class="why-p">平日 2 點前拋單當天出，旺季雙 11 同樣穩定。</div></div>
+          </div>
+          <div class="why-item">
+            <div class="why-icon"><i data-lucide="scan-line"></i></div>
+            <div><div class="why-h">逐件掃碼，99.8% 準確率</div><div class="why-p">人工 + 系統雙重確認，漏單錯單機率業界最低。</div></div>
+          </div>
+        </div>
+        <div class="about-pills" style="margin-top:16px">
+          <span class="about-pill">台南在地倉庫</span>
+          <span class="about-pill">無最低訂單限制</span>
+          <span class="about-pill">自有車隊 4 台</span>
+          <span class="about-pill">常溫 + 恆溫倉儲</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec sbg-cr" id="faq">
+  <div class="sec-in">
+    <div class="sec-hd">
+      <div class="slbl">常見問題</div>
+      <h2 class="stitle">出貨流程 Q&A，<span class="oc">一次看懂</span></h2>
+    </div>
+    <div class="faq-list">
+      <div class="fqi" onclick="toggleFaq(this)">
+        <div class="fqq"><div class="fqq-inner"><div class="fqicon"><i data-lucide="help-circle"></i></div><span class="fqtext">開始合作的流程是什麼？</span></div><div class="fqtog">+</div></div>
+        <div class="fqa"><div class="fqa-in">填寫免費評估表單 → 專員聯繫確認需求 → 簽署合作合約 → 匯款保證金 → 開通 WMS 帳號 → 安排首次入庫，整個流程最快 3 個工作天完成。</div></div>
+      </div>
+      <div class="fqi" onclick="toggleFaq(this)">
+        <div class="fqq"><div class="fqq-inner"><div class="fqicon"><i data-lucide="help-circle"></i></div><span class="fqtext">訂單拋單有截止時間嗎？截止後怎麼辦？</span></div><div class="fqtog">+</div></div>
+        <div class="fqa"><div class="fqa-in">平日下午 2 點前拋單，當天出貨；超過截止時間順延隔日出貨。如有緊急需求可加收急單費，請提前與專員確認。</div></div>
+      </div>
+      <div class="fqi" onclick="toggleFaq(this)">
+        <div class="fqq"><div class="fqq-inner"><div class="fqicon"><i data-lucide="help-circle"></i></div><span class="fqtext">出貨錄影可以查嗎？保存多久？</span></div><div class="fqtog">+</div></div>
+        <div class="fqa"><div class="fqa-in">每筆訂單出貨全程錄影，透過 WMS 系統隨時查閱，錄影資料保存 90 天。若有客訴糾紛可作為理賠依據，大幅降低買賣爭議。</div></div>
+      </div>
+      <div class="fqi" onclick="toggleFaq(this)">
+        <div class="fqq"><div class="fqq-inner"><div class="fqicon"><i data-lucide="help-circle"></i></div><span class="fqtext">商品入倉需要提前預約嗎？需要準備什麼？</span></div><div class="fqtog">+</div></div>
+        <div class="fqa"><div class="fqa-in">是的，入倉前需提前預約時間並準備嘜頭標籤。建議同時提供商品清單（品名、數量、效期），讓入庫更順暢。緊急入倉可 LINE 聯繫專員協調。</div></div>
+      </div>
+      <div class="fqi" onclick="toggleFaq(this)">
+        <div class="fqq"><div class="fqq-inner"><div class="fqicon"><i data-lucide="help-circle"></i></div><span class="fqtext">費用怎麼計算？每月如何結帳？</span></div><div class="fqtog">+</div></div>
+        <div class="fqa"><div class="fqa-in">費用分 WMS 系統費（月租）、倉租（按儲位每日計費）、出貨費（按訂單件數）、入庫費（按件計費）。每月 5 號開立發票，20 號前完成轉帳，帳目清楚不踩雷。詳細報價填寫評估表單免費取得。</div></div>
+      </div>
+      <div class="fqi" onclick="toggleFaq(this)">
+        <div class="fqq"><div class="fqq-inner"><div class="fqicon"><i data-lucide="help-circle"></i></div><span class="fqtext">支援超商寄件嗎？可以指定物流商嗎？</span></div><div class="fqtog">+</div></div>
+        <div class="fqa"><div class="fqa-in">支援！7-11、全家、萊爾富、蝦皮店到店都可以。可指定特定物流商，彈性配合你的商品特性和買家需求。</div></div>
+      </div>
+      <div class="fqi" onclick="toggleFaq(this)">
+        <div class="fqq"><div class="fqq-inner"><div class="fqicon"><i data-lucide="help-circle"></i></div><span class="fqtext">旺季（雙11、年貨、過年）可以處理嗎？</span></div><div class="fqtog">+</div></div>
+        <div class="fqa"><div class="fqa-in">旺季是咻咻的強項！提前通知預估量，我們提前備料、調配人力。1,000+ 坪彈性空間，過往多次協助品牌在旺季 5 倍單量仍準時出完。</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="sec sbg-form" id="contact">
+  <div class="sec-in" style="position:relative;z-index:1">
+    <div class="sec-hd">
+      <div class="slbl">立即諮詢</div>
+      <h2 class="stitle">出貨的事，<span style="color:var(--yw)">交給咻咻</span></h2>
+      <p class="sdesc">填寫免費評估，1 個工作天內專員主動聯繫，完全免費不強迫。</p>
+    </div>
+    <div style="display:flex;justify-content:center;margin-bottom:32px">
+      <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/shooshoo-char-main.png" alt="咻咻" style="height:110px;width:auto;filter:drop-shadow(0 8px 24px rgba(0,0,0,.3));animation:float 3.2s ease-in-out infinite">
+    </div>
+    <div class="cta-btns">
+      <a href="https://lin.ee/L9HtuyF" target="_blank" rel="noopener" class="btn btn-lg"><i data-lucide="message-circle"></i>LINE 馬上諮詢</a>
+      <a href="../consult/" class="btn btn-og"><i data-lucide="clipboard-check"></i>免費倉儲評估</a>
+      <a href="tel:0976757866" class="btn btn-gh"><i data-lucide="phone"></i>0976-757866</a>
+    </div>
+    <div class="cta-trust">
+      <span class="cta-ti"><i data-lucide="check-circle"></i>台南在地倉庫</span>
+      <span class="cta-ti"><i data-lucide="check-circle"></i>無最低訂單限制</span>
+      <span class="cta-ti"><i data-lucide="check-circle"></i>免費評估不強迫</span>
+      <span class="cta-ti"><i data-lucide="check-circle"></i>1 工作天內回覆</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="foot-in">
+    <div class="foot-top">
+      <div>
+        <div class="foot-logo">
+          <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo.png" alt="咻咻打包">
+          <div><div class="foot-brand">咻咻打包</div><div class="foot-ben">ShooShoo Packing</div></div>
+        </div>
+        <p class="foot-desc">台南最萌電商出貨後勤夥伴，讓老闆專心賣貨，出貨咻一下交給我們。翰鮮運營企業有限公司</p>
+        <div class="foot-soc">
+          <a href="https://www.facebook.com/shooshoopacking" target="_blank" class="fsoc fsoc-fb">
+            <img src="https://cdn.simpleicons.org/facebook/ffffff" width="18" height="18" alt="Facebook">
+          </a>
+          <a href="https://www.instagram.com/shooshoopacking" target="_blank" class="fsoc fsoc-ig">
+            <svg viewBox="0 0 24 24" width="22" height="22">
+              <defs><radialGradient id="igs" cx="30%" cy="107%" r="130%"><stop offset="0%" stop-color="#fdf497"/><stop offset="38%" stop-color="#fd5949"/><stop offset="62%" stop-color="#d6249f"/><stop offset="100%" stop-color="#285AEB"/></radialGradient></defs>
+              <rect x="1.5" y="1.5" width="21" height="21" rx="6" fill="url(#igs)"/>
+              <circle cx="12" cy="12" r="4.5" fill="none" stroke="white" stroke-width="2"/>
+              <circle cx="17.3" cy="6.7" r="1.4" fill="white"/>
+            </svg>
+          </a>
+          <a href="https://www.youtube.com/@shooshoopacking" target="_blank" class="fsoc fsoc-yt">
+            <img src="https://cdn.simpleicons.org/youtube/ffffff" width="20" height="20" alt="YouTube">
+          </a>
+          <a href="https://www.threads.net/@shooshoopacking" target="_blank" class="fsoc fsoc-th">
+            <img src="https://cdn.simpleicons.org/threads/ffffff" width="16" height="16" alt="Threads">
+          </a>
+        </div>
+      </div>
+      <div>
+        <div class="foot-ct">倉儲服務</div>
+        <ul class="foot-lks">
+          <li><a href="../flow/">倉儲服務流程</a></li>
+          <li><a href="../wms/">智慧倉儲管理系統 WMS</a></li>
+          <li><a href="../international/">國際貿易代理空海運報關</a></li>
+          <li><a href="../api/">倉儲 API 串接</a></li>
+          <li><a href="../global/">全球發展</a></li>
+          <li><a href="../cooperate/">廠商合作</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="foot-ct">了解更多</div>
+        <ul class="foot-lks">
+          <li><a href="../about/">關於咻咻打包</a></li>
+          <li><a href="../join/">人才招募</a></li>
+          <li><a href="../custom-boxes-tainan/">紙箱訂製</a></li>
+          <li><a href="../influencer/">網紅合作</a></li>
+          <li><a href="../blog/">電商新聞</a></li>
+          <li><a href="../consult/">免費諮詢</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="foot-ct">聯絡我們</div>
+        <ul class="foot-lks">
+          <li><a href="tel:0976757866">0976-757866</a></li>
+          <li><a href="https://lin.ee/L9HtuyF" target="_blank">@911ycmhl</a></li>
+          <li><a href="mailto:shooshoopacking@gmail.com">shooshoopacking@gmail.com</a></li>
+          <li>台南市安定區海寮里25-37號</li>
+          <li>週一至週五 09:00–18:00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <div class="foot-copy">© 2026 <span>咻咻打包 ShooShoo Packing</span>．翰鮮運營企業有限公司</div>
+      <div class="foot-seo">
+        <span class="fseo">台南代出貨流程</span>
+        <span class="fseo">三方倉儲3PL</span>
+        <span class="fseo">電商代出貨</span>
+        <span class="fseo">台南倉儲物流</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING + MOBILE BAR -->
+<div class="float-cta">
+  <a href="https://lin.ee/L9HtuyF" target="_blank" class="fb fb-ln"><div class="fb-pulse"></div><i data-lucide="message-circle"></i>LINE 諮詢</a>
+  <a href="tel:0976757866" class="fb fb-ph"><i data-lucide="phone"></i>電話諮詢</a>
+</div>
+<div class="mob-bar">
+  <div class="mob-row">
+    <a href="https://lin.ee/L9HtuyF" target="_blank" class="mb-btn mb-ln"><i data-lucide="message-circle"></i>LINE 諮詢</a>
+    <a href="../consult/" class="mb-btn mb-ev"><i data-lucide="clipboard-check"></i>免費評估</a>
+  </div>
+</div>
+
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('sc',scrollY>20));
+function toggleMenu(){document.getElementById('mmenu').classList.toggle('open')}
+document.addEventListener('click',e=>{
+  const m=document.getElementById('mmenu'),b=document.getElementById('hamBtn');
+  if(m&&b&&!m.contains(e.target)&&!b.contains(e.target))m.classList.remove('open');
+});
+function toggleFaq(item){
+  const was=item.classList.contains('open');
+  document.querySelectorAll('.fqi').forEach(i=>i.classList.remove('open'));
+  if(!was)item.classList.add('open');
+}
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const id=a.getAttribute('href').slice(1);if(!id)return;
+    const el=document.getElementById(id);if(!el)return;
+    e.preventDefault();
+    window.scrollTo({top:el.getBoundingClientRect().top+scrollY-76,behavior:'smooth'});
+  });
+});
+if(typeof lucide!=='undefined')lucide.createIcons();
+if(typeof gsap!=='undefined'){
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.set(['.badge-live','h1.htitle','.hsub','.htags','.htag','.hbtns','.hbtns .btn','.htrust','.hti','.hero-vis'],{autoAlpha:0});
+  const tl=gsap.timeline({defaults:{ease:'power3.out'}});
+  tl.fromTo('.badge-live',{autoAlpha:0,y:-18},{autoAlpha:1,y:0,duration:.5,ease:'back.out(2)'},0)
+    .fromTo('h1.htitle',{autoAlpha:0,y:32},{autoAlpha:1,y:0,duration:.7},'.2')
+    .fromTo('.hsub',{autoAlpha:0,y:22},{autoAlpha:1,y:0,duration:.55},'.45')
+    .set('.htags',{autoAlpha:1},'.62')
+    .fromTo('.htag',{autoAlpha:0,y:18},{autoAlpha:1,y:0,stagger:.07,duration:.4,ease:'back.out(1.7)'},'.62')
+    .set('.hbtns',{autoAlpha:1},'.92')
+    .fromTo('.hbtns .btn',{autoAlpha:0,y:18},{autoAlpha:1,y:0,stagger:.1,duration:.45,ease:'back.out(1.5)'},'.92')
+    .set('.htrust',{autoAlpha:1},'1.12')
+    .fromTo('.hti',{autoAlpha:0,x:-12},{autoAlpha:1,x:0,stagger:.07,duration:.4},'1.12')
+    .fromTo('.hero-vis',{autoAlpha:0,x:48,scale:.94},{autoAlpha:1,x:0,scale:1,duration:1,ease:'power2.out'},'.15');
+  gsap.fromTo('.stc',{opacity:0,y:44},{opacity:1,y:0,duration:.6,stagger:.1,ease:'back.out(1.5)',scrollTrigger:{trigger:'.stats',start:'top 82%',once:true}});
+  document.querySelectorAll('.cnt').forEach(el=>{
+    const target=+el.dataset.t;
+    ScrollTrigger.create({trigger:el,start:'top 85%',once:true,onEnter(){
+      const obj={val:0};
+      gsap.to(obj,{val:target,duration:1.8,ease:'power2.out',onUpdate(){el.textContent=Math.round(obj.val).toLocaleString();}});
+    }});
+  });
+  gsap.fromTo('.svc-card',{opacity:0,y:52},{opacity:1,y:0,duration:.6,stagger:.1,ease:'power3.out',scrollTrigger:{trigger:'.svc-grid',start:'top 82%',once:true}});
+  gsap.fromTo('.proc-step',{opacity:0,y:32,scale:.88},{opacity:1,y:0,scale:1,duration:.5,stagger:.1,ease:'back.out(1.5)',scrollTrigger:{trigger:'.proc-grid',start:'top 80%',once:true}});
+  gsap.fromTo('.partner-item',{opacity:0,y:20,scale:.9},{opacity:1,y:0,scale:1,duration:.35,stagger:.03,ease:'back.out(1.7)',scrollTrigger:{trigger:'.partner-grid',start:'top 84%',once:true}});
+  gsap.fromTo('.why-item',{opacity:0,x:-24},{opacity:1,x:0,duration:.5,stagger:.08,ease:'power2.out',scrollTrigger:{trigger:'.why-list',start:'top 80%',once:true}});
+  gsap.fromTo('.fqi',{opacity:0,x:-20},{opacity:1,x:0,duration:.4,stagger:.07,ease:'power2.out',scrollTrigger:{trigger:'.faq-list',start:'top 82%',once:true}});
+  gsap.utils.toArray('.sec-hd').forEach(hd=>{
+    const kids=hd.querySelectorAll('.slbl,.stitle,.sdesc');
+    if(!kids.length)return;
+    gsap.fromTo(kids,{opacity:0,y:22},{opacity:1,y:0,duration:.55,stagger:.1,ease:'power2.out',scrollTrigger:{trigger:hd,start:'top 88%',once:true}});
+  });
+}
+</script>
+</body>
+</html>
+
+
+
+

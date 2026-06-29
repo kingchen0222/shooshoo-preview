@@ -1,0 +1,984 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>跨境物流布局・全球發展方向｜咻咻打包</title>
+<meta name="description" content="咻咻打包以台南為基地，協助台灣品牌與電商賣家處理跨境物流需求，建立從倉儲到國際出貨的完整供應鏈協作能力。">
+<meta property="og:title" content="跨境物流布局・全球發展方向｜咻咻打包">
+<meta property="og:description" content="台灣在地執行力 × 跨境供應鏈協作。協助品牌商與電商賣家，讓台灣商品有效率地走向國際市場。">
+<meta property="og:url" content="https://www.shooshoo.com.tw/global/">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://www.shooshoo.com.tw/global/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared.css">
+
+<style>
+/* ════════════════════════════════════════════════════════════
+   Global Page — 頁面專屬樣式
+   ════════════════════════════════════════════════════════════ */
+
+/* ── Hero (full-width, 以文案為主) ── */
+.hero {
+  padding-top: var(--nav-h);
+  background: var(--cream);
+  min-height: 72vh;
+  display: flex; align-items: center;
+  position: relative; overflow: hidden;
+}
+/* Background texture + placeholder comment for photo */
+/*
+ * MEDIA TODO: 新增港口 / 貨櫃場全景作為 hero background-image
+ * 規格詳見 preview/media-needed.md → global-hero
+ * 加入後在此處加 background-image, background-size:cover, background-position:center
+ * 並加 .hero::after overlay: background: rgba(0,0,0,.55)
+ */
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(0,0,0,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,.04) 1px, transparent 1px);
+  background-size: 52px 52px;
+  pointer-events: none;
+}
+/* Decorative gradient accent */
+.hero::after {
+  content: '';
+  position: absolute; right: 0; top: 0; bottom: 0;
+  width: 40%; min-width: 300px;
+  background: linear-gradient(90deg, transparent, rgba(220,165,74,.04));
+  pointer-events: none;
+}
+
+.hero-inner {
+  max-width: var(--max-w); margin: 0 auto; padding: 56px 24px 64px;
+  display: grid; grid-template-columns: 1fr 480px; gap: 64px; align-items: center;
+  position: relative; z-index: 1; width: 100%;
+}
+.hero-meta {
+  display: flex; align-items: center; gap: 12px; margin-bottom: 24px;
+}
+.hero-meta-tag {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: rgba(220,165,74,.12);
+  border: 1px solid rgba(220,165,74,.3);
+  border-radius: var(--r-pill);
+  padding: 5px 13px;
+  font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--orange);
+}
+.hero-meta-tag [data-lucide] { width: 11px; height: 11px }
+
+h1.hero-h1 {
+  font-size: clamp(28px, 3.8vw, 48px); font-weight: 900;
+  color: var(--navy); line-height: 1.2; margin-bottom: 20px;
+}
+.hero-h1 em   { font-style: normal; color: var(--orange) }
+.hero-brand-tagline {
+  display: inline-block;
+  font-size: 13px; font-weight: 700; color: var(--gray-500);
+  background: rgba(0,0,0,.06);
+  border-radius: var(--r);
+  padding: 4px 10px; margin-bottom: 20px;
+}
+
+.hero-desc {
+  font-size: 15px; line-height: 1.8;
+  color: var(--gray-700); margin-bottom: 32px; text-wrap: pretty;
+  max-width: 520px;
+}
+.hero-btns { display: flex; flex-wrap: wrap; gap: 12px }
+
+/* Hero right: key metrics (text-based, no fake numbers) */
+.hero-aside {
+  display: flex; flex-direction: column; gap: 16px;
+}
+.hero-stat {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-left: 3px solid var(--orange);
+  border-radius: var(--r-md);
+  padding: 18px 20px;
+  box-shadow: var(--shadow-xs);
+}
+.hero-stat-label { font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--gray-400); margin-bottom: 6px }
+.hero-stat-value { font-size: 16px; font-weight: 800; color: var(--navy); line-height: 1.3 }
+.hero-stat-sub   { font-size: 12px; color: var(--gray-500); margin-top: 3px }
+
+/* ── Vision / Proposition ── */
+.vision-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start;
+}
+.vision-main h2   { margin-bottom: 14px }
+.vision-main p    { margin-bottom: 20px; max-width: 440px }
+.vision-pillars   { display: flex; flex-direction: column; gap: 0 }
+.vpillar {
+  display: flex; align-items: flex-start; gap: 14px;
+  padding: 20px 0; border-bottom: 1px solid var(--gray-200);
+}
+.vpillar:first-child { border-top: 1px solid var(--gray-200) }
+.vpillar-icon {
+  width: 36px; height: 36px; border-radius: var(--r);
+  background: var(--orange-lt);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.vpillar-icon [data-lucide] { width: 17px; height: 17px; color: var(--orange) }
+.vpillar-title { font-size: 14px; font-weight: 700; color: var(--gray-900); margin-bottom: 4px }
+.vpillar-desc  { font-size: 13px; color: var(--gray-500); line-height: 1.6 }
+
+/* ── Regional Coverage Table ── */
+.region-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch }
+.region-table {
+  width: 100%; min-width: 540px;
+  border-collapse: collapse; font-size: 14px;
+}
+.region-table th, .region-table td {
+  padding: 13px 18px;
+  text-align: left;
+  border-bottom: 1px solid var(--gray-200);
+  vertical-align: middle;
+}
+.region-table thead tr { background: var(--gray-50) }
+.region-table th { font-size: 12px; font-weight: 700; color: var(--gray-500); text-transform: uppercase; letter-spacing: .06em }
+.region-table td:first-child { font-weight: 700; color: var(--gray-900); font-size: 14px }
+.region-table td:nth-child(2) { color: var(--gray-600); font-size: 13px }
+.region-table tbody tr:last-child td { border-bottom: none }
+.region-table tbody tr:hover td { background: var(--gray-50) }
+.region-code { font-size: 11px; color: var(--gray-400); margin-top: 2px; font-family: 'JetBrains Mono', monospace }
+.region-note { font-size: 11px; color: var(--gray-400); margin-top: 3px; font-style: italic }
+
+/* ── Cross-border Capabilities ── */
+.caps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--gray-200) }
+.cap-item {
+  background: var(--white);
+  padding: 28px 24px;
+  display: flex; flex-direction: column; gap: 14px;
+}
+.cap-icon {
+  width: 44px; height: 44px; border-radius: var(--r);
+  background: var(--orange);
+  display: flex; align-items: center; justify-content: center;
+}
+.cap-icon [data-lucide] { width: 20px; height: 20px; color: var(--white) }
+.cap-title { font-size: 15px; font-weight: 800; color: var(--gray-900) }
+.cap-desc  { font-size: 13px; color: var(--gray-500); line-height: 1.65; flex: 1 }
+.cap-tags  { display: flex; flex-wrap: wrap; gap: 6px }
+.cap-tag   { font-size: 11px; font-weight: 600; color: var(--gray-500); background: var(--gray-100); border-radius: var(--r); padding: 3px 8px }
+
+/* ── Development Roadmap ── */
+.roadmap-list { display: flex; flex-direction: column; gap: 0 }
+.roadmap-item {
+  display: grid; grid-template-columns: 140px 1px 1fr; gap: 0;
+  position: relative;
+}
+.roadmap-phase {
+  text-align: right; padding: 0 28px 40px 0;
+  display: flex; flex-direction: column; justify-content: flex-start; gap: 4px;
+  padding-top: 4px;
+}
+.roadmap-phase-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--gray-400) }
+.roadmap-phase-period { font-size: 13px; font-weight: 700; color: var(--navy) }
+.roadmap-line {
+  width: 1px; background: var(--gray-200); position: relative; flex-shrink: 0;
+}
+.roadmap-line::before {
+  content: '';
+  position: absolute; top: 4px; left: 50%;
+  transform: translateX(-50%);
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--white); border: 2px solid var(--gray-300);
+}
+.roadmap-item.active .roadmap-line::before { border-color: var(--orange); background: var(--orange) }
+.roadmap-item.active .roadmap-phase-period { color: var(--orange) }
+
+.roadmap-content {
+  padding: 0 0 40px 28px;
+  padding-top: 0;
+}
+.roadmap-title { font-size: 15px; font-weight: 700; color: var(--gray-900); margin-bottom: 8px }
+.roadmap-desc  { font-size: 14px; color: var(--gray-500); line-height: 1.7 }
+.roadmap-item:last-child .roadmap-phase,
+.roadmap-item:last-child .roadmap-content { padding-bottom: 0 }
+
+/* ── Partnership CTA ── */
+.partner-cta {
+  display: grid; grid-template-columns: 1fr 240px; gap: 48px; align-items: center;
+  background: var(--cream-dk);
+  border: 1.5px solid rgba(220,165,74,.35);
+  border-radius: var(--r-lg);
+  padding: 48px 48px 48px 52px;
+  overflow: hidden; position: relative;
+}
+.partner-cta::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(220,165,74,.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(220,165,74,.06) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+.partner-targets { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 24px }
+.partner-target {
+  display: flex; align-items: center; gap: 6px;
+  background: rgba(220,165,74,.1);
+  border: 1px solid rgba(220,165,74,.3);
+  border-radius: var(--r-pill);
+  padding: 6px 14px;
+  font-size: 12px; font-weight: 600; color: rgba(41,37,15,.75);
+}
+.partner-target [data-lucide] { width: 13px; height: 13px; color: var(--orange) }
+.partner-btns { display: flex; flex-wrap: wrap; gap: 12px }
+.partner-ip { text-align: center; position: relative; z-index: 1 }
+.partner-ip img {
+  max-height: 200px; width: auto; display: block; margin: 0 auto;
+  filter: drop-shadow(0 10px 24px rgba(0,0,0,.3));
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .hero-inner    { grid-template-columns: 1fr; gap: 40px }
+  .hero-aside    { flex-direction: row; flex-wrap: wrap }
+  .hero-stat     { flex: 1; min-width: 200px }
+  .vision-grid   { grid-template-columns: 1fr; gap: 40px }
+  .caps-grid     { grid-template-columns: 1fr 1fr }
+  .partner-cta   { grid-template-columns: 1fr; gap: 28px; padding: 36px }
+  .partner-ip    { display: none }
+}
+@media (max-width: 768px) {
+  .hero-h1       { font-size: 26px }
+  .hero-aside    { display: none }
+  .caps-grid     { grid-template-columns: 1fr 1fr }
+  .roadmap-item  { grid-template-columns: 80px 1px 1fr }
+  .roadmap-phase { padding-right: 18px; font-size: 11px }
+  .roadmap-phase-label { display: none }
+  .roadmap-content { padding-left: 18px }
+}
+@media (max-width: 480px) {
+  .caps-grid { grid-template-columns: 1fr }
+}
+
+/* ── Taiwan Hub model ── */
+.hub-grid {
+  display: grid; grid-template-columns: 1fr 200px 1fr;
+  border: 1px solid var(--gray-200); border-radius: var(--r-lg); overflow: hidden; margin-bottom: 24px;
+}
+.hub-side { padding: 28px 24px; background: var(--gray-50) }
+.hub-center-col {
+  background: #1A1A1A;
+  padding: 24px 18px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px;
+  text-align: center;
+}
+.hub-dir-tag {
+  display: inline-block;
+  font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em;
+  padding: 4px 10px; border-radius: var(--r-pill); margin-bottom: 10px;
+}
+.hub-in-tag  { background: rgba(22,163,74,.1); color: #16A34A; border: 1px solid rgba(22,163,74,.3) }
+.hub-out-tag { background: var(--orange-lt); color: var(--orange); border: 1px solid rgba(220,165,74,.3) }
+.hub-side-title { font-size: 15px; font-weight: 800; color: var(--gray-900); margin-bottom: 6px }
+.hub-side-sub   { font-size: 11px; color: var(--gray-400); margin-bottom: 14px }
+.hub-steps-list { display: flex; flex-direction: column; gap: 7px }
+.hub-steps-list div {
+  font-size: 12px; color: var(--gray-700);
+  background: var(--white); border: 1px solid var(--gray-200);
+  border-radius: var(--r); padding: 7px 11px;
+  display: flex; align-items: center; gap: 7px;
+}
+.hub-steps-list [data-lucide] { width: 12px; height: 12px; color: var(--orange); flex-shrink: 0 }
+.hub-center-label { font-size: 13px; font-weight: 800; color: var(--white); line-height: 1.4 }
+.hub-ops-wrap { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center }
+.hub-ops-wrap span {
+  background: rgba(220,165,74,.15); border: 1px solid rgba(220,165,74,.3);
+  border-radius: var(--r); padding: 4px 8px;
+  font-size: 11px; font-weight: 700; color: var(--orange);
+}
+
+/* ── Modes strip ── */
+.modes-strip {
+  background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: var(--r-md);
+  padding: 14px 24px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+}
+.modes-lbl { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--gray-400); white-space: nowrap }
+.modes-items { display: flex; flex-wrap: wrap; gap: 8px }
+.modes-items span { background: var(--orange-lt); color: var(--orange-dk); border: 1px solid rgba(220,165,74,.35); border-radius: var(--r-pill); padding: 4px 12px; font-size: 12px; font-weight: 700 }
+
+/* ── Overseas planning ── */
+.overseas-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px }
+.overseas-card {
+  background: var(--white); border: 1px solid var(--gray-200); border-top: 3px solid var(--orange);
+  border-radius: var(--r-lg); padding: 24px;
+}
+.overseas-name { font-size: 20px; font-weight: 900; color: var(--gray-900); margin: 10px 0 4px }
+.overseas-iso  { font-size: 11px; font-family: monospace; color: var(--gray-400); margin-bottom: 12px; letter-spacing: .04em }
+.overseas-desc { font-size: 13px; color: var(--gray-500); line-height: 1.65; margin-bottom: 12px }
+.overseas-note { font-size: 11px; color: var(--gray-400); border-top: 1px solid var(--gray-200); padding-top: 10px }
+@media (max-width: 768px) {
+  .hub-grid { grid-template-columns: 1fr }
+  .hub-center-col { order: -1; padding: 20px }
+  .overseas-grid { grid-template-columns: 1fr }
+}
+/* GSAP safety: hero elements visible by default — GSAP animates them in; if CDN fails, content stays readable */
+.badge-live,h1.htitle,.hsub,.hbtns,.hbtns .btn,.htrust,.hero-vis,.hero-chars,.char-wrap{opacity:1;visibility:visible}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAVIGATION ══════════════════════════════════════════════ -->
+<nav class="nav" id="nav" role="navigation" aria-label="主選單">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="咻咻打包首頁">
+      <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/shooshoo-char-logo.png" alt="咻咻打包 Logo" width="42" height="42">
+      <div>
+        <div class="nav-logo-name">咻咻打包</div>
+        <div class="nav-logo-en">ShooShoo Packing</div>
+      </div>
+    </a>
+    <ul class="nav-links" role="list">
+      <li class="has-drop">
+        <a href="/about/" aria-haspopup="true">關於我們</a>
+        <div class="nav-dropdown" role="menu">
+          <a href="/about/" role="menuitem"><i data-lucide="building-2"></i>關於咻咻打包</a>
+          <a href="/join/" role="menuitem"><i data-lucide="user-plus"></i>人才招募</a>
+        </div>
+      </li>
+      <li class="has-drop">
+        <a href="/flow/" aria-haspopup="true">倉儲服務</a>
+        <div class="nav-dropdown" role="menu">
+          <a href="/flow/" role="menuitem"><i data-lucide="workflow"></i>倉儲服務流程</a>
+          <a href="/wms/" role="menuitem"><i data-lucide="monitor"></i>智慧 WMS 系統</a>
+          <a href="/international/" role="menuitem"><i data-lucide="globe"></i>國際貿易代理</a>
+          <a href="/api/" role="menuitem"><i data-lucide="link-2"></i>API 串接</a>
+          <a href="/global/" role="menuitem"><i data-lucide="map"></i>全球發展</a>
+          <a href="/cooperate/" role="menuitem"><i data-lucide="handshake"></i>廠商合作</a>
+        </div>
+      </li>
+      <li><a href="/custom-boxes-tainan/">紙箱訂製</a></li>
+      <li><a href="/influencer/">網紅合作</a></li>
+      <li><a href="/blog/">電商新聞</a></li>
+      <li><a href="/consult/" class="nav-cta">免費諮詢</a></li>
+    </ul>
+    <button class="ham" id="hamBtn" onclick="toggleMenu()" aria-expanded="false" aria-label="開啟選單">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mmenu" id="mmenu" role="navigation" aria-label="行動選單">
+  <a href="/about/" onclick="toggleMenu()">關於咻咻打包</a>
+  <a href="/flow/" onclick="toggleMenu()">倉儲服務</a>
+  <a href="/wms/" onclick="toggleMenu()">WMS 系統</a>
+  <a href="/international/" onclick="toggleMenu()">國際貿易</a>
+  <a href="/api/" onclick="toggleMenu()">API 串接</a>
+  <a href="/blog/" onclick="toggleMenu()">電商新聞</a>
+  <a href="/global/" onclick="toggleMenu()">全球發展</a><a href="/cooperate/" onclick="toggleMenu()">廠商合作</a>
+  <a href="/consult/" class="mc" onclick="toggleMenu()">免費諮詢</a>
+</div>
+
+<!-- ═══ HERO ════════════════════════════════════════════════════ -->
+<!--
+  MEDIA TODO: 設定 .hero 的 background-image 為港口/貨櫃場全景
+  規格詳見 preview/media-needed.md → global-hero
+-->
+<section class="hero" aria-labelledby="hero-h1">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-meta">
+        <div class="hero-meta-tag">
+          <i data-lucide="map"></i>
+          跨境供應鏈・全球布局方向
+        </div>
+      </div>
+
+      <!-- 品牌標語置於 H1 前作為輔助 -->
+      <div class="hero-brand-tagline">咻咻打包～出貨咻一下</div>
+
+      <h1 class="hero-h1" id="hero-h1">
+        從台灣出發<br>
+        連結<em>跨境供應鏈</em>
+      </h1>
+      <p class="hero-desc">
+        台南倉庫是咻咻打包的核心樞紐——商品進台灣，集運入倉後做拆裝貼標再代發；
+        商品出台灣，裝櫃集運空海運出口報關。無論進或出，都以台南為起點，
+        讓跨境物流從複雜變得可預期。
+      </p>
+      <div class="hero-btns">
+        <a href="/consult/" class="btn btn-primary">
+          <i data-lucide="handshake"></i>洽談合作
+        </a>
+        <a href="https://lin.ee/L9HtuyF" target="_blank" rel="noopener noreferrer" class="btn btn-ghost-dk">
+          <i data-lucide="message-circle"></i>LINE 諮詢
+        </a>
+      </div>
+    </div>
+
+    <!-- Hero aside: 能力摘要（文字型，無假數字） -->
+    <div class="hero-aside" aria-label="核心能力摘要">
+      <div class="hero-stat">
+        <div class="hero-stat-label">作業基地</div>
+        <div class="hero-stat-value">台南智慧倉庫</div>
+        <div class="hero-stat-sub">台灣在地執行，WMS 即時庫存管理</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-label">服務範疇</div>
+        <div class="hero-stat-value">倉儲 × 拆裝貼標 × 進出口代理</div>
+        <div class="hero-stat-sub">集運・陸海空・整櫃，雙向物流服務</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-label">技術能力</div>
+        <div class="hero-stat-value">API 串接・多平台整合</div>
+        <div class="hero-stat-sub">蝦皮、MOMO、Shopify 等主流平台</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MARQUEE ══════════════════════════════════════════════════ -->
+<div class="marquee-bar" aria-hidden="true">
+  <div class="marquee-track">
+    <div class="marquee-item"><span class="marquee-text">台南智慧倉庫</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span class="marquee-text">跨境物流協作</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span class="marquee-text">3PL 三方倉儲</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span class="marquee-text">WMS 庫存管理</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span class="marquee-text">API 多平台整合</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span class="marquee-text">國際貿易代理</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span class="marquee-text">供應鏈優化</span><div class="marquee-dot"></div></div>
+    <!-- 重複一組確保無縫循環 -->
+    <div class="marquee-item"><span class="marquee-text">台南智慧倉庫</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span class="marquee-text">跨境物流協作</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span class="marquee-text">3PL 三方倉儲</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span class="marquee-text">WMS 庫存管理</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span class="marquee-text">API 多平台整合</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span class="marquee-text">國際貿易代理</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span class="marquee-text">供應鏈優化</span><div class="marquee-dot"></div></div>
+  </div>
+</div>
+
+<!-- ═══ VISION / PROPOSITION ════════════════════════════════════ -->
+<section class="section bg-white" aria-labelledby="vision-h2">
+  <div class="container">
+    <div class="vision-grid">
+      <div class="vision-main">
+        <div class="label">發展主張</div>
+        <h2 id="vision-h2">
+          台灣在地執行力<br>是跨境布局的起點
+        </h2>
+        <p>
+          咻咻打包相信，跨境物流的競爭力不來自於誇大的全球願景，
+          而是來自於紮實的本地執行能力。當你的台灣出貨流程是穩的，
+          向外拓展才不會是空的。
+        </p>
+        <p>
+          我們正在逐步建立跨境協作能量——從台南倉庫的系統化管理，
+          到進出口文件代辦，再到國際運輸協作。
+          這頁呈現的是我們的現況與方向，不是沒有根據的承諾。
+        </p>
+      </div>
+      <div>
+        <div class="vision-pillars">
+          <div class="vpillar">
+            <div class="vpillar-icon"><i data-lucide="warehouse"></i></div>
+            <div>
+              <div class="vpillar-title">本地倉儲執行力</div>
+              <div class="vpillar-desc">台南智慧倉庫搭配 WMS 系統，確保庫存準確、出貨穩定，是跨境服務的根基。</div>
+            </div>
+          </div>
+          <div class="vpillar">
+            <div class="vpillar-icon"><i data-lucide="file-check-2"></i></div>
+            <div>
+              <div class="vpillar-title">進出口貿易協作</div>
+              <div class="vpillar-desc">空海運安排、報關文件代辦、HS Code 建議，協助電商賣家跨出第一步。</div>
+            </div>
+          </div>
+          <div class="vpillar">
+            <div class="vpillar-icon"><i data-lucide="link-2"></i></div>
+            <div>
+              <div class="vpillar-title">系統串接整合</div>
+              <div class="vpillar-desc">API 銜接主流電商平台，庫存、訂單即時同步，降低人工對帳錯誤率。</div>
+            </div>
+          </div>
+          <div class="vpillar">
+            <div class="vpillar-icon"><i data-lucide="users"></i></div>
+            <div>
+              <div class="vpillar-title">彈性合作模式</div>
+              <div class="vpillar-desc">依業務量彈性配置服務內容，不綁定固定套餐，讓賣家從小規模開始也能合作。</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TAIWAN HUB MODEL ════════════════════════════════════════ -->
+<section class="section bg-white" aria-labelledby="hub-h2">
+  <div class="container">
+    <div class="label">物流樞紐</div>
+    <h2 id="hub-h2" style="margin-bottom:12px">台南倉庫：進出口雙向物流中心</h2>
+    <p style="max-width:520px; margin-bottom:36px">
+      不管貨物方向是進是出，台南倉庫都是核心作業點。
+      進台灣的貨集中到這裡做拆卸分揀，出台灣的貨從這裡整合裝運。
+    </p>
+    <div class="hub-grid">
+
+      <div class="hub-side">
+        <div class="hub-dir-tag hub-in-tag">進口方向</div>
+        <div class="hub-side-title">商品進台灣做生意</div>
+        <div class="hub-side-sub">海外商品 → 台灣市場</div>
+        <div class="hub-steps-list">
+          <div><i data-lucide="ship"></i>集運 / 空海運進口</div>
+          <div><i data-lucide="package-open"></i>台南倉拆櫃・清點</div>
+          <div><i data-lucide="tag"></i>加工貼標・分揀包裝</div>
+          <div><i data-lucide="truck"></i>代發台灣各電商通路</div>
+        </div>
+      </div>
+
+      <div class="hub-center-col">
+        <div class="hub-center-label">咻咻打包<br>台南倉庫</div>
+        <div class="hub-ops-wrap">
+          <span>拆櫃</span><span>裝櫃</span>
+          <span>加工貼標</span><span>代發出貨</span>
+          <span>WMS 庫存</span>
+        </div>
+      </div>
+
+      <div class="hub-side">
+        <div class="hub-dir-tag hub-out-tag">出口方向</div>
+        <div class="hub-side-title">台灣商品出海外做生意</div>
+        <div class="hub-side-sub">台灣商品 → 海外市場</div>
+        <div class="hub-steps-list">
+          <div><i data-lucide="warehouse"></i>台南倉入庫・備貨</div>
+          <div><i data-lucide="package"></i>裝櫃・集運整合</div>
+          <div><i data-lucide="plane"></i>空海運出口・報關</div>
+          <div><i data-lucide="map-pin"></i>到目的地派送</div>
+        </div>
+      </div>
+
+    </div>
+    <div class="modes-strip">
+      <div class="modes-lbl">可用物流模式</div>
+      <div class="modes-items">
+        <span>集運</span><span>陸運</span><span>海運整櫃</span><span>海運散貨</span><span>空運</span><span>快遞</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ REGIONAL COVERAGE ════════════════════════════════════════ -->
+<section class="section bg-light" aria-labelledby="region-h2">
+  <div class="container">
+    <div class="label">服務區域</div>
+    <h2 id="region-h2" style="margin-bottom:10px">目前可協作的出口目的地</h2>
+    <p style="margin-bottom:32px; max-width:540px">
+      以下為目前可協助安排出口協作的地區，實際服務內容依目的地、貨物性質與合作夥伴資源而定。
+      <!-- TODO: 人工確認各地區實際服務能力後更新此表 -->
+    </p>
+
+    <div class="region-table-wrap">
+      <table class="region-table" aria-label="可協作出口目的地一覽">
+        <thead>
+          <tr>
+            <th scope="col">地區 / 國家</th>
+            <th scope="col">可協作內容</th>
+            <th scope="col">狀態</th>
+            <th scope="col">備註</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              台灣（國內倉儲）
+              <div class="region-code">TW · 國內</div>
+            </td>
+            <td>倉儲入庫、WMS 管理、揀貨包裝、國內出貨</td>
+            <td><span class="badge badge-active"><div class="badge-dot"></div>現行服務</span></td>
+            <td>台南安定倉，主要作業據點</td>
+          </tr>
+          <tr>
+            <td>
+              亞太地區
+              <div class="region-code">JP · KR · SG · TH · MY</div>
+            </td>
+            <td>空運快遞協作、海運散貨安排、報關文件支援</td>
+            <td><span class="badge badge-network"><div class="badge-dot"></div>合作協作</span></td>
+            <!-- TODO: 確認具體已服務案例與合作夥伴 -->
+            <td>需確認目的地與貨物類別</td>
+          </tr>
+          <tr>
+            <td>
+              北美
+              <div class="region-code">US · CA</div>
+            </td>
+            <td>空運快遞協作、貿易文件代辦</td>
+            <td><span class="badge badge-network"><div class="badge-dot"></div>合作協作</span></td>
+            <!-- TODO: 確認實際承接案例 -->
+            <td>請洽詢確認商品限制</td>
+          </tr>
+          <tr>
+            <td>
+              歐洲
+              <div class="region-code">DE · GB · FR · NL</div>
+            </td>
+            <td>空運協作、進出口文件支援</td>
+            <td><span class="badge badge-confirm"><div class="badge-dot"></div>洽詢確認</span></td>
+            <!-- TODO: 確認歐洲實際服務能力 -->
+            <td>服務能力待確認，請先諮詢</td>
+          </tr>
+          <tr>
+            <td>
+              其他市場
+              <div class="region-code">AU · ME · 其他</div>
+            </td>
+            <td>視貨物與目的地評估</td>
+            <td><span class="badge badge-plan"><div class="badge-dot"></div>評估中</span></td>
+            <td>請提供需求，我們評估可行性</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:12px; color:var(--gray-400); margin-top:16px">
+      ※ 狀態定義：「現行服務」已穩定承接；「合作協作」透過合作夥伴網路提供；「洽詢確認」需視個案評估；「評估中」尚在規劃中。<br>
+      ※ 本表定期更新，以實際諮詢回覆為準。
+    </p>
+  </div>
+</section>
+
+<!-- ═══ OVERSEAS WAREHOUSE PLANNING ════════════════════════════ -->
+<section class="section bg-white" aria-labelledby="overseas-h2">
+  <div class="container">
+    <div class="label">海外布局</div>
+    <h2 id="overseas-h2" style="margin-bottom:10px">海外倉儲點，規劃進行中</h2>
+    <p style="max-width:560px; margin-bottom:10px">
+      目前規劃在馬來西亞、越南、中國大陸建立倉儲服務據點，
+      以合作夥伴網絡或咻咻打包品牌延伸兩種模式評估，讓客戶在當地也能享有一致的倉儲代發服務。
+    </p>
+    <p style="font-size:12px; color:var(--gray-400); margin-bottom:32px">
+      其他地區目前尚無規劃，仍在評估中。具體啟用時間以官方公告為準。
+    </p>
+    <div class="overseas-grid">
+      <div class="overseas-card">
+        <span class="badge badge-plan"><div class="badge-dot"></div>規劃中</span>
+        <div class="overseas-name">馬來西亞</div>
+        <div class="overseas-iso">MY · 吉隆坡 / 巴生港</div>
+        <p class="overseas-desc">
+          東南亞進出口集散點，協助台灣商品進入馬來西亞市場，
+          或作為東南亞轉運節點，降低跨境最後一哩成本。
+        </p>
+        <div class="overseas-note">以合作夥伴或咻咻打包品牌延伸方式進行，模式確認中</div>
+      </div>
+      <div class="overseas-card">
+        <span class="badge badge-plan"><div class="badge-dot"></div>規劃中・預計 2026</span>
+        <div class="overseas-name">越南</div>
+        <div class="overseas-iso">VN · 胡志明 / 河內</div>
+        <p class="overseas-desc">
+          製造業聚集地與東南亞出口前置倉，降低台越供應鏈對接成本，
+          協助品牌商在越南端備貨與分發。
+        </p>
+        <div class="overseas-note">以合作夥伴或咻咻打包品牌延伸方式進行，預計 2026 年啟用</div>
+      </div>
+      <div class="overseas-card">
+        <span class="badge badge-plan"><div class="badge-dot"></div>規劃中・預計 2026</span>
+        <div class="overseas-name">中國大陸</div>
+        <div class="overseas-iso">CN · 目的地評估中</div>
+        <p class="overseas-desc">
+          供應鏈源頭整合與出口前置倉，協助品牌商在大陸端備貨、轉運，
+          銜接咻咻打包台南倉庫的出口服務。
+        </p>
+        <div class="overseas-note">以合作夥伴或咻咻打包品牌延伸方式進行，預計 2026 年啟用</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CROSS-BORDER CAPABILITIES ═══════════════════════════════ -->
+<section class="section-sm bg-white" aria-labelledby="cap-h2">
+  <div class="container">
+    <div class="label" style="margin-bottom:14px">跨境能力架構</div>
+    <h2 id="cap-h2" style="margin-bottom:32px">現有能力，支撐跨境擴張</h2>
+    <div class="caps-grid" role="list">
+
+      <div class="cap-item" role="listitem">
+        <div class="cap-icon"><i data-lucide="warehouse"></i></div>
+        <div class="cap-title">倉儲與履約</div>
+        <p class="cap-desc">台南智慧倉庫提供進貨入庫、庫存管理、揀貨包裝與出貨執行，WMS 系統確保庫存即時準確。</p>
+        <div class="cap-tags">
+          <span class="cap-tag">入庫驗收</span>
+          <span class="cap-tag">WMS 庫存</span>
+          <span class="cap-tag">揀貨包裝</span>
+          <span class="cap-tag">代發貨</span>
+        </div>
+      </div>
+
+      <div class="cap-item" role="listitem">
+        <div class="cap-icon"><i data-lucide="plane"></i></div>
+        <div class="cap-title">國際運輸協作</div>
+        <p class="cap-desc">協助安排空運快遞與海運（整櫃/散貨）方案，提供時效與費用建議，銜接報關流程。</p>
+        <div class="cap-tags">
+          <span class="cap-tag">空運</span>
+          <span class="cap-tag">海運 FCL/LCL</span>
+          <span class="cap-tag">快遞整合</span>
+          <span class="cap-tag">異常追蹤</span>
+        </div>
+      </div>
+
+      <div class="cap-item" role="listitem">
+        <div class="cap-icon"><i data-lucide="link-2"></i></div>
+        <div class="cap-title">系統串接整合</div>
+        <p class="cap-desc">API 銜接主流電商平台，訂單與庫存自動同步，減少人工對帳成本，支援多倉多通路管理。</p>
+        <div class="cap-tags">
+          <span class="cap-tag">API 串接</span>
+          <span class="cap-tag">訂單同步</span>
+          <span class="cap-tag">多平台</span>
+          <span class="cap-tag">庫存即時</span>
+        </div>
+      </div>
+
+      <div class="cap-item" role="listitem">
+        <div class="cap-icon"><i data-lucide="file-check-2"></i></div>
+        <div class="cap-title">跨境文件支援</div>
+        <p class="cap-desc">報關代辦、HS Code 建議、貿易文件整理（Invoice、Packing List、授權文件），降低清關風險。</p>
+        <div class="cap-tags">
+          <span class="cap-tag">報關代辦</span>
+          <span class="cap-tag">HS Code</span>
+          <span class="cap-tag">貿易文件</span>
+          <span class="cap-tag">商檢協助</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DEVELOPMENT ROADMAP ══════════════════════════════════════ -->
+<section class="section bg-light" aria-labelledby="road-h2">
+  <div class="container">
+    <div style="max-width:720px; margin:0 auto">
+      <div class="label">發展歷程</div>
+      <h2 id="road-h2" style="margin-bottom:10px">從台南出發，逐步建立跨境能力</h2>
+      <p style="margin-bottom:40px">
+        以下為咻咻打包的服務發展階段，每個里程碑都代表我們在執行能力上的真實積累。
+      </p>
+
+      <div class="roadmap-list" role="list">
+
+        <div class="roadmap-item active" role="listitem">
+          <div class="roadmap-phase">
+            <div class="roadmap-phase-label">Phase 1</div>
+            <div class="roadmap-phase-period">起步</div>
+          </div>
+          <div class="roadmap-line"></div>
+          <div class="roadmap-content">
+            <div class="roadmap-title">台南倉庫與基礎物流服務</div>
+            <p class="roadmap-desc">
+              在台南安定設立倉庫，開始為電商賣家提供代倉儲、代發貨、揀貨包裝等基礎物流服務，
+              累積台灣本地出貨執行能量。
+            </p>
+          </div>
+        </div>
+
+        <div class="roadmap-item active" role="listitem">
+          <div class="roadmap-phase">
+            <div class="roadmap-phase-label">Phase 2</div>
+            <div class="roadmap-phase-period">技術化</div>
+          </div>
+          <div class="roadmap-line"></div>
+          <div class="roadmap-content">
+            <div class="roadmap-title">WMS 導入與 API 串接能力</div>
+            <p class="roadmap-desc">
+              導入 WMS（倉儲管理系統），實現即時庫存管理與出貨自動化。
+              建立 API 串接能力，支援蝦皮、MOMO、Shopify 等主流電商平台的訂單同步。
+            </p>
+          </div>
+        </div>
+
+        <div class="roadmap-item active" role="listitem">
+          <div class="roadmap-phase">
+            <div class="roadmap-phase-label">Phase 3</div>
+            <div class="roadmap-phase-period">跨境化</div>
+          </div>
+          <div class="roadmap-line"></div>
+          <div class="roadmap-content">
+            <div class="roadmap-title">國際貿易代理服務啟動</div>
+            <p class="roadmap-desc">
+              開始提供進出口協作服務，包含空海運安排、報關代辦與貿易文件支援，
+              協助台灣賣家將商品出口至亞太及其他地區。
+            </p>
+          </div>
+        </div>
+
+        <div class="roadmap-item" role="listitem">
+          <div class="roadmap-phase">
+            <div class="roadmap-phase-label">Phase 4</div>
+            <div class="roadmap-phase-period">海外布局</div>
+          </div>
+          <div class="roadmap-line"></div>
+          <div class="roadmap-content">
+            <div class="roadmap-title">海外倉儲點建立（規劃中）</div>
+            <p class="roadmap-desc">
+              以合作夥伴網絡或咻咻打包品牌延伸方式，在馬來西亞、越南、中國大陸建立倉儲服務據點，
+              讓台灣賣家的商品能夠在更靠近目的市場的位置進行備貨、分揀與代發，
+              縮短最後一哩距離，降低跨境物流成本。
+              <!-- TODO: 具體啟用時間與模式（自營/合作）請 KING 確認後更新 -->
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PARTNERSHIP CTA ══════════════════════════════════════════ -->
+<!--
+  BRAND IP 使用區塊：咻卡（每頁限一次）
+  IP 置於 CTA 右側作為品牌陪襯
+-->
+<section class="section bg-white" aria-labelledby="partner-h2">
+  <div class="container">
+    <div class="partner-cta" role="region" aria-labelledby="partner-h2">
+      <div style="position:relative; z-index:1">
+        <div class="label" style="color:var(--orange)">合作洽詢</div>
+        <h2 id="partner-h2" style="color:var(--gray-900); margin-bottom:10px">
+          你是品牌商、跨境賣家<br>還是物流合作夥伴？
+        </h2>
+        <p style="color:rgba(41,37,15,.6); margin-bottom:0">
+          告訴我們你的業務規模與需求，我們評估後提供具體合作方式建議。
+          不承諾空洞的全球服務，只討論我們實際能做到的事。
+        </p>
+        <div class="partner-targets">
+          <span class="partner-target"><i data-lucide="package"></i>電商賣家・品牌商</span>
+          <span class="partner-target"><i data-lucide="globe"></i>跨境出口業務</span>
+          <span class="partner-target"><i data-lucide="handshake"></i>物流合作夥伴</span>
+        </div>
+        <div class="partner-btns">
+          <a href="/consult/" class="btn btn-primary">
+            <i data-lucide="file-text"></i>填寫合作需求
+          </a>
+          <a href="https://lin.ee/L9HtuyF" target="_blank" rel="noopener noreferrer" class="btn btn-ghost-dk">
+            <i data-lucide="message-circle"></i>LINE 諮詢
+          </a>
+        </div>
+      </div>
+
+      <!-- 品牌IP：咻卡 -->
+      <div class="partner-ip" aria-hidden="true">
+        <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/shooshoo-char-car.png"
+             alt="咻卡 — 咻咻打包品牌角色"
+             width="220" height="220"
+             loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ══════════════════════════════════════════════════ -->
+<footer class="footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/shooshoo-char-logo.png" alt="咻咻打包 Logo" width="36" height="36">
+          <span class="footer-brand">咻咻打包</span>
+        </div>
+        <p class="footer-desc">台南在地三方倉儲・跨境物流協作<br>讓老闆專心賣貨，出貨交給我們。</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/shooshoopacking/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <i data-lucide="facebook"></i>
+          </a>
+          <a href="https://www.instagram.com/shooshoopacking/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <i data-lucide="instagram"></i>
+          </a>
+          <a href="https://lin.ee/L9HtuyF" target="_blank" rel="noopener noreferrer" aria-label="LINE">
+            <i data-lucide="message-circle"></i>
+          </a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">倉儲服務</div>
+        <ul class="footer-links">
+          <li><a href="/flow/">倉儲服務流程</a></li>
+          <li><a href="/wms/">WMS 系統</a></li>
+          <li><a href="/api/">API 串接</a></li>
+          <li><a href="/cooperate/">廠商合作</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">跨境服務</div>
+        <ul class="footer-links">
+          <li><a href="/international/">國際貿易代理</a></li>
+          <li><a href="/global/">全球發展</a></li>
+          <li><a href="/custom-boxes-tainan/">紙箱訂製</a></li>
+          <li><a href="/blog/">電商新聞</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">聯絡我們</div>
+        <ul class="footer-links">
+          <li><a href="tel:0976757866">0976-757-866</a></li>
+          <li><a href="https://lin.ee/L9HtuyF" target="_blank" rel="noopener noreferrer">LINE @911ycmhl</a></li>
+          <li><a href="mailto:shooshoopacking@gmail.com">shooshoopacking@gmail.com</a></li>
+          <li><span style="color:rgba(41,37,15,.4)">台南市安定區海寮里 25-37 號</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 咻咻打包 ShooShoo Packing・翰鮮運營企業有限公司</div>
+      <a href="/privacy/" style="font-size:12px; color:rgba(41,37,15,.4)">隱私政策</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══ FLOAT CTA ════════════════════════════════════════════════ -->
+<div class="float-cta" aria-label="快速聯絡">
+  <a href="https://lin.ee/L9HtuyF" target="_blank" rel="noopener noreferrer" class="fcta-btn fcta-line" aria-label="LINE 諮詢">
+    <div class="fcta-pulse" aria-hidden="true"></div>
+    <i data-lucide="message-circle"></i>LINE 諮詢
+  </a>
+  <a href="tel:0976757866" class="fcta-btn fcta-phone" aria-label="電話諮詢">
+    <i data-lucide="phone"></i>電話
+  </a>
+</div>
+
+<!-- Mobile bottom bar -->
+<div class="mob-bar" aria-label="行動版快速聯絡">
+  <div class="mob-row">
+    <a href="https://lin.ee/L9HtuyF" target="_blank" rel="noopener noreferrer" class="mob-btn mob-line">
+      <i data-lucide="message-circle"></i>LINE 諮詢
+    </a>
+    <a href="/consult/" class="mob-btn mob-phone">
+      <i data-lucide="file-text"></i>洽談合作
+    </a>
+  </div>
+</div>
+
+<!-- ═══ SCRIPTS ══════════════════════════════════════════════════ -->
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script>
+if (typeof lucide !== 'undefined') lucide.createIcons();
+
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 20);
+}, { passive: true });
+
+function toggleMenu() {
+  const menu = document.getElementById('mmenu');
+  const btn   = document.getElementById('hamBtn');
+  const open  = menu.classList.toggle('open');
+  btn.setAttribute('aria-expanded', open);
+}
+document.addEventListener('click', (e) => {
+  const menu = document.getElementById('mmenu');
+  const btn  = document.getElementById('hamBtn');
+  if (menu && btn && !menu.contains(e.target) && !btn.contains(e.target)) {
+    menu.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+  }
+});
+</script>
+</body>
+</html>
