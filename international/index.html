@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>國際貿易代理・空海運報關協作｜咻咻打包進出口服務</title>
+<meta name="description" content="咻咻打包提供台灣進出口國際貿易代理服務，包含空運、海運、報關代辦與貿易文件協助。協助電商賣家簡化跨境出貨流程，聯繫 LINE 免費諮詢。">
+<meta property="og:title" content="國際貿易代理・空海運報關協作｜咻咻打包">
+<meta property="og:description" content="台灣進出口・空海運・報關代辦・貿易文件，一站式協助電商賣家處理跨境物流流程。">
+<meta property="og:url" content="https://www.shooshoo.com.tw/international/">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://www.shooshoo.com.tw/international/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared.css">
+
+<style>
+/* ════════════════════════════════════════════════════════════
+   International Page — 頁面專屬樣式
+   ════════════════════════════════════════════════════════════ */
+
+/* ── Hero ── */
+.hero {
+  padding-top: var(--nav-h);
+  background: var(--cream);
+  min-height: 76vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+/* Subtle grid texture */
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(0,0,0,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+  pointer-events: none;
+}
+.hero-inner {
+  width: 100%; max-width: var(--max-w); margin: 0 auto; padding: 0 24px;
+  display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: center;
+  position: relative; z-index: 1; padding-top: 48px; padding-bottom: 56px;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(220,165,74,.15);
+  border: 1px solid rgba(220,165,74,.35);
+  border-radius: var(--r-pill);
+  padding: 5px 14px;
+  font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--orange); margin-bottom: 20px;
+}
+.hero-badge [data-lucide] { width: 12px; height: 12px }
+
+h1.hero-h1 {
+  font-size: clamp(30px, 4.2vw, 52px); font-weight: 900;
+  color: var(--navy); line-height: 1.18; margin-bottom: 18px;
+}
+.hero-h1 em { font-style: normal; color: var(--orange) }
+
+.hero-desc {
+  font-size: 15px; line-height: 1.8;
+  color: var(--gray-700); margin-bottom: 28px; text-wrap: pretty;
+}
+.hero-btns { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 32px }
+.hero-tags {
+  display: flex; flex-wrap: wrap; gap: 20px;
+  border-top: 1px solid rgba(0,0,0,.08);
+  padding-top: 20px;
+}
+.hero-tag {
+  display: flex; align-items: center; gap: 7px;
+  font-size: 12px; font-weight: 600;
+  color: var(--gray-500);
+}
+.hero-tag [data-lucide] { width: 13px; height: 13px; color: var(--orange) }
+
+/* Hero photo placeholder (right column) */
+.hero-media {
+  height: 400px; border-radius: var(--r-md);
+  overflow: hidden; position: relative;
+}
+/*
+ * MEDIA NEEDED — hero-media
+ * 替換說明：將 .hero-media 改為 <img> 或設 background-image
+ * 規格：見 preview/media-needed.md → international-hero
+ */
+.hero-ph {
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,.04);
+  border: 1.5px dashed rgba(0,0,0,.15);
+  border-radius: var(--r-md);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 12px; color: var(--gray-400);
+}
+.hero-ph [data-lucide] { width: 32px; height: 32px }
+.hero-ph-title { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase }
+.hero-ph-spec  { font-size: 11px; opacity: .6; text-align: center; line-height: 1.5 }
+
+/* ── Services (numbered list) ── */
+.svc-list { display: flex; flex-direction: column }
+.svc-row {
+  display: grid;
+  grid-template-columns: 56px 1fr 1.1fr;
+  gap: 24px; align-items: start;
+  padding: 32px 0;
+  border-bottom: 1px solid var(--gray-200);
+}
+.svc-row:first-child { border-top: 1px solid var(--gray-200) }
+.svc-num {
+  font-size: 13px; font-weight: 700; color: var(--gray-300);
+  letter-spacing: .04em; padding-top: 4px;
+}
+.svc-main { padding-right: 16px }
+.svc-icon-wrap {
+  width: 40px; height: 40px; border-radius: var(--r-md);
+  background: var(--orange-lt);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 12px; flex-shrink: 0;
+}
+.svc-icon-wrap [data-lucide] { width: 19px; height: 19px; color: var(--orange) }
+.svc-name { font-size: 17px; font-weight: 800; color: var(--gray-900); margin-bottom: 8px }
+.svc-desc { font-size: 14px; line-height: 1.7; color: var(--gray-500) }
+.svc-attrs { display: flex; flex-direction: column; gap: 8px; padding-top: 4px }
+.svc-attr {
+  display: flex; align-items: flex-start; gap: 8px;
+  font-size: 13px; line-height: 1.55; color: var(--gray-700);
+}
+.svc-attr-dot {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: var(--orange); margin-top: 6px; flex-shrink: 0;
+}
+
+/* ── Process Timeline ── */
+.process-wrap { overflow-x: auto; padding: 8px 0 }
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  min-width: 600px; position: relative;
+}
+/* Connecting line */
+.process-steps::before {
+  content: '';
+  position: absolute;
+  top: 20px; left: calc(10% + 4px); right: calc(10% + 4px);
+  height: 2px; background: var(--gray-200); z-index: 0;
+}
+.process-step { display: flex; flex-direction: column; align-items: center; gap: 0; position: relative; z-index: 1 }
+.process-node {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--white); border: 2px solid var(--gray-200);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 800; color: var(--gray-400);
+  margin-bottom: 14px; flex-shrink: 0; z-index: 1;
+  transition: border-color .2s, color .2s;
+}
+.process-step:hover .process-node { border-color: var(--orange); color: var(--orange) }
+.process-title { font-size: 13px; font-weight: 700; color: var(--gray-900); margin-bottom: 6px; text-align: center }
+.process-desc  { font-size: 12px; line-height: 1.55; color: var(--gray-400); text-align: center; padding: 0 4px }
+
+/* Mobile: vertical timeline */
+.process-v { display: none; flex-direction: column; gap: 0 }
+.process-v-item {
+  display: grid; grid-template-columns: 40px 1fr; gap: 16px;
+  padding-bottom: 28px; position: relative;
+}
+.process-v-item::before {
+  content: '';
+  position: absolute; left: 19px; top: 40px; bottom: 0;
+  width: 2px; background: var(--gray-200);
+}
+.process-v-item:last-child::before { display: none }
+.process-v-node {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--white); border: 2px solid var(--gray-200);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 800; color: var(--gray-400);
+  flex-shrink: 0; z-index: 1;
+}
+.process-v-content { padding-top: 8px }
+.process-v-title { font-size: 14px; font-weight: 700; color: var(--gray-900); margin-bottom: 4px }
+.process-v-desc  { font-size: 13px; color: var(--gray-400); line-height: 1.55 }
+
+/* ── Comparison Table ── */
+.compare-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch }
+.compare-table {
+  width: 100%; min-width: 540px;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.compare-table th, .compare-table td {
+  padding: 14px 18px;
+  text-align: left;
+  border-bottom: 1px solid var(--gray-200);
+  vertical-align: top;
+}
+.compare-table thead tr { background: var(--gray-50) }
+.compare-table th {
+  font-size: 13px; font-weight: 700; color: var(--gray-700);
+  white-space: nowrap;
+}
+.compare-table th:first-child { color: var(--gray-500); width: 24% }
+.compare-table th:nth-child(2) { color: var(--navy); border-left: 3px solid var(--orange) }
+.compare-table th:nth-child(3) { color: var(--navy); border-left: 3px solid var(--navy) }
+.compare-table td:first-child  { font-weight: 600; color: var(--gray-700); font-size: 13px }
+.compare-table td:nth-child(2) { border-left: 3px solid rgba(220,165,74,.2) }
+.compare-table td:nth-child(3) { border-left: 3px solid rgba(21,42,126,.1) }
+.compare-table tbody tr:last-child td { border-bottom: none }
+.compare-table tbody tr:hover td { background: var(--gray-50) }
+.ct-tag {
+  display: inline-block;
+  background: var(--gray-100); color: var(--gray-700);
+  border-radius: var(--r); padding: 2px 8px;
+  font-size: 11px; font-weight: 600; margin: 2px 2px 2px 0;
+}
+.ct-note { font-size: 11px; color: var(--gray-400); margin-top: 6px; font-style: italic }
+
+/* ── Why ShooShoo ── */
+.why-inner {
+  display: grid; grid-template-columns: 1fr 320px; gap: 56px; align-items: center;
+}
+.why-points { display: flex; flex-direction: column; gap: 24px; margin-top: 28px }
+.why-point { display: grid; grid-template-columns: 40px 1fr; gap: 14px; align-items: start }
+.why-icon {
+  width: 40px; height: 40px; border-radius: var(--r-md);
+  background: rgba(220,165,74,.15);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.why-icon [data-lucide] { width: 18px; height: 18px; color: var(--orange) }
+.why-point-title { font-size: 14px; font-weight: 700; color: var(--gray-900); margin-bottom: 4px }
+.why-point-desc  { font-size: 13px; color: rgba(41,37,15,.6); line-height: 1.6 }
+.why-ip img {
+  max-height: 300px; width: auto;
+  display: block; margin: 0 auto;
+  filter: drop-shadow(0 12px 32px rgba(0,0,0,.25));
+}
+
+/* ── CTA Section ── */
+.cta-sec {
+  background: var(--cream);
+  border-top: 1px solid rgba(220,165,74,.2);
+  padding: 80px 0;
+  text-align: center;
+}
+.cta-sec h2 { color: var(--gray-900); margin-bottom: 12px }
+.cta-sec p  { margin-bottom: 32px }
+.cta-btns   { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px }
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .svc-row { grid-template-columns: 40px 1fr; grid-template-rows: auto auto }
+  .svc-attrs { grid-column: 2 }
+  .why-inner { grid-template-columns: 1fr; gap: 40px }
+  .why-ip { order: -1; text-align: center }
+  .why-ip img { max-height: 220px }
+}
+@media (max-width: 768px) {
+  .hero-inner { grid-template-columns: 1fr; padding-top: 32px; padding-bottom: 40px; gap: 32px }
+  .hero-media { display: none } /* Hide placeholder on mobile; show text only */
+  .hero-h1 { font-size: 28px }
+  .process-wrap { display: none }
+  .process-v { display: flex }
+  .svc-row { grid-template-columns: 1fr; gap: 12px; padding: 24px 0 }
+  .svc-num { display: none }
+}
+
+/* ── Bidirectional flow model ── */
+.bidir-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px }
+.bidir-card {
+  border: 1px solid var(--gray-200); border-radius: var(--r-lg);
+  padding: 28px; background: var(--white);
+}
+.bidir-in  { border-top: 3px solid #16A34A }
+.bidir-out { border-top: 3px solid var(--orange) }
+.bidir-icon {
+  width: 44px; height: 44px; border-radius: var(--r);
+  display: flex; align-items: center; justify-content: center; margin-bottom: 14px;
+}
+.bidir-in  .bidir-icon { background: rgba(22,163,74,.1) }
+.bidir-out .bidir-icon { background: var(--orange-lt) }
+.bidir-in  .bidir-icon [data-lucide] { color: #16A34A; width: 20px; height: 20px }
+.bidir-out .bidir-icon [data-lucide] { color: var(--orange); width: 20px; height: 20px }
+.bidir-title { font-size: 17px; font-weight: 800; color: var(--gray-900); margin-bottom: 10px }
+.bidir-desc  { font-size: 13px; color: var(--gray-500); line-height: 1.7; margin-bottom: 18px }
+.bidir-flow  { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; font-size: 12px }
+.bidir-flow span { background: var(--gray-100); color: var(--gray-700); font-weight: 600; border-radius: var(--r); padding: 5px 10px }
+.bidir-flow .fa  { background: none; color: var(--gray-400); padding: 0; font-size: 14px; font-weight: 400 }
+.modes-strip {
+  margin-top: 24px; background: var(--white);
+  border: 1px solid var(--gray-200); border-radius: var(--r-md);
+  padding: 14px 24px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+}
+.modes-lbl { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--gray-400); white-space: nowrap }
+.modes-items { display: flex; flex-wrap: wrap; gap: 8px }
+.modes-items span { background: var(--orange-lt); color: var(--orange-dk); border: 1px solid rgba(220,165,74,.35); border-radius: var(--r-pill); padding: 4px 12px; font-size: 12px; font-weight: 700 }
+@media (max-width: 768px) { .bidir-grid { grid-template-columns: 1fr } }
+</style>
+</head>
+<body>
+
+<!-- ═══ NAVIGATION ══════════════════════════════════════════════ -->
+<nav class="nav" id="nav" role="navigation" aria-label="主選單">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="咻咻打包首頁">
+      <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo.png" alt="咻咻打包 Logo" width="42" height="42">
+      <div>
+        <div class="nav-logo-name">咻咻打包</div>
+        <div class="nav-logo-en">ShooShoo Packing</div>
+      </div>
+    </a>
+    <ul class="nav-links" role="list">
+      <li class="has-drop">
+        <a href="/about/" aria-haspopup="true">關於我們</a>
+        <div class="nav-dropdown" role="menu">
+          <a href="/about/" role="menuitem"><i data-lucide="building-2"></i>關於咻咻打包</a>
+          <a href="/join/" role="menuitem"><i data-lucide="user-plus"></i>人才招募</a>
+        </div>
+      </li>
+      <li class="has-drop">
+        <a href="/flow/" aria-haspopup="true">倉儲服務</a>
+        <div class="nav-dropdown" role="menu">
+          <a href="/flow/" role="menuitem"><i data-lucide="workflow"></i>倉儲服務流程</a>
+          <a href="/wms/" role="menuitem"><i data-lucide="monitor"></i>智慧 WMS 系統</a>
+          <a href="/international/" role="menuitem"><i data-lucide="globe"></i>國際貿易代理</a>
+          <a href="/api/" role="menuitem"><i data-lucide="link-2"></i>API 串接</a>
+          <a href="/global/" role="menuitem"><i data-lucide="map"></i>全球發展</a>
+          <a href="/cooperate/" role="menuitem"><i data-lucide="handshake"></i>廠商合作</a>
+        </div>
+      </li>
+      <li><a href="/custom-boxes-tainan/">紙箱訂製</a></li>
+      <li><a href="/influencer/">網紅合作</a></li>
+      <li><a href="/blog/">電商新聞</a></li>
+      <li><a href="/consult/" class="nav-cta">免費諮詢</a></li>
+    </ul>
+    <button class="ham" id="hamBtn" onclick="toggleMenu()" aria-expanded="false" aria-label="開啟選單">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mmenu" id="mmenu" role="navigation" aria-label="行動選單">
+  <a href="/about/" onclick="toggleMenu()">關於咻咻打包</a>
+  <a href="/flow/" onclick="toggleMenu()">倉儲服務</a>
+  <a href="/wms/" onclick="toggleMenu()">WMS 系統</a>
+  <a href="/international/" onclick="toggleMenu()">國際貿易</a>
+  <a href="/api/" onclick="toggleMenu()">API 串接</a>
+  <a href="/blog/" onclick="toggleMenu()">電商新聞</a>
+  <a href="/consult/" class="mc" onclick="toggleMenu()">免費諮詢</a>
+</div>
+
+<!-- ═══ HERO ════════════════════════════════════════════════════ -->
+<!--
+  MEDIA TODO: 右側 .hero-ph 需替換為專業物流照片
+  規格詳見 preview/media-needed.md → international-hero
+-->
+<section class="hero" aria-labelledby="hero-h1">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-badge">
+        <i data-lucide="globe"></i>
+        國際貿易代理・進出口服務
+      </div>
+      <h1 class="hero-h1" id="hero-h1">
+        空海運・集運・拆裝貼標<br>
+        進出口物流<em>一站式協作</em>
+      </h1>
+      <p class="hero-desc">
+        無論商品是進台灣做生意，還是從台灣出海外——咻咻打包台南倉庫都是你的物流核心。
+        集運入倉、拆裝貼標、加工代發，到空海運出口、報關文件協助，
+        一個窗口統一處理，讓進出口流程從混亂變得可預期。
+      </p>
+      <div class="hero-btns">
+        <a href="https://lin.ee/L9HtuyF" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          <i data-lucide="message-circle"></i>LINE 諮詢
+        </a>
+        <a href="/consult/" class="btn btn-ghost-dk">
+          <i data-lucide="file-text"></i>申請服務
+        </a>
+      </div>
+      <div class="hero-tags">
+        <span class="hero-tag"><i data-lucide="package-open"></i>集運入倉・拆裝貼標</span>
+        <span class="hero-tag"><i data-lucide="plane"></i>空運 / 快遞</span>
+        <span class="hero-tag"><i data-lucide="anchor"></i>海運整櫃 / 散貨</span>
+        <span class="hero-tag"><i data-lucide="file-check"></i>報關代辦</span>
+      </div>
+    </div>
+
+    <div class="hero-media" aria-hidden="true">
+      <div class="hero-ph">
+        <i data-lucide="camera"></i>
+        <div class="hero-ph-title">HERO PHOTO</div>
+        <div class="hero-ph-spec">
+          航空貨運站 / 港口作業 / 報關文件<br>
+          建議尺寸：800 × 640 px・16:10 比例
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MARQUEE ══════════════════════════════════════════════════ -->
+<div class="marquee-bar" aria-hidden="true">
+  <div class="marquee-track">
+    <div class="marquee-item"><span class="marquee-text">集運入倉</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span class="marquee-text">拆裝貼標・加工代發</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span class="marquee-text">空運報關</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span class="marquee-text">海運整櫃 / 散貨 / 集運</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span class="marquee-text">HS Code 建議</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span class="marquee-text">文件代辦</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span class="marquee-text">異常追蹤</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span class="marquee-text">進出口代理</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span class="marquee-text">Invoice / Packing List</span><div class="marquee-dot"></div></div>
+    <!-- 重複一組確保無縫循環 -->
+    <div class="marquee-item"><span class="marquee-text">集運入倉</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span class="marquee-text">拆裝貼標・加工代發</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span class="marquee-text">空運報關</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span class="marquee-text">海運整櫃 / 散貨 / 集運</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span class="marquee-text">HS Code 建議</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span class="marquee-text">文件代辦</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span class="marquee-text">異常追蹤</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span class="marquee-text">進出口代理</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span class="marquee-text">Invoice / Packing List</span><div class="marquee-dot"></div></div>
+  </div>
+</div>
+
+<!-- ═══ TWO DIRECTIONS ═══════════════════════════════════════════ -->
+<section class="section bg-light" aria-labelledby="bidir-h2">
+  <div class="container">
+    <div class="label">服務對象</div>
+    <h2 id="bidir-h2" style="margin-bottom:10px">兩種進出口需求，一個後勤夥伴</h2>
+    <p style="margin-bottom:32px; max-width:500px">
+      台南倉庫同時支援進口與出口兩個方向。商品走哪條路都有咻咻打包在旁邊。
+    </p>
+    <div class="bidir-grid">
+      <div class="bidir-card bidir-in">
+        <div class="bidir-icon"><i data-lucide="arrow-down-to-line"></i></div>
+        <div class="bidir-title">商品進台灣做生意</div>
+        <p class="bidir-desc">
+          海外商品透過集運、空海運進入台灣，在台南倉完成拆櫃、清點、入庫；
+          再進行加工貼標、分揀包裝，代發至台灣各電商通路。
+        </p>
+        <div class="bidir-flow">
+          <span>集運 / 空海運</span>
+          <span class="fa">→</span>
+          <span>台南倉拆櫃・入庫</span>
+          <span class="fa">→</span>
+          <span>加工貼標</span>
+          <span class="fa">→</span>
+          <span>代發通路</span>
+        </div>
+      </div>
+      <div class="bidir-card bidir-out">
+        <div class="bidir-icon"><i data-lucide="arrow-up-from-line"></i></div>
+        <div class="bidir-title">台灣商品出海外做生意</div>
+        <p class="bidir-desc">
+          台灣商品進入台南倉備貨，完成裝櫃、集運整合後，
+          透過陸海空出口，報關文件一併協助，到目的地完成派送。
+        </p>
+        <div class="bidir-flow">
+          <span>台南倉入庫</span>
+          <span class="fa">→</span>
+          <span>裝櫃・集運</span>
+          <span class="fa">→</span>
+          <span>空海運出口</span>
+          <span class="fa">→</span>
+          <span>到目的地</span>
+        </div>
+      </div>
+    </div>
+    <div class="modes-strip">
+      <div class="modes-lbl">支援物流模式</div>
+      <div class="modes-items">
+        <span>集運</span><span>陸運</span><span>海運整櫃</span><span>海運散貨</span><span>空運</span><span>快遞</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CORE SERVICES ══════════════════════════════════════════ -->
+<section class="section bg-white" aria-labelledby="svc-h2">
+  <div class="container">
+    <div class="label">服務範疇</div>
+    <h2 id="svc-h2">我們可以協助哪些事</h2>
+    <p style="max-width:520px; margin-top:12px; margin-bottom:40px;">
+      從集運入倉、拆裝貼標，到空海運出口、報關文件協助——咻咻打包提供單一窗口協作，減少你需要對接的窗口數量。
+    </p>
+
+    <div class="svc-list">
+
+      <!-- 01 空運 / 快遞 -->
+      <div class="svc-row">
+        <div class="svc-num">01</div>
+        <div class="svc-main">
+          <div class="svc-icon-wrap"><i data-lucide="plane"></i></div>
+          <div class="svc-name">空運 / 快遞</div>
+          <p class="svc-desc">
+            協助安排時效優先的空運或快遞出貨。適合高單價、小批量、節慶前補貨等時效敏感情境。
+            提供不同快遞通路的時效與費用建議，協助確認出貨文件與包裝規範。
+          </p>
+        </div>
+        <div class="svc-attrs">
+          <div class="svc-attr"><div class="svc-attr-dot"></div>適合高單價、時效敏感商品</div>
+          <div class="svc-attr"><div class="svc-attr-dot"></div>協助確認快遞通路與出貨注意事項</div>
+          <div class="svc-attr"><div class="svc-attr-dot"></div>新品首發、缺貨補急首選</div>
+          <div class="svc-attr"><div class="svc-attr-dot"></div>到貨後可直入台南倉庫或直送客戶</div>
+        </div>
+      </div>
+
+      <!-- 02 海運整櫃 / 散貨 -->
+      <div class="svc-row">
+        <div class="svc-num">02</div>
+        <div class="svc-main">
+          <div class="svc-icon-wrap"><i data-lucide="anchor"></i></div>
+          <div class="svc-name">海運整櫃 / 散貨</div>
+          <p class="svc-desc">
+            協助安排整櫃（FCL）或散貨（LCL）出貨方案，適合大量補貨與長期合作計畫。
+            協助確認艙位、時程與文件，避免因準備不足造成被動延誤。
+          </p>
+        </div>
+        <div class="svc-attrs">
+          <div class="svc-attr"><div class="svc-attr-dot"></div>整櫃（FCL）/ 散貨（LCL）彈性選配</div>
+          <div class="svc-attr"><div class="svc-attr-dot"></div>適合大量、長期補貨、成本敏感貨物</div>
+          <div class="svc-attr"><div class="svc-attr-dot"></div>協助艙位安排與時程對齊</div>
+          <div class="svc-attr"><div class="svc-attr-dot"></div>文件預審，減少補件延誤風險</div>
+        </div>
+      </div>
+
+      <!-- 03 拆裝貼標・倉儲加工 -->
+      <div class="svc-row">
+        <div class="svc-num">03</div>
+        <div class="svc-main">
+          <div class="svc-icon-wrap"><i data-lucide="package-open"></i></div>
+          <div class="svc-name">拆裝貼標・倉儲加工</div>
+          <p class="svc-desc">
+            貨物進入台南倉後，提供拆櫃分揀、裝櫃整合、商品貼標與加工服務。
+            確保貨物符合通路要求或出口規格後再出倉，適合需要在台灣轉口加工、
+            重新包裝、換標的進出口業者。
+          </p>
+        </div>
+        <div class="svc-attrs">
+          <div class="svc-attr"><div class="svc-attr-dot"></div>整櫃 / 散貨拆卸分揀</div>
+          <div class="svc-attr"><div class="svc-attr-dot"></div>商品重新貼標、換標</div>
+          <div class="svc-attr"><div class="svc-attr-dot"></div>包裝加工與套組整合</div>
+          <div class="svc-attr"><div class="svc-attr-dot"></div>進口轉再出口業者適用</div>
+        </div>
+      </div>
+
+      <!-- 04 報關協作 -->
+      <div class="svc-row">
+        <div class="svc-num">04</div>
+        <div class="svc-main">
+          <div class="svc-icon-wrap"><i data-lucide="file-check-2"></i></div>
+          <div class="svc-name">報關協作</div>
+          <p class="svc-desc">
+            協助確認 HS Code 分類方向、出口申報文件準備與報關流程銜接。
+            商品品名、材質、用途梳理，提供 HS Code 建議，降低被查驗與卡關風險。
+          </p>
+        </div>
+        <div class="svc-attrs">
+          <div class="svc-attr"><div class="svc-attr-dot"></div>HS Code 方向建議（非保證申報結果）</div>
+          <div class="svc-attr"><div class="svc-attr-dot"></div>商業發票（Invoice）格式確認</div>
+          <div class="svc-attr"><div class="svc-attr-dot"></div>裝箱單（Packing List）核對</div>
+          <div class="svc-attr"><div class="svc-attr-dot"></div>出口報關、進口申報協助</div>
+        </div>
+      </div>
+
+      <!-- 05 文件代辦與異常追蹤 -->
+      <div class="svc-row">
+        <div class="svc-num">05</div>
+        <div class="svc-main">
+          <div class="svc-icon-wrap"><i data-lucide="bell-ring"></i></div>
+          <div class="svc-name">文件代辦與異常追蹤</div>
+          <p class="svc-desc">
+            協助準備 Invoice、Packing List、授權文件、產地證明等貿易單據。
+            貨物在途出現延誤、查驗、退件或補件需求時，第一時間通報並協助處理。
+          </p>
+        </div>
+        <div class="svc-attrs">
+          <div class="svc-attr"><div class="svc-attr-dot"></div>貿易文件預審與整理</div>
+          <div class="svc-attr"><div class="svc-attr-dot"></div>授權文件、產地證明協助</div>
+          <div class="svc-attr"><div class="svc-attr-dot"></div>異常即時通報，不用追十個窗口</div>
+          <div class="svc-attr"><div class="svc-attr-dot"></div>查驗、補件、退件全程協助</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROCESS TIMELINE ════════════════════════════════════════ -->
+<section class="section-sm bg-light" aria-labelledby="proc-h2">
+  <div class="container">
+    <div class="label">作業流程</div>
+    <h2 id="proc-h2" style="margin-bottom:40px">從詢價到到貨，五個步驟</h2>
+
+    <!-- Desktop horizontal -->
+    <div class="process-wrap" aria-hidden="true">
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="process-node">1</div>
+          <div class="process-title">需求確認</div>
+          <div class="process-desc">商品、數量、目的地、時效需求說明</div>
+        </div>
+        <div class="process-step">
+          <div class="process-node">2</div>
+          <div class="process-title">文件準備</div>
+          <div class="process-desc">Invoice / Packing List / 授權文件整理</div>
+        </div>
+        <div class="process-step">
+          <div class="process-node">3</div>
+          <div class="process-title">運輸安排</div>
+          <div class="process-desc">確認空運或海運方案、艙位銜接</div>
+        </div>
+        <div class="process-step">
+          <div class="process-node">4</div>
+          <div class="process-title">報關放行</div>
+          <div class="process-desc">HS Code 確認、申報、海關放行追蹤</div>
+        </div>
+        <div class="process-step">
+          <div class="process-node">5</div>
+          <div class="process-title">到貨確認</div>
+          <div class="process-desc">到港 / 到站、派送、後續倉儲銜接</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile vertical (hidden on desktop) -->
+    <div class="process-v" role="list">
+      <div class="process-v-item" role="listitem">
+        <div class="process-v-node">1</div>
+        <div class="process-v-content">
+          <div class="process-v-title">需求確認</div>
+          <div class="process-v-desc">商品、數量、目的地、時效需求說明</div>
+        </div>
+      </div>
+      <div class="process-v-item" role="listitem">
+        <div class="process-v-node">2</div>
+        <div class="process-v-content">
+          <div class="process-v-title">文件準備</div>
+          <div class="process-v-desc">Invoice / Packing List / 授權文件整理</div>
+        </div>
+      </div>
+      <div class="process-v-item" role="listitem">
+        <div class="process-v-node">3</div>
+        <div class="process-v-content">
+          <div class="process-v-title">運輸安排</div>
+          <div class="process-v-desc">確認空運或海運方案、艙位銜接</div>
+        </div>
+      </div>
+      <div class="process-v-item" role="listitem">
+        <div class="process-v-node">4</div>
+        <div class="process-v-content">
+          <div class="process-v-title">報關放行</div>
+          <div class="process-v-desc">HS Code 確認、申報、放行追蹤</div>
+        </div>
+      </div>
+      <div class="process-v-item" role="listitem">
+        <div class="process-v-node">5</div>
+        <div class="process-v-content">
+          <div class="process-v-title">到貨確認</div>
+          <div class="process-v-desc">到港 / 到站、派送、後續倉儲銜接</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ AIR vs SEA COMPARISON ═══════════════════════════════════ -->
+<section class="section bg-white" aria-labelledby="cmp-h2">
+  <div class="container">
+    <div class="label">方案選擇</div>
+    <h2 id="cmp-h2" style="margin-bottom:8px">空運 vs. 海運，如何選擇</h2>
+    <p style="margin-bottom:32px; max-width:520px;">
+      根據你的貨量、目的地與時效需求，以下比較可作為初步參考。
+      實際費用與時程請洽詢，由我們提供具體建議。
+    </p>
+
+    <div class="compare-wrap">
+      <table class="compare-table" aria-label="空運與海運方案比較">
+        <thead>
+          <tr>
+            <th scope="col">比較項目</th>
+            <th scope="col">空運 / 快遞</th>
+            <th scope="col">海運整櫃 / 散貨</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>適合貨型</td>
+            <td>
+              高單價、輕重量、時效敏感商品
+              <div class="ct-note">電子產品、服飾、新品首批等</div>
+            </td>
+            <td>
+              大量、重量大、長期備貨商品
+              <div class="ct-note">家具、大型消費品、日常耗材等</div>
+            </td>
+          </tr>
+          <tr>
+            <td>時效特性</td>
+            <td>
+              <span class="ct-tag">時效較快</span>
+              <div class="ct-note">視目的地與快遞通路而定，請洽詢</div>
+            </td>
+            <td>
+              <span class="ct-tag">時效較長</span>
+              <div class="ct-note">視航線、港口、申報而定，請洽詢</div>
+            </td>
+          </tr>
+          <tr>
+            <td>費用特性</td>
+            <td>
+              <span class="ct-tag">運費較高</span>
+              <div class="ct-note">適合貨值高、量少情境</div>
+            </td>
+            <td>
+              <span class="ct-tag">運費較低</span>
+              <div class="ct-note">量大時每單位成本明顯降低</div>
+            </td>
+          </tr>
+          <tr>
+            <td>適合情境</td>
+            <td>新品首發・節慶補貨・缺貨補急・試銷小批</td>
+            <td>定期大量補貨・長期合作計畫・倉儲備貨</td>
+          </tr>
+          <tr>
+            <td>主要風險</td>
+            <td>費用較高、超重計費、危品限制多</td>
+            <td>時程較難預測、需提前規劃文件與艙位</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:12px; color:var(--gray-400); margin-top:14px;">
+      ※ 實際時效與費用因目的地、貨物性質、航班配置而異，以洽詢報價為準。
+    </p>
+  </div>
+</section>
+
+<!-- ═══ WHY SHOOSHOO ════════════════════════════════════════════ -->
+<!--
+  BRAND IP 使用區塊：行政喵喵（每頁限一次）
+  IP 作為品牌陪襯，內容主體為左側文字
+-->
+<section class="section bg-navy" aria-labelledby="why-h2">
+  <div class="container">
+    <div class="why-inner">
+      <div>
+        <div class="label" style="color:var(--orange)">為什麼選咻咻打包</div>
+        <h2 id="why-h2" style="color:var(--gray-900); margin-bottom:14px">
+          把國貿的「雜」外包出去<br>你才有空專心做生意
+        </h2>
+        <p style="color:rgba(41,37,15,.6); margin-bottom:0">
+          跨境物流流程繁瑣不是問題，真正的問題是你還在自己應付所有環節。
+          咻咻打包提供單一窗口，讓你只需要說一次需求，其餘由我們追蹤和協調。
+        </p>
+        <div class="why-points">
+          <div class="why-point">
+            <div class="why-icon"><i data-lucide="file-check-2"></i></div>
+            <div>
+              <div class="why-point-title">文件預審，減少補件次數</div>
+              <div class="why-point-desc">出貨前協助核對文件格式，Invoice、Packing List、授權文件問題在出關前先排除。</div>
+            </div>
+          </div>
+          <div class="why-point">
+            <div class="why-icon"><i data-lucide="bell-ring"></i></div>
+            <div>
+              <div class="why-point-title">異常第一時間通報</div>
+              <div class="why-point-desc">貨物查驗、延誤、補件需求出現時，我們統一追蹤並第一時間告知你，不用你自己追各方窗口。</div>
+            </div>
+          </div>
+          <div class="why-point">
+            <div class="why-icon"><i data-lucide="link-2"></i></div>
+            <div>
+              <div class="why-point-title">與台南倉庫無縫銜接</div>
+              <div class="why-point-desc">進口到台南後可直接入庫，銜接揀貨、包裝與出貨流程，減少中轉與換手次數。</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="why-ip" aria-hidden="true">
+        <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/shooshoo-char-admin-cat.png"
+             alt="行政喵喵 — 咻咻打包品牌角色"
+             width="280" height="280"
+             loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ══════════════════════════════════════════════════════ -->
+<section class="section bg-light" aria-labelledby="faq-h2">
+  <div class="container">
+    <div style="max-width:720px; margin:0 auto">
+      <div class="label">常見問題</div>
+      <h2 id="faq-h2" style="margin-bottom:36px">進出口服務常見疑問</h2>
+      <div class="faq-list" role="list">
+
+        <div class="faq-item" role="listitem">
+          <div class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" role="button" tabindex="0">
+            <span class="faq-q-text">我不懂報關手續，可以完全委託嗎？</span>
+            <span class="faq-toggle" aria-hidden="true"><i data-lucide="plus"></i></span>
+          </div>
+          <div class="faq-a" role="region">
+            <div class="faq-a-inner">
+              可以。咻咻打包提供完整的報關代辦協作，包括 HS Code 方向建議、出口文件準備與申報流程銜接。你只需要提供商品資料與目的地，我們協助完成後續作業。需注意，HS Code 建議僅供參考方向，正式申報由合作報關行執行。
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <div class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" role="button" tabindex="0">
+            <span class="faq-q-text">貨量不多，也可以走散貨海運（LCL）嗎？</span>
+            <span class="faq-toggle" aria-hidden="true"><i data-lucide="plus"></i></span>
+          </div>
+          <div class="faq-a" role="region">
+            <div class="faq-a-inner">
+              可以。散貨（LCL）模式就是為小量貨物設計的，你只需支付實際佔用的艙位費用，適合貨量不足一整個貨櫃的出貨計畫。我們可協助確認是否適合走 LCL 以及相關費用評估，請洽詢說明。
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <div class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" role="button" tabindex="0">
+            <span class="faq-q-text">從海外進口台灣的商品，也可以協助報關嗎？</span>
+            <span class="faq-toggle" aria-hidden="true"><i data-lucide="plus"></i></span>
+          </div>
+          <div class="faq-a" role="region">
+            <div class="faq-a-inner">
+              可以。我們可協助進口報關作業，包括商檢需求確認、進口申報文件準備與流程協調。商品入關後可直接入庫台南倉庫，銜接後續出貨。若有進口需求請先洽詢，確認商品類別與相關限制。
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <div class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" role="button" tabindex="0">
+            <span class="faq-q-text">貨物卡關或被查驗，你們可以幫忙處理嗎？</span>
+            <span class="faq-toggle" aria-hidden="true"><i data-lucide="plus"></i></span>
+          </div>
+          <div class="faq-a" role="region">
+            <div class="faq-a-inner">
+              是。我們提供全程異常追蹤，一旦出現查驗、延誤或補件需求，會第一時間通知並協助確認應對方式，由合作報關行與相關單位協調處理。你不需要自己對接多個窗口。
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <div class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" role="button" tabindex="0">
+            <span class="faq-q-text">你們實際支援哪些目的地 / 國家？</span>
+            <span class="faq-toggle" aria-hidden="true"><i data-lucide="plus"></i></span>
+          </div>
+          <div class="faq-a" role="region">
+            <div class="faq-a-inner">
+              <!-- TODO: 人工確認實際服務目的地清單後更新此答案 -->
+              目前主要協助台灣出口至亞太地區，部分目的地可支援空海運協作。具體可服務的目的地依貨物性質、通路與合作夥伴而定，建議先透過 LINE 告知目的地與商品，我們評估後給予具體回覆。
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ══════════════════════════════════════════════════════ -->
+<section class="cta-sec" aria-labelledby="cta-h2">
+  <div class="container">
+    <h2 id="cta-h2">準備開始討論進出口需求？</h2>
+    <p style="color:rgba(41,37,15,.6); max-width:440px; margin:12px auto 32px">
+      告訴我們商品、目的地與時效，我們評估後給予具體建議。
+    </p>
+    <div class="cta-btns">
+      <a href="https://lin.ee/L9HtuyF" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+        <i data-lucide="message-circle"></i>LINE 諮詢
+      </a>
+      <a href="/consult/" class="btn btn-ghost-dk">
+        <i data-lucide="file-text"></i>填寫需求表單
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ══════════════════════════════════════════════════ -->
+<footer class="footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo.png" alt="咻咻打包 Logo" width="36" height="36">
+          <span class="footer-brand">咻咻打包</span>
+        </div>
+        <p class="footer-desc">台南在地三方倉儲・進出口貿易代理<br>讓老闆專心賣貨，出貨交給我們。</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/shooshoopacking/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <i data-lucide="facebook"></i>
+          </a>
+          <a href="https://www.instagram.com/shooshoopacking/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <i data-lucide="instagram"></i>
+          </a>
+          <a href="https://lin.ee/L9HtuyF" target="_blank" rel="noopener noreferrer" aria-label="LINE">
+            <i data-lucide="message-circle"></i>
+          </a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">倉儲服務</div>
+        <ul class="footer-links">
+          <li><a href="/flow/">倉儲服務流程</a></li>
+          <li><a href="/wms/">WMS 系統</a></li>
+          <li><a href="/api/">API 串接</a></li>
+          <li><a href="/cooperate/">廠商合作</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">更多服務</div>
+        <ul class="footer-links">
+          <li><a href="/international/">國際貿易代理</a></li>
+          <li><a href="/global/">全球發展</a></li>
+          <li><a href="/custom-boxes-tainan/">紙箱訂製</a></li>
+          <li><a href="/blog/">電商新聞</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">聯絡我們</div>
+        <ul class="footer-links">
+          <li><a href="tel:0976757866">0976-757-866</a></li>
+          <li><a href="https://lin.ee/L9HtuyF" target="_blank" rel="noopener noreferrer">LINE @911ycmhl</a></li>
+          <li><a href="mailto:shooshoopacking@gmail.com">shooshoopacking@gmail.com</a></li>
+          <li><span style="color:rgba(255,255,255,.3)">台南市安定區海寮里 25-37 號</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 咻咻打包 ShooShoo Packing・翰鮮運營企業有限公司</div>
+      <a href="/privacy/" style="font-size:12px; color:rgba(255,255,255,.3)">隱私政策</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══ FLOAT CTA ════════════════════════════════════════════════ -->
+<div class="float-cta" aria-label="快速聯絡">
+  <a href="https://lin.ee/L9HtuyF" target="_blank" rel="noopener noreferrer" class="fcta-btn fcta-line" aria-label="LINE 諮詢">
+    <div class="fcta-pulse" aria-hidden="true"></div>
+    <i data-lucide="message-circle"></i>LINE 諮詢
+  </a>
+  <a href="tel:0976757866" class="fcta-btn fcta-phone" aria-label="電話諮詢">
+    <i data-lucide="phone"></i>電話
+  </a>
+</div>
+
+<!-- Mobile bottom bar -->
+<div class="mob-bar" aria-label="行動版快速聯絡">
+  <div class="mob-row">
+    <a href="https://lin.ee/L9HtuyF" target="_blank" rel="noopener noreferrer" class="mob-btn mob-line">
+      <i data-lucide="message-circle"></i>LINE 諮詢
+    </a>
+    <a href="/consult/" class="mob-btn mob-phone">
+      <i data-lucide="file-text"></i>申請服務
+    </a>
+  </div>
+</div>
+
+<!-- ═══ SCRIPTS ══════════════════════════════════════════════════ -->
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script>
+/* Lucide icons */
+if (typeof lucide !== 'undefined') lucide.createIcons();
+
+/* Nav scroll */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 20);
+}, { passive: true });
+
+/* Mobile menu */
+function toggleMenu() {
+  const menu = document.getElementById('mmenu');
+  const btn   = document.getElementById('hamBtn');
+  const open  = menu.classList.toggle('open');
+  btn.setAttribute('aria-expanded', open);
+}
+document.addEventListener('click', (e) => {
+  const menu = document.getElementById('mmenu');
+  const btn  = document.getElementById('hamBtn');
+  if (menu && btn && !menu.contains(e.target) && !btn.contains(e.target)) {
+    menu.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+  }
+});
+
+/* FAQ accordion */
+function toggleFaq(qEl) {
+  const item = qEl.closest('.faq-item');
+  const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => {
+    i.classList.remove('open');
+    i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+    i.querySelector('.faq-a').style.maxHeight = null;
+  });
+  if (!wasOpen) {
+    item.classList.add('open');
+    qEl.setAttribute('aria-expanded', 'true');
+    const ans = item.querySelector('.faq-a');
+    ans.style.maxHeight = ans.scrollHeight + 'px';
+  }
+}
+
+/* Keyboard FAQ support */
+document.querySelectorAll('.faq-q').forEach(q => {
+  q.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggleFaq(q);
+    }
+  });
+});
+</script>
+</body>
+</html>

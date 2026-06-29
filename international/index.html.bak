@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>國際貿易代理・空海運報關服務｜台灣進出口貨物・咻咻打包</title>
+<meta name="description" content="咻咻打包提供台灣進出口國際貿易代理服務，空運、海運、快遞報關一手包辦。HS CODE 建議、貿易文件代辦、東南亞與歐美航線配送，讓你的商品順利走向全世界。">
+<meta property="og:title" content="國際貿易代理・空海運報關｜咻咻打包進出口服務">
+<meta property="og:url" content="https://www.shooshoo.com.tw/international/">
+<link rel="canonical" href="https://www.shooshoo.com.tw/international/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+<style>
+:root{--cr:#FFF8ED;--crl:#FFFCF5;--crd:#FFE9C8;--og:#FF6B35;--ogd:#E85520;--yw:#FFC845;--br:#2D1B0E;--brm:#5C3D1E;--brl:#9B7250;--gy:#6B7280;--gn:#2ECC71;--lg:#06C755;--s1:0 2px 8px rgba(45,27,14,.08);--s2:0 6px 24px rgba(45,27,14,.12);--s3:0 12px 48px rgba(45,27,14,.16);--r1:12px;--r2:20px;--rf:9999px}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:'Noto Sans TC',-apple-system,sans-serif;background:var(--crl);color:var(--br);overflow-x:hidden}a{text-decoration:none;color:inherit}img{display:block;max-width:100%}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}@keyframes pulse{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.8);opacity:0}}@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,252,245,.93);backdrop-filter:blur(16px);border-bottom:1px solid rgba(45,27,14,.06)}.nav-in{max-width:1200px;margin:0 auto;padding:0 20px;height:72px;display:flex;align-items:center;justify-content:space-between;gap:8px}.logo{display:flex;align-items:center;gap:12px;flex-shrink:0}.logo img{width:48px;height:48px;object-fit:contain}.logo-name{font-size:20px;font-weight:900;color:var(--og)}.logo-en{font-size:11px;color:var(--brl)}.nav-links{display:flex;align-items:center;gap:2px;list-style:none}.nav-links a{padding:7px 12px;border-radius:var(--r1);font-size:15px;font-weight:600;color:var(--brm);transition:all .2s;white-space:nowrap}.nav-links a:hover{color:var(--og)}.nav-links .has-drop{position:relative}.nav-links .has-drop:hover .dropdown{display:block}.dropdown{display:none;position:absolute;top:calc(100% + 8px);left:0;background:#fff;border:1px solid rgba(45,27,14,.08);border-radius:var(--r2);padding:8px;min-width:200px;box-shadow:var(--s3);z-index:10}.dropdown a{display:flex;align-items:center;gap:8px;padding:9px 12px;border-radius:var(--r1);font-size:13px;color:var(--brm);transition:all .2s}.dropdown a:hover{background:var(--cr);color:var(--og)}.nav-cta{background:var(--og)!important;color:#fff!important;border-radius:var(--rf)!important;padding:8px 18px!important;font-weight:800!important}.ham{display:none;flex-direction:column;gap:5px;padding:8px;background:var(--crd);border-radius:8px;border:none;cursor:pointer}.ham span{display:block;width:20px;height:2px;background:var(--br);border-radius:3px}.mmenu{display:none;position:fixed;top:72px;left:0;right:0;z-index:199;background:rgba(255,252,245,.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--crd);padding:12px 20px 20px;flex-direction:column;gap:3px}.mmenu.open{display:flex}.mmenu a{padding:11px 14px;border-radius:var(--r1);font-size:15px;font-weight:600;color:var(--brm)}.mmenu .mc{background:var(--og);color:#fff!important;text-align:center;border-radius:var(--rf)!important;margin-top:6px;font-weight:800!important}
+.hero{min-height:80vh;padding:100px 20px 80px;background:linear-gradient(135deg,#1A0F05 0%,#2D1B0E 50%,#1A3A2A 100%);display:flex;align-items:center;position:relative;overflow:hidden}.hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,200,69,.06) 1px,transparent 1px);background-size:36px 36px}.hero-in{max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;position:relative;z-index:1}.badge-live{display:inline-flex;align-items:center;gap:8px;background:rgba(255,200,69,.15);border:1.5px solid rgba(255,200,69,.4);border-radius:var(--rf);padding:6px 14px;font-size:12px;font-weight:700;color:var(--yw);margin-bottom:18px}h1.htitle{font-size:clamp(30px,4.2vw,54px);font-weight:900;line-height:1.18;color:#fff;margin-bottom:16px}.htitle .hl{color:var(--yw)}.htitle .hl2{color:var(--og)}.hsub{font-size:15px;color:rgba(255,248,237,.75);line-height:1.75;margin-bottom:22px;text-wrap:pretty}.hbtns{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:26px}.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:var(--rf);font-size:15px;font-weight:800;border:none;cursor:pointer;transition:all .25s cubic-bezier(.34,1.56,.64,1)}.btn-lg{background:var(--lg);color:#fff}.btn-lg:hover{transform:translateY(-3px)}.btn-og{background:var(--og);color:#fff}.btn-og:hover{transform:translateY(-3px)}.btn-gh{background:rgba(255,255,255,.1);color:#fff;border:1.5px solid rgba(255,255,255,.3)}.btn-gh:hover{transform:translateY(-3px)}.htrust{display:flex;flex-wrap:wrap;gap:16px}.hti{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:rgba(255,248,237,.75)}.hti [data-lucide]{width:14px;height:14px;color:var(--yw);stroke-width:2}
+.char-wrap{display:flex;align-items:center;justify-content:center;height:340px}.char-wrap img{height:300px;width:auto;filter:drop-shadow(0 20px 40px rgba(0,0,0,.3));animation:float 4s ease-in-out infinite}
+.mqbar{background:var(--br);padding:12px 0;overflow:hidden}.mqtrack{display:flex;width:max-content;animation:marquee 28s linear infinite}.mqi{display:flex;align-items:center;gap:9px;padding:0 28px;color:#fff;font-size:13px;font-weight:700;white-space:nowrap}.mq-star{color:var(--yw)}.mq-sep{color:var(--yw);opacity:.4;font-size:9px}
+.sec{padding:80px 20px}.sec-in{max-width:1200px;margin:0 auto}.sec-hd{text-align:center;margin-bottom:52px}.slbl{display:inline-flex;border-left:3px solid var(--og);padding:3px 0 3px 12px;font-size:11px;font-weight:800;color:var(--og);letter-spacing:.1em;text-transform:uppercase;margin-bottom:18px}h2.stitle{font-size:clamp(24px,3.2vw,40px);font-weight:900;color:var(--br);line-height:1.25;margin-bottom:12px}.stitle .oc{color:var(--og)}.sdesc{font-size:16px;color:var(--brm);max-width:560px;margin:0 auto;line-height:1.7}
+.sbg-w{background:#fff;padding:80px 20px}.sbg-cr{background:var(--cr)}.sbg-dk{background:linear-gradient(135deg,#2D1B0E 0%,#3D2010 60%,#1A0F05 100%);padding:80px 20px}.sbg-dk .stitle{color:#fff}.sbg-dk .slbl{border-left-color:var(--yw);color:var(--yw)}.sbg-dk .sdesc{color:rgba(255,248,237,.65)}
+/* 國貿秘書 section */
+.secretary-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:60px;align-items:center}.secretary-img{text-align:center}.secretary-img img{max-height:380px;object-fit:contain;filter:drop-shadow(0 20px 48px rgba(45,27,14,.18));animation:float 4s ease-in-out infinite}.secretary-content .slbl{margin-bottom:14px}.secretary-content h2{font-size:clamp(22px,2.8vw,36px);font-weight:900;color:var(--br);margin-bottom:12px;line-height:1.3}.secretary-content h2 span{color:var(--og)}.secretary-content p{font-size:15px;color:var(--brm);line-height:1.8;margin-bottom:24px}.sec-pts{display:flex;flex-direction:column;gap:12px}.sec-pt{display:flex;align-items:flex-start;gap:12px;background:var(--cr);border-radius:var(--r1);padding:14px 16px}.sec-pt-icon{width:36px;height:36px;border-radius:10px;background:rgba(255,107,53,.12);display:flex;align-items:center;justify-content:center;flex-shrink:0}.sec-pt-icon [data-lucide]{width:18px;height:18px;color:var(--og)}.sec-pt-text strong{display:block;font-size:13px;font-weight:900;color:var(--br);margin-bottom:2px}.sec-pt-text span{font-size:12px;color:var(--gy);line-height:1.5}
+/* 流程條 */
+.flow-bar{background:linear-gradient(135deg,#2D1B0E,#3D2010);padding:36px 20px}.flow-in{max-width:1200px;margin:0 auto}.flow-steps{display:flex;align-items:center;justify-content:center;gap:0;overflow-x:auto}.flow-step{display:flex;align-items:center;gap:0;flex-shrink:0}.flow-node{display:flex;flex-direction:column;align-items:center;gap:8px;padding:0 20px}.flow-num{width:40px;height:40px;border-radius:50%;background:rgba(255,200,69,.2);border:2px solid rgba(255,200,69,.5);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;color:var(--yw)}.flow-label{font-size:13px;font-weight:800;color:#fff;white-space:nowrap}.flow-arrow{font-size:18px;color:rgba(255,200,69,.5);padding:0 4px}
+/* 服務卡片 */
+.service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.svc-card{background:#fff;border:1px solid rgba(45,27,14,.07);border-radius:var(--r2);padding:24px;box-shadow:0 2px 12px rgba(45,27,14,.05);transition:all .3s;position:relative;overflow:hidden}.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--og),var(--yw))}.svc-card:hover{transform:translateY(-6px);box-shadow:var(--s3)}.svc-icon{width:48px;height:48px;border-radius:12px;background:rgba(255,107,53,.08);display:flex;align-items:center;justify-content:center;color:var(--og);margin-bottom:14px}.svc-icon [data-lucide]{width:22px;height:22px;stroke-width:1.7}.svc-h{font-size:15px;font-weight:900;color:var(--br);margin-bottom:7px}.svc-p{font-size:13px;color:var(--gy);line-height:1.65}
+/* 空運 vs 海運 對比 */
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.cmp-card{border-radius:var(--r2);padding:32px 28px;position:relative;overflow:hidden}.cmp-air{background:linear-gradient(135deg,#1A2D40,#0A1A2A);border:1.5px solid rgba(255,200,69,.2)}.cmp-sea{background:linear-gradient(135deg,#1A2D0E,#0A2010);border:1.5px solid rgba(46,204,113,.2)}.cmp-icon{font-size:48px;margin-bottom:16px}.cmp-title{font-size:22px;font-weight:900;color:#fff;margin-bottom:4px}.cmp-sub{font-size:12px;font-weight:800;color:var(--yw);letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px}.cmp-desc{font-size:14px;color:rgba(255,248,237,.7);line-height:1.7;margin-bottom:20px}.cmp-tags{display:flex;flex-wrap:wrap;gap:8px}.cmp-tag{background:rgba(255,255,255,.08);border-radius:var(--rf);padding:5px 12px;font-size:12px;font-weight:700;color:rgba(255,248,237,.8)}
+/* 痛點 */
+.pain-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.pain-card{background:#fff;border-radius:var(--r2);padding:24px;border-left:4px solid var(--og);box-shadow:var(--s1);transition:all .3s}.pain-card:hover{transform:translateX(6px);box-shadow:var(--s2)}.pain-h{display:flex;align-items:center;gap:10px;margin-bottom:10px}.pain-icon{width:34px;height:34px;border-radius:10px;background:rgba(255,107,53,.08);display:flex;align-items:center;justify-content:center}.pain-icon [data-lucide]{width:16px;height:16px;color:var(--og)}.pain-title{font-size:14px;font-weight:900;color:var(--br)}.pain-desc{font-size:13px;color:var(--gy);line-height:1.65}
+.region-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.region-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:var(--r2);padding:22px;text-align:center;transition:all .3s;cursor:pointer}.region-card:hover{background:rgba(255,255,255,.12);border-color:rgba(255,200,69,.3);transform:translateY(-4px)}.region-flag{font-size:36px;margin-bottom:10px}.region-name{font-size:15px;font-weight:800;color:#fff;margin-bottom:6px}.region-desc{font-size:12px;color:rgba(255,248,237,.5);line-height:1.5}
+.faq-list{max-width:780px;margin:0 auto;display:flex;flex-direction:column;gap:10px}.fqi{background:#fff;border-radius:var(--r2);border:1px solid rgba(45,27,14,.07);overflow:hidden;transition:border-color .3s}.fqi.open{border-color:rgba(255,107,53,.3)}.fqq{display:flex;align-items:center;justify-content:space-between;padding:17px 20px;cursor:pointer;gap:12px}.fqq-inner{display:flex;align-items:center;gap:10px}.fqicon{width:28px;height:28px;border-radius:8px;background:rgba(255,107,53,.08);display:flex;align-items:center;justify-content:center}.fqicon [data-lucide]{width:14px;height:14px;color:var(--og)}.fqtext{font-size:15px;font-weight:700;color:var(--br)}.fqtog{width:26px;height:26px;border-radius:8px;background:var(--cr);display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--og);font-weight:900;transition:all .3s}.fqi.open .fqtog{background:var(--og);color:#fff;transform:rotate(45deg)}.fqa{max-height:0;overflow:hidden;transition:max-height .4s ease}.fqa-in{padding:0 20px 16px 58px;font-size:14px;color:var(--gy);line-height:1.75}
+.cta-sec{background:linear-gradient(135deg,#2D1B0E 0%,#3D2010 100%);padding:80px 20px;text-align:center}.cta-sec h2{font-size:clamp(26px,3.5vw,44px);font-weight:900;color:#fff;margin-bottom:14px}.cta-sec p{font-size:16px;color:rgba(255,248,237,.75);margin-bottom:36px}.cta-btns{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+footer{background:var(--br);padding:48px 20px 20px}.foot-in{max-width:1200px;margin:0 auto}.foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;margin-bottom:36px}.foot-logo{display:flex;align-items:center;gap:10px;margin-bottom:14px}.foot-logo img{width:40px;height:40px;object-fit:contain}.foot-bname{font-size:17px;font-weight:900;color:var(--og)}.foot-desc{font-size:13px;line-height:1.7;color:rgba(255,248,237,.6);margin-bottom:16px}.fsoc{display:flex;gap:10px}.fsoc a{width:34px;height:34px;border-radius:9px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;transition:all .2s;color:rgba(255,248,237,.7)}.fsoc a:hover{background:var(--og);color:#fff}.fsoc [data-lucide]{width:16px;height:16px}.foot-ct{font-size:13px;font-weight:800;color:var(--og);text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px}.foot-lks{list-style:none;display:flex;flex-direction:column;gap:8px}.foot-lks a{font-size:13px;color:rgba(255,248,237,.65);transition:color .2s}.foot-lks a:hover{color:var(--og)}.foot-bot{border-top:1px solid rgba(255,255,255,.08);padding-top:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}.foot-copy{font-size:12px;color:rgba(255,248,237,.4)}.foot-copy span{color:rgba(255,248,237,.6)}
+.float-cta{position:fixed;right:20px;bottom:24px;display:flex;flex-direction:column;gap:10px;z-index:100}.fb{display:flex;align-items:center;gap:8px;padding:12px 18px;border-radius:var(--rf);font-size:14px;font-weight:800;color:#fff;box-shadow:var(--s3);transition:all .25s;position:relative}.fb-ln{background:var(--lg)}.fb-ph{background:var(--og)}.fb-pulse{position:absolute;top:-4px;right:-4px;width:12px;height:12px;border-radius:50%;background:var(--yw);border:2px solid #fff;animation:pulse 2s ease-out infinite}.fb [data-lucide]{width:16px;height:16px}.mob-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:100;background:#fff;border-top:1px solid var(--crd);padding:10px 16px 14px}.mob-row{display:flex;gap:10px}.mb-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:13px;border-radius:var(--rf);font-size:14px;font-weight:800;color:#fff}.mb-ln{background:var(--lg)}.mb-ev{background:var(--og)}.mb-btn [data-lucide]{width:16px;height:16px}
+@media(max-width:1024px){.hero-in{grid-template-columns:1fr;text-align:center}.hbtns,.htrust{justify-content:center}.secretary-grid{grid-template-columns:1fr;gap:32px}.secretary-img img{max-height:260px}.service-grid{grid-template-columns:1fr 1fr}.compare-grid{grid-template-columns:1fr}.pain-grid{grid-template-columns:1fr}.region-grid{grid-template-columns:1fr 1fr}.foot-top{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){.nav-links{display:none}.ham{display:flex}.float-cta{display:none}.mob-bar{display:block}.service-grid{grid-template-columns:1fr 1fr}.flow-steps{gap:0}.foot-top{grid-template-columns:1fr}}
+@media(max-width:500px){.service-grid{grid-template-columns:1fr}.region-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<nav class="nav" id="nav">
+<div class="nav-in">
+  <a href="/" class="logo"><img src="../../影片素材/角色去背/咻咻LOGO.png" alt="咻咻打包"><div><div class="logo-name">咻咻打包</div><div class="logo-en">ShooShoo Packing</div></div></a>
+  <ul class="nav-links">
+    <li class="has-drop"><a href="/about/">關於我們 ▾</a><div class="dropdown"><a href="/about/"><i data-lucide="building-2"></i>關於咻咻打包</a><a href="/join/"><i data-lucide="user-plus"></i>人才招募</a></div></li>
+    <li class="has-drop"><a href="/flow/">倉儲服務 ▾</a><div class="dropdown"><a href="/flow/"><i data-lucide="workflow"></i>倉儲服務流程</a><a href="/wms/"><i data-lucide="monitor"></i>智慧 WMS 系統</a><a href="/international/"><i data-lucide="globe"></i>國際貿易代理</a><a href="/api/"><i data-lucide="link-2"></i>API 串接</a><a href="/global/"><i data-lucide="map"></i>全球發展</a><a href="/cooperate/"><i data-lucide="handshake"></i>廠商合作</a></div></li>
+    <li><a href="/custom-boxes-tainan/">紙箱訂製</a></li>
+    <li><a href="/influencer/">網紅合作</a></li>
+    <li><a href="/blog/">電商新聞</a></li>
+    <li><a href="/consult/" class="nav-cta">免費諮詢 →</a></li>
+  </ul>
+  <button class="ham" id="hamBtn" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+</div>
+</nav>
+<div class="mmenu" id="mmenu">
+  <a href="/about/" onclick="toggleMenu()">關於咻咻打包</a>
+  <a href="/flow/" onclick="toggleMenu()">倉儲服務流程</a>
+  <a href="/wms/" onclick="toggleMenu()">WMS 系統</a>
+  <a href="/international/" onclick="toggleMenu()">國際貿易</a>
+  <a href="/api/" onclick="toggleMenu()">API 串接</a>
+  <a href="/blog/" onclick="toggleMenu()">電商新聞</a>
+  <a href="/consult/" class="mc" onclick="toggleMenu()">免費諮詢</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-in">
+    <div>
+      <div class="badge-live">🌏 台灣進出口・國際貿易代理</div>
+      <h1 class="htitle">跨境空海運<br><span class="hl2">報關｜文件代辦</span><br><span class="hl">讓你像有國貿秘書</span></h1>
+      <p class="hsub">你只要告訴我們：商品、數量、目的地、希望時效。剩下的 HS CODE、文件、報關、追蹤、異常處理——全部交給咻咻打包。</p>
+      <div class="hbtns">
+        <a href="https://lin.ee/L9HtuyF" target="_blank" class="btn btn-lg"><i data-lucide="message-circle"></i>LINE 諮詢報關</a>
+        <a href="/consult/" class="btn btn-og"><i data-lucide="file-text"></i>申請進出口服務</a>
+      </div>
+      <div class="htrust">
+        <span class="hti"><i data-lucide="plane"></i>空運快遞</span>
+        <span class="hti"><i data-lucide="anchor"></i>海運整櫃 / 散貨</span>
+        <span class="hti"><i data-lucide="file-check"></i>報關代辦</span>
+        <span class="hti"><i data-lucide="shield-check"></i>HS CODE 建議</span>
+      </div>
+    </div>
+    <div class="char-wrap">
+      <img src="../../影片素材/角色去背/咻卡.png" alt="咻卡">
+    </div>
+  </div>
+</section>
+
+<div class="mqbar"><div class="mqtrack">
+  <div class="mqi"><span class="mq-star">★</span>空海運報關<span class="mq-sep">◆</span></div><div class="mqi"><span class="mq-star">★</span>文件代辦<span class="mq-sep">◆</span></div><div class="mqi"><span class="mq-star">★</span>HS CODE 建議<span class="mq-sep">◆</span></div><div class="mqi"><span class="mq-star">★</span>東南亞配送<span class="mq-sep">◆</span></div><div class="mqi"><span class="mq-star">★</span>歐美航線<span class="mq-sep">◆</span></div><div class="mqi"><span class="mq-star">★</span>異常追蹤<span class="mq-sep">◆</span></div>
+  <div class="mqi"><span class="mq-star">★</span>空海運報關<span class="mq-sep">◆</span></div><div class="mqi"><span class="mq-star">★</span>文件代辦<span class="mq-sep">◆</span></div><div class="mqi"><span class="mq-star">★</span>HS CODE 建議<span class="mq-sep">◆</span></div><div class="mqi"><span class="mq-star">★</span>東南亞配送<span class="mq-sep">◆</span></div><div class="mqi"><span class="mq-star">★</span>歐美航線<span class="mq-sep">◆</span></div><div class="mqi"><span class="mq-star">★</span>異常追蹤<span class="mq-sep">◆</span></div>
+</div></div>
+
+<!-- 國貿秘書 -->
+<section class="sec sbg-cr">
+  <div class="sec-in">
+    <div class="secretary-grid">
+      <div class="secretary-img">
+        <img src="../../影片素材/角色去背/行政喵喵.png" alt="行政喵喵">
+      </div>
+      <div class="secretary-content">
+        <div class="slbl">服務理念</div>
+        <h2>讓你像有<br><span>國貿秘書</span>一樣</h2>
+        <p>跨境物流不是難，是雜。把「雜」外包掉，你才有空做生意。咻咻打包幫你把出口流程從頭到尾對齊，讓複雜的國貿流程變得可預期。</p>
+        <div class="sec-pts">
+          <div class="sec-pt">
+            <div class="sec-pt-icon"><i data-lucide="file-check-2"></i></div>
+            <div class="sec-pt-text"><strong>文件預審</strong><span>Invoice / Packing List / 授權文件整理，少一次補件就省很多時間</span></div>
+          </div>
+          <div class="sec-pt">
+            <div class="sec-pt-icon"><i data-lucide="tag"></i></div>
+            <div class="sec-pt-text"><strong>HS CODE 建議</strong><span>品名 / 材質 / 用途梳理，提供 HS CODE 方向，降低卡關風險</span></div>
+          </div>
+          <div class="sec-pt">
+            <div class="sec-pt-icon"><i data-lucide="alert-triangle"></i></div>
+            <div class="sec-pt-text"><strong>異常即時通報</strong><span>延誤、退件、查驗、補件——不用你追十個窗口，我們幫你盯</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 出口流程條 -->
+<div class="flow-bar">
+  <div class="flow-in">
+    <div class="flow-steps">
+      <div class="flow-step">
+        <div class="flow-node"><div class="flow-num">1</div><div class="flow-label">文件報關</div></div>
+        <div class="flow-arrow">→</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-node"><div class="flow-num">2</div><div class="flow-label">海關放行</div></div>
+        <div class="flow-arrow">→</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-node"><div class="flow-num">3</div><div class="flow-label">裝船 / 起飛</div></div>
+        <div class="flow-arrow">→</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-node"><div class="flow-num">4</div><div class="flow-label">到港 / 到站</div></div>
+        <div class="flow-arrow">→</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-node"><div class="flow-num">5</div><div class="flow-label">目的地派送</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 4 大服務 -->
+<section class="sec sbg-w">
+  <div class="sec-in">
+    <div class="sec-hd">
+      <div class="slbl">服務項目</div>
+      <h2 class="stitle">四大服務<span class="oc">一手包辦</span></h2>
+      <p class="sdesc">從文件準備到最終派送，咻咻打包一站式搞定所有國貿流程</p>
+    </div>
+    <div class="service-grid">
+      <div class="svc-card">
+        <div class="svc-icon"><i data-lucide="file-text"></i></div>
+        <div class="svc-h">文件代辦</div>
+        <p class="svc-p">Invoice、Packing List、產地 / 授權文件整理與檢核，杜絕補件延誤。</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon"><i data-lucide="tag"></i></div>
+        <div class="svc-h">HS CODE 建議</div>
+        <p class="svc-p">品名 / 材質 / 用途梳理，提供 HS CODE 方向，降低被抽驗 / 卡關風險。</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon"><i data-lucide="shield-check"></i></div>
+        <div class="svc-h">報關 / 商檢協助</div>
+        <p class="svc-p">出口 / 進口報關、商檢需求提醒與準備方向，讓流程可預期。</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon"><i data-lucide="bell-ring"></i></div>
+        <div class="svc-h">異常追蹤</div>
+        <p class="svc-p">延誤、退件、查驗、補件——你不用追十個窗口，我們幫你盯到底。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 空運 vs 海運 對比 -->
+<section class="sec sbg-dk">
+  <div class="sec-in">
+    <div class="sec-hd">
+      <div class="slbl">方案選擇</div>
+      <h2 class="stitle">空運 vs 海運<span class="oc">怎麼選？</span></h2>
+      <p class="sdesc" style="color:rgba(255,248,237,.65)">根據貨量、時效、預算，選出最適合你的出貨方案</p>
+    </div>
+    <div class="compare-grid">
+      <div class="cmp-card cmp-air">
+        <div class="cmp-icon">✈️</div>
+        <div class="cmp-title">空運 / 快遞</div>
+        <div class="cmp-sub">要快就選這個</div>
+        <p class="cmp-desc">適合新品首發、缺貨補貨、時效敏感商品。小批量、高單價、節日前補貨首選。提供成本 / 時效建議與出貨注意事項。</p>
+        <div class="cmp-tags">
+          <span class="cmp-tag">3–7 天到達</span>
+          <span class="cmp-tag">小批量</span>
+          <span class="cmp-tag">即時追蹤</span>
+          <span class="cmp-tag">新品首發</span>
+        </div>
+      </div>
+      <div class="cmp-card cmp-sea">
+        <div class="cmp-icon">🚢</div>
+        <div class="cmp-title">海運整櫃 / 散貨</div>
+        <div class="cmp-sub">要省就選這個</div>
+        <p class="cmp-desc">適合大量補貨、長期備貨、成本敏感商品。整櫃（FCL）或散貨（LCL）彈性選配。協助艙位 / 時程 / 文件對齊，避免被動延誤。</p>
+        <div class="cmp-tags">
+          <span class="cmp-tag">整櫃 FCL</span>
+          <span class="cmp-tag">散貨 LCL</span>
+          <span class="cmp-tag">成本優化</span>
+          <span class="cmp-tag">大量貨物</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 你最常卡的痛點 -->
+<section class="sec sbg-cr">
+  <div class="sec-in">
+    <div class="sec-hd">
+      <div class="slbl">痛點解決</div>
+      <h2 class="stitle">你最常卡的<span class="oc">國貿痛點</span></h2>
+      <p class="sdesc">跨境物流不是難，是雜。把「雜」外包掉，你才有空做生意。</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="pain-h"><div class="pain-icon"><i data-lucide="file-x"></i></div><div class="pain-title">補件麻煩，一直被退</div></div>
+        <p class="pain-desc">Invoice 格式錯誤、Packing List 漏填、授權文件不齊——咻咻幫你預審，出貨前就排除問題。</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-h"><div class="pain-icon"><i data-lucide="hash"></i></div><div class="pain-title">HS CODE 不知道填什麼</div></div>
+        <p class="pain-desc">商品品名不確定、材質分類模糊——我們幫你梳理，提供申報方向，降低被抽查風險。</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-h"><div class="pain-icon"><i data-lucide="clock"></i></div><div class="pain-title">卡關了，不知道怎麼辦</div></div>
+        <p class="pain-desc">海關查驗、延誤通知、補件要求——我們即時追蹤異常狀態，第一時間通知並協助處理。</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-h"><div class="pain-icon"><i data-lucide="calculator"></i></div><div class="pain-title">空運海運選哪個比較省</div></div>
+        <p class="pain-desc">根據你的貨量、目的地、時效需求，提供空運 vs 海運成本試算，讓你做出最划算的選擇。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 服務地區 -->
+<div class="sbg-dk">
+  <div class="sec-in">
+    <div class="sec-hd">
+      <div class="slbl">配送地區</div>
+      <h2 class="stitle">主要航線<span class="oc">全覆蓋</span></h2>
+      <p class="sdesc" style="color:rgba(255,248,237,.65)">台灣出口主力市場，配合你的拓展節奏逐步佈局</p>
+    </div>
+    <div class="region-grid">
+      <div class="region-card"><div class="region-flag">🇯🇵</div><div class="region-name">日本</div><p class="region-desc">電商最熱門目的地，空運 3–5 天</p></div>
+      <div class="region-card"><div class="region-flag">🇰🇷</div><div class="region-name">韓國</div><p class="region-desc">快速成長市場，空運直達</p></div>
+      <div class="region-card"><div class="region-flag">🇸🇬</div><div class="region-name">東南亞</div><p class="region-desc">新加坡、馬來西亞、泰國等</p></div>
+      <div class="region-card"><div class="region-flag">🇺🇸</div><div class="region-name">美國</div><p class="region-desc">快遞 5–7 天，海運 25–30 天</p></div>
+      <div class="region-card"><div class="region-flag">🇩🇪</div><div class="region-name">歐洲</div><p class="region-desc">德國、英法荷等主要市場</p></div>
+      <div class="region-card"><div class="region-flag">🇦🇺</div><div class="region-name">澳洲</div><p class="region-desc">空運 5–8 天，穩定航班</p></div>
+      <div class="region-card"><div class="region-flag">🌏</div><div class="region-name">中東</div><p class="region-desc">阿聯酋、沙烏地等新興市場</p></div>
+      <div class="region-card"><div class="region-flag">🌍</div><div class="region-name">其他地區</div><p class="region-desc">全球 200+ 國家，洽詢報價</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<section class="sec sbg-w">
+  <div class="sec-in">
+    <div class="sec-hd">
+      <div class="slbl">常見問題</div>
+      <h2 class="stitle">國際貿易<span class="oc">常見問答</span></h2>
+    </div>
+    <div class="faq-list">
+      <div class="fqi" onclick="toggleFaq(this)"><div class="fqq"><div class="fqq-inner"><div class="fqicon"><i data-lucide="help-circle"></i></div><span class="fqtext">我不懂報關，可以全部委託嗎？</span></div><div class="fqtog">+</div></div><div class="fqa"><div class="fqa-in">可以！咻咻打包提供完整的報關代辦服務，包括 HS CODE 分類建議、出口報單申報、產地證明申請等。你只需要提供商品資料，其餘全交給我們。</div></div></div>
+      <div class="fqi" onclick="toggleFaq(this)"><div class="fqq"><div class="fqq-inner"><div class="fqicon"><i data-lucide="help-circle"></i></div><span class="fqtext">我的貨量不多，可以走散貨海運嗎？</span></div><div class="fqtog">+</div></div><div class="fqa"><div class="fqa-in">當然可以！散貨（LCL）就是為小量貨物設計的，只需支付你的貨物所占空間的費用，非常適合剛開始拓展海外市場的賣家。</div></div></div>
+      <div class="fqi" onclick="toggleFaq(this)"><div class="fqq"><div class="fqq-inner"><div class="fqicon"><i data-lucide="help-circle"></i></div><span class="fqtext">進口台灣的外國商品，也可以幫忙報關嗎？</span></div><div class="fqtog">+</div></div><div class="fqa"><div class="fqa-in">可以！咻咻打包提供台灣進口報關服務，協助你從海外採購的商品順利進關，並直接入庫我們的台南倉庫，省去層層轉運費用。</div></div></div>
+      <div class="fqi" onclick="toggleFaq(this)"><div class="fqq"><div class="fqq-inner"><div class="fqicon"><i data-lucide="help-circle"></i></div><span class="fqtext">商品卡關了，你們可以幫忙處理嗎？</span></div><div class="fqtog">+</div></div><div class="fqa"><div class="fqa-in">可以！我們提供全程異常追蹤服務。一旦出現延誤、查驗或補件需求，我們會第一時間通知你並協助處理，不需要你自己追各方窗口。</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-sec">
+  <div class="sec-in">
+    <h2>準備讓商品走向國際？</h2>
+    <p>聯繫咻咻打包，規劃最適合你的進出口物流方案</p>
+    <div class="cta-btns">
+      <a href="https://lin.ee/L9HtuyF" target="_blank" class="btn btn-lg"><i data-lucide="message-circle"></i>LINE 諮詢</a>
+      <a href="/consult/" class="btn btn-gh"><i data-lucide="globe"></i>申請服務</a>
+    </div>
+  </div>
+</section>
+<footer><div class="foot-in"><div class="foot-top"><div><div class="foot-logo"><img src="../../影片素材/角色去背/咻咻LOGO.png" alt="咻咻打包"><div class="foot-bname">咻咻打包</div></div><p class="foot-desc">台南在地三方倉儲首選。進出口・代倉儲・代出貨一手包辦。</p><div class="fsoc"><a href="#"><i data-lucide="facebook"></i></a><a href="#"><i data-lucide="instagram"></i></a><a href="https://lin.ee/L9HtuyF" target="_blank"><i data-lucide="message-circle"></i></a></div></div><div><div class="foot-ct">倉儲服務</div><ul class="foot-lks"><li><a href="/flow/">倉儲服務流程</a></li><li><a href="/wms/">WMS 系統</a></li><li><a href="/api/">API 串接</a></li><li><a href="/international/">國際貿易</a></li></ul></div><div><div class="foot-ct">更多服務</div><ul class="foot-lks"><li><a href="/custom-boxes-tainan/">紙箱訂製</a></li><li><a href="/influencer/">網紅合作</a></li><li><a href="/blog/">電商新聞</a></li><li><a href="/about/">關於我們</a></li></ul></div><div><div class="foot-ct">聯絡我們</div><ul class="foot-lks"><li><a href="tel:0976757866">0976-757866</a></li><li><a href="https://lin.ee/L9HtuyF" target="_blank">LINE @911ycmhl</a></li><li><a href="mailto:shooshoopacking@gmail.com">shooshoopacking@gmail.com</a></li></ul></div></div><div class="foot-bot"><div class="foot-copy">© 2026 <span>咻咻打包 ShooShoo Packing</span>．翰鮮運營企業有限公司</div></div></div></footer>
+<div class="float-cta"><a href="https://lin.ee/L9HtuyF" target="_blank" class="fb fb-ln"><div class="fb-pulse"></div><i data-lucide="message-circle"></i>LINE 諮詢</a><a href="tel:0976757866" class="fb fb-ph"><i data-lucide="phone"></i>電話諮詢</a></div>
+<div class="mob-bar"><div class="mob-row"><a href="https://lin.ee/L9HtuyF" target="_blank" class="mb-btn mb-ln"><i data-lucide="message-circle"></i>LINE 諮詢</a><a href="/consult/" class="mb-btn mb-ev"><i data-lucide="globe"></i>申請服務</a></div></div>
+<script>
+const nav=document.getElementById('nav');window.addEventListener('scroll',()=>nav.classList.toggle('sc',scrollY>20));
+function toggleMenu(){document.getElementById('mmenu').classList.toggle('open')}
+document.addEventListener('click',e=>{const m=document.getElementById('mmenu'),b=document.getElementById('hamBtn');if(m&&b&&!m.contains(e.target)&&!b.contains(e.target))m.classList.remove('open');});
+function toggleFaq(item){const was=item.classList.contains('open');document.querySelectorAll('.fqi').forEach(i=>i.classList.remove('open'));if(!was)item.classList.add('open');}
+if(typeof lucide!=='undefined')lucide.createIcons();
+if(typeof gsap!=='undefined'){
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.set(['h1.htitle','.hsub','.hbtns .btn','.hti','.char-wrap','.badge-live'],{autoAlpha:0});
+  gsap.timeline({defaults:{ease:'power3.out'}})
+    .fromTo('.badge-live',{autoAlpha:0,y:-18},{autoAlpha:1,y:0,duration:.5,ease:'back.out(2)'},0)
+    .fromTo('h1.htitle',{autoAlpha:0,y:32},{autoAlpha:1,y:0,duration:.7},'.2')
+    .fromTo('.hsub',{autoAlpha:0,y:22},{autoAlpha:1,y:0,duration:.55},'.45')
+    .fromTo('.hbtns .btn',{autoAlpha:0,y:18},{autoAlpha:1,y:0,stagger:.1,duration:.45,ease:'back.out(1.5)'},'.7')
+    .fromTo('.hti',{autoAlpha:0,x:-12},{autoAlpha:1,x:0,stagger:.07,duration:.4},'1')
+    .fromTo('.char-wrap',{autoAlpha:0,x:48},{autoAlpha:1,x:0,duration:1,ease:'power2.out'},'.15');
+  gsap.fromTo('.secretary-img',{opacity:0,x:-36},{opacity:1,x:0,duration:.7,ease:'power2.out',scrollTrigger:{trigger:'.secretary-grid',start:'top 82%',once:true}});
+  gsap.fromTo('.secretary-content',{opacity:0,x:28},{opacity:1,x:0,duration:.7,ease:'power2.out',scrollTrigger:{trigger:'.secretary-grid',start:'top 82%',once:true}});
+  gsap.fromTo('.sec-pt',{opacity:0,y:16},{opacity:1,y:0,duration:.4,stagger:.1,ease:'power2.out',scrollTrigger:{trigger:'.sec-pts',start:'top 88%',once:true}});
+  gsap.fromTo('.svc-card',{opacity:0,y:40},{opacity:1,y:0,duration:.6,stagger:.1,ease:'power3.out',scrollTrigger:{trigger:'.service-grid',start:'top 82%',once:true}});
+  gsap.fromTo('.cmp-card',{opacity:0,y:32},{opacity:1,y:0,duration:.6,stagger:.15,ease:'power2.out',scrollTrigger:{trigger:'.compare-grid',start:'top 82%',once:true}});
+  gsap.fromTo('.pain-card',{opacity:0,x:-24},{opacity:1,x:0,duration:.5,stagger:.1,ease:'power2.out',scrollTrigger:{trigger:'.pain-grid',start:'top 84%',once:true}});
+  gsap.fromTo('.region-card',{opacity:0,scale:.88},{opacity:1,scale:1,duration:.4,stagger:.07,ease:'back.out(1.5)',scrollTrigger:{trigger:'.region-grid',start:'top 82%',once:true}});
+  gsap.fromTo('.fqi',{opacity:0,y:16},{opacity:1,y:0,duration:.4,stagger:.06,ease:'power2.out',scrollTrigger:{trigger:'.faq-list',start:'top 84%',once:true}});
+}
+</script>
+</body>
+</html>

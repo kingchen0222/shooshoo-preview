@@ -1,0 +1,274 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>網紅合作・KOL/KOC 一站帶貨出貨「咻！就搞定」｜咻咻打包</title>
+<meta name="description" content="咻咻打包提供 KOL/KOC 一站帶貨服務。賣家把商品放倉後，我們幫你對接適合的網紅，爆單時自動拋單、揀貨、包裝、出貨，讓你專注品牌不用煩後勤。">
+<meta property="og:title" content="網紅合作・KOL/KOC 一站帶貨｜咻咻打包">
+<meta property="og:url" content="https://www.shooshoo.com.tw/influencer/">
+<link rel="canonical" href="https://www.shooshoo.com.tw/influencer/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+<style>
+:root{--cr:#FFF8ED;--crl:#FFFCF5;--crd:#FFE9C8;--og:#DCA54A;--ogd:#B8852E;--yw:#FFC845;--br:#2D1B0E;--brm:#5C3D1E;--brl:#9B7250;--gy:#6B7280;--gn:#2ECC71;--lg:#06C755;--s1:0 2px 8px rgba(45,27,14,.08);--s2:0 6px 24px rgba(45,27,14,.12);--s3:0 12px 48px rgba(45,27,14,.16);--r1:12px;--r2:20px;--rf:9999px}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:'Noto Sans TC',-apple-system,sans-serif;background:var(--crl);color:var(--br);overflow-x:hidden;text-rendering:optimizeLegibility;font-feature-settings:"kern" 1}a{text-decoration:none;color:inherit}img{display:block;max-width:100%}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}@keyframes float2{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-10px) rotate(3deg)}}@keyframes pulse{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.8);opacity:0}}@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,252,245,.93);backdrop-filter:blur(16px);border-bottom:1px solid rgba(45,27,14,.06)}.nav-in{max-width:1200px;margin:0 auto;padding:0 20px;height:72px;display:flex;align-items:center;justify-content:space-between;gap:8px}.logo{display:flex;align-items:center;gap:12px;flex-shrink:0}.logo img{width:48px;height:48px;object-fit:contain}.logo-name{font-size:20px;font-weight:900;color:var(--og)}.logo-en{font-size:11px;color:var(--brl)}.nav-links{display:flex;align-items:center;gap:2px;list-style:none}.nav-links a{padding:7px 12px;border-radius:var(--r1);font-size:15px;font-weight:600;color:var(--brm);transition:all .2s;white-space:nowrap}.nav-links a:hover{color:var(--og)}.nav-links .has-drop{position:relative}.nav-links .has-drop:hover .dropdown{display:block}.dropdown{display:none;position:absolute;top:calc(100% + 8px);left:0;background:#fff;border:1px solid rgba(45,27,14,.08);border-radius:var(--r2);padding:8px;min-width:200px;box-shadow:var(--s3);z-index:10}.dropdown a{display:flex;align-items:center;gap:8px;padding:9px 12px;border-radius:var(--r1);font-size:13px;color:var(--brm);transition:all .2s}.dropdown a:hover{background:var(--cr);color:var(--og)}.nav-cta{background:var(--og)!important;color:#fff!important;border-radius:var(--rf)!important;padding:8px 18px!important;font-weight:800!important}.ham{display:none;flex-direction:column;gap:5px;padding:8px;background:var(--crd);border-radius:8px;border:none;cursor:pointer}.ham span{display:block;width:20px;height:2px;background:var(--br);border-radius:3px}.mmenu{display:none;position:fixed;top:72px;left:0;right:0;z-index:199;background:rgba(255,252,245,.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--crd);padding:12px 20px 20px;flex-direction:column;gap:3px}.mmenu.open{display:flex}.mmenu a{padding:11px 14px;border-radius:var(--r1);font-size:15px;font-weight:600;color:var(--brm)}.mmenu .mc{background:var(--og);color:#fff!important;text-align:center;border-radius:var(--rf)!important;margin-top:6px;font-weight:800!important}
+/* HERO */
+.hero{padding:100px 20px 70px;background:linear-gradient(150deg,#FFF0E0 0%,#FFF8ED 40%,#FFF0D8 100%);position:relative;overflow:hidden}.hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,107,53,.07) 1.5px,transparent 1.5px);background-size:30px 30px;pointer-events:none}.hero-in{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;position:relative;z-index:1}.badge-live{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1.5px solid var(--yw);border-radius:var(--rf);padding:6px 14px;font-size:12px;font-weight:700;color:var(--brm);margin-bottom:18px}.bdot{position:relative;width:8px;height:8px;flex-shrink:0}.bdot-c{position:absolute;inset:1px;background:var(--gn);border-radius:50%}.bdot-r{position:absolute;inset:0;border-radius:50%;border:2px solid var(--gn);animation:pulse 1.5s ease-out infinite}h1.htitle{font-size:clamp(26px,3.8vw,50px);font-weight:900;line-height:1.2;color:var(--br);margin-bottom:14px}.htitle .hl{color:var(--og);position:relative;display:inline-block}.htitle .hl::after{content:'';position:absolute;left:0;right:0;bottom:-3px;height:6px;background:var(--yw);border-radius:4px;opacity:.5;z-index:-1}.htitle .shoo{color:var(--og);font-size:.9em}.hsub{font-size:15px;color:var(--brm);line-height:1.75;margin-bottom:22px;text-wrap:pretty}.hbtns{display:flex;flex-wrap:wrap;gap:12px}.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:var(--rf);font-size:15px;font-weight:800;border:none;cursor:pointer;transition:all .25s cubic-bezier(.34,1.56,.64,1)}.btn-og{background:var(--og);color:#fff;box-shadow:0 4px 20px rgba(255,107,53,.35)}.btn-og:hover{transform:translateY(-3px)}.btn-lg{background:var(--lg);color:#fff}.btn-lg:hover{transform:translateY(-3px)}.btn-bdr{background:#fff;color:var(--og);border:2px solid var(--og)}.btn-bdr:hover{background:var(--og);color:#fff}
+/* Hero chars */
+.hero-chars{position:relative;height:280px;display:flex;align-items:flex-end;justify-content:center;gap:-20px}.hc{position:absolute;filter:drop-shadow(0 16px 32px rgba(45,27,14,.13))}.hc1{height:220px;bottom:0;left:10%;animation:float 4s ease-in-out infinite}.hc2{height:240px;bottom:0;right:8%;animation:float2 3.8s ease-in-out .4s infinite}
+/* Marquee */
+.mqbar{background:#DCA54A;padding:12px 0;overflow:hidden}.mqtrack{display:flex;width:max-content;animation:marquee 28s linear infinite}.mqi{display:flex;align-items:center;gap:9px;padding:0 28px;color:rgba(41,37,15,.85);font-size:13px;font-weight:700;white-space:nowrap}.mq-star{color:var(--yw)}.mq-sep{color:var(--yw);opacity:.4;font-size:9px}
+/* Sections */
+.sec{padding:80px 20px}.sec-in{max-width:1100px;margin:0 auto}.sec-hd{text-align:center;margin-bottom:52px}.slbl{display:inline-flex;border-left:3px solid var(--og);padding:3px 0 3px 12px;font-size:11px;font-weight:800;color:var(--og);letter-spacing:.1em;text-transform:uppercase;margin-bottom:18px}h2.stitle{font-size:clamp(24px,3.2vw,40px);font-weight:900;color:var(--br);line-height:1.25;margin-bottom:12px}.stitle .oc{color:var(--og)}.sdesc{font-size:16px;color:var(--brm);max-width:560px;margin:0 auto;line-height:1.7}
+.sbg-w{background:#fff;padding:80px 20px}.sbg-cr{background:var(--cr)}.sbg-dk{background:var(--cr,#FFF8ED);padding:80px 20px}.sbg-dk .stitle{color:#29250F}.sbg-dk .slbl{border-left-color:var(--yw);color:var(--yw)}.sbg-dk .sdesc{color:rgba(41,37,15,.65)}
+/* Pain 2-col */
+.pain-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.pain-card{border-radius:var(--r2);padding:28px;position:relative;overflow:hidden}.pain-card.pc1{background:linear-gradient(135deg,#fff5f0,#ffe8dd)}.pain-card.pc2{background:linear-gradient(135deg,#fff8e8,#ffefc4)}.pain-top{display:flex;align-items:center;gap:12px;margin-bottom:14px}.pain-icon{font-size:32px}.pain-h{font-size:17px;font-weight:900;color:var(--br)}.pain-p{font-size:14px;color:var(--brm);line-height:1.7}.pain-arrow{position:absolute;right:20px;bottom:20px;font-size:28px;opacity:.15}
+/* Dual value */
+.dual-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.dual-card{border-radius:var(--r2);overflow:hidden;box-shadow:var(--s2)}.dual-head{padding:20px 24px;display:flex;align-items:center;gap:14px}.dual-head.seller{background:linear-gradient(135deg,var(--og),var(--ogd))}.dual-head.kol{background:linear-gradient(135deg,var(--yw),#e8a800)}.dual-avatar{width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;font-size:24px}.dual-ht{font-size:17px;font-weight:900;color:#fff}.dual-hs{font-size:12px;color:rgba(255,255,255,.8)}.dual-body{background:#fff;padding:20px 24px}.dual-item{display:flex;align-items:flex-start;gap:10px;padding:9px 0;border-bottom:1px solid rgba(45,27,14,.06)}.dual-item:last-child{border-bottom:none}.dual-chk{width:20px;height:20px;flex-shrink:0;border-radius:50%;background:rgba(46,204,113,.15);display:flex;align-items:center;justify-content:center;margin-top:1px;font-size:11px}.dual-t{font-size:14px;color:var(--brm);line-height:1.55;font-weight:600}
+/* Features */
+.feat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.feat-card{background:#fff;border:1px solid rgba(45,27,14,.07);border-radius:var(--r2);padding:24px;text-align:center;box-shadow:var(--s1);transition:all .3s}.feat-card:hover{transform:translateY(-6px);box-shadow:var(--s2)}.feat-char{height:80px;width:auto;margin:0 auto 12px}.feat-h{font-size:15px;font-weight:900;color:var(--br);margin-bottom:6px}.feat-p{font-size:13px;color:var(--gy);line-height:1.6}
+/* Cases */
+.case-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.case-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--r2);padding:28px;transition:all .3s}.case-card:hover{background:rgba(255,255,255,.1);border-color:rgba(255,200,69,.3)}.case-tag{display:inline-flex;padding:4px 12px;border-radius:var(--rf);font-size:11px;font-weight:800;background:rgba(255,200,69,.2);color:var(--yw);margin-bottom:14px}.case-metric{font-size:40px;font-weight:900;color:var(--yw);line-height:1;margin-bottom:6px}.case-label{font-size:13px;color:rgba(255,248,237,.5);margin-bottom:14px}.case-desc{font-size:14px;color:rgba(255,248,237,.75);line-height:1.65}
+/* KOL gallery */
+.kol-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.kol-card{border-radius:var(--r2);overflow:hidden;background:#fff;box-shadow:var(--s1);transition:all .3s;position:relative}.kol-card:hover{transform:translateY(-6px);box-shadow:var(--s2)}.kol-img{width:100%;aspect-ratio:3/4;object-fit:cover}.kol-name{padding:10px 14px;font-size:13px;font-weight:800;color:var(--br)}.kol-cat{padding:0 14px 12px;font-size:11px;color:var(--brl)}
+/* CTA */
+.cta-sec{background:var(--cr,#FFF8ED);padding:80px 20px;text-align:center}.cta-sec h2{font-size:clamp(26px,3.5vw,44px);font-weight:900;color:#29250F;margin-bottom:8px}.cta-sub{font-size:16px;color:rgba(41,37,15,.7);margin-bottom:32px}.cta-btns{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}.cta-btns .btn-bdr{border-color:rgba(255,255,255,.35);color:rgba(255,255,255,.85)}.cta-btns .btn-bdr:hover{background:rgba(255,255,255,.1);color:#fff}
+/* Footer */
+footer{background:#FFF8ED;padding:48px 20px 20px}.foot-in{max-width:1200px;margin:0 auto}.foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;margin-bottom:36px}.foot-logo{display:flex;align-items:center;gap:10px;margin-bottom:14px}.foot-logo img{width:40px;height:40px;object-fit:contain}.foot-bname{font-size:17px;font-weight:900;color:var(--og)}.foot-desc{font-size:13px;line-height:1.7;color:rgba(41,37,15,.6);margin-bottom:16px}.fsoc{display:flex;gap:10px}.fsoc a{width:34px;height:34px;border-radius:9px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;transition:all .2s;color:rgba(41,37,15,.7)}.fsoc a:hover{background:var(--og);color:#fff}.fsoc [data-lucide]{width:16px;height:16px}.foot-ct{font-size:13px;font-weight:800;color:var(--og);text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px}.foot-lks{list-style:none;display:flex;flex-direction:column;gap:8px}.foot-lks a{font-size:13px;color:rgba(41,37,15,.65);transition:color .2s}.foot-lks a:hover{color:var(--og)}.foot-bot{border-top:1px solid rgba(220,165,74,.2);padding-top:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}.tabnum{font-variant-numeric:tabular-nums}.foot-copy{font-size:12px;color:rgba(41,37,15,.4)}.foot-copy span{color:rgba(41,37,15,.6)}
+/* Float CTA */
+.float-cta{position:fixed;right:20px;bottom:24px;display:flex;flex-direction:column;gap:10px;z-index:100}.fb{display:flex;align-items:center;gap:8px;padding:12px 18px;border-radius:var(--rf);font-size:14px;font-weight:800;color:#fff;box-shadow:var(--s3);transition:all .25s;position:relative}.fb-ln{background:var(--lg)}.fb-ph{background:var(--og)}.fb-pulse{position:absolute;top:-4px;right:-4px;width:12px;height:12px;border-radius:50%;background:var(--yw);border:2px solid #fff;animation:pulse 2s ease-out infinite}.fb [data-lucide]{width:16px;height:16px}.mob-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:100;background:#fff;border-top:1px solid var(--crd);padding:10px 16px 14px}.mob-row{display:flex;gap:10px}.mb-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:13px;border-radius:var(--rf);font-size:14px;font-weight:800;color:#fff}.mb-ln{background:var(--lg)}.mb-ev{background:var(--og)}.mb-btn [data-lucide]{width:16px;height:16px}
+@media(max-width:1024px){.hero-in{grid-template-columns:1fr;text-align:center}.hbtns{justify-content:center}.feat-grid{grid-template-columns:1fr 1fr}.kol-grid{grid-template-columns:repeat(3,1fr)}.foot-top{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){.nav-links{display:none}.ham{display:flex}.float-cta{display:none}.mob-bar{display:block}.pain-grid{grid-template-columns:1fr}.dual-grid{grid-template-columns:1fr}.case-grid{grid-template-columns:1fr}.kol-grid{grid-template-columns:1fr 1fr}.foot-top{grid-template-columns:1fr}}
+@media(max-width:480px){.kol-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<nav class="nav" id="nav">
+<div class="nav-in">
+  <a href="/" class="logo"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo.png" alt="咻咻打包"><div><div class="logo-name">咻咻打包</div><div class="logo-en">ShooShoo Packing</div></div></a>
+  <ul class="nav-links">
+    <li class="has-drop"><a href="/about/">關於我們 ▾</a><div class="dropdown"><a href="/about/"><i data-lucide="building-2"></i>關於咻咻打包</a><a href="/join/"><i data-lucide="user-plus"></i>人才招募</a></div></li>
+    <li class="has-drop"><a href="/flow/">倉儲服務 ▾</a><div class="dropdown"><a href="/flow/"><i data-lucide="workflow"></i>倉儲服務流程</a><a href="/wms/"><i data-lucide="monitor"></i>WMS 系統</a><a href="/api/"><i data-lucide="link-2"></i>API 串接</a></div></li>
+    <li><a href="/custom-boxes-tainan/">紙箱訂製</a></li>
+    <li><a href="/influencer/">網紅合作</a></li>
+    <li><a href="/consult/" class="nav-cta">免費諮詢 →</a></li>
+  </ul>
+  <button class="ham" id="hamBtn" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+</div>
+</nav>
+<div class="mmenu" id="mmenu">
+  <a href="/about/" onclick="toggleMenu()">關於咻咻打包</a><a href="/flow/" onclick="toggleMenu()">倉儲服務流程</a><a href="/wms/" onclick="toggleMenu()">WMS 系統</a><a href="/custom-boxes-tainan/" onclick="toggleMenu()">紙箱訂製</a>
+  <a href="/influencer/" onclick="toggleMenu()">網紅合作</a>
+  <a href="/consult/" class="mc" onclick="toggleMenu()">免費諮詢</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-in">
+    <div>
+      <div class="badge-live"><span class="bdot"><span class="bdot-c"></span><span class="bdot-r"></span></span>KOL / KOC 一站帶貨服務</div>
+      <h1 class="htitle">出貨包貨<br><span class="hl">「咻！就搞定」</span></h1>
+      <p class="hsub">商品放進咻咻打包倉庫後，我們幫你媒合適合的網紅，爆單時自動拋單、揀貨、包裝、出貨——讓你專心做品牌，後勤全包辦。</p>
+      <div class="hbtns">
+        <a href="https://lin.ee/L9HtuyF" target="_blank" class="btn btn-lg"><i data-lucide="message-circle"></i>馬上諮詢</a>
+        <a href="/consult/" class="btn btn-og"><i data-lucide="clipboard-check"></i>免費諮詢倉儲 + 網紅方案</a>
+      </div>
+    </div>
+    <div class="hero-chars">
+      <img class="hc hc1" src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/shooshoo-char-admin-cat.png" alt="行政喵喵">
+      <img class="hc hc2" src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/shooshoo-char-tape.png" alt="咚咚膠帶">
+    </div>
+  </div>
+</section>
+
+<div class="mqbar"><div class="mqtrack">
+  <div class="mqi"><span class="mq-star">★</span>KOL 媒合<span class="mq-sep">◆</span></div><div class="mqi"><span class="mq-star">★</span>爆單不怕<span class="mq-sep">◆</span></div><div class="mqi"><span class="mq-star">★</span>自動拋單<span class="mq-sep">◆</span></div><div class="mqi"><span class="mq-star">★</span>品牌禮盒設計<span class="mq-sep">◆</span></div><div class="mqi"><span class="mq-star">★</span>網紅免跑超商<span class="mq-sep">◆</span></div><div class="mqi"><span class="mq-star">★</span>咻咻打包一站搞定<span class="mq-sep">◆</span></div>
+  <div class="mqi"><span class="mq-star">★</span>KOL 媒合<span class="mq-sep">◆</span></div><div class="mqi"><span class="mq-star">★</span>爆單不怕<span class="mq-sep">◆</span></div><div class="mqi"><span class="mq-star">★</span>自動拋單<span class="mq-sep">◆</span></div><div class="mqi"><span class="mq-star">★</span>品牌禮盒設計<span class="mq-sep">◆</span></div><div class="mqi"><span class="mq-star">★</span>網紅免跑超商<span class="mq-sep">◆</span></div><div class="mqi"><span class="mq-star">★</span>咻咻打包一站搞定<span class="mq-sep">◆</span></div>
+</div></div>
+
+<!-- 問題診斷 -->
+<section class="sec sbg-w">
+  <div class="sec-in">
+    <div class="sec-hd">
+      <div class="slbl">你是否也遇到這些問題</div>
+      <h2 class="stitle">行銷前後<span class="oc">兩種痛苦</span></h2>
+      <p class="sdesc">不管是賣貨的賣家，還是做內容的網紅，都有同一個困境——後勤跟不上。</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card pc1">
+        <div class="pain-arrow">😰</div>
+        <div class="pain-top"><div class="pain-icon">📉</div><div class="pain-h">行銷不夠，訂單稀稀落落</div></div>
+        <p class="pain-p">商品已上架但沒人推廣，流量少、轉換低，不知道要找哪種網紅、找了又怕踩雷、成效難以追蹤。</p>
+      </div>
+      <div class="pain-card pc2">
+        <div class="pain-arrow">😵</div>
+        <div class="pain-top"><div class="pain-icon">📦</div><div class="pain-h">爆單之後，包貨包到懷疑人生</div></div>
+        <p class="pain-p">網紅一推，訂單瞬間湧入。一個人在家打包、跑超商、回客服——根本忙不過來，還出包。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 雙向價值 -->
+<section class="sec sbg-cr">
+  <div class="sec-in">
+    <div class="sec-hd">
+      <div class="slbl">咻咻打包雙向解決</div>
+      <h2 class="stitle">賣家 + 網紅<span class="oc">都受益</span></h2>
+      <p class="sdesc">不管你是品牌賣家還是 KOL/KOC，咻咻打包都有對應的服務方案。</p>
+    </div>
+    <div class="dual-grid">
+      <div class="dual-card">
+        <div class="dual-head seller"><div class="dual-avatar">🏪</div><div><div class="dual-ht">給品牌賣家</div><div class="dual-hs">讓你專心賣貨，後勤全包辦</div></div></div>
+        <div class="dual-body">
+          <div class="dual-item"><div class="dual-chk">✅</div><div class="dual-t">精準 KOL 媒合庫，免去自己尋找網紅的時間與試錯成本</div></div>
+          <div class="dual-item"><div class="dual-chk">✅</div><div class="dual-t">爆單時自動拋單、揀貨、包裝、出貨，零人力壓力</div></div>
+          <div class="dual-item"><div class="dual-chk">✅</div><div class="dual-t">消除庫存積壓壓力，按需出貨不囤貨</div></div>
+          <div class="dual-item"><div class="dual-chk">✅</div><div class="dual-t">專心品牌營運與商品開發，其餘交給咻咻</div></div>
+        </div>
+      </div>
+      <div class="dual-card">
+        <div class="dual-head kol"><div class="dual-avatar">🎥</div><div><div class="dual-ht" style="color:var(--br)">給網紅 / KOL / KOC</div><div class="dual-hs" style="color:rgba(45,27,14,.7)">免囤貨免跑超商，專心做內容</div></div></div>
+        <div class="dual-body">
+          <div class="dual-item"><div class="dual-chk">✅</div><div class="dual-t">嚴選優質商品庫，快速申請試用品，輕鬆找好物推薦</div></div>
+          <div class="dual-item"><div class="dual-chk">✅</div><div class="dual-t">免囤貨、免包裝、免跑超商寄件，後勤全由倉庫代勞</div></div>
+          <div class="dual-item"><div class="dual-chk">✅</div><div class="dual-t">出貨速度快、包裝精緻，大幅提升客戶滿意度和開箱分享率</div></div>
+          <div class="dual-item"><div class="dual-chk">✅</div><div class="dual-t">品牌禮盒、客製包裝加持，讓開箱影片更有質感</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 功能特色 -->
+<div class="sbg-dk">
+  <div class="sec-in">
+    <div class="sec-hd">
+      <div class="slbl">四大核心功能</div>
+      <h2 class="stitle">讓網紅帶貨<span class="oc">更完整</span></h2>
+    </div>
+    <div class="feat-grid">
+      <div class="feat-card">
+        <img class="feat-char" src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/shooshoo-char-admin-cat.png" alt="行政喵喵">
+        <div class="feat-h">WMS 智慧庫存</div>
+        <p class="feat-p">即時庫存監控，多平台訂單自動同步，爆單也不混亂</p>
+      </div>
+      <div class="feat-card">
+        <img class="feat-char" src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/shooshoo-char-pick-cat.png" alt="揀貨喵喵">
+        <div class="feat-h">在地高效團隊</div>
+        <p class="feat-p">台南在地倉庫，接單 24 小時出貨，旺季不掉速</p>
+      </div>
+      <div class="feat-card">
+        <img class="feat-char" src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/shooshoo-char-tape.png" alt="咚咚膠帶">
+        <div class="feat-h">品牌 IP 包裝</div>
+        <p class="feat-p">客製化禮盒與特製包裝，讓開箱影片更有品牌感</p>
+      </div>
+      <div class="feat-card">
+        <img class="feat-char" src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/shooshoo-char-merchant.png" alt="電商老闆">
+        <div class="feat-h">KOL 精準媒合</div>
+        <p class="feat-p">依品牌定位與受眾推薦適合的 KOL，降低試錯成本</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 合作 KOL -->
+<section class="sec sbg-w">
+  <div class="sec-in">
+    <div class="sec-hd">
+      <div class="slbl">合作案例</div>
+      <h2 class="stitle">他們都選擇<span class="oc">咻咻打包</span></h2>
+      <p class="sdesc">從藝人、歌手到部落客，多種類型的 KOL 都與咻咻打包合作過</p>
+    </div>
+    <div class="kol-grid">
+      <div class="kol-card"><img class="kol-img" src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/八點檔演員-陳詩縈.jpg" alt="八點檔演員 陳詩縈"><div class="kol-name">陳詩縈</div><div class="kol-cat">八點檔演員</div></div>
+      <div class="kol-card"><img class="kol-img" src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/台語歌手余曼曼.jpg" alt="台語歌手 余曼曼"><div class="kol-name">余曼曼</div><div class="kol-cat">台語歌手</div></div>
+      <div class="kol-card"><img class="kol-img" src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/兒童服飾品牌-品艾Abby推薦.jpg" alt="兒童服飾 品艾Abby"><div class="kol-name">品艾 Abby</div><div class="kol-cat">兒童服飾品牌</div></div>
+      <div class="kol-card"><img class="kol-img" src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/寵物用品廠商-糖糖.jpg" alt="寵物用品 糖糖"><div class="kol-name">糖糖</div><div class="kol-cat">寵物用品廠商</div></div>
+      <div class="kol-card"><img class="kol-img" src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/直播主團主-推薦-菟爺.jpg" alt="直播主 菟爺"><div class="kol-name">菟爺</div><div class="kol-cat">直播主・團主</div></div>
+      <div class="kol-card"><img class="kol-img" src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/美食團主推薦-謝子芯.jpg" alt="美食團主 謝子芯"><div class="kol-name">謝子芯</div><div class="kol-cat">美食團主</div></div>
+      <div class="kol-card"><img class="kol-img" src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/親子部落客-金貝貝推薦.jpg" alt="親子部落客 金貝貝"><div class="kol-name">金貝貝</div><div class="kol-cat">親子部落客</div></div>
+      <div class="kol-card" style="background:linear-gradient(135deg,var(--cr),var(--crd));display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;min-height:200px">
+        <div><div style="font-size:36px;margin-bottom:12px">🤝</div><div style="font-size:14px;font-weight:800;color:var(--br);margin-bottom:8px">我是網紅<br>想找好物</div><a href="https://lin.ee/L9HtuyF" target="_blank" style="display:inline-flex;align-items:center;gap:6px;background:var(--og);color:#fff;padding:9px 16px;border-radius:var(--rf);font-size:13px;font-weight:800;margin-top:8px"><i data-lucide="message-circle"></i>聯繫我們</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 案例數字 -->
+<div class="sbg-dk">
+  <div class="sec-in">
+    <div class="sec-hd">
+      <div class="slbl">成效數據</div>
+      <h2 class="stitle">真實案例<span class="oc">真實成效</span></h2>
+    </div>
+    <div class="case-grid">
+      <div class="case-card">
+        <div class="case-tag">飾品品牌</div>
+        <div class="case-metric">+35%</div>
+        <div class="case-label">ROAS 廣告投資報酬率提升</div>
+        <p class="case-desc">媒合 5 位精準微網紅後，品牌聲量提升，同一廣告預算帶來更高轉換，ROAS 從基準值提升 35%。</p>
+      </div>
+      <div class="case-card">
+        <div class="case-tag">居家用品</div>
+        <div class="case-metric">4x</div>
+        <div class="case-label">月出貨量成長</div>
+        <p class="case-desc">透過 KOL 帶貨搭配咻咻打包自動出貨，月出貨量從 500 單增長至 2,000 單，品牌主完全不需要自己打包。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<section class="cta-sec">
+  <div class="sec-in">
+    <h2>準備好讓後勤咻一下了嗎？</h2>
+    <p class="cta-sub">不管你是品牌賣家還是網紅，都歡迎聯繫咻咻打包討論合作方式</p>
+    <div class="cta-btns">
+      <a href="https://lin.ee/L9HtuyF" target="_blank" class="btn btn-lg"><i data-lucide="message-circle"></i>馬上諮詢</a>
+      <a href="/consult/" class="btn btn-og"><i data-lucide="clipboard-check"></i>填寫諮詢表單</a>
+      <a href="https://lin.ee/L9HtuyF" target="_blank" class="btn btn-bdr"><i data-lucide="star"></i>我是網紅，我想找好物</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="foot-in"><div class="foot-top"><div><div class="foot-logo"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo.png" alt="咻咻打包"><div class="foot-bname">咻咻打包</div></div><p class="foot-desc">台南在地三方倉儲首選。讓老闆專心賣貨，出貨交給咻咻打包。</p><div class="fsoc"><a href="#"><i data-lucide="facebook"></i></a><a href="#"><i data-lucide="instagram"></i></a><a href="https://lin.ee/L9HtuyF" target="_blank"><i data-lucide="message-circle"></i></a></div></div><div><div class="foot-ct">倉儲服務</div><ul class="foot-lks"><li><a href="/flow/">倉儲服務流程</a></li><li><a href="/wms/">WMS 系統</a></li><li><a href="/api/">API 串接</a></li></ul></div><div><div class="foot-ct">更多</div><ul class="foot-lks"><li><a href="/about/">關於我們</a></li><li><a href="/influencer/">網紅合作</a></li><li><a href="/custom-boxes-tainan/">紙箱訂製</a></li></ul></div><div><div class="foot-ct">聯絡我們</div><ul class="foot-lks"><li><a href="tel:0976757866">0976-757866</a></li><li><a href="https://lin.ee/L9HtuyF" target="_blank">LINE @911ycmhl</a></li><li><a href="mailto:shooshoopacking@gmail.com">shooshoopacking@gmail.com</a></li></ul></div></div><div class="foot-bot"><div class="foot-copy">© 2026 <span>咻咻打包 ShooShoo Packing</span>．翰鮮運營企業有限公司</div></div></div></footer>
+<div class="float-cta"><a href="https://lin.ee/L9HtuyF" target="_blank" class="fb fb-ln"><div class="fb-pulse"></div><i data-lucide="message-circle"></i>LINE 諮詢</a><a href="tel:0976757866" class="fb fb-ph"><i data-lucide="phone"></i>0976-757866</a></div>
+<div class="mob-bar"><div class="mob-row"><a href="https://lin.ee/L9HtuyF" target="_blank" class="mb-btn mb-ln"><i data-lucide="message-circle"></i>LINE 諮詢</a><a href="/consult/" class="mb-btn mb-ev"><i data-lucide="clipboard-check"></i>免費諮詢</a></div></div>
+
+<script>
+const nav=document.getElementById('nav');window.addEventListener('scroll',()=>nav.classList.toggle('sc',scrollY>20));
+function toggleMenu(){document.getElementById('mmenu').classList.toggle('open')}
+document.addEventListener('click',e=>{const m=document.getElementById('mmenu'),b=document.getElementById('hamBtn');if(m&&b&&!m.contains(e.target)&&!b.contains(e.target))m.classList.remove('open');});
+if(typeof lucide!=='undefined')lucide.createIcons();
+if(typeof gsap!=='undefined'){
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.set(['.badge-live','h1.htitle','.hsub','.hbtns','.hbtns .btn','.hero-chars'],{autoAlpha:0});
+  gsap.timeline({defaults:{ease:'power3.out'}})
+    .fromTo('.badge-live',{autoAlpha:0,y:-18},{autoAlpha:1,y:0,duration:.5,ease:'back.out(2)'},0)
+    .fromTo('h1.htitle',{autoAlpha:0,y:32},{autoAlpha:1,y:0,duration:.7},'.2')
+    .fromTo('.hsub',{autoAlpha:0,y:22},{autoAlpha:1,y:0,duration:.55},'.45')
+    .set('.hbtns',{autoAlpha:1},'.7')
+    .fromTo('.hbtns .btn',{autoAlpha:0,y:18},{autoAlpha:1,y:0,stagger:.1,duration:.45,ease:'back.out(1.5)'},'.7')
+    .fromTo('.hero-chars',{autoAlpha:0,x:48},{autoAlpha:1,x:0,duration:1,ease:'power2.out'},'.15');
+  gsap.utils.toArray('.sec-hd').forEach(hd=>{gsap.fromTo(hd.querySelectorAll('.slbl,.stitle,.sdesc'),{opacity:0,y:22},{opacity:1,y:0,duration:.55,stagger:.1,ease:'power2.out',scrollTrigger:{trigger:hd,start:'top 88%',once:true}});});
+  gsap.fromTo('.pain-card',{opacity:0,y:40,scale:.94},{opacity:1,y:0,scale:1,duration:.55,stagger:.15,ease:'back.out(1.5)',scrollTrigger:{trigger:'.pain-grid',start:'top 82%',once:true}});
+  gsap.fromTo('.dual-card',{opacity:0,y:40},{opacity:1,y:0,duration:.6,stagger:.15,ease:'power3.out',scrollTrigger:{trigger:'.dual-grid',start:'top 82%',once:true}});
+  gsap.fromTo('.feat-card',{opacity:0,y:28,scale:.9},{opacity:1,y:0,scale:1,duration:.45,stagger:.08,ease:'back.out(1.5)',scrollTrigger:{trigger:'.feat-grid',start:'top 82%',once:true}});
+  gsap.fromTo('.kol-card',{opacity:0,y:24,scale:.92},{opacity:1,y:0,scale:1,duration:.4,stagger:.06,ease:'back.out(1.5)',scrollTrigger:{trigger:'.kol-grid',start:'top 82%',once:true}});
+  gsap.fromTo('.case-card',{opacity:0,x:-32},{opacity:1,x:0,duration:.55,stagger:.15,ease:'power3.out',scrollTrigger:{trigger:'.case-grid',start:'top 82%',once:true}});
+}
+</script>
+</body>
+</html>
+
+
+
+

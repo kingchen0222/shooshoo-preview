@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>電商倉儲 API 串接・20+ 平台庫存同步｜咻咻打包</title>
+<meta name="description" content="咻咻打包支援蝦皮、MOMO、PChome、Shopify 等 20+ 電商平台 API 串接。訂單自動流轉、庫存即時同步，徹底告別超賣與手動比對的地獄。">
+<meta property="og:title" content="電商倉儲 API 串接｜20+ 平台庫存同步・咻咻打包">
+<meta property="og:url" content="https://www.shooshoo.com.tw/api/">
+<link rel="canonical" href="https://www.shooshoo.com.tw/api/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+<style>
+:root{--cr:#FFF8ED;--crl:#FFFCF5;--crd:#FFE9C8;--og:#DCA54A;--ogd:#B8852E;--yw:#FFC845;--br:#2D1B0E;--brm:#5C3D1E;--brl:#9B7250;--gy:#6B7280;--wh:#FFFFFF;--gn:#2ECC71;--lg:#06C755;--s1:0 2px 8px rgba(45,27,14,.08);--s2:0 6px 24px rgba(45,27,14,.12);--s3:0 12px 48px rgba(45,27,14,.16);--r1:12px;--r2:20px;--r3:32px;--rf:9999px}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:'Noto Sans TC',-apple-system,sans-serif;background:var(--crl);color:var(--br);overflow-x:hidden;text-rendering:optimizeLegibility;font-feature-settings:"kern" 1}a{text-decoration:none;color:inherit}img{display:block;max-width:100%}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}@keyframes pulse{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.8);opacity:0}}@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,252,245,.93);backdrop-filter:blur(16px);border-bottom:1px solid rgba(45,27,14,.06)}.nav-in{max-width:1200px;margin:0 auto;padding:0 20px;height:72px;display:flex;align-items:center;justify-content:space-between;gap:8px}.logo{display:flex;align-items:center;gap:12px;flex-shrink:0}.logo img{width:48px;height:48px;object-fit:contain}.logo-name{font-size:20px;font-weight:900;color:var(--og)}.logo-en{font-size:11px;color:var(--brl)}.nav-links{display:flex;align-items:center;gap:2px;list-style:none}.nav-links a{padding:7px 12px;border-radius:var(--r1);font-size:15px;font-weight:600;color:var(--brm);transition:all .2s;white-space:nowrap}.nav-links a:hover{color:var(--og)}.nav-links .has-drop{position:relative}.nav-links .has-drop:hover .dropdown{display:block}.dropdown{display:none;position:absolute;top:calc(100% + 8px);left:0;background:#fff;border:1px solid rgba(45,27,14,.08);border-radius:var(--r2);padding:8px;min-width:200px;box-shadow:var(--s3);z-index:10}.dropdown a{display:flex;align-items:center;gap:8px;padding:9px 12px;border-radius:var(--r1);font-size:13px;color:var(--brm);transition:all .2s}.dropdown a:hover{background:var(--cr);color:var(--og)}.nav-cta{background:var(--og)!important;color:#fff!important;border-radius:var(--rf)!important;padding:8px 18px!important;font-weight:800!important}.ham{display:none;flex-direction:column;gap:5px;padding:8px;background:var(--crd);border-radius:8px;border:none;cursor:pointer}.ham span{display:block;width:20px;height:2px;background:var(--br);border-radius:3px}.mmenu{display:none;position:fixed;top:72px;left:0;right:0;z-index:199;background:rgba(255,252,245,.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--crd);padding:12px 20px 20px;flex-direction:column;gap:3px}.mmenu.open{display:flex}.mmenu a{padding:11px 14px;border-radius:var(--r1);font-size:15px;font-weight:600;color:var(--brm)}.mmenu .mc{background:var(--og);color:#fff!important;text-align:center;border-radius:var(--rf)!important;margin-top:6px;font-weight:800!important}
+.hero{min-height:80vh;padding:100px 20px 80px;background:var(--cr);background-image:radial-gradient(ellipse at 80% 20%,rgba(255,107,53,.12) 0%,transparent 50%),radial-gradient(ellipse at 15% 85%,rgba(255,200,69,.15) 0%,transparent 55%);display:flex;align-items:center;position:relative;overflow:hidden}.hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,107,53,.07) 1.5px,transparent 1.5px);background-size:30px 30px;pointer-events:none}.hero-in{max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;position:relative;z-index:1}.badge-live{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1.5px solid var(--yw);border-radius:var(--rf);padding:6px 14px;font-size:12px;font-weight:700;color:var(--brm);margin-bottom:18px}.bdot{position:relative;width:8px;height:8px;flex-shrink:0}.bdot-c{position:absolute;inset:1px;background:var(--gn);border-radius:50%}.bdot-r{position:absolute;inset:0;border-radius:50%;border:2px solid var(--gn);animation:pulse 1.5s ease-out infinite}h1.htitle{font-size:clamp(30px,4.2vw,54px);font-weight:900;line-height:1.18;color:var(--br);margin-bottom:16px}.htitle .hl{color:var(--og);position:relative;display:inline-block}.htitle .hl::after{content:'';position:absolute;left:0;right:0;bottom:-3px;height:6px;background:var(--yw);border-radius:4px;opacity:.5;z-index:-1}.hsub{font-size:15px;color:var(--brm);line-height:1.75;margin-bottom:22px;text-wrap:pretty}.hbtns{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:26px}.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:var(--rf);font-size:15px;font-weight:800;border:none;cursor:pointer;transition:all .25s cubic-bezier(.34,1.56,.64,1)}.btn-lg{background:var(--lg);color:#fff}.btn-lg:hover{transform:translateY(-3px)}.btn-og{background:var(--og);color:#fff}.btn-og:hover{transform:translateY(-3px)}.htrust{display:flex;flex-wrap:wrap;gap:16px}.hti{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--brm)}.hti [data-lucide]{width:14px;height:14px;color:var(--og);stroke-width:2}
+.code-block{background:#1A1A2E;border-radius:var(--r2);padding:24px;font-family:'JetBrains Mono',monospace;font-size:13px;line-height:1.7;position:relative;border:1px solid rgba(255,200,69,.2)}.code-block::before{content:'';position:absolute;top:12px;left:14px;display:flex;gap:6px;width:52px;height:12px;background:linear-gradient(90deg,#ff5f56 0 14px,transparent 14px 20px,#ffbd2e 20px 34px,transparent 34px 40px,#27c93f 40px 54px)}.code-pre{margin-top:20px;padding-top:8px;white-space:pre-wrap;word-break:break-all}.c-k{color:#C678DD}.c-s{color:#98C379}.c-n{color:#E5C07B}.c-p{color:#ABB2BF}.c-c{color:#5C6370;font-style:italic}.cursor{display:inline-block;width:2px;height:14px;background:var(--og);vertical-align:text-bottom;animation:blink 1s ease-in-out infinite}
+.mqbar{background:#DCA54A;padding:12px 0;overflow:hidden}.mqtrack{display:flex;width:max-content;animation:marquee 28s linear infinite}.mqi{display:flex;align-items:center;gap:9px;padding:0 28px;color:rgba(41,37,15,.85);font-size:13px;font-weight:700;white-space:nowrap}.mq-star{color:var(--yw)}.mq-sep{color:var(--yw);opacity:.4;font-size:9px}
+.sec{padding:80px 20px}.sec-in{max-width:1200px;margin:0 auto}.sec-hd{text-align:center;margin-bottom:52px}.slbl{display:inline-flex;border-left:3px solid var(--og);padding:3px 0 3px 12px;font-size:11px;font-weight:800;color:var(--og);letter-spacing:.1em;text-transform:uppercase;margin-bottom:18px}h2.stitle{font-size:clamp(24px,3.2vw,40px);font-weight:900;color:var(--br);line-height:1.25;margin-bottom:12px}.stitle .oc{color:var(--og)}.sdesc{font-size:16px;color:var(--brm);max-width:560px;margin:0 auto;line-height:1.7;text-wrap:pretty}
+.sbg-w{background:#fff;padding:80px 20px}.sbg-cr{background:var(--cr)}.sbg-dk{background:var(--cr,#FFF8ED);padding:80px 20px}.sbg-dk .stitle{color:#29250F}.sbg-dk .slbl{border-left-color:var(--yw);color:var(--yw)}.sbg-dk .sdesc{color:rgba(41,37,15,.65)}
+.plat-grid{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;max-width:760px;margin:0 auto}.plat{display:inline-flex;align-items:center;gap:7px;padding:9px 16px;border-radius:var(--rf);background:#fff;border:1.5px solid rgba(45,27,14,.09);font-size:13px;font-weight:700;color:var(--brm);transition:all .22s;box-shadow:0 2px 8px rgba(45,27,14,.05)}.plat:hover{border-color:var(--og);color:var(--og);transform:scale(1.05)}.plat-badge{width:18px;height:18px;border-radius:4px;flex-shrink:0}
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.feat-card{background:#fff;border:1px solid rgba(45,27,14,.07);border-radius:var(--r2);padding:28px;box-shadow:0 2px 12px rgba(45,27,14,.05);transition:all .3s;position:relative;overflow:hidden}.feat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--og),var(--yw))}.feat-card:hover{transform:translateY(-7px);box-shadow:var(--s3)}.feat-icon{width:54px;height:54px;border-radius:14px;background:rgba(255,107,53,.08);display:flex;align-items:center;justify-content:center;color:var(--og);margin-bottom:16px}.feat-icon [data-lucide]{width:24px;height:24px;stroke-width:1.7}.feat-h{font-size:17px;font-weight:900;color:var(--br);margin-bottom:9px}.feat-p{font-size:14px;color:var(--gy);line-height:1.7;text-wrap:pretty}
+.flow-row{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}.flow-list{display:flex;flex-direction:column;gap:0}.flow-item{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid rgba(45,27,14,.07)}.flow-item:last-child{border-bottom:none}.flow-num{width:36px;height:36px;flex-shrink:0;border-radius:10px;background:var(--og);color:#fff;font-size:16px;font-weight:900;display:flex;align-items:center;justify-content:center}.flow-h{font-size:15px;font-weight:800;color:var(--br);margin-bottom:4px}.flow-p{font-size:13px;color:var(--gy);line-height:1.6}
+.cta-sec{background:var(--cr,#FFF8ED);padding:80px 20px;text-align:center}.cta-sec h2{font-size:clamp(26px,3.5vw,44px);font-weight:900;color:#29250F;margin-bottom:14px}.cta-sec p{font-size:16px;color:rgba(41,37,15,.65);margin-bottom:36px}.cta-btns{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+footer{background:#FFF8ED;padding:48px 20px 20px}.foot-in{max-width:1200px;margin:0 auto}.foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;margin-bottom:36px}.foot-logo{display:flex;align-items:center;gap:10px;margin-bottom:14px}.foot-logo img{width:40px;height:40px;object-fit:contain}.foot-bname{font-size:17px;font-weight:900;color:var(--og)}.foot-desc{font-size:13px;line-height:1.7;color:rgba(41,37,15,.6);margin-bottom:16px}.fsoc{display:flex;gap:10px}.fsoc a{width:34px;height:34px;border-radius:9px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;transition:all .2s;color:rgba(41,37,15,.7)}.fsoc a:hover{background:var(--og);color:#fff}.fsoc [data-lucide]{width:16px;height:16px}.foot-ct{font-size:13px;font-weight:800;color:var(--og);text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px}.foot-lks{list-style:none;display:flex;flex-direction:column;gap:8px}.foot-lks a{font-size:13px;color:rgba(41,37,15,.65);transition:color .2s}.foot-lks a:hover{color:var(--og)}.foot-bot{border-top:1px solid rgba(220,165,74,.2);padding-top:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}.tabnum{font-variant-numeric:tabular-nums}.foot-copy{font-size:12px;color:rgba(41,37,15,.4)}.foot-copy span{color:rgba(41,37,15,.6)}
+.float-cta{position:fixed;right:20px;bottom:24px;display:flex;flex-direction:column;gap:10px;z-index:100}.fb{display:flex;align-items:center;gap:8px;padding:12px 18px;border-radius:var(--rf);font-size:14px;font-weight:800;color:#fff;box-shadow:var(--s3);transition:all .25s;position:relative}.fb-ln{background:var(--lg)}.fb-ph{background:var(--og)}.fb-pulse{position:absolute;top:-4px;right:-4px;width:12px;height:12px;border-radius:50%;background:var(--yw);border:2px solid #fff;animation:pulse 2s ease-out infinite}.fb [data-lucide]{width:16px;height:16px}.mob-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:100;background:#fff;border-top:1px solid var(--crd);padding:10px 16px 14px}.mob-row{display:flex;gap:10px}.mb-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:13px;border-radius:var(--rf);font-size:14px;font-weight:800;color:#fff}.mb-ln{background:var(--lg)}.mb-ev{background:var(--og)}.mb-btn [data-lucide]{width:16px;height:16px}
+@media(max-width:1024px){.hero-in{grid-template-columns:1fr;text-align:center}.hbtns,.htrust{justify-content:center}.feat-grid{grid-template-columns:1fr 1fr}.flow-row{grid-template-columns:1fr}.foot-top{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){.nav-links{display:none}.ham{display:flex}.float-cta{display:none}.mob-bar{display:block}.feat-grid{grid-template-columns:1fr}.foot-top{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav class="nav" id="nav">
+<div class="nav-in">
+  <a href="/" class="logo"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo.png" alt="咻咻打包"><div><div class="logo-name">咻咻打包</div><div class="logo-en">ShooShoo Packing</div></div></a>
+  <ul class="nav-links">
+    <li class="has-drop"><a href="/about/">關於我們 ▾</a><div class="dropdown"><a href="/about/"><i data-lucide="building-2"></i>關於咻咻打包</a><a href="/join/"><i data-lucide="user-plus"></i>人才招募</a></div></li>
+    <li class="has-drop"><a href="/flow/">倉儲服務 ▾</a><div class="dropdown"><a href="/flow/"><i data-lucide="workflow"></i>倉儲服務流程</a><a href="/wms/"><i data-lucide="monitor"></i>智慧 WMS 系統</a><a href="/international/"><i data-lucide="globe"></i>國際貿易代理</a><a href="/api/"><i data-lucide="link-2"></i>API 串接</a><a href="/global/"><i data-lucide="map"></i>全球發展</a><a href="/cooperate/"><i data-lucide="handshake"></i>廠商合作</a></div></li>
+    <li><a href="/custom-boxes-tainan/">紙箱訂製</a></li><li><a href="/influencer/">網紅合作</a></li><li><a href="/consult/" class="nav-cta">免費諮詢 →</a></li>
+  </ul>
+  <button class="ham" id="hamBtn" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+</div>
+</nav>
+<div class="mmenu" id="mmenu">
+  <a href="/about/" onclick="toggleMenu()">關於咻咻打包</a><a href="/flow/" onclick="toggleMenu()">倉儲服務流程</a><a href="/wms/" onclick="toggleMenu()">WMS 系統</a><a href="/api/" onclick="toggleMenu()">API 串接</a><a href="/custom-boxes-tainan/" onclick="toggleMenu()">紙箱訂製</a>
+  <a href="/consult/" class="mc" onclick="toggleMenu()">免費諮詢</a>
+</div>
+
+<section class="hero">
+  <div class="hero-in">
+    <div>
+      <div class="badge-live"><span class="bdot"><span class="bdot-c"></span><span class="bdot-r"></span></span>20+ 電商平台即時串接</div>
+      <h1 class="htitle">訂單<span class="hl">自動流轉</span><br>庫存即時同步</h1>
+      <p class="hsub">蝦皮賣一件、PChome 賣一件、MOMO 賣一件——庫存卻不會超賣。咻咻打包 API 串接讓所有平台的訂單與庫存自動同步，徹底解放你的人力。</p>
+      <div class="hbtns">
+        <a href="https://lin.ee/L9HtuyF" target="_blank" class="btn btn-lg"><i data-lucide="message-circle"></i>LINE 諮詢串接</a>
+        <a href="/consult/" class="btn btn-og"><i data-lucide="link-2"></i>申請 API 整合</a>
+      </div>
+      <div class="htrust">
+        <span class="hti"><i data-lucide="zap"></i>即時庫存同步</span>
+        <span class="hti"><i data-lucide="shield-check"></i>99.8% 準確率</span>
+        <span class="hti"><i data-lucide="layers"></i>多平台統一管理</span>
+      </div>
+    </div>
+    <div style="padding-top:20px">
+      <div class="code-block">
+        <pre class="code-pre"><span class="c-c">// 訂單自動同步示意</span>
+<span class="c-k">const</span> <span class="c-n">order</span> = <span class="c-k">await</span> shooshoo.<span class="c-n">sync</span>({
+  <span class="c-s">platform</span>: <span class="c-s">"shopee"</span>,
+  <span class="c-s">order_id</span>: <span class="c-s">"SHP-2026-001"</span>,
+  <span class="c-s">items</span>: [{ <span class="c-s">sku</span>: <span class="c-s">"PROD-A"</span>, <span class="c-s">qty</span>: 2 }]
+});
+
+<span class="c-c">// ✅ 庫存自動扣減</span>
+<span class="c-c">// ✅ 24h 出貨排程</span>
+<span class="c-c">// ✅ 物流單號回傳</span>
+<span class="c-p">{ status: </span><span class="c-s">"queued"</span><span class="c-p">, eta: </span><span class="c-s">"2026-06-28"</span><span class="c-p"> }<span class="cursor"></span></span></pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="mqbar"><div class="mqtrack">
+  <div class="mqi"><span class="mq-star">★</span>蝦皮 API<span class="mq-sep">◆</span></div><div class="mqi"><span class="mq-star">★</span>MOMO 串接<span class="mq-sep">◆</span></div><div class="mqi"><span class="mq-star">★</span>PChome 整合<span class="mq-sep">◆</span></div><div class="mqi"><span class="mq-star">★</span>Shopify 同步<span class="mq-sep">◆</span></div><div class="mqi"><span class="mq-star">★</span>庫存即時同步<span class="mq-sep">◆</span></div><div class="mqi"><span class="mq-star">★</span>訂單自動流轉<span class="mq-sep">◆</span></div><div class="mqi"><span class="mq-star">★</span>多平台統一<span class="mq-sep">◆</span></div>
+  <div class="mqi"><span class="mq-star">★</span>蝦皮 API<span class="mq-sep">◆</span></div><div class="mqi"><span class="mq-star">★</span>MOMO 串接<span class="mq-sep">◆</span></div><div class="mqi"><span class="mq-star">★</span>PChome 整合<span class="mq-sep">◆</span></div><div class="mqi"><span class="mq-star">★</span>Shopify 同步<span class="mq-sep">◆</span></div><div class="mqi"><span class="mq-star">★</span>庫存即時同步<span class="mq-sep">◆</span></div><div class="mqi"><span class="mq-star">★</span>訂單自動流轉<span class="mq-sep">◆</span></div><div class="mqi"><span class="mq-star">★</span>多平台統一<span class="mq-sep">◆</span></div>
+</div></div>
+
+<!-- 平台 -->
+<section class="sec sbg-cr">
+  <div class="sec-in">
+    <div class="sec-hd">
+      <div class="slbl">已支援平台</div>
+      <h2 class="stitle">20+ 電商平台<span class="oc">全都串</span></h2>
+      <p class="sdesc">台灣主流、國際平台、自有網站通通整合，一個後台管所有庫存。</p>
+    </div>
+    <div class="plat-grid">
+      <span class="plat">🛒 蝦皮購物</span><span class="plat">📱 MOMO 購物</span><span class="plat">💻 PChome 24h</span><span class="plat">🏪 樂天市場</span><span class="plat">🌐 Shopify</span><span class="plat">📦 Yahoo 購物</span><span class="plat">🛍 博客來</span><span class="plat">💄 美妝電商</span><span class="plat">🏠 家樂福網路</span><span class="plat">📲 LINE 購物</span><span class="plat">🌏 蝦皮東南亞</span><span class="plat">✈ 跨境電商</span><span class="plat">🔌 WooCommerce</span><span class="plat">📊 自建系統</span><span class="plat">＋ 更多持續新增</span>
+    </div>
+  </div>
+</section>
+
+<!-- 核心功能 -->
+<section class="sec sbg-w">
+  <div class="sec-in">
+    <div class="sec-hd">
+      <div class="slbl">核心功能</div>
+      <h2 class="stitle">API 串接帶來的<span class="oc">三大改變</span></h2>
+    </div>
+    <div class="feat-grid">
+      <div class="feat-card"><div class="feat-icon"><i data-lucide="layers"></i></div><div class="feat-h">多平台庫存即時同步</div><p class="feat-p">所有銷售平台共用同一個庫存池，任何平台成交立即扣減，徹底告別超賣與手動比對的惡夢。</p></div>
+      <div class="feat-card"><div class="feat-icon"><i data-lucide="zap"></i></div><div class="feat-h">訂單自動排程出貨</div><p class="feat-p">訂單進來自動排入出貨佇列，不需要人工輸入，出貨速度快、出錯率趨近於零。</p></div>
+      <div class="feat-card"><div class="feat-icon"><i data-lucide="bar-chart-2"></i></div><div class="feat-h">銷售數據即時回報</div><p class="feat-p">各平台銷售量、庫存餘量、出貨狀態一目了然，讓你隨時掌握補貨時機，不缺貨不呆料。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 整合流程 -->
+<div class="sbg-dk">
+  <div class="sec-in">
+    <div class="sec-hd">
+      <div class="slbl">整合流程</div>
+      <h2 class="stitle">三天完成<span class="oc">全平台串接</span></h2>
+    </div>
+    <div class="flow-row">
+      <div class="flow-list">
+        <div class="flow-item"><div class="flow-num">1</div><div><div class="flow-h" style="color:#29250F">需求確認</div><p class="flow-p" style="color:rgba(41,37,15,.6)">告知目前在哪些平台銷售、哪些需要串接</p></div></div>
+        <div class="flow-item"><div class="flow-num">2</div><div><div class="flow-h" style="color:#29250F">API 授權設定</div><p class="flow-p" style="color:rgba(41,37,15,.6)">在各平台後台授權咻咻打包取得 API 存取</p></div></div>
+        <div class="flow-item"><div class="flow-num">3</div><div><div class="flow-h" style="color:#29250F">SKU 對應設定</div><p class="flow-p" style="color:rgba(41,37,15,.6)">確認各平台商品 SKU 對應關係，建立庫存池</p></div></div>
+        <div class="flow-item"><div class="flow-num">4</div><div><div class="flow-h" style="color:#29250F">測試驗收</div><p class="flow-p" style="color:rgba(41,37,15,.6)">模擬訂單測試庫存扣減與出貨流程，確認正確</p></div></div>
+        <div class="flow-item"><div class="flow-num">5</div><div><div class="flow-h" style="color:#29250F">正式上線</div><p class="flow-p" style="color:rgba(41,37,15,.6)">系統全面運作，全通路訂單自動流入咻咻後台</p></div></div>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:center">
+        <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/shooshoo-char-admin-cat.png" alt="行政喵喵" style="height:220px;width:auto;filter:drop-shadow(0 16px 32px rgba(45,27,14,.18));animation:float 4s ease-in-out infinite">
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="cta-sec">
+  <div class="sec-in">
+    <h2>準備整合你的電商平台？</h2>
+    <p>告訴我們你目前在哪些平台銷售，咻咻打包為你規劃最快的串接方案</p>
+    <div class="cta-btns">
+      <a href="https://lin.ee/L9HtuyF" target="_blank" class="btn btn-lg"><i data-lucide="message-circle"></i>LINE 諮詢串接</a>
+      <a href="/consult/" class="btn" style="background:rgba(41,37,15,.06);color:#29250F;border:2px solid rgba(41,37,15,.2)"><i data-lucide="clipboard-check"></i>填寫諮詢表單</a>
+    </div>
+  </div>
+</section>
+<footer><div class="foot-in"><div class="foot-top"><div><div class="foot-logo"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo.png" alt="咻咻打包"><div class="foot-bname">咻咻打包</div></div><p class="foot-desc">台南在地三方倉儲首選。讓老闆專心賣貨，出貨交給咻咻打包。</p><div class="fsoc"><a href="#"><i data-lucide="facebook"></i></a><a href="#"><i data-lucide="instagram"></i></a><a href="https://lin.ee/L9HtuyF" target="_blank"><i data-lucide="message-circle"></i></a></div></div><div><div class="foot-ct">倉儲服務</div><ul class="foot-lks"><li><a href="/flow/">倉儲服務流程</a></li><li><a href="/wms/">WMS 系統</a></li><li><a href="/api/">API 串接</a></li><li><a href="/international/">國際貿易</a></li></ul></div><div><div class="foot-ct">更多服務</div><ul class="foot-lks"><li><a href="/custom-boxes-tainan/">紙箱訂製</a></li><li><a href="/influencer/">網紅合作</a></li><li><a href="/cooperate/">廠商合作</a></li><li><a href="/about/">關於我們</a></li></ul></div><div><div class="foot-ct">聯絡我們</div><ul class="foot-lks"><li><a href="tel:0976757866">0976-757866</a></li><li><a href="https://lin.ee/L9HtuyF" target="_blank">LINE @911ycmhl</a></li><li><a href="mailto:shooshoopacking@gmail.com">shooshoopacking@gmail.com</a></li></ul></div></div><div class="foot-bot"><div class="foot-copy">© 2026 <span>咻咻打包 ShooShoo Packing</span>．翰鮮運營企業有限公司</div></div></div></footer>
+<div class="float-cta"><a href="https://lin.ee/L9HtuyF" target="_blank" class="fb fb-ln"><div class="fb-pulse"></div><i data-lucide="message-circle"></i>LINE 諮詢</a><a href="tel:0976757866" class="fb fb-ph"><i data-lucide="phone"></i>電話諮詢</a></div>
+<div class="mob-bar"><div class="mob-row"><a href="https://lin.ee/L9HtuyF" target="_blank" class="mb-btn mb-ln"><i data-lucide="message-circle"></i>LINE 諮詢</a><a href="/consult/" class="mb-btn mb-ev"><i data-lucide="link-2"></i>申請串接</a></div></div>
+<script>
+const nav=document.getElementById('nav');window.addEventListener('scroll',()=>nav.classList.toggle('sc',scrollY>20));
+function toggleMenu(){document.getElementById('mmenu').classList.toggle('open')}
+document.addEventListener('click',e=>{const m=document.getElementById('mmenu'),b=document.getElementById('hamBtn');if(m&&b&&!m.contains(e.target)&&!b.contains(e.target))m.classList.remove('open');});
+if(typeof lucide!=='undefined')lucide.createIcons();
+if(typeof gsap!=='undefined'){
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.set(['.badge-live','h1.htitle','.hsub','.hbtns','.hbtns .btn','.htrust','.hti','.code-block'],{autoAlpha:0});
+  const tl=gsap.timeline({defaults:{ease:'power3.out'}});
+  tl.fromTo('.badge-live',{autoAlpha:0,y:-18},{autoAlpha:1,y:0,duration:.5,ease:'back.out(2)'},0).fromTo('h1.htitle',{autoAlpha:0,y:32},{autoAlpha:1,y:0,duration:.7},'.2').fromTo('.hsub',{autoAlpha:0,y:22},{autoAlpha:1,y:0,duration:.55},'.45').set('.hbtns',{autoAlpha:1},'.7').fromTo('.hbtns .btn',{autoAlpha:0,y:18},{autoAlpha:1,y:0,stagger:.1,duration:.45,ease:'back.out(1.5)'},'.7').set('.htrust',{autoAlpha:1},'1').fromTo('.hti',{autoAlpha:0,x:-12},{autoAlpha:1,x:0,stagger:.07,duration:.4},'1').fromTo('.code-block',{autoAlpha:0,x:48,scale:.96},{autoAlpha:1,x:0,scale:1,duration:1,ease:'power2.out'},'.2');
+  gsap.utils.toArray('.sec-hd').forEach(hd=>{gsap.fromTo(hd.querySelectorAll('.slbl,.stitle,.sdesc'),{opacity:0,y:22},{opacity:1,y:0,duration:.55,stagger:.1,ease:'power2.out',scrollTrigger:{trigger:hd,start:'top 88%',once:true}});});
+  gsap.fromTo('.plat',{opacity:0,scale:.88},{opacity:1,scale:1,duration:.35,stagger:.04,ease:'back.out(1.7)',scrollTrigger:{trigger:'.plat-grid',start:'top 82%',once:true}});
+  gsap.fromTo('.feat-card',{opacity:0,y:40},{opacity:1,y:0,duration:.6,stagger:.12,ease:'power3.out',scrollTrigger:{trigger:'.feat-grid',start:'top 82%',once:true}});
+  gsap.fromTo('.flow-item',{opacity:0,x:-24},{opacity:1,x:0,duration:.45,stagger:.08,ease:'power2.out',scrollTrigger:{trigger:'.flow-list',start:'top 80%',once:true}});
+}
+</script>
+</body>
+</html>
+
+
+
+
