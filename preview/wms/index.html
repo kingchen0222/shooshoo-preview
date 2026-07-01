@@ -222,9 +222,18 @@ footer{background:#FFF8ED;color:rgba(255,248,237,.8);padding:48px 20px 20px}
 .mb-ev{background:var(--og)}
 .mb-btn [data-lucide]{width:16px;height:16px;stroke-width:2}
 /* RESPONSIVE */
-@media(max-width:1024px){.hero-in{grid-template-columns:1fr;text-align:center}.htags{justify-content:center}.hbtns{justify-content:center}.htrust{justify-content:center}.char-wrap{width:240px;height:280px}.char-wrap img{height:200px}.feat-grid{grid-template-columns:1fr 1fr}.wms-detail{grid-template-columns:1fr;text-align:center}.step-grid{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}.foot-top{grid-template-columns:1fr 1fr}.module-grid{grid-template-columns:1fr 1fr}.cert-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:768px){.nav-links{display:none}.ham{display:flex}.hero{padding:90px 20px 60px}.feat-grid{grid-template-columns:1fr}.float-cta{display:none}.mob-bar{display:block}.foot-top{grid-template-columns:1fr}}
+@media(max-width:1024px){.hero-in{grid-template-columns:1fr;text-align:center}.htags{justify-content:center}.hbtns{justify-content:center}.htrust{justify-content:center}.char-wrap{width:240px;height:280px}.char-wrap img{height:200px}.feat-grid{grid-template-columns:1fr 1fr}.wms-detail{grid-template-columns:1fr;text-align:center}.step-grid{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}.foot-top{grid-template-columns:1fr 1fr}.module-grid{grid-template-columns:1fr 1fr}.cert-grid{grid-template-columns:1fr 1fr}.plat-logo-grid{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:768px){.nav-links{display:none}.ham{display:flex}.hero{padding:90px 20px 60px}.feat-grid{grid-template-columns:1fr}.float-cta{display:none}.mob-bar{display:block}.foot-top{grid-template-columns:1fr}.plat-logo-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:480px){.stats{grid-template-columns:1fr 1fr}.step-grid{grid-template-columns:1fr 1fr}}
+/* PLATFORM LOGO GRID */
+.plat-logo-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-bottom:28px}
+.plat-logo-card{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:14px 8px;background:#fff;border:1px solid rgba(45,27,14,.07);border-radius:12px;text-align:center;transition:all .25s;min-height:84px}
+.plat-logo-card:hover{border-color:rgba(255,107,53,.25);transform:translateY(-3px);box-shadow:0 4px 12px rgba(45,27,14,.08)}
+.plat-logo-card img{height:32px;max-width:80px;object-fit:contain}
+.plc-badge{display:inline-flex;align-items:center;justify-content:center;width:78px;height:32px;border-radius:6px;font-size:11px;font-weight:900;letter-spacing:.02em;line-height:1.2;padding:0 6px;text-align:center}
+.plat-logo-name{font-size:11px;font-weight:700;color:var(--brm);line-height:1.3}
+.plat-logo-note{font-size:10px;color:var(--gy);margin-top:-3px}
+.plat-sec-lbl{font-size:13px;font-weight:800;color:var(--og);margin-bottom:14px;letter-spacing:.06em;text-transform:uppercase;border-left:3px solid var(--og);padding-left:10px}
 /* MODULE GRID */
 .module-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .module-card{background:#fff;border:1px solid rgba(45,27,14,.07);border-radius:var(--r2);padding:22px 18px;box-shadow:0 2px 8px rgba(45,27,14,.05);transition:all .3s;position:relative;overflow:hidden}
@@ -554,46 +563,46 @@ footer{background:#FFF8ED;color:rgba(255,248,237,.8);padding:48px 20px 20px}
       <h2 class="stitle">已串接 <span class="oc">30+</span> 電商物流系統</h2>
       <p class="sdesc">主流電商平台、開店系統、物流配送與 ERP 全面支援，無論你在哪裡賣、用哪家物流，庫存與訂單都能即時同步。</p>
     </div>
-    <p style="text-align:center;font-size:14px;font-weight:700;color:var(--og);margin-bottom:14px">電商平台</p>
-    <div class="plat-list" style="margin-bottom:28px">
-      <div class="plat-chip"><i data-lucide="shopping-bag"></i>蝦皮購物</div>
-      <div class="plat-chip"><i data-lucide="tv"></i>MOMO 購物網</div>
-      <div class="plat-chip"><i data-lucide="monitor"></i>PChome（含甲配乙配）</div>
-      <div class="plat-chip"><i data-lucide="globe"></i>Yahoo 購物中心</div>
-      <div class="plat-chip"><i data-lucide="box"></i>Shopify</div>
-      <div class="plat-chip"><i data-lucide="layout"></i>SHOPLINE（含 POS）</div>
-      <div class="plat-chip"><i data-lucide="store"></i>91APP</div>
-      <div class="plat-chip"><i data-lucide="shopping-cart"></i>Cyberbiz</div>
-      <div class="plat-chip"><i data-lucide="package"></i>EasyStore</div>
-      <div class="plat-chip"><i data-lucide="star"></i>松果 Pcone</div>
-      <div class="plat-chip"><i data-lucide="link"></i>1shop OneShop</div>
-      <div class="plat-chip"><i data-lucide="radio"></i>東森 EtMall</div>
-      <div class="plat-chip"><i data-lucide="shopping-bag"></i>露天拍賣</div>
-      <div class="plat-chip"><i data-lucide="globe-2"></i>酷澎 Coupang</div>
-      <div class="plat-chip"><i data-lucide="package-2"></i>LiteShop</div>
-      <div class="plat-chip"><i data-lucide="grid"></i>Showmore</div>
-      <div class="plat-chip"><i data-lucide="users"></i>團購表單</div>
+    <p class="plat-sec-lbl">電商平台</p>
+    <div class="plat-logo-grid">
+      <div class="plat-logo-card"><img src="https://cdn.simpleicons.org/shopee/EE4D2D" alt="Shopee"><div class="plat-logo-name">蝦皮購物</div></div>
+      <div class="plat-logo-card"><span class="plc-badge" style="background:#B30035;color:#fff">MOMO</span><div class="plat-logo-name">MOMO 購物網</div><div class="plat-logo-note">含甲配、乙配</div></div>
+      <div class="plat-logo-card"><span class="plc-badge" style="background:#E22C33;color:#fff">PChome</span><div class="plat-logo-name">PChome 24h</div><div class="plat-logo-note">含甲配、乙配</div></div>
+      <div class="plat-logo-card"><img src="https://cdn.simpleicons.org/yahoo/6001D2" alt="Yahoo"><div class="plat-logo-name">Yahoo 購物中心</div></div>
+      <div class="plat-logo-card"><img src="https://cdn.simpleicons.org/shopify/96BF48" alt="Shopify"><div class="plat-logo-name">Shopify</div></div>
+      <div class="plat-logo-card"><span class="plc-badge" style="background:#175BCC;color:#fff">SHOPLINE</span><div class="plat-logo-name">SHOPLINE</div><div class="plat-logo-note">含 POS</div></div>
+      <div class="plat-logo-card"><span class="plc-badge" style="background:#222;color:#fff">91APP</span><div class="plat-logo-name">91APP</div></div>
+      <div class="plat-logo-card"><span class="plc-badge" style="background:#0070F3;color:#fff">Cyberbiz</span><div class="plat-logo-name">Cyberbiz</div></div>
+      <div class="plat-logo-card"><span class="plc-badge" style="background:#7C3AED;color:#fff">EasyStore</span><div class="plat-logo-name">EasyStore</div></div>
+      <div class="plat-logo-card"><span class="plc-badge" style="background:#F15A29;color:#fff">松果</span><div class="plat-logo-name">松果 Pcone</div></div>
+      <div class="plat-logo-card"><img src="https://cdn.simpleicons.org/wordpress/21759B" alt="WordPress"><div class="plat-logo-name">WordPress</div></div>
+      <div class="plat-logo-card"><span class="plc-badge" style="background:#003B8E;color:#fff">1shop</span><div class="plat-logo-name">1shop OneShop</div></div>
+      <div class="plat-logo-card"><span class="plc-badge" style="background:#E0001B;color:#fff">東森</span><div class="plat-logo-name">東森 EtMall</div></div>
+      <div class="plat-logo-card"><span class="plc-badge" style="background:#D9251D;color:#fff">露天</span><div class="plat-logo-name">露天拍賣</div></div>
+      <div class="plat-logo-card"><span class="plc-badge" style="background:#00BAB3;color:#fff">LiteShop</span><div class="plat-logo-name">LiteShop</div></div>
+      <div class="plat-logo-card"><img src="https://cdn.simpleicons.org/coupang/C00305" alt="Coupang"><div class="plat-logo-name">酷澎 Coupang</div></div>
+      <div class="plat-logo-card"><span class="plc-badge" style="background:#34A853;color:#fff">團購</span><div class="plat-logo-name">團購表單</div></div>
     </div>
-    <p style="text-align:center;font-size:14px;font-weight:700;color:var(--og);margin-bottom:14px">物流配送串接</p>
-    <div class="plat-list" style="margin-bottom:28px">
-      <div class="plat-chip"><i data-lucide="truck"></i>新竹物流（含冷鏈冷凍）</div>
-      <div class="plat-chip"><i data-lucide="truck"></i>黑貓宅急便（含冷藏冷凍）</div>
-      <div class="plat-chip"><i data-lucide="truck"></i>宅配通（含冷藏）</div>
-      <div class="plat-chip"><i data-lucide="map-pin"></i>順豐速運（含店取）</div>
-      <div class="plat-chip"><i data-lucide="package-check"></i>綠界（7-11 / 全家）</div>
-      <div class="plat-chip"><i data-lucide="package-check"></i>賣貨便（7-ELEVEN）</div>
-      <div class="plat-chip"><i data-lucide="package-check"></i>立吉富（7-11 / 全家）</div>
-      <div class="plat-chip"><i data-lucide="globe"></i>DHL</div>
-      <div class="plat-chip"><i data-lucide="mail"></i>中華郵政</div>
-      <div class="plat-chip"><i data-lucide="truck"></i>嘉里大榮</div>
+    <p class="plat-sec-lbl">物流配送</p>
+    <div class="plat-logo-grid" style="grid-template-columns:repeat(5,1fr)">
+      <div class="plat-logo-card"><span class="plc-badge" style="background:#009143;color:#fff">新竹物流</span><div class="plat-logo-name">新竹物流</div><div class="plat-logo-note">含冷鏈冷凍</div></div>
+      <div class="plat-logo-card"><span class="plc-badge" style="background:#1A1A1A;color:#FFD700">黑貓</span><div class="plat-logo-name">黑貓宅急便</div><div class="plat-logo-note">含冷藏冷凍</div></div>
+      <div class="plat-logo-card"><span class="plc-badge" style="background:#0055A5;color:#fff">宅配通</span><div class="plat-logo-name">宅配通</div><div class="plat-logo-note">含冷藏</div></div>
+      <div class="plat-logo-card"><span class="plc-badge" style="background:#CC2935;color:#fff">順豐</span><div class="plat-logo-name">順豐速運</div><div class="plat-logo-note">含店取 7-11/全家</div></div>
+      <div class="plat-logo-card"><span class="plc-badge" style="background:#009933;color:#fff">綠界</span><div class="plat-logo-name">綠界 ECPay</div><div class="plat-logo-note">7-11、全家等</div></div>
+      <div class="plat-logo-card"><span class="plc-badge" style="background:#007B40;color:#fff">賣貨便</span><div class="plat-logo-name">賣貨便</div><div class="plat-logo-note">7-ELEVEN</div></div>
+      <div class="plat-logo-card"><span class="plc-badge" style="background:#003087;color:#fff">立吉富</span><div class="plat-logo-name">立吉富</div><div class="plat-logo-note">7-11、全家</div></div>
+      <div class="plat-logo-card"><img src="https://cdn.simpleicons.org/dhl/D40511" alt="DHL"><div class="plat-logo-name">DHL</div></div>
+      <div class="plat-logo-card"><span class="plc-badge" style="background:#B51A1A;color:#fff">中華郵政</span><div class="plat-logo-name">中華郵政</div></div>
+      <div class="plat-logo-card"><span class="plc-badge" style="background:#F47920;color:#fff">嘉里大榮</span><div class="plat-logo-name">嘉里大榮</div></div>
     </div>
-    <p style="text-align:center;font-size:14px;font-weight:700;color:var(--og);margin-bottom:14px">ERP / 金流系統</p>
-    <div class="plat-list">
-      <div class="plat-chip"><i data-lucide="server"></i>SAP</div>
-      <div class="plat-chip"><i data-lucide="server"></i>Microsoft Dynamics</div>
-      <div class="plat-chip"><i data-lucide="server"></i>Odoo</div>
-      <div class="plat-chip"><i data-lucide="server"></i>鼎新電腦 Digiwin</div>
-      <div class="plat-chip"><i data-lucide="credit-card"></i>PAYUNi 統一金流</div>
+    <p class="plat-sec-lbl">ERP / 金流</p>
+    <div class="plat-logo-grid" style="grid-template-columns:repeat(5,1fr)">
+      <div class="plat-logo-card"><img src="https://cdn.simpleicons.org/sap/0FAAFF" alt="SAP"><div class="plat-logo-name">SAP</div></div>
+      <div class="plat-logo-card"><span class="plc-badge" style="background:#002050;color:#fff;font-size:10px">Dynamics</span><div class="plat-logo-name">Microsoft Dynamics</div></div>
+      <div class="plat-logo-card"><img src="https://cdn.simpleicons.org/odoo/714B67" alt="Odoo"><div class="plat-logo-name">Odoo</div></div>
+      <div class="plat-logo-card"><span class="plc-badge" style="background:#003087;color:#fff">鼎新</span><div class="plat-logo-name">鼎新電腦 Digiwin</div></div>
+      <div class="plat-logo-card"><span class="plc-badge" style="background:#0068B7;color:#fff">PAYUNi</span><div class="plat-logo-name">PAYUNi 統一金流</div></div>
     </div>
   </div>
 </section>
