@@ -10,6 +10,7 @@
 <meta property="og:url" content="https://www.shooshoo.com.tw">
 <link rel="canonical" href="https://www.shooshoo.com.tw">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
@@ -28,7 +29,7 @@
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:'Noto Sans TC',-apple-system,'PingFang TC',sans-serif;background:var(--crl);color:var(--br);overflow-x:hidden}
+body{font-family:'Noto Sans TC',-apple-system,'PingFang TC',sans-serif;background:var(--crl);color:var(--br);overflow-x:hidden;text-rendering:optimizeLegibility;font-feature-settings:"kern" 1}
 a{text-decoration:none;color:inherit}
 img{display:block;max-width:100%}
 
@@ -41,8 +42,10 @@ img{display:block;max-width:100%}
 .fl1{animation:float 3.2s ease-in-out infinite}
 .fl2{animation:float2 3.8s ease-in-out .6s infinite}
 .fl3{animation:float3 4.4s ease-in-out 1.2s infinite}
-.reveal.on{opacity:1;transform:translateY(0)}
-.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+.reveal{opacity:1;transform:none}
+.reveal.animate-in{animation:revealUp .55s ease both}
+@keyframes revealUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+.d1.animate-in{animation-delay:.1s}.d2.animate-in{animation-delay:.2s}.d3.animate-in{animation-delay:.3s}.d4.animate-in{animation-delay:.4s}
 
 /* NAV */
 .nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,252,245,.93);backdrop-filter:blur(16px);border-bottom:2px solid var(--crd);transition:box-shadow .3s}
@@ -58,9 +61,9 @@ img{display:block;max-width:100%}
 .nav-links .has-drop{position:relative}
 .nav-links .has-drop:hover .dropdown{display:block}
 .dropdown{display:none;position:absolute;top:calc(100% + 8px);left:0;background:#fff;border:2px solid var(--crd);border-radius:var(--r2);padding:10px;min-width:180px;box-shadow:var(--s3);z-index:10}
-.dropdown a{display:flex;align-items:center;gap:8px;padding:9px 12px;border-radius:var(--r1);font-size:13px;color:var(--brm);transition:all .2s}
+.dropdown a{display:flex;align-items:center;gap:8px;padding:9px 12px;border-radius:var(--r1);font-size:14px;color:var(--brm);transition:all .2s}
 .dropdown a:hover{background:var(--cr);color:var(--og)}
-.nav-cta{background:var(--og)!important;color:#fff!important;border-radius:var(--rf)!important;padding:9px 20px!important;font-weight:800!important;box-shadow:0 4px 14px rgba(255,107,53,.35)}
+.nav-cta{background:var(--og)!important;color:#fff!important;border-radius:var(--rf)!important;padding:9px 20px!important;font-weight:800!important;box-shadow:0 4px 14px rgba(255,107,53,.35);margin-left:16px!important}
 .nav-cta:hover{background:var(--ogd)!important;transform:translateY(-2px)}
 .ham{display:none;flex-direction:column;gap:5px;padding:9px;background:var(--crd);border-radius:10px;border:none;cursor:pointer}
 .ham span{display:block;width:20px;height:2.5px;background:var(--br);border-radius:3px}
@@ -71,7 +74,7 @@ img{display:block;max-width:100%}
 .mmenu .mc{background:var(--og);color:#fff!important;text-align:center;border-radius:var(--rf)!important;margin-top:6px;font-weight:800!important}
 
 /* HERO */
-.hero{min-height:100vh;padding:100px 20px 80px;background:var(--cr);background-image:radial-gradient(ellipse at 18% 80%,rgba(255,200,69,.18) 0%,transparent 55%),radial-gradient(ellipse at 82% 15%,rgba(255,107,53,.12) 0%,transparent 50%);display:flex;align-items:center;position:relative;overflow:hidden}
+.hero{min-height:100vh;padding:100px 40px 80px;background:var(--cr);background-image:radial-gradient(ellipse at 18% 80%,rgba(255,200,69,.18) 0%,transparent 55%),radial-gradient(ellipse at 82% 15%,rgba(255,107,53,.12) 0%,transparent 50%);display:flex;align-items:center;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,107,53,.1) 1.5px,transparent 1.5px);background-size:30px 30px;pointer-events:none}
 .hero-wave{position:absolute;bottom:0;left:0;right:0;line-height:0;z-index:2}
 /* hero-in: 左文右影 2欄 */
@@ -171,7 +174,7 @@ h2.stitle{font-size:clamp(24px,3.5vw,42px);font-weight:900;color:var(--br);line-
 
 /* PROCESS */
 .sbg-dk{background:var(--cr,#FFF8ED)}
-.sbg-dk .stitle{color:#fff}
+.sbg-dk .stitle{color:#29250F}
 .sbg-dk .slbl{background:rgba(255,200,69,.15);border-color:rgba(255,200,69,.3);color:var(--yw)}
 .sbg-dk .sdesc{color:rgba(41,37,15,.65)}
 .proc-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:0;position:relative}
@@ -182,7 +185,7 @@ h2.stitle{font-size:clamp(24px,3.5vw,42px);font-weight:900;color:var(--br);line-
 .proc-em{font-size:24px;line-height:1}
 .proc-n{font-size:9px;font-weight:800;color:var(--yw);letter-spacing:.5px;margin-top:2px}
 .proc-step:hover .proc-n{color:var(--br)}
-.proc-name{font-size:13px;font-weight:800;color:#fff;margin-bottom:5px}
+.proc-name{font-size:13px;font-weight:800;color:#29250F;margin-bottom:5px}
 .proc-desc{font-size:11px;color:rgba(41,37,15,.55);line-height:1.5}
 .proc-char{text-align:center;margin-top:40px}
 .proc-char img{height:180px;width:auto;margin:0 auto;filter:drop-shadow(0 10px 24px rgba(0,0,0,.3))}
@@ -337,31 +340,31 @@ h2.stitle{font-size:clamp(24px,3.5vw,42px);font-weight:900;color:var(--br);line-
 .form-ok p{font-size:14px;color:var(--gy);line-height:1.65}
 
 /* FOOTER */
-.footer{background:#FFF8ED;color:#fff;padding:56px 20px 0}
+.footer{background:#FFF8ED;color:rgba(41,37,15,.8);padding:56px 20px 0}
 .foot-in{max-width:1200px;margin:0 auto}
 .foot-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:2px solid rgba(255,255,255,.07)}
 .foot-logo{display:flex;align-items:center;gap:14px;margin-bottom:16px}
 .foot-logo img{width:56px;height:56px;object-fit:contain;filter:drop-shadow(0 4px 10px rgba(0,0,0,.3))}
 .foot-brand{font-size:20px;font-weight:900;color:var(--og)}
-.foot-ben{font-size:11px;color:rgba(255,255,255,.45);margin-top:2px}
-.foot-desc{font-size:13px;color:rgba(255,255,255,.4);line-height:1.7;margin-bottom:20px}
+.foot-ben{font-size:11px;color:rgba(41,37,15,.5);margin-top:2px}
+.foot-desc{font-size:13px;color:rgba(41,37,15,.55);line-height:1.7;margin-bottom:20px}
 .foot-soc{display:flex;gap:8px}
 .fsoc{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .28s cubic-bezier(.34,1.56,.64,1);flex-shrink:0}
 .fsoc:hover{transform:translateY(-4px) scale(1.1);box-shadow:0 8px 24px rgba(0,0,0,.35)}
 .fsoc img{display:block;flex-shrink:0}
 .fsoc-fb{background:#1877F2}
-.fsoc-ig{background:#FFF3E8}
+.fsoc-ig{background:radial-gradient(circle at 30% 107%,#fdf497 0%,#fdf497 5%,#fd5949 45%,#d6249f 60%,#285AEB 90%)}
 .fsoc-yt{background:#FF0000}
 .fsoc-th{background:#000}
-.foot-ct{font-size:13px;font-weight:800;color:#fff;margin-bottom:12px}
+.foot-ct{font-size:13px;font-weight:800;color:#29250F;margin-bottom:12px}
 .foot-lks{list-style:none;display:flex;flex-direction:column;gap:8px}
-.foot-lks a{font-size:13px;color:rgba(255,255,255,.4);transition:color .2s}
+.foot-lks a{font-size:15px;color:rgba(41,37,15,.55);transition:color .2s}
 .foot-lks a:hover{color:var(--og)}
 .foot-bot{padding:22px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
-.foot-copy{font-size:12px;color:rgba(255,255,255,.3)}
+.tabnum{font-variant-numeric:tabular-nums}.foot-copy{font-size:12px;color:rgba(41,37,15,.4)}
 .foot-copy span{color:var(--og)}
 .foot-seo{display:flex;flex-wrap:wrap;gap:5px}
-.fseo{font-size:11px;color:rgba(255,255,255,.2);background:rgba(255,255,255,.04);padding:3px 8px;border-radius:var(--rf);border:1px solid rgba(255,255,255,.06)}
+.fseo{font-size:11px;color:rgba(41,37,15,.35);background:rgba(41,37,15,.04);padding:3px 8px;border-radius:var(--rf);border:1px solid rgba(41,37,15,.1)}
 
 /* FLOATING */
 .float-cta{position:fixed;bottom:22px;right:22px;z-index:300;display:flex;flex-direction:column;gap:10px;align-items:flex-end}
@@ -440,6 +443,7 @@ h2.stitle{font-size:clamp(24px,3.5vw,42px);font-weight:900;color:var(--br);line-
 .bphoto{border-radius:var(--r2);overflow:hidden;border:2px solid var(--crd);background:#fff;transition:all .3s}
 .bphoto:hover{transform:translateY(-4px);box-shadow:var(--s2);border-color:var(--og)}
 .bphoto img{width:100%;height:110px;object-fit:cover;display:block}
+.bphoto-icon{height:80px;display:flex;align-items:center;justify-content:center;font-size:36px;background:var(--cr)}
 .bphoto-lbl{font-size:11px;font-weight:700;color:var(--brm);text-align:center;padding:6px 8px}
 
 /* INFLUENCER PHOTOS GRID */
@@ -592,7 +596,7 @@ h2.stitle{font-size:clamp(24px,3.5vw,42px);font-weight:900;color:var(--br);line-
 <nav class="nav" id="nav">
 <div class="nav-in">
   <a href="/" class="logo">
-    <img src="../影片素材/角色去背/咻咻LOGO.png" alt="咻咻打包 Logo">
+    <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/shooshoo-char-logo.png" alt="咻咻打包 Logo">
     <div><div class="logo-name">咻咻打包</div><div class="logo-en">ShooShoo Packing</div></div>
   </a>
   <ul class="nav-links">
@@ -678,21 +682,17 @@ h2.stitle{font-size:clamp(24px,3.5vw,42px);font-weight:900;color:var(--br);line-
         <!-- Video Carousel: video-1 → video-2 → video-3 → video-4 (loop) -->
         <div class="vcar">
           <video class="vc active" muted playsinline preload="metadata" id="vc0">
-            <source src="../影片素材/官網輪播影片/video-1.mp4" type="video/mp4">
+            <source src="https://www.shooshoo.com.tw/wp-content/uploads/2026/05/video-1.mp4" type="video/mp4">
           </video>
           <video class="vc" muted playsinline preload="metadata" id="vc1">
-            <source src="../影片素材/官網輪播影片/video-2.mp4" type="video/mp4">
+            <source src="https://www.shooshoo.com.tw/wp-content/uploads/2026/05/video-2.mp4" type="video/mp4">
           </video>
           <video class="vc" muted playsinline preload="metadata" id="vc2">
-            <source src="../影片素材/官網輪播影片/video-3.mp4" type="video/mp4">
+            <source src="https://www.shooshoo.com.tw/wp-content/uploads/2026/05/video-3.mp4" type="video/mp4">
           </video>
           <video class="vc" muted playsinline preload="metadata" id="vc3">
-            <source src="../影片素材/官網輪播影片/video-4.mp4" type="video/mp4">
+            <source src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/video-4.mp4" type="video/mp4">
           </video>
-          <!-- overlay label -->
-          <div class="vc-overlay">
-            <img src="../影片素材/角色去背/咻咻.png" alt="咻咻" class="vc-mascot fl1">
-          </div>
           <!-- prev / next -->
           <button class="vc-arr vc-prev" onclick="vcMove(-1)">‹</button>
           <button class="vc-arr vc-next" onclick="vcMove(1)">›</button>
@@ -749,11 +749,11 @@ h2.stitle{font-size:clamp(24px,3.5vw,42px);font-weight:900;color:var(--br);line-
     <div class="about-grid">
       <div class="reveal">
         <div class="wh-photo">
-          <img src="../影片素材/IG素材/電商主題/B01-倉庫全景.png" alt="咻咻打包倉庫全景">
+          <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/b01-ho.png" alt="咻咻打包倉庫全景">
         </div>
         <div class="wh-photo-row">
-          <div class="wh-photo-sm"><img src="../影片素材/IG素材/電商主題/B02-揀貨效率.png" alt="揀貨效率"></div>
-          <div class="wh-photo-sm"><img src="../影片素材/IG素材/電商主題/B06-叉車作業.png" alt="叉車作業"></div>
+          <div class="wh-photo-sm"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/b02-ah.png" alt="揀貨效率"></div>
+          <div class="wh-photo-sm"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/B06-EEm.png" alt="叉車作業"></div>
         </div>
       </div>
       <div class="about-text reveal d2">
@@ -785,7 +785,7 @@ h2.stitle{font-size:clamp(24px,3.5vw,42px);font-weight:900;color:var(--br);line-
 
       <div class="svc-card reveal">
         <span class="svc-badge">核心服務</span>
-        <div class="svc-char-wrap"><img src="../影片素材/角色去背/倉倉老闆.png" alt="倉倉老闆 — 3PL倉儲"></div>
+        <div class="svc-char-wrap"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/shooshoo-char-boss.png" alt="倉倉老闆 — 3PL倉儲"></div>
         <div class="svc-body">
           <h3 class="svc-name">3PL 三方倉儲整合</h3>
           <p class="svc-desc">幫你管庫存、管倉位、管進出，你只要賣貨，其他的交給咻咻。</p>
@@ -799,7 +799,7 @@ h2.stitle{font-size:clamp(24px,3.5vw,42px);font-weight:900;color:var(--br);line-
       </div>
 
       <div class="svc-card reveal d1">
-        <div class="svc-char-wrap"><img src="../影片素材/角色去背/揀貨喵喵.png" alt="揀貨喵喵 — 代出貨"></div>
+        <div class="svc-char-wrap"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/shooshoo-char-pick-cat.png" alt="揀貨喵喵 — 代出貨"></div>
         <div class="svc-body">
           <h3 class="svc-name">代出貨服務</h3>
           <p class="svc-desc">揀貨→打包→貼單→寄出，截單前下訂，當天準時出貨不拖延。</p>
@@ -812,7 +812,7 @@ h2.stitle{font-size:clamp(24px,3.5vw,42px);font-weight:900;color:var(--br);line-
       </div>
 
       <div class="svc-card reveal d2">
-        <div class="svc-char-wrap"><img src="../影片素材/角色去背/行政喵喵.png" alt="行政喵喵 — WMS系統"></div>
+        <div class="svc-char-wrap"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/shooshoo-char-admin-cat.png" alt="行政喵喵 — WMS系統"></div>
         <div class="svc-body">
           <h3 class="svc-name">WMS + API 訂單同步</h3>
           <p class="svc-desc">串接主流電商平台，訂單自動拋送 WMS，零人工、零漏單，爆量也不怕。</p>
@@ -826,7 +826,7 @@ h2.stitle{font-size:clamp(24px,3.5vw,42px);font-weight:900;color:var(--br);line-
       </div>
 
       <div class="svc-card reveal d1">
-        <div class="svc-char-wrap"><img src="../影片素材/角色去背/咚咚膠帶.png" alt="咚咚膠帶 — 加工服務"></div>
+        <div class="svc-char-wrap"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/shooshoo-char-tape.png" alt="咚咚膠帶 — 加工服務"></div>
         <div class="svc-body">
           <h3 class="svc-name">加工服務</h3>
           <p class="svc-desc">貼標、組裝、重新包裝，讓你的商品亮麗出貨，提升開箱體驗。</p>
@@ -840,7 +840,7 @@ h2.stitle{font-size:clamp(24px,3.5vw,42px);font-weight:900;color:var(--br);line-
       </div>
 
       <div class="svc-card reveal d2">
-        <div class="svc-char-wrap"><img src="../影片素材/角色去背/卡卡刀刀.png" alt="卡卡刀刀 — 逆物流處理"></div>
+        <div class="svc-char-wrap"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/shooshoo-char-cutter.png" alt="卡卡刀刀 — 逆物流處理"></div>
         <div class="svc-body">
           <h3 class="svc-name">逆物流處理</h3>
           <p class="svc-desc">退貨不再是痛點，咻咻幫你驗貨、整新、重新入庫，保持庫存品質。</p>
@@ -854,7 +854,7 @@ h2.stitle{font-size:clamp(24px,3.5vw,42px);font-weight:900;color:var(--br);line-
       </div>
 
       <div class="svc-card reveal d3">
-        <div class="svc-char-wrap"><img src="../影片素材/角色去背/咻卡.png" alt="咻卡小貨車 — 自有車隊"></div>
+        <div class="svc-char-wrap"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/shooshoo-char-car.png" alt="咻卡小貨車 — 自有車隊"></div>
         <div class="svc-body">
           <h3 class="svc-name">自有車隊配送</h3>
           <p class="svc-desc">公司自有車隊直送，大量出貨、拆貨櫃、台南在地配送都搞定。</p>
@@ -889,9 +889,9 @@ h2.stitle{font-size:clamp(24px,3.5vw,42px);font-weight:900;color:var(--br);line-
     </div>
     <!-- 流程實拍橫幅 -->
     <div class="reveal d2" style="margin-top:48px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
-      <div style="border-radius:var(--r2);overflow:hidden;border:2px solid rgba(255,255,255,.1)"><img src="../影片素材/IG素材/電商主題/B02-揀貨效率.png" alt="揀貨效率" style="width:100%;height:140px;object-fit:cover;display:block"></div>
-      <div style="border-radius:var(--r2);overflow:hidden;border:2px solid rgba(255,255,255,.1)"><img src="../影片素材/IG素材/電商主題/B03-打包分工.png" alt="打包分工" style="width:100%;height:140px;object-fit:cover;display:block"></div>
-      <div style="border-radius:var(--r2);overflow:hidden;border:2px solid rgba(255,255,255,.1)"><img src="../影片素材/IG素材/電商主題/B07-品質檢驗.png" alt="品質檢驗" style="width:100%;height:140px;object-fit:cover;display:block"></div>
+      <div style="border-radius:var(--r2);overflow:hidden;border:2px solid rgba(255,255,255,.1)"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/b02-ah.png" alt="揀貨效率" style="width:100%;height:140px;object-fit:cover;display:block"></div>
+      <div style="border-radius:var(--r2);overflow:hidden;border:2px solid rgba(255,255,255,.1)"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/shooshoo-b03-packing-team.png" alt="打包分工" style="width:100%;height:140px;object-fit:cover;display:block"></div>
+      <div style="border-radius:var(--r2);overflow:hidden;border:2px solid rgba(255,255,255,.1)"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/B07-AecW.png" alt="品質檢驗" style="width:100%;height:140px;object-fit:cover;display:block"></div>
     </div>
   </div>
 </section>
@@ -912,29 +912,29 @@ h2.stitle{font-size:clamp(24px,3.5vw,42px);font-weight:900;color:var(--br);line-
         <span class="integ-block-badge">23 個平台</span>
       </div>
       <div class="partner-grid">
-        <div class="partner-item"><img src="../影片素材/官網圖/logo-shopee.webp" alt="蝦皮購物"><span class="partner-name">蝦皮 Shopee</span></div>
-        <div class="partner-item"><img src="../影片素材/官網圖/logo-liteshop.webp" alt="LiteShop"><span class="partner-name">LiteShop</span></div>
-        <div class="partner-item"><img src="../影片素材/官網圖/logo-momo.webp" alt="MOMO購物"><span class="partner-name">MOMO</span></div>
-        <div class="partner-item"><img src="../影片素材/官網圖/logo-shopline-n.webp" alt="Shopline"><span class="partner-name">Shopline<span class="ptag">含 POS</span></span></div>
-        <div class="partner-item"><img src="../影片素材/官網圖/logo-shopify.webp" alt="Shopify"><span class="partner-name">Shopify</span></div>
-        <div class="partner-item"><img src="../影片素材/官網圖/logo-cyberbiz.png" alt="CYBERBIZ"><span class="partner-name">Cyberbiz</span></div>
-        <div class="partner-item"><img src="../影片素材/官網圖/logo-91app.webp" alt="91APP"><span class="partner-name">91APP</span></div>
-        <div class="partner-item"><img src="../影片素材/官網圖/logo-yahoo.webp" alt="Yahoo購物中心"><span class="partner-name">Yahoo 購物中心</span></div>
-        <div class="partner-item"><img src="../影片素材/官網圖/logo-wordpress.svg" alt="WordPress"><span class="partner-name">WordPress</span></div>
-        <div class="partner-item"><img src="../影片素材/官網圖/logo-pcone.webp" alt="松果購物"><span class="partner-name">松果 Pcone</span></div>
-        <div class="partner-item"><img src="../影片素材/官網圖/logo-pchome.webp" alt="PChome"><span class="partner-name">PChome<span class="ptag">含甲配、乙配</span></span></div>
-        <div class="partner-item"><img src="../影片素材/官網圖/logo-1shop.svg" alt="1shop OneShop"><span class="partner-name">1shop OneShop</span></div>
-        <div class="partner-item"><img src="../影片素材/官網圖/logo-onewarehouse.svg" alt="OneWarehouse"><span class="partner-name">OneWarehouse</span></div>
-        <div class="partner-item"><img src="../影片素材/官網圖/logo-etmall.webp" alt="東森購物"><span class="partner-name">東森 ETMall</span></div>
-        <div class="partner-item"><img src="../影片素材/官網圖/logo-moplus.webp" alt="Mo店+"><span class="partner-name">Mo店+ MoPlus</span></div>
-        <div class="partner-item"><img src="../影片素材/官網圖/logo-easystore.svg" alt="EasyStore"><span class="partner-name">EasyStore</span></div>
-        <div class="partner-item"><img src="../影片素材/官網圖/logo-bvshop-v2.png" alt="BvShop"><span class="partner-name">BvShop</span></div>
-        <div class="partner-item"><img src="../影片素材/官網圖/logo-showmore.webp" alt="Showmore"><span class="partner-name">Showmore</span></div>
-        <div class="partner-item"><img src="../影片素材/官網圖/logo-ruten.svg" alt="露天拍賣"><span class="partner-name">露天 Ruten</span></div>
-        <div class="partner-item"><img src="../影片素材/官網圖/logo-m2line.png" alt="M2Line"><span class="partner-name">M2Line</span></div>
-        <div class="partner-item"><img src="../影片素材/官網圖/logo-coupang.svg" alt="酷澎"><span class="partner-name">酷澎 Coupang</span></div>
-        <div class="partner-item"><img src="../影片素材/官網圖/logo-groupbuy.png" alt="團購表單"><span class="partner-name">團購表單</span></div>
-        <div class="partner-item"><img src="../影片素材/官網圖/logo-freestore.svg" alt="Freestore"><span class="partner-name">Freestore</span></div>
+        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-shopee.webp" alt="蝦皮購物"><span class="partner-name">蝦皮 Shopee</span></div>
+        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-liteshop.webp" alt="LiteShop"><span class="partner-name">LiteShop</span></div>
+        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-momo.webp" alt="MOMO購物"><span class="partner-name">MOMO</span></div>
+        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-shopline-n.webp" alt="Shopline"><span class="partner-name">Shopline<span class="ptag">含 POS</span></span></div>
+        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-shopify.webp" alt="Shopify"><span class="partner-name">Shopify</span></div>
+        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-cyberbiz.png" alt="CYBERBIZ"><span class="partner-name">Cyberbiz</span></div>
+        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-91app.webp" alt="91APP"><span class="partner-name">91APP</span></div>
+        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-yahoo.webp" alt="Yahoo購物中心"><span class="partner-name">Yahoo 購物中心</span></div>
+        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-wordpress.svg" alt="WordPress"><span class="partner-name">WordPress</span></div>
+        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-pcone.webp" alt="松果購物"><span class="partner-name">松果 Pcone</span></div>
+        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-pchome.webp" alt="PChome"><span class="partner-name">PChome<span class="ptag">含甲配、乙配</span></span></div>
+        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-1shop.svg" alt="1shop OneShop"><span class="partner-name">1shop OneShop</span></div>
+        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-onewarehouse.svg" alt="OneWarehouse"><span class="partner-name">OneWarehouse</span></div>
+        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-etmall.webp" alt="東森購物"><span class="partner-name">東森 ETMall</span></div>
+        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-moplus.webp" alt="Mo店+"><span class="partner-name">Mo店+ MoPlus</span></div>
+        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-easystore.svg" alt="EasyStore"><span class="partner-name">EasyStore</span></div>
+        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-bvshop-v2.png" alt="BvShop"><span class="partner-name">BvShop</span></div>
+        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-showmore.webp" alt="Showmore"><span class="partner-name">Showmore</span></div>
+        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-ruten.svg" alt="露天拍賣"><span class="partner-name">露天 Ruten</span></div>
+        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-m2line.png" alt="M2Line"><span class="partner-name">M2Line</span></div>
+        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-coupang.svg" alt="酷澎"><span class="partner-name">酷澎 Coupang</span></div>
+        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-groupbuy.png" alt="團購表單"><span class="partner-name">團購表單</span></div>
+        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-freestore.svg" alt="Freestore"><span class="partner-name">Freestore</span></div>
       </div>
     </div>
 
@@ -946,31 +946,31 @@ h2.stitle{font-size:clamp(24px,3.5vw,42px);font-weight:900;color:var(--br);line-
         <span class="integ-block-badge">20 個串接</span>
       </div>
       <div class="partner-grid">
-        <div class="partner-item"><img src="../影片素材/官網圖/logo-hct-new.webp" alt="新竹物流"><span class="partner-name">新竹物流<span class="ptag">含冷藏・冷凍</span></span></div>
-        <div class="partner-item"><img src="../影片素材/官網圖/logo-tcat.webp" alt="黑貓宅急便"><span class="partner-name">黑貓<span class="ptag">含冷藏・冷凍</span></span></div>
-        <div class="partner-item"><img src="../影片素材/官網圖/logo-pelican-n.webp" alt="宅配通"><span class="partner-name">宅配通<span class="ptag">含冷藏</span></span></div>
-        <div class="partner-item"><img src="../影片素材/官網圖/logo-ecpay.webp" alt="綠界ECPay"><span class="partner-name">綠界 ECPay<span class="ptag">7-11・全家・萊</span></span></div>
-        <div class="partner-item"><img src="../影片素材/官網圖/logo-srexpress.webp" alt="順豐速運"><span class="partner-name">順豐速運<span class="ptag">含店取7-11・全家</span></span></div>
-        <div class="partner-item"><img src="../影片素材/官網圖/logo-kerry.webp" alt="嘉里大榮"><span class="partner-name">嘉里大榮</span></div>
-        <div class="partner-item"><img src="../影片素材/官網圖/logo-dpex.webp" alt="DPEX"><span class="partner-name">迪比翼 DPEX</span></div>
-        <div class="partner-item"><img src="../影片素材/官網圖/logo-7eleven-new.webp" alt="統一數網"><span class="partner-name">統一數網<span class="ptag">含宅配通・黑貓</span></span></div>
-        <div class="partner-item"><img src="../影片素材/官網圖/logo-tong-ying.webp" alt="通盈"><span class="partner-name">通盈</span></div>
-        <div class="partner-item"><img src="../影片素材/官網圖/logo-paynow.png" alt="立吉富"><span class="partner-name">立吉富<span class="ptag">7-11・全家</span></span></div>
-        <div class="partner-item"><img src="../影片素材/官網圖/logo-shyang-yih.webp" alt="祥億物流"><span class="partner-name">祥億物流</span></div>
-        <div class="partner-item"><img src="../影片素材/官網圖/logo-dhl.webp" alt="DHL"><span class="partner-name">DHL</span></div>
-        <div class="partner-item"><img src="../影片素材/官網圖/logo-family.webp" alt="日翊物流"><span class="partner-name">日翊物流</span></div>
-        <div class="partner-item"><img src="../影片素材/官網圖/logo-post.png" alt="中華郵政"><span class="partner-name">中華郵政<span class="ptag">郵局</span></span></div>
-        <div class="partner-item"><img src="../影片素材/官網圖/logo-payuni.svg" alt="PAYUNi"><span class="partner-name">PAYUNi 統一金流</span></div>
-        <div class="partner-item"><img src="../影片素材/官網圖/logo-odoo.png" alt="Odoo"><span class="partner-name">Odoo</span></div>
-        <div class="partner-item"><img src="../影片素材/官網圖/logo-msdynamics.png" alt="Microsoft Dynamics"><span class="partner-name">Microsoft Dynamics</span></div>
-        <div class="partner-item"><img src="../影片素材/官網圖/logo-digiwin.webp" alt="鼎新電腦"><span class="partner-name">鼎新電腦 Digiwin</span></div>
-        <div class="partner-item"><img src="../影片素材/官網圖/logo-sap.png" alt="SAP"><span class="partner-name">SAP</span></div>
-        <div class="partner-item"><img src="../影片素材/官網圖/logo-jinghong.png" alt="旋泓科技"><span class="partner-name">旋泓科技</span></div>
+        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-hct-new.webp" alt="新竹物流"><span class="partner-name">新竹物流<span class="ptag">含冷藏・冷凍</span></span></div>
+        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-tcat.webp" alt="黑貓宅急便"><span class="partner-name">黑貓<span class="ptag">含冷藏・冷凍</span></span></div>
+        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-pelican-n.webp" alt="宅配通"><span class="partner-name">宅配通<span class="ptag">含冷藏</span></span></div>
+        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-ecpay.webp" alt="綠界ECPay"><span class="partner-name">綠界 ECPay<span class="ptag">7-11・全家・萊</span></span></div>
+        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-srexpress.webp" alt="順豐速運"><span class="partner-name">順豐速運<span class="ptag">含店取7-11・全家</span></span></div>
+        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-kerry.webp" alt="嘉里大榮"><span class="partner-name">嘉里大榮</span></div>
+        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-dpex.webp" alt="DPEX"><span class="partner-name">迪比翼 DPEX</span></div>
+        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-7eleven-new.webp" alt="統一數網"><span class="partner-name">統一數網<span class="ptag">含宅配通・黑貓</span></span></div>
+        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-tong-ying.webp" alt="通盈"><span class="partner-name">通盈</span></div>
+        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-paynow.png" alt="立吉富"><span class="partner-name">立吉富<span class="ptag">7-11・全家</span></span></div>
+        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-shyang-yih.webp" alt="祥億物流"><span class="partner-name">祥億物流</span></div>
+        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-dhl.webp" alt="DHL"><span class="partner-name">DHL</span></div>
+        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-family.webp" alt="日翊物流"><span class="partner-name">日翊物流</span></div>
+        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-post.png" alt="中華郵政"><span class="partner-name">中華郵政<span class="ptag">郵局</span></span></div>
+        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-payuni.svg" alt="PAYUNi"><span class="partner-name">PAYUNi 統一金流</span></div>
+        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-odoo.png" alt="Odoo"><span class="partner-name">Odoo</span></div>
+        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-msdynamics.png" alt="Microsoft Dynamics"><span class="partner-name">Microsoft Dynamics</span></div>
+        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-digiwin.webp" alt="鼎新電腦"><span class="partner-name">鼎新電腦 Digiwin</span></div>
+        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-sap.png" alt="SAP"><span class="partner-name">SAP</span></div>
+        <div class="partner-item"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-jinghong.png" alt="旋泓科技"><span class="partner-name">旋泓科技</span></div>
       </div>
     </div>
     <div class="wms-grid">
       <div class="wms-char">
-        <img src="../影片素材/角色去背/行政喵喵.png" alt="行政喵喵使用WMS系統">
+        <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/shooshoo-char-admin-cat.png" alt="行政喵喵使用WMS系統">
       </div>
       <div class="wms-features">
         <div class="slbl" style="margin-bottom:16px">WMS 功能一覽</div>
@@ -1008,19 +1008,19 @@ h2.stitle{font-size:clamp(24px,3.5vw,42px);font-weight:900;color:var(--br);line-
         <p>不用每天手動匯出訂單、貼貼貼，咻咻的 API 串接讓電商平台訂單自動跑進 WMS，揀貨開始、庫存扣除、貨態回傳，全部自動化搞定。</p>
         <p>就算同時開蝦皮、MOMO、Shopify 三個店，全部統一在一個後台管理，再也不用在三個視窗之間跳來跳去。</p>
         <div class="api-plats">
-          <span class="api-plat"><img src="../影片素材/官網圖/logo-shopee.webp" alt="蝦皮" style="height:18px;width:auto;vertical-align:middle;margin-right:4px"> 蝦皮</span>
-          <span class="api-plat"><img src="../影片素材/官網圖/logo-momo.webp" alt="MOMO" style="height:18px;width:auto;vertical-align:middle;margin-right:4px"> MOMO</span>
-          <span class="api-plat"><img src="../影片素材/官網圖/logo-shopify.webp" alt="Shopify" style="height:18px;width:auto;vertical-align:middle;margin-right:4px"> Shopify</span>
-          <span class="api-plat"><img src="../影片素材/官網圖/logo-shopline-n.webp" alt="Shopline" style="height:18px;width:auto;vertical-align:middle;margin-right:4px"> Shopline</span>
-          <span class="api-plat"><img src="../影片素材/官網圖/logo-91app.webp" alt="91APP" style="height:18px;width:auto;vertical-align:middle;margin-right:4px"> 91APP</span>
-          <span class="api-plat"><img src="../影片素材/官網圖/logo-cyberbiz.png" alt="CYBERBIZ" style="height:18px;width:auto;vertical-align:middle;margin-right:4px"> CYBERBIZ</span>
+          <span class="api-plat"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-shopee.webp" alt="蝦皮" style="height:18px;width:auto;vertical-align:middle;margin-right:4px"> 蝦皮</span>
+          <span class="api-plat"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-momo.webp" alt="MOMO" style="height:18px;width:auto;vertical-align:middle;margin-right:4px"> MOMO</span>
+          <span class="api-plat"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-shopify.webp" alt="Shopify" style="height:18px;width:auto;vertical-align:middle;margin-right:4px"> Shopify</span>
+          <span class="api-plat"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-shopline-n.webp" alt="Shopline" style="height:18px;width:auto;vertical-align:middle;margin-right:4px"> Shopline</span>
+          <span class="api-plat"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-91app.webp" alt="91APP" style="height:18px;width:auto;vertical-align:middle;margin-right:4px"> 91APP</span>
+          <span class="api-plat"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-cyberbiz.png" alt="CYBERBIZ" style="height:18px;width:auto;vertical-align:middle;margin-right:4px"> CYBERBIZ</span>
         </div>
         <div style="margin-top:24px">
           <a href="#contact" class="btn btn-og"><i data-lucide="link-2"></i>我要申請 API 串接</a>
         </div>
       </div>
       <div class="api-char reveal d2">
-        <img src="../影片素材/角色去背/行政喵喵.png" alt="行政喵喵處理API訂單">
+        <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/shooshoo-char-admin-cat.png" alt="行政喵喵處理API訂單">
         <div class="api-bubble ab1">✅ 訂單自動同步！</div>
         <div class="api-bubble ab2">📦 庫存即時扣除</div>
       </div>
@@ -1047,14 +1047,11 @@ h2.stitle{font-size:clamp(24px,3.5vw,42px);font-weight:900;color:var(--br);line-
         </div>
       </div>
       <div class="reveal d2">
-        <img src="../影片素材/角色去背/咚咚膠帶.png" alt="咚咚膠帶" style="height:140px;width:auto;margin:0 auto;filter:drop-shadow(0 8px 20px rgba(45,27,14,.12))">
+        <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/shooshoo-char-tape.png" alt="咚咚膠帶" style="height:140px;width:auto;margin:0 auto;filter:drop-shadow(0 8px 20px rgba(45,27,14,.12))">
         <div class="boxes-photos">
-          <div class="bphoto"><img src="../影片素材/官網圖/官網紙箱.png" alt="瓦楞紙箱"><div class="bphoto-lbl">公版瓦楞紙箱</div></div>
-          <div class="bphoto"><img src="../影片素材/官網圖/官網紙箱1.png" alt="品牌紙箱"><div class="bphoto-lbl">品牌訂製箱</div></div>
-          <div class="bphoto"><img src="../影片素材/官網圖/官網禮盒.png" alt="禮盒包裝"><div class="bphoto-lbl">精緻禮盒</div></div>
-          <div class="bphoto"><img src="../影片素材/官網圖/官網果盒.png" alt="果盒包裝"><div class="bphoto-lbl">果盒包裝</div></div>
-          <div class="bphoto"><img src="../影片素材/官網圖/官網果盒2.png" alt="果盒2"><div class="bphoto-lbl">特殊造型盒</div></div>
-          <div class="bphoto"><img src="../影片素材/官網圖/官網妝品彩盒.png" alt="妝品彩盒"><div class="bphoto-lbl">美妝彩盒</div></div>
+          <div class="bphoto"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/02/官網紙箱1.png" alt="公版瓦楞紙箱"><div class="bphoto-lbl">公版瓦楞紙箱</div></div>
+          <div class="bphoto"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/box-branded-custom.png" alt="品牌訂製箱"><div class="bphoto-lbl">品牌訂製箱</div></div>
+          <div class="bphoto"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/02/官網果盒2.png" alt="果盒包裝"><div class="bphoto-lbl">果盒包裝</div></div>
         </div>
       </div>
     </div>
@@ -1068,12 +1065,12 @@ h2.stitle{font-size:clamp(24px,3.5vw,42px);font-weight:900;color:var(--br);line-
       <div class="reveal">
         <div class="slbl" style="margin-bottom:14px">合作網紅 / 達人</div>
         <div class="inf-photos">
-          <div class="inf-photo"><img src="../影片素材/官網圖/八點檔演員-陳詩縈.jpg" alt="八點檔演員陳詩縈"><div class="inf-photo-nm">八點檔演員 陳詩縈</div></div>
-          <div class="inf-photo"><img src="../影片素材/官網圖/台語歌手余曼曼.jpg" alt="台語歌手余曼曼"><div class="inf-photo-nm">台語歌手 余曼曼</div></div>
-          <div class="inf-photo"><img src="../影片素材/官網圖/直播主團主-推薦-菟爺.jpg" alt="直播主菟爺"><div class="inf-photo-nm">直播主 菟爺</div></div>
-          <div class="inf-photo"><img src="../影片素材/官網圖/美食團主推薦-謝子芯.jpg" alt="美食團主謝子芯"><div class="inf-photo-nm">美食團主 謝子芯</div></div>
-          <div class="inf-photo"><img src="../影片素材/官網圖/親子部落客-金貝貝推薦.jpg" alt="親子部落客金貝貝"><div class="inf-photo-nm">親子部落客 金貝貝</div></div>
-          <div class="inf-photo"><img src="../影片素材/官網圖/兒童服飾品牌-品艾Abby推薦.jpg" alt="品艾Abby"><div class="inf-photo-nm">兒童服飾 品艾Abby</div></div>
+          <div class="inf-photo"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/八點檔演員-陳詩縈.jpg" alt="八點檔演員陳詩縈"><div class="inf-photo-nm">八點檔演員 陳詩縈</div></div>
+          <div class="inf-photo"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/台語歌手余曼曼.jpg" alt="台語歌手余曼曼"><div class="inf-photo-nm">台語歌手 余曼曼</div></div>
+          <div class="inf-photo"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/直播主團主-推薦-菟爺.jpg" alt="直播主菟爺"><div class="inf-photo-nm">直播主 菟爺</div></div>
+          <div class="inf-photo"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/美食團主推薦-謝子芯.jpg" alt="美食團主謝子芯"><div class="inf-photo-nm">美食團主 謝子芯</div></div>
+          <div class="inf-photo"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/親子部落客-金貝貝推薦.jpg" alt="親子部落客金貝貝"><div class="inf-photo-nm">親子部落客 金貝貝</div></div>
+          <div class="inf-photo"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/兒童服飾品牌-品艾Abby推薦.jpg" alt="品艾Abby"><div class="inf-photo-nm">兒童服飾 品艾Abby</div></div>
         </div>
       </div>
       <div class="reveal d2">
@@ -1145,7 +1142,7 @@ h2.stitle{font-size:clamp(24px,3.5vw,42px);font-weight:900;color:var(--br);line-
         <div class="tc-stars">★★★★★</div>
         <p class="tc-qt">以前自己出貨每天弄到晚上10點，現在交給咻咻，下午可以去拍產品，訂單量反而漲了 30%！</p>
         <div class="tc-au">
-          <div class="tc-av"><img src="../影片素材/官網圖/寵物用品廠商-糖糖.jpg" alt="糖糖"></div>
+          <div class="tc-av"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/寵物用品廠商-糖糖.jpg" alt="糖糖"></div>
           <div><div class="tc-name">糖糖 / 寵物用品廠商</div><div class="tc-role">蝦皮電商・月出貨 800+ 筆</div></div>
         </div>
       </div>
@@ -1153,7 +1150,7 @@ h2.stitle{font-size:clamp(24px,3.5vw,42px);font-weight:900;color:var(--br);line-
         <div class="tc-stars">★★★★★</div>
         <p class="tc-qt">雙11前我很緊張，咻咻說「放心，旺季我們有加人」，結果訂單量衝到平日5倍，全部準時出貨！</p>
         <div class="tc-au">
-          <div class="tc-av"><img src="../影片素材/官網圖/直播主團主-推薦-菟爺.jpg" alt="菟爺"></div>
+          <div class="tc-av"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/直播主團主-推薦-菟爺.jpg" alt="菟爺"></div>
           <div><div class="tc-name">菟爺 / 直播主</div><div class="tc-role">多平台・月出貨 2000+ 筆</div></div>
         </div>
       </div>
@@ -1161,7 +1158,7 @@ h2.stitle{font-size:clamp(24px,3.5vw,42px);font-weight:900;color:var(--br);line-
         <div class="tc-stars">★★★★★</div>
         <p class="tc-qt">WMS 出貨錄影功能讓我跟客人的糾紛直接少了 8 成，在台北就能即時看到台南的庫存，超方便！</p>
         <div class="tc-au">
-          <div class="tc-av"><img src="../影片素材/官網圖/美食團主推薦-謝子芯.jpg" alt="謝子芯"></div>
+          <div class="tc-av"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/美食團主推薦-謝子芯.jpg" alt="謝子芯"></div>
           <div><div class="tc-name">謝子芯 / 美食團主</div><div class="tc-role">Shopify・台北品牌放台南</div></div>
         </div>
       </div>
@@ -1179,19 +1176,26 @@ h2.stitle{font-size:clamp(24px,3.5vw,42px);font-weight:900;color:var(--br);line-
     </div>
     <div class="blog-grid">
       <div class="blog-card reveal">
-        <div class="blog-img" style="padding:0;height:160px">
-          <img src="../影片素材/IG素材/電商主題/B05-出貨整齊.png" alt="出貨教學" style="width:100%;height:100%;object-fit:cover">
-          <div class="blog-cat">出貨教學</div>
+        <div class="blog-img" style="padding:0;height:160px;position:relative">
+          <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/blog-shipping-cost-comparison-scaled.png" alt="運費比較指南" style="width:100%;height:100%;object-fit:cover;object-position:center top">
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(45,27,14,.72) 0%,rgba(45,27,14,.1) 60%,transparent 100%)"></div>
+          <div style="position:absolute;bottom:8px;left:10px;right:10px">
+            <div style="font-size:13px;font-weight:900;color:#fff;line-height:1.3;margin-bottom:5px;text-shadow:0 1px 4px rgba(0,0,0,.5)">運費比較指南</div>
+            <div style="display:flex;gap:4px;flex-wrap:wrap">
+              <span style="background:rgba(255,107,53,.9);color:#fff;font-size:10px;font-weight:800;padding:2px 7px;border-radius:20px">宅配到府</span>
+              <span style="background:rgba(255,107,53,.9);color:#fff;font-size:10px;font-weight:800;padding:2px 7px;border-radius:20px">超商取件</span>
+            </div>
+          </div>
         </div>
         <div class="blog-body">
           <div class="blog-meta">2026/06/20 · 5 分鐘閱讀</div>
-          <div class="blog-title">蝦皮賣家必看！2026 出貨費用完整比較（黑貓 vs 宅配通 vs 超商）</div>
-          <div class="blog-desc">不同商品重量、尺寸，哪家物流最划算？咻咻幫你全部算好了。</div>
+          <div class="blog-title">蝦皮賣家必看！2026 出貨費用完整比較（宅配 vs 超商）</div>
+          <div class="blog-desc">宅配到府 vs 超商取件，不同重量尺寸哪個最划算？咻咻幫你全部算好了。</div>
         </div>
       </div>
       <div class="blog-card reveal d1">
         <div class="blog-img" style="padding:0;height:160px">
-          <img src="../影片素材/IG素材/電商主題/B03-打包分工.png" alt="旺季攻略" style="width:100%;height:100%;object-fit:cover">
+          <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/blog-double11-prep-scaled.png" alt="雙11備戰" style="width:100%;height:100%;object-fit:cover;object-position:center top">
           <div class="blog-cat">旺季攻略</div>
         </div>
         <div class="blog-body">
@@ -1202,7 +1206,7 @@ h2.stitle{font-size:clamp(24px,3.5vw,42px);font-weight:900;color:var(--br);line-
       </div>
       <div class="blog-card reveal d2">
         <div class="blog-img" style="padding:0;height:160px">
-          <img src="../影片素材/IG素材/電商主題/B04-WMS系統.png" alt="3PL入門" style="width:100%;height:100%;object-fit:cover">
+          <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/blog-what-is-3pl-scaled.png" alt="什麼是3PL" style="width:100%;height:100%;object-fit:cover;object-position:center top">
           <div class="blog-cat">倉儲入門</div>
         </div>
         <div class="blog-body">
@@ -1329,7 +1333,7 @@ h2.stitle{font-size:clamp(24px,3.5vw,42px);font-weight:900;color:var(--br);line-
     <div class="foot-top">
       <div>
         <div class="foot-logo">
-          <img src="../影片素材/角色去背/咻咻LOGO.png" alt="咻咻打包">
+          <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/shooshoo-char-logo.png" alt="咻咻打包">
           <div><div class="foot-brand">咻咻打包</div><div class="foot-ben">ShooShoo Packing</div></div>
         </div>
         <p class="foot-desc">台南在地電商出貨後勤夥伴，讓老闆專心賣貨，出貨咻一下交給我們。翰鮮運營企業有限公司</p>
@@ -1338,20 +1342,7 @@ h2.stitle{font-size:clamp(24px,3.5vw,42px);font-weight:900;color:var(--br);line-
             <img src="https://cdn.simpleicons.org/facebook/ffffff" width="20" height="20" alt="Facebook">
           </a>
           <a href="https://www.instagram.com/shooshoopacking" target="_blank" class="fsoc fsoc-ig" title="Instagram">
-            <svg viewBox="0 0 24 24" width="24" height="24" aria-label="Instagram">
-              <defs>
-                <radialGradient id="ig-g" cx="30%" cy="107%" r="130%">
-                  <stop offset="0%" stop-color="#fdf497"/>
-                  <stop offset="12%" stop-color="#fdf497"/>
-                  <stop offset="38%" stop-color="#fd5949"/>
-                  <stop offset="62%" stop-color="#d6249f"/>
-                  <stop offset="100%" stop-color="#285AEB"/>
-                </radialGradient>
-              </defs>
-              <rect x="1.5" y="1.5" width="21" height="21" rx="6" fill="url(#ig-g)"/>
-              <circle cx="12" cy="12" r="4.5" fill="none" stroke="white" stroke-width="2"/>
-              <circle cx="17.3" cy="6.7" r="1.4" fill="white"/>
-            </svg>
+            <img src="https://cdn.simpleicons.org/instagram/ffffff" width="20" height="20" alt="Instagram">
           </a>
           <a href="https://www.youtube.com/@shooshoopacking" target="_blank" class="fsoc fsoc-yt" title="YouTube">
             <img src="https://cdn.simpleicons.org/youtube/ffffff" width="22" height="22" alt="YouTube">
@@ -1511,17 +1502,12 @@ if(typeof gsap!=='undefined'){
     .fromTo('.hti',{autoAlpha:0,x:-12},{autoAlpha:1,x:0,stagger:.07,duration:.4},'1.12')
     .fromTo('.hero-vis',{autoAlpha:0,x:48,scale:.94},{autoAlpha:1,x:0,scale:1,duration:1,ease:'power2.out'},'.15');
 
-  // ---- Generic scroll reveal ----
-  // Skip: hero (handled above) + elements with dedicated stagger below
-  const _own='.stc,.svc-card,.proc-step,.tc,.blog-card,.why-item,.fqi,.sec-hd .slbl,.sec-hd .stitle,.sec-hd .sdesc';
-  const _dmap={'d1':.1,'d2':.2,'d3':.3,'d4':.4};
+  // ---- Scroll entrance animation (elements always visible; IO only triggers animation) ----
+  const _revealIO=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('animate-in');_revealIO.unobserve(e.target);}});
+  },{threshold:0,rootMargin:'0px 0px 200px 0px'});
   document.querySelectorAll('.reveal').forEach(el=>{
-    if(el.closest('.hero'))return;
-    if(el.matches(_own))return;
-    const delay=Object.entries(_dmap).find(([c])=>el.classList.contains(c))?.[1]||0;
-    gsap.fromTo(el,{opacity:0,y:26},{opacity:1,y:0,duration:.65,delay,ease:'power2.out',
-      scrollTrigger:{trigger:el,start:'top 88%',once:true}
-    });
+    if(!el.closest('.hero'))_revealIO.observe(el);
   });
 
   // ---- Section headers ----
@@ -1533,15 +1519,10 @@ if(typeof gsap!=='undefined'){
     });
   });
 
-  // ---- Stats cards ----
-  gsap.fromTo('.stc',{opacity:0,y:44},{opacity:1,y:0,duration:.6,stagger:.1,ease:'back.out(1.5)',
-    scrollTrigger:{trigger:'.stats',start:'top 82%',once:true}
-  });
-
-  // ---- Stat counters ----
+  // ---- Stat counters (ScrollTrigger only for number animation) ----
   document.querySelectorAll('.cnt').forEach(el=>{
     const target=+el.dataset.t;
-    ScrollTrigger.create({trigger:el,start:'top 85%',once:true,
+    ScrollTrigger.create({trigger:el,start:'top 90%',once:true,
       onEnter(){
         const obj={val:0};
         gsap.to(obj,{val:target,duration:1.8,ease:'power2.out',
@@ -1550,50 +1531,13 @@ if(typeof gsap!=='undefined'){
       }
     });
   });
-
-  // ---- Service cards ----
-  gsap.fromTo('.svc-card',{opacity:0,y:52},{opacity:1,y:0,duration:.6,stagger:.1,ease:'power3.out',
-    scrollTrigger:{trigger:'.svc-grid',start:'top 82%',once:true}
-  });
-
-  // ---- Process steps ----
-  gsap.fromTo('.proc-step',{opacity:0,y:32,scale:.88},{opacity:1,y:0,scale:1,duration:.5,stagger:.08,ease:'back.out(1.5)',
-    scrollTrigger:{trigger:'.proc-grid',start:'top 80%',once:true}
-  });
-
-  // ---- Partner grid ----
-  gsap.fromTo('.partner-item',{opacity:0,y:20,scale:.9},{opacity:1,y:0,scale:1,duration:.35,stagger:.03,ease:'back.out(1.7)',
-    scrollTrigger:{trigger:'.partner-grid',start:'top 84%',once:true}
-  });
-
-  // ---- WMS char + features ----
-  gsap.fromTo('.wms-char img',{opacity:0,y:40},{opacity:1,y:0,duration:.8,ease:'back.out(1.4)',
-    scrollTrigger:{trigger:'.wms-grid',start:'top 80%',once:true}
-  });
-  gsap.fromTo('.wms-feat',{opacity:0,x:32},{opacity:1,x:0,duration:.5,stagger:.1,ease:'power3.out',
-    scrollTrigger:{trigger:'.wms-features',start:'top 80%',once:true}
-  });
-
-  // ---- Why items ----
-  gsap.fromTo('.why-item',{opacity:0,x:-24},{opacity:1,x:0,duration:.5,stagger:.08,ease:'power2.out',
-    scrollTrigger:{trigger:'.why-list',start:'top 80%',once:true}
-  });
-
-  // ---- Testimonials ----
-  gsap.fromTo('.tc',{opacity:0,y:36},{opacity:1,y:0,duration:.55,stagger:.1,ease:'power2.out',
-    scrollTrigger:{trigger:'.test-grid',start:'top 82%',once:true}
-  });
-
-  // ---- Blog cards ----
-  gsap.fromTo('.blog-card',{opacity:0,y:36},{opacity:1,y:0,duration:.5,stagger:.1,ease:'power2.out',
-    scrollTrigger:{trigger:'.blog-grid',start:'top 82%',once:true}
-  });
-
-  // ---- FAQ items ----
-  gsap.fromTo('.fqi',{opacity:0,x:-20},{opacity:1,x:0,duration:.4,stagger:.07,ease:'power2.out',
-    scrollTrigger:{trigger:'.faq-list',start:'top 82%',once:true}
-  });
 }
 </script>
 </body>
 </html>
+
+
+
+
+
+

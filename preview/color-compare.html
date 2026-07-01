@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<title>配色比較 v2 — 咻咻打包</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box }
+body { font-family:'Noto Sans TC', sans-serif; background:#EDE8DC }
+
+:root { --og: #DCA54A; --og-dk: #B8852E; --cr: #F7F3E6; --crl: #FFFCF5 }
+
+h1.page-title { text-align:center; padding:28px 24px 6px; font-size:20px; font-weight:900; color:#29250F }
+p.page-sub { text-align:center; padding:0 24px 8px; font-size:13px; color:#9B7250 }
+.source-tag { text-align:center; padding:0 24px 24px; font-size:12px; color:#B8852E; font-weight:700 }
+
+.compare-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  max-width:1440px;
+  margin:0 auto;
+  border-top:3px solid var(--og);
+}
+
+.col-label {
+  text-align:center; padding:14px 12px 12px;
+  font-size:14px; font-weight:800; color:#29250F;
+  background:#EDE8DC;
+  border-right:1px solid rgba(0,0,0,.08);
+}
+.col-label span { display:block; font-size:11px; font-weight:400; color:#9B7250; margin-top:3px }
+.col-label .color-chip {
+  display:inline-block; width:14px; height:14px;
+  border-radius:3px; vertical-align:middle; margin-right:5px;
+  border:1px solid rgba(0,0,0,.15);
+}
+.badge {
+  display:inline-block; font-size:9px; font-weight:800;
+  padding:2px 7px; border-radius:99px; margin-top:5px;
+  letter-spacing:.04em;
+}
+.badge-official { background:#DCA54A; color:#fff }
+.badge-theory   { background:#29250F; color:#fff }
+.badge-light    { background:#F7F3E6; color:#9B7250; border:1px solid #DCA54A }
+
+/* ── Shared UI ── */
+.mock-nav {
+  background:var(--crl); padding:14px 20px;
+  display:flex; align-items:center; justify-content:space-between;
+  border-bottom:1px solid rgba(220,165,74,.25);
+  border-right:1px solid rgba(0,0,0,.06);
+}
+.mock-logo { font-size:16px; font-weight:900; color:#29250F }
+.mock-btn  { background:var(--og); color:#fff; border:none; border-radius:99px; padding:8px 16px; font-size:12px; font-weight:700 }
+
+.mock-hero {
+  background:var(--cr); padding:36px 20px 32px; text-align:center;
+  border-right:1px solid rgba(0,0,0,.06);
+}
+.mock-hero h2 { font-size:24px; font-weight:900; color:#29250F; margin-bottom:8px }
+.mock-hero h2 em { color:var(--og); font-style:normal }
+.mock-hero p  { font-size:12px; color:#9B7250; margin-bottom:16px; line-height:1.6 }
+.mock-hero-btn { display:inline-block; background:var(--og); color:#fff; padding:10px 24px; border-radius:99px; font-size:13px; font-weight:700 }
+
+/* Cards */
+.mock-cards {
+  background:var(--crl); padding:24px 16px;
+  display:grid; grid-template-columns:1fr 1fr; gap:8px;
+  border-right:1px solid rgba(0,0,0,.06);
+}
+.mock-card { background:#fff; border-radius:8px; padding:14px; box-shadow:0 1px 6px rgba(0,0,0,.05) }
+.mock-card-icon { width:32px; height:32px; border-radius:7px; background:var(--og); margin-bottom:8px; display:flex; align-items:center; justify-content:center; color:#fff; font-size:14px }
+.mock-card h3 { font-size:12px; font-weight:800; color:#29250F; margin-bottom:3px }
+.mock-card p  { font-size:10px; color:#9B7250; line-height:1.5 }
+
+/* Marquee */
+.mock-mqbar { padding:9px 16px; display:flex; align-items:center; gap:12px; overflow:hidden; border-right:1px solid rgba(0,0,0,.06) }
+.mock-mqbar span { font-size:11px; font-weight:700; white-space:nowrap }
+.mq-sep { opacity:.4; font-size:9px }
+
+/* CTA */
+.mock-cta { padding:28px 20px; text-align:center; border-right:1px solid rgba(0,0,0,.06) }
+.mock-cta h3 { font-size:18px; font-weight:900; margin-bottom:6px }
+.mock-cta p  { font-size:11px; margin-bottom:14px; line-height:1.6 }
+.mock-cta-btn { display:inline-block; background:var(--og); color:#fff; padding:10px 24px; border-radius:99px; font-size:12px; font-weight:700 }
+
+/* Footer */
+.mock-footer { padding:20px 16px 16px; border-right:1px solid rgba(0,0,0,.06) }
+.mock-footer-row { display:flex; gap:12px; justify-content:space-between; margin-bottom:14px }
+.mock-footer-brand { font-size:14px; font-weight:900 }
+.mock-footer-sub { font-size:10px; margin-top:3px; line-height:1.5 }
+.mock-footer-col h4 { font-size:10px; font-weight:800; margin-bottom:6px }
+.mock-footer-col li { font-size:9px; margin-bottom:3px; list-style:none }
+.mock-footer-bot { font-size:9px; padding-top:10px; border-top:1px solid rgba(0,0,0,.08); text-align:center }
+
+/* ══════════════════════════════════════════
+   A: 官網提取深色 #29250F
+   官網 H3 文字色，暖橄欖深棕
+   ══════════════════════════════════════════ */
+.opt-A .mock-mqbar { background:#29250F; }
+.opt-A .mock-mqbar span { color:#fff }
+.opt-A .mock-cta { background:#29250F }
+.opt-A .mock-cta h3 { color:#fff }
+.opt-A .mock-cta p  { color:rgba(255,248,237,.65) }
+.opt-A .mock-footer { background:#29250F }
+.opt-A .mock-footer-brand { color:var(--og) }
+.opt-A .mock-footer-sub { color:rgba(255,248,237,.55) }
+.opt-A .mock-footer-col h4 { color:var(--og) }
+.opt-A .mock-footer-col li { color:rgba(255,248,237,.55) }
+.opt-A .mock-footer-bot { color:rgba(255,248,237,.35); border-top-color:rgba(255,255,255,.08) }
+
+/* ══════════════════════════════════════════
+   B: 色彩學推導 — 琥珀深棕 #2A1F00
+   DCA54A 同色相(H≈38°)，大幅降低明度
+   ══════════════════════════════════════════ */
+.opt-B .mock-mqbar { background:#2A1F00 }
+.opt-B .mock-mqbar span { color:#fff }
+.opt-B .mock-cta { background:#2A1F00 }
+.opt-B .mock-cta h3 { color:#fff }
+.opt-B .mock-cta p  { color:rgba(255,248,237,.65) }
+.opt-B .mock-footer { background:#2A1F00 }
+.opt-B .mock-footer-brand { color:var(--og) }
+.opt-B .mock-footer-sub { color:rgba(255,248,237,.55) }
+.opt-B .mock-footer-col h4 { color:var(--og) }
+.opt-B .mock-footer-col li { color:rgba(255,248,237,.55) }
+.opt-B .mock-footer-bot { color:rgba(255,248,237,.35); border-top-color:rgba(255,255,255,.08) }
+
+/* ══════════════════════════════════════════
+   C: 官網風 Light — 跟官網一樣全亮色
+   Marquee 用金、Footer 用奶油白、無深CTA
+   ══════════════════════════════════════════ */
+.opt-C .mock-mqbar { background:var(--og) }
+.opt-C .mock-mqbar span { color:#fff }
+.opt-C .mock-cta { background:var(--cr); border-top:2px solid rgba(220,165,74,.25) }
+.opt-C .mock-cta h3 { color:#29250F }
+.opt-C .mock-cta p  { color:#9B7250 }
+.opt-C .mock-cta-btn { background:var(--og); color:#fff }
+.opt-C .mock-footer { background:var(--crl); border-top:1px solid rgba(220,165,74,.25) }
+.opt-C .mock-footer-brand { color:var(--og) }
+.opt-C .mock-footer-sub { color:#9B7250 }
+.opt-C .mock-footer-col h4 { color:#29250F }
+.opt-C .mock-footer-col li { color:#9B7250 }
+.opt-C .mock-footer-bot { color:#C4B89A; border-top-color:rgba(220,165,74,.2) }
+</style>
+</head>
+<body>
+
+<h1 class="page-title">配色比較 v2 — 以官網為基準</h1>
+<p class="page-sub">官網實際配色：<strong>#DCA54A 琥珀金</strong> ＋ <strong>#F7F3E6 奶油</strong> ＋ <strong>#29250F 暖棕文字</strong>（無深色背景區塊）</p>
+<div class="source-tag">↓ 三個方案都用官網色，差異只在深色區塊的處理方式</div>
+
+<div class="compare-grid">
+
+  <!-- Labels row -->
+  <div class="col-label">
+    方案 A — 官網深色<br>
+    <span><span class="color-chip" style="background:#29250F"></span>#29250F 官網 H3 標題色</span>
+    <div><span class="badge badge-official">官網提取</span></div>
+  </div>
+  <div class="col-label">
+    方案 B — 色彩學深色<br>
+    <span><span class="color-chip" style="background:#2A1F00"></span>#2A1F00 琥珀同色相深版</span>
+    <div><span class="badge badge-theory">色彩學推導</span></div>
+  </div>
+  <div class="col-label">
+    方案 C — 全亮色<br>
+    <span><span class="color-chip" style="background:#DCA54A"></span>Marquee 用金色，無深背景</span>
+    <div><span class="badge badge-light">跟官網一致</span></div>
+  </div>
+
+  <!-- A -->
+  <div class="opt-A">
+    <div class="mock-nav"><div class="mock-logo">咻咻打包</div><button class="mock-btn">免費諮詢 →</button></div>
+    <div class="mock-hero">
+      <h2>出貨交給我們<br><em>你專心賣貨</em></h2>
+      <p>台南在地三方倉儲・電商代出貨<br>蝦皮 MOMO 全平台整合</p>
+      <a class="mock-hero-btn">立即詢問方案</a>
+    </div>
+    <div class="mock-mqbar">
+      <span>★ 三方倉儲</span><span class="mq-sep" style="color:#DCA54A">◆</span>
+      <span>代發貨</span><span class="mq-sep" style="color:#DCA54A">◆</span>
+      <span>揀貨打包</span><span class="mq-sep" style="color:#DCA54A">◆</span>
+      <span>貼標加工</span><span class="mq-sep" style="color:#DCA54A">◆</span>
+      <span>倉儲管理</span>
+    </div>
+    <div class="mock-cards">
+      <div class="mock-card"><div class="mock-card-icon">📦</div><h3>揀貨打包</h3><p>準確率 99.9%</p></div>
+      <div class="mock-card"><div class="mock-card-icon">🚚</div><h3>代發貨</h3><p>黑貓宅配郵局</p></div>
+      <div class="mock-card"><div class="mock-card-icon">🏷️</div><h3>貼標加工</h3><p>一站式完成</p></div>
+      <div class="mock-card"><div class="mock-card-icon">📊</div><h3>WMS 系統</h3><p>即時庫存查詢</p></div>
+    </div>
+    <div class="mock-cta">
+      <h3>準備好讓咻咻幫你出貨？</h3>
+      <p>填寫需求，24 小時內提供客製報價</p>
+      <a class="mock-cta-btn">免費取得方案 →</a>
+    </div>
+    <div class="mock-footer">
+      <div class="mock-footer-row">
+        <div><div class="mock-footer-brand">咻咻打包</div><div class="mock-footer-sub">台南在地電商<br>出貨後勤夥伴</div></div>
+        <div class="mock-footer-col"><h4>服務</h4><ul><li>三方倉儲</li><li>代發貨</li><li>加工貼標</li></ul></div>
+        <div class="mock-footer-col"><h4>聯絡</h4><ul><li>0976-757866</li><li>LINE @911ycmhl</li></ul></div>
+      </div>
+      <div class="mock-footer-bot">© 2026 咻咻打包 ShooShoo Packing</div>
+    </div>
+  </div>
+
+  <!-- B -->
+  <div class="opt-B">
+    <div class="mock-nav"><div class="mock-logo">咻咻打包</div><button class="mock-btn">免費諮詢 →</button></div>
+    <div class="mock-hero">
+      <h2>出貨交給我們<br><em>你專心賣貨</em></h2>
+      <p>台南在地三方倉儲・電商代出貨<br>蝦皮 MOMO 全平台整合</p>
+      <a class="mock-hero-btn">立即詢問方案</a>
+    </div>
+    <div class="mock-mqbar">
+      <span>★ 三方倉儲</span><span class="mq-sep" style="color:#DCA54A">◆</span>
+      <span>代發貨</span><span class="mq-sep" style="color:#DCA54A">◆</span>
+      <span>揀貨打包</span><span class="mq-sep" style="color:#DCA54A">◆</span>
+      <span>貼標加工</span><span class="mq-sep" style="color:#DCA54A">◆</span>
+      <span>倉儲管理</span>
+    </div>
+    <div class="mock-cards">
+      <div class="mock-card"><div class="mock-card-icon">📦</div><h3>揀貨打包</h3><p>準確率 99.9%</p></div>
+      <div class="mock-card"><div class="mock-card-icon">🚚</div><h3>代發貨</h3><p>黑貓宅配郵局</p></div>
+      <div class="mock-card"><div class="mock-card-icon">🏷️</div><h3>貼標加工</h3><p>一站式完成</p></div>
+      <div class="mock-card"><div class="mock-card-icon">📊</div><h3>WMS 系統</h3><p>即時庫存查詢</p></div>
+    </div>
+    <div class="mock-cta">
+      <h3>準備好讓咻咻幫你出貨？</h3>
+      <p>填寫需求，24 小時內提供客製報價</p>
+      <a class="mock-cta-btn">免費取得方案 →</a>
+    </div>
+    <div class="mock-footer">
+      <div class="mock-footer-row">
+        <div><div class="mock-footer-brand">咻咻打包</div><div class="mock-footer-sub">台南在地電商<br>出貨後勤夥伴</div></div>
+        <div class="mock-footer-col"><h4>服務</h4><ul><li>三方倉儲</li><li>代發貨</li><li>加工貼標</li></ul></div>
+        <div class="mock-footer-col"><h4>聯絡</h4><ul><li>0976-757866</li><li>LINE @911ycmhl</li></ul></div>
+      </div>
+      <div class="mock-footer-bot">© 2026 咻咻打包 ShooShoo Packing</div>
+    </div>
+  </div>
+
+  <!-- C -->
+  <div class="opt-C">
+    <div class="mock-nav"><div class="mock-logo">咻咻打包</div><button class="mock-btn">免費諮詢 →</button></div>
+    <div class="mock-hero">
+      <h2>出貨交給我們<br><em>你專心賣貨</em></h2>
+      <p>台南在地三方倉儲・電商代出貨<br>蝦皮 MOMO 全平台整合</p>
+      <a class="mock-hero-btn">立即詢問方案</a>
+    </div>
+    <div class="mock-mqbar">
+      <span>★ 三方倉儲</span><span class="mq-sep" style="color:rgba(255,255,255,.5)">◆</span>
+      <span>代發貨</span><span class="mq-sep" style="color:rgba(255,255,255,.5)">◆</span>
+      <span>揀貨打包</span><span class="mq-sep" style="color:rgba(255,255,255,.5)">◆</span>
+      <span>貼標加工</span><span class="mq-sep" style="color:rgba(255,255,255,.5)">◆</span>
+      <span>倉儲管理</span>
+    </div>
+    <div class="mock-cards">
+      <div class="mock-card"><div class="mock-card-icon">📦</div><h3>揀貨打包</h3><p>準確率 99.9%</p></div>
+      <div class="mock-card"><div class="mock-card-icon">🚚</div><h3>代發貨</h3><p>黑貓宅配郵局</p></div>
+      <div class="mock-card"><div class="mock-card-icon">🏷️</div><h3>貼標加工</h3><p>一站式完成</p></div>
+      <div class="mock-card"><div class="mock-card-icon">📊</div><h3>WMS 系統</h3><p>即時庫存查詢</p></div>
+    </div>
+    <div class="mock-cta">
+      <h3>準備好讓咻咻幫你出貨？</h3>
+      <p>填寫需求，24 小時內提供客製報價</p>
+      <a class="mock-cta-btn">免費取得方案 →</a>
+    </div>
+    <div class="mock-footer">
+      <div class="mock-footer-row">
+        <div><div class="mock-footer-brand">咻咻打包</div><div class="mock-footer-sub">台南在地電商<br>出貨後勤夥伴</div></div>
+        <div class="mock-footer-col"><h4>服務</h4><ul><li>三方倉儲</li><li>代發貨</li><li>加工貼標</li></ul></div>
+        <div class="mock-footer-col"><h4>聯絡</h4><ul><li>0976-757866</li><li>LINE @911ycmhl</li></ul></div>
+      </div>
+      <div class="mock-footer-bot">© 2026 咻咻打包 ShooShoo Packing</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
