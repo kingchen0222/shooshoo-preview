@@ -222,9 +222,41 @@ footer{background:#FFF8ED;color:rgba(255,248,237,.8);padding:48px 20px 20px}
 .mb-ev{background:var(--og)}
 .mb-btn [data-lucide]{width:16px;height:16px;stroke-width:2}
 /* RESPONSIVE */
-@media(max-width:1024px){.hero-in{grid-template-columns:1fr;text-align:center}.htags{justify-content:center}.hbtns{justify-content:center}.htrust{justify-content:center}.char-wrap{width:240px;height:280px}.char-wrap img{height:200px}.feat-grid{grid-template-columns:1fr 1fr}.wms-detail{grid-template-columns:1fr;text-align:center}.step-grid{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}.foot-top{grid-template-columns:1fr 1fr}}
+@media(max-width:1024px){.hero-in{grid-template-columns:1fr;text-align:center}.htags{justify-content:center}.hbtns{justify-content:center}.htrust{justify-content:center}.char-wrap{width:240px;height:280px}.char-wrap img{height:200px}.feat-grid{grid-template-columns:1fr 1fr}.wms-detail{grid-template-columns:1fr;text-align:center}.step-grid{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}.foot-top{grid-template-columns:1fr 1fr}.module-grid{grid-template-columns:1fr 1fr}.cert-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:768px){.nav-links{display:none}.ham{display:flex}.hero{padding:90px 20px 60px}.feat-grid{grid-template-columns:1fr}.float-cta{display:none}.mob-bar{display:block}.foot-top{grid-template-columns:1fr}}
 @media(max-width:480px){.stats{grid-template-columns:1fr 1fr}.step-grid{grid-template-columns:1fr 1fr}}
+/* MODULE GRID */
+.module-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.module-card{background:#fff;border:1px solid rgba(45,27,14,.07);border-radius:var(--r2);padding:22px 18px;box-shadow:0 2px 8px rgba(45,27,14,.05);transition:all .3s;position:relative;overflow:hidden}
+.module-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--og),var(--yw))}
+.module-card:hover{transform:translateY(-6px);box-shadow:var(--s2);border-color:rgba(255,107,53,.25)}
+.module-ico{width:44px;height:44px;border-radius:12px;background:rgba(255,107,53,.08);display:flex;align-items:center;justify-content:center;color:var(--og);margin-bottom:12px}
+.module-ico [data-lucide]{width:22px;height:22px;stroke-width:1.6}
+.module-h{font-size:14px;font-weight:800;color:var(--br);margin-bottom:6px}
+.module-p{font-size:13px;color:var(--gy);line-height:1.65}
+.module-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
+.module-tag{font-size:11px;font-weight:600;background:rgba(255,107,53,.07);color:var(--og);padding:2px 7px;border-radius:4px}
+/* COMPARE TABLE */
+.compare-table-wrap{overflow-x:auto;margin-top:32px}
+.compare-table{width:100%;border-collapse:separate;border-spacing:0;border-radius:var(--r2);overflow:hidden;box-shadow:var(--s2)}
+.compare-table th,.compare-table td{padding:14px 20px;text-align:center}
+.compare-table th:first-child,.compare-table td:first-child{text-align:left}
+.compare-table th{font-size:13px;font-weight:800}
+.compare-table th:first-child{background:var(--cr)}
+.compare-table th.col-gw{background:linear-gradient(135deg,var(--og),#E8A830);color:#fff}
+.compare-table th.col-old{background:rgba(45,27,14,.06);color:var(--brm)}
+.compare-table td{font-size:14px;border-top:1px solid rgba(45,27,14,.06)}
+.compare-table td:first-child{font-weight:700;color:var(--brm);background:var(--cr)}
+.compare-table td.col-gw{background:rgba(255,107,53,.04);color:var(--br);font-weight:600}
+.compare-table td.col-old{background:#fff;color:var(--gy)}
+/* CERT GRID */
+.cert-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.cert-card{background:#fff;border:1px solid rgba(45,27,14,.07);border-radius:var(--r2);padding:24px 20px;text-align:center;box-shadow:0 2px 8px rgba(45,27,14,.05);transition:all .3s}
+.cert-card:hover{transform:translateY(-4px);box-shadow:var(--s2)}
+.cert-ico{width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,rgba(255,107,53,.1),rgba(255,200,69,.1));display:flex;align-items:center;justify-content:center;margin:0 auto 12px;color:var(--og)}
+.cert-ico [data-lucide]{width:26px;height:26px;stroke-width:1.5}
+.cert-h{font-size:14px;font-weight:800;color:var(--br);margin-bottom:6px}
+.cert-p{font-size:13px;color:var(--gy);line-height:1.55}
 /* GSAP safety: hero elements visible by default — GSAP animates them in; if CDN fails, content stays readable */
 .badge-live,h1.htitle,.hsub,.hbtns,.hbtns .btn,.htrust,.hero-vis,.hero-chars,.char-wrap{opacity:1;visibility:visible}
 </style>
@@ -330,18 +362,26 @@ footer{background:#FFF8ED;color:rgba(255,248,237,.8);padding:48px 20px 20px}
     <div class="mqi"><span class="mq-star">★</span>MOMO 訂單串接<span class="mq-sep">◆</span></div>
     <div class="mqi"><span class="mq-star">★</span>效期自動預警<span class="mq-sep">◆</span></div>
     <div class="mqi"><span class="mq-star">★</span>FIFO 先進先出<span class="mq-sep">◆</span></div>
-    <div class="mqi"><span class="mq-star">★</span>智慧訂單分流<span class="mq-sep">◆</span></div>
+    <div class="mqi"><span class="mq-star">★</span>訂單智慧分流<span class="mq-sep">◆</span></div>
     <div class="mqi"><span class="mq-star">★</span>Shopify 整合<span class="mq-sep">◆</span></div>
     <div class="mqi"><span class="mq-star">★</span>91APP 串接<span class="mq-sep">◆</span></div>
-    <div class="mqi"><span class="mq-star">★</span>庫存異常通知<span class="mq-sep">◆</span></div>
+    <div class="mqi"><span class="mq-star">★</span>QC 雲端錄影<span class="mq-sep">◆</span></div>
+    <div class="mqi"><span class="mq-star">★</span>波次揀貨<span class="mq-sep">◆</span></div>
+    <div class="mqi"><span class="mq-star">★</span>新竹物流出貨<span class="mq-sep">◆</span></div>
+    <div class="mqi"><span class="mq-star">★</span>黑貓宅急便<span class="mq-sep">◆</span></div>
+    <div class="mqi"><span class="mq-star">★</span>批號效期管理<span class="mq-sep">◆</span></div>
     <div class="mqi"><span class="mq-star">★</span>蝦皮庫存同步<span class="mq-sep">◆</span></div>
     <div class="mqi"><span class="mq-star">★</span>MOMO 訂單串接<span class="mq-sep">◆</span></div>
     <div class="mqi"><span class="mq-star">★</span>效期自動預警<span class="mq-sep">◆</span></div>
     <div class="mqi"><span class="mq-star">★</span>FIFO 先進先出<span class="mq-sep">◆</span></div>
-    <div class="mqi"><span class="mq-star">★</span>智慧訂單分流<span class="mq-sep">◆</span></div>
+    <div class="mqi"><span class="mq-star">★</span>訂單智慧分流<span class="mq-sep">◆</span></div>
     <div class="mqi"><span class="mq-star">★</span>Shopify 整合<span class="mq-sep">◆</span></div>
     <div class="mqi"><span class="mq-star">★</span>91APP 串接<span class="mq-sep">◆</span></div>
-    <div class="mqi"><span class="mq-star">★</span>庫存異常通知<span class="mq-sep">◆</span></div>
+    <div class="mqi"><span class="mq-star">★</span>QC 雲端錄影<span class="mq-sep">◆</span></div>
+    <div class="mqi"><span class="mq-star">★</span>波次揀貨<span class="mq-sep">◆</span></div>
+    <div class="mqi"><span class="mq-star">★</span>新竹物流出貨<span class="mq-sep">◆</span></div>
+    <div class="mqi"><span class="mq-star">★</span>黑貓宅急便<span class="mq-sep">◆</span></div>
+    <div class="mqi"><span class="mq-star">★</span>批號效期管理<span class="mq-sep">◆</span></div>
   </div>
 </div>
 
@@ -350,8 +390,8 @@ footer{background:#FFF8ED;color:rgba(255,248,237,.8);padding:48px 20px 20px}
   <div class="stats">
     <div class="stc reveal">
       <div class="stc-icon"><i data-lucide="store"></i></div>
-      <div class="stc-n"><span class="cnt" data-t="20">0</span><span class="stc-sfx">+</span></div>
-      <div class="stc-l">串接電商平台</div>
+      <div class="stc-n"><span class="cnt" data-t="30">0</span><span class="stc-sfx">+</span></div>
+      <div class="stc-l">電商物流串接</div>
     </div>
     <div class="stc reveal">
       <div class="stc-icon"><i data-lucide="target"></i></div>
@@ -399,8 +439,69 @@ footer{background:#FFF8ED;color:rgba(255,248,237,.8);padding:48px 20px 20px}
   </div>
 </section>
 
-<!-- WMS 完整功能 -->
+<!-- 八大核心模組 -->
 <section class="sec sbg-w">
+  <div class="sec-in">
+    <div class="sec-hd">
+      <div class="slbl">功能架構</div>
+      <h2 class="stitle">八大流程模組<span class="oc">全閉環管理</span></h2>
+      <p class="sdesc">從入庫到退貨，GOWAREHOUSE 完整涵蓋倉儲八大核心作業，每一環節都有 SOP 與系統雙重把關，倉儲管理不留漏洞。</p>
+    </div>
+    <div class="module-grid">
+      <div class="module-card reveal">
+        <div class="module-ico"><i data-lucide="package-check"></i></div>
+        <div class="module-h">入庫管理</div>
+        <p class="module-p">到貨驗收到上架歸位，標準化每一個入庫環節</p>
+        <div class="module-tags"><span class="module-tag">多層彈性點收</span><span class="module-tag">批號效期 FEFO</span></div>
+      </div>
+      <div class="module-card reveal">
+        <div class="module-ico"><i data-lucide="settings-2"></i></div>
+        <div class="module-h">加工管理</div>
+        <p class="module-p">倉內加工、組裝與改包，原物料到成品的轉化站</p>
+        <div class="module-tags"><span class="module-tag">BOM 物料清單</span><span class="module-tag">加工單管理</span></div>
+      </div>
+      <div class="module-card reveal">
+        <div class="module-ico"><i data-lucide="database"></i></div>
+        <div class="module-h">庫存管理</div>
+        <p class="module-p">即時掌握庫存水位、效期與異動，四類預警監控</p>
+        <div class="module-tags"><span class="module-tag">安全庫存預警</span><span class="module-tag">耗材成本精算</span></div>
+      </div>
+      <div class="module-card reveal">
+        <div class="module-ico"><i data-lucide="map-pin"></i></div>
+        <div class="module-h">智慧儲位</div>
+        <p class="module-p">三種模式 × 五溫層分區，系統全程指引最佳存放策略</p>
+        <div class="module-tags"><span class="module-tag">Top 5 智慧推薦</span><span class="module-tag">四種盤點模式</span></div>
+      </div>
+      <div class="module-card reveal">
+        <div class="module-ico"><i data-lucide="shopping-cart"></i></div>
+        <div class="module-h">訂單管理</div>
+        <p class="module-p">多平台訂單匯入到智慧分派，兩階段防超賣機制</p>
+        <div class="module-tags"><span class="module-tag">全通路自動拉單</span><span class="module-tag">Webhook API</span></div>
+      </div>
+      <div class="module-card reveal">
+        <div class="module-ico"><i data-lucide="scan-line"></i></div>
+        <div class="module-h">揀貨配貨</div>
+        <p class="module-p">波次揀貨、路線自動排序、語音播報、多人同步作業</p>
+        <div class="module-tags"><span class="module-tag">波次揀貨</span><span class="module-tag">格位看板語音</span></div>
+      </div>
+      <div class="module-card reveal">
+        <div class="module-ico"><i data-lucide="camera"></i></div>
+        <div class="module-h">品檢包裝出貨</div>
+        <p class="module-p">掃碼品檢、印標一氣呵成，全程雲端錄影留存品質憑據</p>
+        <div class="module-tags"><span class="module-tag">QC 即時印標</span><span class="module-tag">雲端錄影存證</span></div>
+      </div>
+      <div class="module-card reveal">
+        <div class="module-ico"><i data-lucide="rotate-ccw"></i></div>
+        <div class="module-h">退貨管理</div>
+        <p class="module-p">從退貨驗收到重新上架，完整逆物流閉環，品質爭議有影像存證</p>
+        <div class="module-tags"><span class="module-tag">退貨錄影存證</span><span class="module-tag">良品自動入庫</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WMS 完整功能 -->
+<section class="sec sbg-cr">
   <div class="sec-in">
     <div class="wms-detail">
       <div class="wms-char-lg">
@@ -446,28 +547,135 @@ footer{background:#FFF8ED;color:rgba(255,248,237,.8);padding:48px 20px 20px}
 </section>
 
 <!-- 串接平台 -->
-<section class="sec sbg-cr">
+<section class="sec sbg-w">
   <div class="sec-in">
     <div class="sec-hd">
       <div class="slbl">平台串接</div>
-      <h2 class="stitle">已串接 <span class="oc">20+</span> 電商平台</h2>
-      <p class="sdesc">主流電商平台與開店系統全部支援，無論你在哪裡賣，庫存都能即時同步。</p>
+      <h2 class="stitle">已串接 <span class="oc">30+</span> 電商物流系統</h2>
+      <p class="sdesc">主流電商平台、開店系統、物流配送與 ERP 全面支援，無論你在哪裡賣、用哪家物流，庫存與訂單都能即時同步。</p>
     </div>
-    <p style="text-align:center;font-size:14px;font-weight:700;color:var(--og);margin-bottom:16px">電商平台</p>
-    <div class="plat-list" style="margin-bottom:24px">
+    <p style="text-align:center;font-size:14px;font-weight:700;color:var(--og);margin-bottom:14px">電商平台</p>
+    <div class="plat-list" style="margin-bottom:28px">
       <div class="plat-chip"><i data-lucide="shopping-bag"></i>蝦皮購物</div>
       <div class="plat-chip"><i data-lucide="tv"></i>MOMO 購物網</div>
-      <div class="plat-chip"><i data-lucide="monitor"></i>PChome</div>
-      <div class="plat-chip"><i data-lucide="star"></i>樂天市場</div>
-      <div class="plat-chip"><i data-lucide="globe"></i>Yahoo 超級商城</div>
-    </div>
-    <p style="text-align:center;font-size:14px;font-weight:700;color:var(--og);margin-bottom:16px">開店系統</p>
-    <div class="plat-list">
+      <div class="plat-chip"><i data-lucide="monitor"></i>PChome（含甲配乙配）</div>
+      <div class="plat-chip"><i data-lucide="globe"></i>Yahoo 購物中心</div>
       <div class="plat-chip"><i data-lucide="box"></i>Shopify</div>
-      <div class="plat-chip"><i data-lucide="layout"></i>SHOPLINE</div>
+      <div class="plat-chip"><i data-lucide="layout"></i>SHOPLINE（含 POS）</div>
       <div class="plat-chip"><i data-lucide="store"></i>91APP</div>
       <div class="plat-chip"><i data-lucide="shopping-cart"></i>Cyberbiz</div>
       <div class="plat-chip"><i data-lucide="package"></i>EasyStore</div>
+      <div class="plat-chip"><i data-lucide="star"></i>松果 Pcone</div>
+      <div class="plat-chip"><i data-lucide="link"></i>1shop OneShop</div>
+      <div class="plat-chip"><i data-lucide="radio"></i>東森 EtMall</div>
+      <div class="plat-chip"><i data-lucide="shopping-bag"></i>露天拍賣</div>
+      <div class="plat-chip"><i data-lucide="globe-2"></i>酷澎 Coupang</div>
+      <div class="plat-chip"><i data-lucide="package-2"></i>LiteShop</div>
+      <div class="plat-chip"><i data-lucide="grid"></i>Showmore</div>
+      <div class="plat-chip"><i data-lucide="users"></i>團購表單</div>
+    </div>
+    <p style="text-align:center;font-size:14px;font-weight:700;color:var(--og);margin-bottom:14px">物流配送串接</p>
+    <div class="plat-list" style="margin-bottom:28px">
+      <div class="plat-chip"><i data-lucide="truck"></i>新竹物流（含冷鏈冷凍）</div>
+      <div class="plat-chip"><i data-lucide="truck"></i>黑貓宅急便（含冷藏冷凍）</div>
+      <div class="plat-chip"><i data-lucide="truck"></i>宅配通（含冷藏）</div>
+      <div class="plat-chip"><i data-lucide="map-pin"></i>順豐速運（含店取）</div>
+      <div class="plat-chip"><i data-lucide="package-check"></i>綠界（7-11 / 全家）</div>
+      <div class="plat-chip"><i data-lucide="package-check"></i>賣貨便（7-ELEVEN）</div>
+      <div class="plat-chip"><i data-lucide="package-check"></i>立吉富（7-11 / 全家）</div>
+      <div class="plat-chip"><i data-lucide="globe"></i>DHL</div>
+      <div class="plat-chip"><i data-lucide="mail"></i>中華郵政</div>
+      <div class="plat-chip"><i data-lucide="truck"></i>嘉里大榮</div>
+    </div>
+    <p style="text-align:center;font-size:14px;font-weight:700;color:var(--og);margin-bottom:14px">ERP / 金流系統</p>
+    <div class="plat-list">
+      <div class="plat-chip"><i data-lucide="server"></i>SAP</div>
+      <div class="plat-chip"><i data-lucide="server"></i>Microsoft Dynamics</div>
+      <div class="plat-chip"><i data-lucide="server"></i>Odoo</div>
+      <div class="plat-chip"><i data-lucide="server"></i>鼎新電腦 Digiwin</div>
+      <div class="plat-chip"><i data-lucide="credit-card"></i>PAYUNi 統一金流</div>
+    </div>
+  </div>
+</section>
+
+<!-- 認證保障 -->
+<section class="sec sbg-cr">
+  <div class="sec-in">
+    <div class="sec-hd">
+      <div class="slbl">認證保障</div>
+      <h2 class="stitle">企業級<span class="oc">安全認證</span>守護你的數據</h2>
+      <p class="sdesc">GOWAREHOUSE 通過多項國際認證，資料安全與系統穩定均達企業最高標準。</p>
+    </div>
+    <div class="cert-grid">
+      <div class="cert-card reveal">
+        <div class="cert-ico"><i data-lucide="shield-check"></i></div>
+        <div class="cert-h">ISO/IEC 27001:2022</div>
+        <p class="cert-p">資訊安全管理認證，國際標準等級數據保護，客戶資料完全隔離</p>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-ico"><i data-lucide="cloud"></i></div>
+        <div class="cert-h">Google Cloud Platform</div>
+        <p class="cert-p">企業級雲端託管，99.9% SLA 服務可用性，資料自動備份無痛復原</p>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-ico"><i data-lucide="cpu"></i></div>
+        <div class="cert-h">Claude MCP 整合</div>
+        <p class="cert-p">相容 Anthropic 開放 MCP 協定，AI 智慧倉管助理隨時在側</p>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-ico"><i data-lucide="globe-2"></i></div>
+        <div class="cert-h">多國語系支援</div>
+        <p class="cert-p">繁中 / 簡中 / 英文 / 日文 / 東南亞語系，跨境業務無語言障礙</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 雲端 WMS vs 傳統系統 -->
+<section class="sec sbg-w">
+  <div class="sec-in">
+    <div class="sec-hd">
+      <div class="slbl">系統比較</div>
+      <h2 class="stitle">雲端 WMS <span class="oc">vs</span> 傳統買斷系統</h2>
+      <p class="sdesc">GOWAREHOUSE 雲端訂閱，省去高額硬體投資與 IT 維護成本，讓各規模倉庫都能用到頂尖 WMS 功能。</p>
+    </div>
+    <div class="compare-table-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>比較項目</th>
+            <th class="col-gw">⚡ GOWAREHOUSE 雲端 WMS</th>
+            <th class="col-old">傳統買斷型 WMS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>付費方式</td>
+            <td class="col-gw">雲端訂閱，每天 NT$ 219 起</td>
+            <td class="col-old">一次買斷數十萬至數百萬</td>
+          </tr>
+          <tr>
+            <td>現場設備</td>
+            <td class="col-gw">員工手機下載 APP 即用</td>
+            <td class="col-old">購買 PDA、掃描槍（數萬元）</td>
+          </tr>
+          <tr>
+            <td>系統建置</td>
+            <td class="col-gw">雲端服務，不需 IT 團隊</td>
+            <td class="col-old">自建伺服器、派 IT 維運</td>
+          </tr>
+          <tr>
+            <td>導入時間</td>
+            <td class="col-gw">最快當天上線</td>
+            <td class="col-old">2–6 個月客製化開發</td>
+          </tr>
+          <tr>
+            <td>系統升級</td>
+            <td class="col-gw">訂閱內自動更新，功能持續增加</td>
+            <td class="col-old">每次升級額外付費</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>
@@ -527,7 +735,15 @@ footer{background:#FFF8ED;color:rgba(255,248,237,.8);padding:48px 20px 20px}
       </div>
       <div class="fqi" onclick="toggleFaq(this)">
         <div class="fqq"><div class="fqq-inner"><div class="fqicon"><i data-lucide="help-circle"></i></div><span class="fqtext">效期預警功能如何設定？</span></div><div class="fqtog">+</div></div>
-        <div class="fqa"><div class="fqa-in">入庫時系統會記錄每批商品的效期，你可以自訂預警天數（例如效期前 30 天提醒）。系統會自動鎖定即期品並優先出貨，搭配 FIFO 機制確保庫存零浪費。</div></div>
+        <div class="fqa"><div class="fqa-in">入庫時系統會記錄每批商品的效期，你可以自訂預警天數（例如效期前 30 天提醒）。系統會自動鎖定即期品並優先出貨，搭配 FEFO 批號效期管理機制確保庫存零浪費。</div></div>
+      </div>
+      <div class="fqi" onclick="toggleFaq(this)">
+        <div class="fqq"><div class="fqq-inner"><div class="fqicon"><i data-lucide="help-circle"></i></div><span class="fqtext">WMS 系統如何避免超賣？</span></div><div class="fqtog">+</div></div>
+        <div class="fqa"><div class="fqa-in">GOWAREHOUSE 採「兩階段防超賣」機制：訂單建立時預扣庫存，確認出貨時正式扣減，同時即時回寫各電商平台庫存數字。即使在蝦皮、MOMO、自建官網同時熱賣，也不會發生超賣情況。</div></div>
+      </div>
+      <div class="fqi" onclick="toggleFaq(this)">
+        <div class="fqq"><div class="fqq-inner"><div class="fqicon"><i data-lucide="help-circle"></i></div><span class="fqtext">行動 APP 可以取代 PDA 掃描槍嗎？</span></div><div class="fqtog">+</div></div>
+        <div class="fqa"><div class="fqa-in">可以。GOWAREHOUSE 提供 iOS 和 Android 行動倉管 APP，員工用手機就能完成入庫上架、揀貨品檢、盤點調撥等所有作業，省去購買 PDA 掃描槍的數萬元硬體投資，新人平均 2 天即可上手。</div></div>
       </div>
     </div>
   </div>
@@ -663,6 +879,9 @@ if(typeof gsap!=='undefined'){
   gsap.fromTo('.plat-chip',{opacity:0,y:20,scale:.9},{opacity:1,y:0,scale:1,duration:.35,stagger:.03,ease:'back.out(1.7)',scrollTrigger:{trigger:'.plat-list',start:'top 84%',once:true}});
   gsap.fromTo('.fqi',{opacity:0,y:16},{opacity:1,y:0,duration:.45,stagger:.06,ease:'power2.out',scrollTrigger:{trigger:'.faq-list',start:'top 84%',once:true}});
   gsap.fromTo('.wms-char-lg img',{opacity:0,y:40},{opacity:1,y:0,duration:.8,ease:'back.out(1.4)',scrollTrigger:{trigger:'.wms-detail',start:'top 80%',once:true}});
+  gsap.fromTo('.module-card',{opacity:0,y:36,scale:.95},{opacity:1,y:0,scale:1,duration:.5,stagger:.07,ease:'back.out(1.5)',scrollTrigger:{trigger:'.module-grid',start:'top 82%',once:true}});
+  gsap.fromTo('.cert-card',{opacity:0,y:28},{opacity:1,y:0,duration:.55,stagger:.1,ease:'back.out(1.5)',scrollTrigger:{trigger:'.cert-grid',start:'top 84%',once:true}});
+  gsap.fromTo('.compare-table',{opacity:0,y:24},{opacity:1,y:0,duration:.6,ease:'power2.out',scrollTrigger:{trigger:'.compare-table-wrap',start:'top 84%',once:true}});
 }
 </script>
 </body>

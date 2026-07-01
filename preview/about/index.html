@@ -32,8 +32,17 @@
 .cta-sec{background:var(--cr,#FFF8ED);padding:80px 20px;text-align:center}.cta-sec h2{font-size:clamp(26px,3.5vw,44px);font-weight:900;color:#29250F;margin-bottom:14px}.cta-sec p{font-size:16px;color:rgba(41,37,15,.65);margin-bottom:36px;text-wrap:pretty}.cta-btns{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
 footer{background:#FFF8ED;color:rgba(255,248,237,.8);padding:48px 20px 20px}.foot-in{max-width:1200px;margin:0 auto}.foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;margin-bottom:36px}.foot-logo{display:flex;align-items:center;gap:10px;margin-bottom:14px}.foot-logo img{width:40px;height:40px;object-fit:contain}.foot-bname{font-size:17px;font-weight:900;color:var(--og)}.foot-desc{font-size:13px;line-height:1.7;color:rgba(41,37,15,.6);margin-bottom:16px;text-wrap:pretty}.foot-soc{display:flex;gap:10px}.fsoc{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .28s cubic-bezier(.34,1.56,.64,1);flex-shrink:0}.fsoc:hover{transform:translateY(-4px) scale(1.1);box-shadow:0 8px 24px rgba(0,0,0,.35)}.fsoc-fb{background:#1877F2}.fsoc-ig{background:radial-gradient(circle at 30% 107%,#fdf497 0%,#fdf497 5%,#fd5949 45%,#d6249f 60%,#285AEB 90%)}.fsoc-yt{background:#FF0000}.fsoc-th{background:#000}.foot-ct{font-size:13px;font-weight:800;color:var(--og);text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px}.foot-lks{list-style:none;display:flex;flex-direction:column;gap:8px}.foot-lks a{font-size:15px;color:rgba(41,37,15,.85);transition:color .2s}.foot-lks a:hover{color:var(--og)}.foot-bot{border-top:1px solid rgba(220,165,74,.2);padding-top:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}.tabnum{font-variant-numeric:tabular-nums}.foot-copy{font-size:12px;color:rgba(41,37,15,.4)}.foot-copy span{color:rgba(41,37,15,.6)}.foot-seo{display:flex;flex-wrap:wrap;gap:6px}.fseo{font-size:11px;color:rgba(255,248,237,.3)}
 .float-cta{position:fixed;right:20px;bottom:24px;display:flex;flex-direction:column;gap:10px;z-index:100}.fb{display:flex;align-items:center;gap:8px;padding:12px 18px;border-radius:var(--rf);font-size:14px;font-weight:800;color:#fff;box-shadow:var(--s3);transition:all .25s;position:relative}.fb-ln{background:var(--lg)}.fb-ln:hover{transform:translateY(-2px)}.fb-ph{background:var(--og)}.fb-ph:hover{transform:translateY(-2px)}.fb-pulse{position:absolute;top:-4px;right:-4px;width:12px;height:12px;border-radius:50%;background:var(--yw);border:2px solid #fff;animation:pulse 2s ease-out infinite}.fb [data-lucide]{width:16px;height:16px;stroke-width:2}.mob-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:100;background:#fff;border-top:1px solid var(--crd);padding:10px 16px 14px}.mob-row{display:flex;gap:10px}.mb-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:13px;border-radius:var(--rf);font-size:14px;font-weight:800;color:#fff}.mb-ln{background:var(--lg)}.mb-ev{background:var(--og)}.mb-btn [data-lucide]{width:16px;height:16px;stroke-width:2}
-@media(max-width:1024px){.hero-in{grid-template-columns:1fr;text-align:center}.hbtns{justify-content:center}.htrust{justify-content:center}.value-grid{grid-template-columns:1fr 1fr}.service-list{grid-template-columns:1fr}.cooperate-grid{grid-template-columns:1fr 1fr}.story-grid{grid-template-columns:1fr}.foot-top{grid-template-columns:1fr 1fr}}
+@media(max-width:1024px){.hero-in{grid-template-columns:1fr;text-align:center}.hbtns{justify-content:center}.htrust{justify-content:center}.value-grid{grid-template-columns:1fr 1fr}.service-list{grid-template-columns:1fr}.cooperate-grid{grid-template-columns:1fr 1fr}.story-grid{grid-template-columns:1fr}.foot-top{grid-template-columns:1fr 1fr}.diff-grid{grid-template-columns:1fr}}
 @media(max-width:768px){.nav-links{display:none}.ham{display:flex}.hero{padding:90px 20px 60px}.float-cta{display:none}.mob-bar{display:block}.cooperate-grid{grid-template-columns:1fr}.foot-top{grid-template-columns:1fr}}
+/* Advantages diff-grid */
+.diff-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.diff-list{display:flex;flex-direction:column;gap:12px}
+.diff-item{display:flex;gap:14px;align-items:flex-start;padding:16px;background:#fff;border:1px solid rgba(45,27,14,.08);border-radius:var(--r2);transition:all .3s;box-shadow:0 2px 8px rgba(45,27,14,.04)}
+.diff-item:hover{border-color:rgba(255,107,53,.3);transform:translateX(4px)}
+.diff-ico{width:40px;height:40px;flex-shrink:0;border-radius:10px;background:rgba(220,165,74,.12);display:flex;align-items:center;justify-content:center}
+.diff-ico [data-lucide]{width:20px;height:20px;color:var(--og);stroke-width:1.7}
+.diff-h{font-size:15px;font-weight:800;color:var(--br);margin-bottom:3px}
+.diff-p{font-size:13px;color:var(--gy);line-height:1.6}
 /* GSAP safety: hero elements visible by default — GSAP animates them in; if CDN fails, content stays readable */
 .badge-live,h1.htitle,.hsub,.hbtns,.hbtns .btn,.htrust,.hero-vis,.hero-chars,.char-wrap{opacity:1;visibility:visible}
 </style>
@@ -147,6 +156,47 @@ footer{background:#FFF8ED;color:rgba(255,248,237,.8);padding:48px 20px 20px}.foo
   </div>
 </section>
 
+<!-- 台南在地六大優勢 -->
+<section class="sec sbg-w" id="advantages">
+  <div class="sec-in">
+    <div class="sec-hd">
+      <div class="slbl">選擇咻咻打包</div>
+      <h2 class="stitle">台南在地<span class="oc">六大優勢</span></h2>
+      <p class="sdesc">在地倉庫 × 有溫度的服務 × 智慧系統，讓你的出貨後勤零焦慮。</p>
+    </div>
+    <div class="diff-grid">
+      <div class="diff-list">
+        <div class="diff-item">
+          <div class="diff-ico"><i data-lucide="map-pin"></i></div>
+          <div><div class="diff-h">台南在地・快速響應</div><p class="diff-p">本地倉庫、本地車隊，緊急補貨或異常狀況能以最快速度處理</p></div>
+        </div>
+        <div class="diff-item">
+          <div class="diff-ico"><i data-lucide="heart"></i></div>
+          <div><div class="diff-h">有溫度的服務態度</div><p class="diff-p">不是冰冷的系統，是真人溝通、主動回報，異常立即告知</p></div>
+        </div>
+        <div class="diff-item">
+          <div class="diff-ico"><i data-lucide="monitor"></i></div>
+          <div><div class="diff-h">智慧 WMS 全透明</div><p class="diff-p">導入雲端 WMS，庫存、訂單、出貨進度隨時查，不需要追問</p></div>
+        </div>
+      </div>
+      <div class="diff-list">
+        <div class="diff-item">
+          <div class="diff-ico"><i data-lucide="zap"></i></div>
+          <div><div class="diff-h">24 小時接單出貨</div><p class="diff-p">週一至週六正常運作，旺季彈性加班，不讓出貨成為你的瓶頸</p></div>
+        </div>
+        <div class="diff-item">
+          <div class="diff-ico"><i data-lucide="link-2"></i></div>
+          <div><div class="diff-h">20+ 平台 API 整合</div><p class="diff-p">多平台庫存統一管理，一個後台搞定蝦皮、MOMO、PChome 全部</p></div>
+        </div>
+        <div class="diff-item">
+          <div class="diff-ico"><i data-lucide="shield-check"></i></div>
+          <div><div class="diff-h">99.8% 出貨準確率</div><p class="diff-p">嚴格 QC 流程，每筆訂單出貨前再次確認，把出錯率降到最低</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- 服務項目 -->
 <div class="sbg-dk">
   <div class="sec-in">
@@ -233,6 +283,7 @@ if(typeof gsap!=='undefined'){
   gsap.fromTo('.val-card',{opacity:0,y:40},{opacity:1,y:0,duration:.6,stagger:.12,ease:'power3.out',scrollTrigger:{trigger:'.value-grid',start:'top 82%',once:true}});
   gsap.fromTo('.svc-row',{opacity:0,x:-24},{opacity:1,x:0,duration:.5,stagger:.08,ease:'power2.out',scrollTrigger:{trigger:'.service-list',start:'top 80%',once:true}});
   gsap.fromTo('.cop-card',{opacity:0,y:36},{opacity:1,y:0,duration:.55,stagger:.1,ease:'power3.out',scrollTrigger:{trigger:'.cooperate-grid',start:'top 82%',once:true}});
+  gsap.fromTo('.diff-item',{opacity:0,x:-20},{opacity:1,x:0,duration:.45,stagger:.07,ease:'power2.out',scrollTrigger:{trigger:'.diff-grid',start:'top 80%',once:true}});
   gsap.fromTo('.hc1',{opacity:0,x:-30},{opacity:1,x:0,duration:.7,ease:'back.out(1.5)'},0);
   gsap.fromTo('.hc2',{opacity:0,y:30},{opacity:1,y:0,duration:.7,delay:.15,ease:'back.out(1.5)'},0);
   gsap.fromTo('.hc3',{opacity:0,x:30},{opacity:1,x:0,duration:.7,delay:.3,ease:'back.out(1.5)'},0);
