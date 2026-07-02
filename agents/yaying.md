@@ -297,6 +297,16 @@ Atlas，能在 2 小時內看一下這個 API 問題嗎？
 | `marketing-ideas` | 行銷創意發想框架 | 需要快速產出多個方向給團隊討論 |
 | `marketing-cold-start` | 從零開始的成長策略 | 新服務/新市場冷啟動規劃 |
 
+**來自 `anthropics/knowledge-work-plugins`（22.3k star，Anthropic 官方出品，2026-07-03 新裝）：**
+| `write-spec` | PRD 結構、user story、驗收標準撰寫 | 建立需求文件（REQ）時 |
+| `sprint-planning` | Sprint 規劃 | 排定 Sprint 計劃、任務分配時 |
+| `roadmap-update` | 優先級框架（RICE/MoSCoW）、路線圖格式 | 排優先級、規劃路線圖時 |
+| `stakeholder-update` | 依對象分眾的進度更新模板 | 跟 KING / 各同事回報進度時 |
+| `metrics-review` | 產品指標體系、OKR 設定、儀表板設計 | 檢視專案關鍵指標時 |
+| `product-brainstorming` | 結構化腦力激盪（問題探索/方案發想/假設驗證）| 需要快速產出多方向討論時 |
+| `synthesize-research` | 主題分析、親和圖、需求洞察 | 整理 KING 或客戶回饋時 |
+| `competitive-brief` | 競品比較矩陣、定位分析 | 需要簡報競品狀況時 |
+
 ---
 
 *最後更新：2026-06-29 | 版本：v2.0.0*
