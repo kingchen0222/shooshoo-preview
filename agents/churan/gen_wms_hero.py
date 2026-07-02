@@ -13,58 +13,34 @@ KIE  = os.getenv('KIE_API_KEY', '')
 KIE_H = {"Authorization": f"Bearer {KIE}", "Content-Type": "application/json"}
 OUT = Path('D:/咻咻打包CLAUDE/social-cards/文章配圖')
 
-# WP 上已有的 style refs（咻咻角色風格）
+# 參考圖：左手機來源（真實卡通圖）+ GoWarehouse style
 REFS = [
-    "https://www.shooshoo.com.tw/wp-content/uploads/2026/06/shooshoo-char-admin-cat.png",
-    "https://www.shooshoo.com.tw/wp-content/uploads/2026/06/shooshoo-char-pick-cat.png",
+    "https://www.shooshoo.com.tw/wp-content/uploads/2026/07/shooshoo-wms-team-cartoon.jpg",  # 左手機內容
+    "https://www.shooshoo.com.tw/wp-content/uploads/2026/06/shooshoo-char-admin-cat.png",    # 角色風格 ref
 ]
 
 PROMPT = """
-Create a professional product marketing image in 16:9 format.
+Create a professional product marketing hero image, landscape 16:9 format.
 
-OVERALL COMPOSITION:
-Two modern smartphones floating side by side against a warm cream background (#FFF8ED).
-Left phone tilts slightly left (-8 deg), right phone tilts slightly right (+5 deg).
-Both cast soft drop shadows. Background has 4 soft pastel blue circles of varying sizes scattered decoratively.
+COMPOSITION: Two floating smartphones displayed side by side against a soft warm cream background (#FFF8ED).
+The left phone leans slightly to the left, the right phone leans slightly to the right.
+Both phones float with subtle drop shadows beneath them.
+Scattered in the corners: 4 soft pastel blue semi-transparent circles of varying sizes as decorative elements.
+No text labels or annotations anywhere in the background — only the two phones and the decorative circles.
 
-━━ LEFT PHONE ━━
-The screen shows a 2D kawaii chibi flat illustration titled "最萌打包團隊" at the top inside a red ribbon banner.
-Top of screen: "咻咻打包 ➤ SHOOSHOO PACKING ➤" logo bar with dark brown background.
-Bottom of screen: small "GoWarehouse" badge bottom-right corner.
-Background of screen: warm tan/parchment color.
-Characters shown together in a cheerful group scene:
-1. Orange tabby cat (seated at a mini box-desk, using a laptop) — top-left
-2. Gray tabby cat (wrapping/taping a cardboard box, sparkles around) — center
-3. Cute yellow cartoon forklift with expressive face — top-right
-4. Cardboard box character wearing a brown business suit, giving thumbs up — right
-5. Brown tape-roll mascot with smiling face — lower center
-6. Small cute white delivery mini-truck with a face — lower-left
-7. Running cardboard box character (咻咻 mascot) with "TT" on chest — upper area
-All characters drawn in 2D Japanese chibi flat illustration style, warm brown/tan color palette, thick outlines, super cute expressions.
+LEFT PHONE:
+The screen displays the EXACT illustration from reference image 1 — a 2D kawaii chibi cartoon titled "最萌打包團隊" showing cute warehouse mascot characters together: running cardboard box mascot, orange cat with laptop, gray cat sealing a box, yellow forklift, box-head character in suit, tape-roll mascot, small white delivery truck. Warm tan/beige background, dark brown header bar with "咻咻打包 SHOOSHOO PACKING" text, red ribbon banner with "最萌打包團隊". Reproduce this screen faithfully.
 
-━━ RIGHT PHONE ━━
-Screen shows a dark-mode WMS warehouse management mobile app (GoWarehouse IBIZA).
-Pure black (#0D0D0D) background, clean modern dark UI.
-Top status bar area: shows "Operator / Warehouse Staff" with small user icon, dark gray card.
-Below: "目前貨主  全部貨主 >" selector row in dark card.
-Main content: vertical menu list with these items in white text on dark rows:
-  • 儀表板 (highlighted/active, blue accent)
-  • 入倉驗收
-  • 上架作業
-  • 揀貨作業
-  • 揀貨庫位
-  • 出貨品檢
-  • 庫存盤點
-  • 庫存查詢
-  • 庫存移轉
-Bottom of screen: notification bell icon (🔔), globe/language icon (🌐), and red 登出 (logout) text.
-Overall: sleek, modern dark UI, professional WMS app aesthetic.
+RIGHT PHONE:
+Screen shows a dark-mode mobile WMS app. Pure black background (#0D0D0D).
+Top area: dark gray card with user icon, text "Operator / Warehouse Staff".
+Below: "目前貨主  全部貨主 >" selector.
+Main area: vertical list menu with icons, items in white text:
+儀表板 (active, highlighted with blue), 入倉驗收, 上架作業, 揀貨作業, 揀貨庫位, 出貨品檢, 庫存盤點, 庫存查詢, 庫存移轉.
+Bottom bar: bell icon, globe icon, red 登出 text.
 
-STYLE NOTES:
-- Product shot quality, clean background, professional marketing image
-- Left phone warm/colorful illustrated screen vs right phone sleek dark professional UI — intentional contrast
-- Phones look like modern thin-bezel smartphones
-- Image conveys: cute brand identity + powerful modern technology = ShooShoo WMS
+TECHNICAL: Both phones are modern smartphones with thin bezels, rounded corners, silver/dark frames.
+Professional tech product shot quality. Clean, polished, marketing-ready.
 """
 
 def kie_create(prompt, refs):
