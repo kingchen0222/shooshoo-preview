@@ -24,7 +24,7 @@
 .mqbar{background:#DCA54A;padding:12px 0;overflow:hidden}.mqtrack{display:flex;width:max-content;animation:marquee 28s linear infinite}.mqi{display:flex;align-items:center;gap:9px;padding:0 28px;color:rgba(41,37,15,.85);font-size:13px;font-weight:700;white-space:nowrap}.mq-star{color:var(--yw)}.mq-sep{color:var(--yw);opacity:.4;font-size:9px}
 .sec{padding:80px 20px}.sec-in{max-width:1200px;margin:0 auto}.sec-hd{text-align:center;margin-bottom:52px}.slbl{display:inline-flex;border-left:3px solid var(--og);padding:3px 0 3px 12px;font-size:11px;font-weight:800;color:var(--og);letter-spacing:.1em;text-transform:uppercase;margin-bottom:18px}h2.stitle{font-size:clamp(24px,3.2vw,40px);font-weight:900;color:var(--br);line-height:1.25;margin-bottom:12px}.stitle .oc{color:var(--og)}.sdesc{font-size:16px;color:var(--brm);max-width:560px;margin:0 auto;line-height:1.7;text-wrap:pretty}
 .sbg-w{background:#fff;padding:80px 20px}.sbg-cr{background:var(--cr)}.sbg-dk{background:var(--cr,#FFF8ED);padding:80px 20px}.sbg-dk .stitle{color:#29250F}.sbg-dk .slbl{border-left-color:var(--yw);color:var(--yw)}.sbg-dk .sdesc{color:rgba(41,37,15,.65)}
-.plat-grid{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;max-width:760px;margin:0 auto}.plat{display:inline-flex;align-items:center;gap:7px;padding:9px 16px;border-radius:var(--rf);background:#fff;border:1.5px solid rgba(45,27,14,.09);font-size:13px;font-weight:700;color:var(--brm);transition:all .22s;box-shadow:0 2px 8px rgba(45,27,14,.05)}.plat:hover{border-color:var(--og);color:var(--og);transform:scale(1.05)}.plat-badge{width:18px;height:18px;border-radius:4px;flex-shrink:0}
+.plat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:12px;max-width:960px;margin:0 auto}.plat-card{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:16px 10px;border-radius:14px;background:#fff;border:1px solid rgba(45,27,14,.08);transition:all .22s;box-shadow:0 2px 8px rgba(45,27,14,.05)}.plat-card:hover{border-color:var(--og);transform:translateY(-3px);box-shadow:0 6px 18px rgba(45,27,14,.1)}.plat-card img{height:28px;max-width:80px;object-fit:contain}.plat-card span{font-size:12px;font-weight:700;color:var(--brm);text-align:center;white-space:nowrap}
 .feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.feat-card{background:#fff;border:1px solid rgba(45,27,14,.07);border-radius:var(--r2);padding:28px;box-shadow:0 2px 12px rgba(45,27,14,.05);transition:all .3s;position:relative;overflow:hidden}.feat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--og),var(--yw))}.feat-card:hover{transform:translateY(-7px);box-shadow:var(--s3)}.feat-icon{width:54px;height:54px;border-radius:14px;background:rgba(255,107,53,.08);display:flex;align-items:center;justify-content:center;color:var(--og);margin-bottom:16px}.feat-icon [data-lucide]{width:24px;height:24px;stroke-width:1.7}.feat-h{font-size:17px;font-weight:900;color:var(--br);margin-bottom:9px}.feat-p{font-size:14px;color:var(--gy);line-height:1.7;text-wrap:pretty}
 .flow-row{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}.flow-list{display:flex;flex-direction:column;gap:0}.flow-item{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid rgba(45,27,14,.07)}.flow-item:last-child{border-bottom:none}.flow-num{width:36px;height:36px;flex-shrink:0;border-radius:10px;background:var(--og);color:#fff;font-size:16px;font-weight:900;display:flex;align-items:center;justify-content:center}.flow-h{font-size:15px;font-weight:800;color:var(--br);margin-bottom:4px}.flow-p{font-size:13px;color:var(--gy);line-height:1.6}
 .cta-sec{background:var(--cr,#FFF8ED);padding:80px 20px;text-align:center}.cta-sec h2{font-size:clamp(26px,3.5vw,44px);font-weight:900;color:#29250F;margin-bottom:14px}.cta-sec p{font-size:16px;color:rgba(41,37,15,.65);margin-bottom:36px}.cta-btns{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
@@ -102,11 +102,44 @@ footer{background:#FFF8ED;padding:48px 20px 20px}.foot-in{max-width:1200px;margi
   <div class="sec-in">
     <div class="sec-hd">
       <div class="slbl">已支援平台</div>
-      <h2 class="stitle">20+ 電商平台<span class="oc">全都串</span></h2>
+      <h2 class="stitle">30+ 電商物流系統<span class="oc">全都串</span></h2>
       <p class="sdesc">台灣主流、國際平台、自有網站通通整合，一個後台管所有庫存。</p>
     </div>
+    <p style="text-align:center;font-size:13px;font-weight:800;color:var(--og);margin-bottom:14px">電商平台串接</p>
+    <div class="plat-grid" style="margin-bottom:32px">
+      <div class="plat-card"><img src="https://cdn.simpleicons.org/shopee/EE4D2D" alt="Shopee"><span>蝦皮購物</span></div>
+      <div class="plat-card"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-momo.webp" alt="MOMO"><span>MOMO</span></div>
+      <div class="plat-card"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/07/logo-pchome24h.svg" alt="PChome 24h"><span>PChome 24h</span></div>
+      <div class="plat-card"><img src="https://cdn.simpleicons.org/yahoo/6001D2" alt="Yahoo"><span>Yahoo</span></div>
+      <div class="plat-card"><img src="https://cdn.simpleicons.org/shopify/96BF48" alt="Shopify"><span>Shopify</span></div>
+      <div class="plat-card"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-shopline-n.webp" alt="SHOPLINE"><span>SHOPLINE</span></div>
+      <div class="plat-card"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-91app.webp" alt="91APP"><span>91APP</span></div>
+      <div class="plat-card"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-cyberbiz.png" alt="Cyberbiz"><span>Cyberbiz</span></div>
+      <div class="plat-card"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/07/logo-easystore.svg" alt="EasyStore"><span>EasyStore</span></div>
+      <div class="plat-card"><img src="https://cdn.simpleicons.org/wordpress/21759B" alt="WordPress"><span>WordPress</span></div>
+      <div class="plat-card"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/07/logo-pcone.webp" alt="松果 Pcone"><span>松果 Pcone</span></div>
+      <div class="plat-card"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/07/logo-1shop.webp" alt="1shop"><span>1shop</span></div>
+      <div class="plat-card"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/07/logo-etmall.webp" alt="東森 EtMall"><span>東森 EtMall</span></div>
+      <div class="plat-card"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/logo-ruten.svg" alt="露天拍賣"><span>露天拍賣</span></div>
+      <div class="plat-card"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/07/logo-liteshop.webp" alt="LiteShop"><span>LiteShop</span></div>
+      <div class="plat-card"><img src="https://cdn.simpleicons.org/coupang/C00305" alt="Coupang"><span>酷澎</span></div>
+      <div class="plat-card"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/07/logo-groupbuy.png" alt="團購表單"><span>團購表單</span></div>
+    </div>
+    <p style="text-align:center;font-size:13px;font-weight:800;color:var(--og);margin-bottom:14px">物流及 ERP 系統串接</p>
     <div class="plat-grid">
-      <span class="plat">🛒 蝦皮購物</span><span class="plat">📱 MOMO 購物</span><span class="plat">💻 PChome 24h</span><span class="plat">🏪 樂天市場</span><span class="plat">🌐 Shopify</span><span class="plat">📦 Yahoo 購物</span><span class="plat">🛍 博客來</span><span class="plat">💄 美妝電商</span><span class="plat">🏠 家樂福網路</span><span class="plat">📲 LINE 購物</span><span class="plat">🌏 蝦皮東南亞</span><span class="plat">✈ 跨境電商</span><span class="plat">🔌 WooCommerce</span><span class="plat">📊 自建系統</span><span class="plat">＋ 更多持續新增</span>
+      <div class="plat-card"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-hct-new.webp" alt="新竹物流"><span>新竹物流</span></div>
+      <div class="plat-card"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-tcat.webp" alt="黑貓宅急便"><span>黑貓宅急便</span></div>
+      <div class="plat-card"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-pelican-n.webp" alt="宅配通"><span>宅配通</span></div>
+      <div class="plat-card"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-srexpress.webp" alt="順豐速運"><span>順豐速運</span></div>
+      <div class="plat-card"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-ecpay.webp" alt="綠界 ECPay"><span>綠界 ECPay</span></div>
+      <div class="plat-card"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/07/logo-post.png" alt="中華郵政"><span>中華郵政</span></div>
+      <div class="plat-card"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/logo-kerry.webp" alt="嘉里大榮"><span>嘉里大榮</span></div>
+      <div class="plat-card"><img src="https://cdn.simpleicons.org/dhl/D40511" alt="DHL"><span>DHL</span></div>
+      <div class="plat-card"><img src="https://cdn.simpleicons.org/sap/0FAAFF" alt="SAP"><span>SAP</span></div>
+      <div class="plat-card"><img src="https://cdn.simpleicons.org/odoo/714B67" alt="Odoo"><span>Odoo</span></div>
+      <div class="plat-card"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/07/logo-digiwin.webp" alt="鼎新電腦"><span>鼎新電腦</span></div>
+      <div class="plat-card"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/07/logo-payuni.svg" alt="PAYUNi"><span>PAYUNi</span></div>
+      <div class="plat-card"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/07/logo-msdynamics.png" alt="MS Dynamics"><span>MS Dynamics</span></div>
     </div>
   </div>
 </section>
