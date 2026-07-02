@@ -37,7 +37,7 @@ async def generate_video(
             print('  已連接真實 Chrome（使用現有登入狀態）')
             using_real_chrome = True
         except Exception:
-            print('  提示：執行 agents/yifei/start_chrome.ps1 可直接使用已登入的 Chrome')
+            print('  提示：執行 agents/helv/start_chrome.ps1 可直接使用已登入的 Chrome')
             print('  改用內建瀏覽器...')
             browser = await p.chromium.launch(
                 headless=False, slow_mo=350,

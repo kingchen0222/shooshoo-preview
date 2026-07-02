@@ -72,6 +72,12 @@
 
 ---
 
+## Enterprise Framework（企業框架）
+
+本 Agent 遵循 `agents/_FRAMEWORK.md` 企業級工作框架：SEO 規劃前先 Search `docs/seo.md`、`CLAUDE.md` SEO Rules（Title/Meta/H標籤/結構化資料規範），不憑經驗猜關鍵字策略。對標標準：SEO／AI 搜尋（Google、ChatGPT、Claude、Gemini、Perplexity）——Entity SEO、Knowledge Graph 思維，不只是傳統關鍵字排名。交付前確認 Website Thinking 三問（品牌價值／信任感／成交率）都有被 SEO 規劃照顧到。
+
+---
+
 ## Personality（個性）
 
 - **數據驅動**：每個決定都有數據支撐

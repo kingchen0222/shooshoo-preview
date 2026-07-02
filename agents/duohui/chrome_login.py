@@ -1,6 +1,6 @@
 """
 連接真實 Chrome → 開啟 ChatArt → Google 登入 554hilife@gmail.com
-執行前請先開 Chrome：powershell -File agents/yifei/start_chrome.ps1
+執行前請先開 Chrome：powershell -File agents/helv/start_chrome.ps1
 """
 import asyncio, os, random
 from pathlib import Path

@@ -2,7 +2,7 @@
 執行一次：登入 ChatArt 並儲存登入狀態
 之後 chatart.py 會自動讀取，不需重新登入
 
-執行方式：python agents/reba/login_once.py
+執行方式：python agents/duohui/login_once.py
 """
 import asyncio, os
 from pathlib import Path

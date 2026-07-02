@@ -1,6 +1,16 @@
 # 咻咻打包 — AI Agent 目錄
 
-> **版本：** v1.0.0 | **建立：** 2026-06-22
+> **版本：** v1.1.0 | **建立：** 2026-06-22 | **企業框架升級：** 2026-07-03
+
+---
+
+## ⚙️ 企業級工作框架
+
+所有同事（Atlas 以下 18 位執行型 Agent）統一遵循 **[`_FRAMEWORK.md`](_FRAMEWORK.md)**：
+Think→Search→Read→Understand→Plan→Proposal→Execute→Review→Improve→QA→Complete、知識調用優先順序、Website/Brand Thinking、Creative Review Checklist、世界級對標標準。
+**這是單一來源，不要把框架內容複製進個別同事檔案，改框架只改這一份文件。**
+
+✅ **2026-07-03 已修正**：原本 `agents/lusi/`、`agents/reba/`、`agents/yifei/` 三個資料夾內的自動化腳本實際上分別是珉貞、多慧、荷律的工具，資料夾名稱跟內容不符。已改名為 `agents/minzheng/`、`agents/duohui/`、`agents/helv/`，程式路徑引用同步更新，KING 已確認執行。
 
 ---
 
