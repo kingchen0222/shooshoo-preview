@@ -98,25 +98,25 @@ h1.htitle{font-size:clamp(28px,3.8vw,48px);font-weight:900;line-height:1.18;colo
 .app-row{display:grid;grid-template-columns:1.15fr 1fr;gap:60px;align-items:start}
 .app-vis img{width:100%;border-radius:0;box-shadow:none}
 .app-dl{display:flex;flex-direction:column;align-items:flex-start}
-.app-lbl{font-size:12px;font-weight:800;color:var(--og);letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:8px}
-.app-h{font-size:clamp(26px,3.2vw,40px);font-weight:900;color:var(--br);margin-bottom:12px;line-height:1.2}
-.app-desc{font-size:15px;color:var(--brm);line-height:1.7;margin-bottom:8px}
-.app-qr-lbl{font-size:13px;color:var(--gy);margin-bottom:24px}
+.app-lbl{font-size:12px;font-weight:800;color:var(--og);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px}
+.app-h{font-size:clamp(24px,2.8vw,34px);font-weight:900;color:var(--br);margin-bottom:8px;line-height:1.2}
+.app-desc{font-size:14px;color:var(--brm);line-height:1.6;margin-bottom:6px}
+.app-qr-lbl{font-size:13px;color:var(--gy);margin-bottom:16px}
 .dl-group{display:inline-flex;flex-direction:column;align-items:flex-start}
-.dl-cols{display:flex;gap:32px;margin-bottom:28px;align-self:flex-end}
-.dl-col{display:flex;flex-direction:column;gap:12px;width:150px}
+.dl-cols{display:flex;gap:24px;margin-bottom:20px;align-self:flex-end}
+.dl-col{display:flex;flex-direction:column;gap:10px;width:130px}
 .qr-box{display:block;text-decoration:none;opacity:.95;transition:opacity .2s}
 .qr-box:hover{opacity:1}
-.qr-box img{display:block;width:150px;height:150px;border-radius:8px;box-shadow:0 2px 10px rgba(45,27,14,.1)}
+.qr-box img{display:block;width:130px;height:130px;border-radius:8px;box-shadow:0 2px 10px rgba(45,27,14,.1)}
 .store-wrap{display:none}
-.store-btn{display:flex;align-items:center;gap:8px;padding:10px 12px;border-radius:10px;background:rgba(45,27,14,.04);border:1.5px solid rgba(45,27,14,.14);text-decoration:none;transition:all .2s;width:100%;box-sizing:border-box;min-height:48px}
+.store-btn{display:flex;align-items:center;gap:8px;padding:9px 12px;border-radius:10px;background:rgba(45,27,14,.04);border:1.5px solid rgba(45,27,14,.14);text-decoration:none;transition:all .2s;width:100%;box-sizing:border-box;min-height:44px}
 .store-btn:hover{border-color:var(--og);background:rgba(220,165,74,.07);transform:translateY(-1px)}
-.store-icon{width:26px;height:26px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.store-icon{width:24px;height:24px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
 .store-icon img{width:20px;height:20px;object-fit:contain;display:block}
 .store-icon svg{width:22px;height:22px;display:block}
 .sb-sub{font-size:9px;color:var(--gy);line-height:1;margin-bottom:2px;letter-spacing:.02em}
-.sb-main{font-size:14px;font-weight:900;color:var(--br);line-height:1;white-space:nowrap}
-.odl-lbl{font-size:12px;font-weight:800;color:var(--brm);margin-bottom:12px;letter-spacing:.05em}
+.sb-main{font-size:13px;font-weight:900;color:var(--br);line-height:1;white-space:nowrap}
+.odl-lbl{font-size:12px;font-weight:800;color:var(--brm);margin-bottom:10px;letter-spacing:.05em}
 .odl-wrap{display:flex;gap:8px;flex-wrap:wrap}
 .odl-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:var(--rf);border:1.5px solid rgba(45,27,14,.12);font-size:13px;font-weight:700;color:var(--brm);background:#fff;transition:all .2s;white-space:nowrap}
 .odl-btn:hover{border-color:var(--og);color:var(--og)}
@@ -753,7 +753,7 @@ footer{background:#FFF8ED;color:rgba(255,248,237,.8);padding:48px 20px 20px}
       </div>
       <!-- 右：下載內容 -->
       <div class="app-dl">
-        <div class="app-lbl"><i data-lucide="smartphone"></i>行動倉管 APP</div>
+        <div class="app-lbl">行動倉管 APP</div>
         <h2 class="app-h">下載輔助程式</h2>
         <p class="app-desc">功能涵蓋：進倉上架、調撥、移動儲位、理揀貨等等流程</p>
         <p class="app-qr-lbl">掃描 QR Code 或點擊下方按鈕下載</p>
@@ -775,14 +775,7 @@ footer{background:#FFF8ED;color:rgba(255,248,237,.8);padding:48px 20px 20px}
               <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/07/gowarehouse-qr-android.png" alt="Android QR Code">
             </a>
             <a href="https://play.google.com/store/apps/details?id=com.ibiza.wms&hl=zh-TW" target="_blank" rel="noopener" class="store-btn">
-              <div class="store-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-label="Google Play">
-                  <path fill="#4CAF50" d="M3.18 1.13c-.2.1-.34.3-.34.52v20.7c0 .22.14.42.34.53L14.89 12z"/>
-                  <path fill="#4285F4" d="M4.13.07L4.08.24 14.89 12l3.07-3.07L5.08.38C4.75.17 4.38.07 4.13.07z"/>
-                  <path fill="#EA4335" d="M3.18 22.88l11.71-10.88-3.14-3.14z"/>
-                  <path fill="#FBBC05" d="M21.78 10.63l-3.82-2.7-3.07 3.07 3.07 3.07 3.86-2.22c.74-.42.74-1.54-.04-2.22z"/>
-                </svg>
-              </div>
+              <div class="store-icon"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/07/google-play-icon-official.svg" alt="Google Play"></div>
               <div><div class="sb-sub">GET IT ON</div><div class="sb-main">Google Play</div></div>
             </a>
           </div>
