@@ -110,6 +110,7 @@ h1.htitle{font-size:clamp(28px,3.8vw,48px);font-weight:900;line-height:1.18;colo
 .store-btn:hover{border-color:var(--og);background:rgba(220,165,74,.07);transform:translateY(-1px)}
 .store-icon{width:26px;height:26px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
 .store-icon img{width:20px;height:20px;object-fit:contain;display:block}
+.store-icon svg{width:22px;height:22px;display:block}
 .sb-sub{font-size:9px;color:var(--gy);line-height:1;margin-bottom:2px;letter-spacing:.02em}
 .sb-main{font-size:14px;font-weight:900;color:var(--br);line-height:1;white-space:nowrap}
 .odl-lbl{font-size:12px;font-weight:800;color:var(--brm);margin-bottom:10px;letter-spacing:.05em}
@@ -755,10 +756,10 @@ footer{background:#FFF8ED;color:rgba(255,248,237,.8);padding:48px 20px 20px}
         <p class="app-qr-lbl">掃描 QR Code 或點擊下方按鈕下載</p>
         <div class="qr-wrap">
           <a href="https://apps.apple.com/tw/app/gowarehouse/id1631966034" target="_blank" rel="noopener" class="qr-box">
-            <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/07/gowarehouse-qr-ios.png" alt="iOS QR Code" width="155" height="155">
+            <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/07/gowarehouse-qr-ios.png" alt="iOS QR Code" width="130" height="130">
           </a>
           <a href="https://play.google.com/store/apps/details?id=com.ibiza.wms&hl=zh-TW" target="_blank" rel="noopener" class="qr-box">
-            <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/07/gowarehouse-qr-android.png" alt="Android QR Code" width="155" height="155">
+            <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/07/gowarehouse-qr-android.png" alt="Android QR Code" width="130" height="130">
           </a>
         </div>
         <div class="store-wrap">
@@ -767,7 +768,14 @@ footer{background:#FFF8ED;color:rgba(255,248,237,.8);padding:48px 20px 20px}
             <div><div class="sb-sub">Download on the</div><div class="sb-main">App Store</div></div>
           </a>
           <a href="https://play.google.com/store/apps/details?id=com.ibiza.wms&hl=zh-TW" target="_blank" rel="noopener" class="store-btn">
-            <div class="store-icon"><img src="https://cdn.simpleicons.org/googleplay/34A853" alt="Google Play"></div>
+            <div class="store-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-label="Google Play">
+                <path fill="#4CAF50" d="M3.18 1.13c-.2.1-.34.3-.34.52v20.7c0 .22.14.42.34.53L14.89 12z"/>
+                <path fill="#4285F4" d="M4.13.07L4.08.24 14.89 12l3.07-3.07L5.08.38C4.75.17 4.38.07 4.13.07z"/>
+                <path fill="#EA4335" d="M3.18 22.88l11.71-10.88-3.14-3.14z"/>
+                <path fill="#FBBC05" d="M21.78 10.63l-3.82-2.7-3.07 3.07 3.07 3.07 3.86-2.22c.74-.42.74-1.54-.04-2.22z"/>
+              </svg>
+            </div>
             <div><div class="sb-sub">GET IT ON</div><div class="sb-main">Google Play</div></div>
           </a>
         </div>
