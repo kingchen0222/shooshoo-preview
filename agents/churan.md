@@ -272,10 +272,7 @@ assets/images/
 
 ## Skills（可呼叫的 Skill）
 
-| 指令 | 用途 | 何時用 |
-|------|------|--------|
-| `/canvas-design` | 排版設計輔助 | 生成社群圖卡、廣告素材構圖前 |
-| `/taste-skill` | 防 slop 美感校準 | 確保圖像輸出不落入 AI 通用風格 |
+> 2026-07-02 校正：原列的 `/canvas-design`、`/taste-skill` 在本專案 Skill 市集中不存在，已移除。真實可用的 Skill 請見 `agents/churan/profile.md`：`/shooshoo-packing-brand`（品牌規範）、`/frontend-design`（視覺質感把關）。
 
 ---
 

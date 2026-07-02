@@ -297,10 +297,7 @@ test.describe('詢價表單流程', () => {
 
 ## Skills（可呼叫的 Skill）
 
-| 指令 | 用途 | 何時用 |
-|------|------|--------|
-| `/webapp-testing` | Web App 測試流程 | 每次功能上線前的 QA checklist |
-| `/debugging-and-error-recovery` | 系統化除錯 | 測試失敗、發現 bug、無法重現問題時 |
+> 2026-07-02 校正：原列的 `/webapp-testing`、`/debugging-and-error-recovery` 在本專案 Skill 市集中不存在，已移除。目前技術 QA 沒有對應的專屬 Skill，測試流程直接用標準工具（瀏覽器自動化、Bash 跑測試指令）執行；社群/內容類 QA 請見下方 `agents/yifei/profile.md` 的真實 Skill 清單（`/social-post`、`/create-viral-content`、`/copywriting`）。
 
 ---
 

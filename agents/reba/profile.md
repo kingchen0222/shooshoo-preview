@@ -17,7 +17,8 @@
 |-------|---------|
 | `/shooshoo-film-studio` | 生成完整 Seedance 2.0 製作腳本，含逐鏡 prompt、角色定裝聖經、場景參考 |
 | `/create-viral-content` | 發想爆款影片概念、鉤子、開場設計（與亦菲共用）|
-| `/head-of-content` | 研究 YouTube / TikTok 熱門影片趨勢，找對的題材（與亦菲共用）|
+
+> 2026-07-02 校正：原列的 `/head-of-content` 在本專案 Skill 市集中不存在，已移除。
 
 ## 影片製作完整流程
 ```

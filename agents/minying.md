@@ -301,10 +301,7 @@ export function SchemaOrg({ type, data }: SchemaOrgProps) {
 
 ## Skills（可呼叫的 Skill）
 
-| 指令 | 用途 | 何時用 |
-|------|------|--------|
-| `/frontend-ui-engineering` | 前端工程最佳實踐 | 寫元件、架構規劃、PR 前自我 check |
-| `/ui-ux-pro-max` | UI 設計細節規則 | 實作設計稿時確認間距、色彩、響應式細節 |
+> 2026-07-02 校正：原列的 `/frontend-ui-engineering`、`/ui-ux-pro-max` 在本專案 Skill 市集中不存在，已移除。目前敏英沒有對應的專屬 Skill，做前端工作時直接用標準工具（Read/Edit/Bash）執行，可參考 `frontend-design` Skill（員瑛/楚然共用）確保視覺質感。
 
 ---
 

@@ -203,9 +203,7 @@
 
 ## Skills（可呼叫的 Skill）
 
-| 指令 | 用途 | 何時用 |
-|------|------|--------|
-| `/brand-guidelines` | 品牌規範生成與整理 | 輸出品牌文件、對外提案、新合作夥伴簡報時 |
+> 2026-07-02 校正：原列的 `/brand-guidelines` 在本專案 Skill 市集中不存在，已移除。真實可用的 Skill 請見 `agents/yuanying/profile.md`：`/ai-seo`、`/seo-audit`、`/copywriting`、`/cro`、`/web-design`、`/frontend-design`。
 
 ---
 

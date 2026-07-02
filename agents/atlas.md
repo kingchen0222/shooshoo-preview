@@ -255,10 +255,7 @@ Atlas 提供技術 Proposal 時，格式如下：
 
 ## Skills（可呼叫的 Skill）
 
-| 指令 | 用途 | 何時用 |
-|------|------|--------|
-| `/debugging-and-error-recovery` | 系統化除錯流程 | 任何測試失敗、build 錯誤、bug 出現時，Stop→Preserve→Diagnose→Fix |
-| `/project-scaffolding` | 新專案初始化 | 建立全新工具、子系統、腳本專案時 |
+> 2026-07-02 校正：原列的 `/debugging-and-error-recovery`、`/project-scaffolding` 在本專案 Skill 市集中不存在，已移除。目前 Atlas 沒有對應的專屬 Skill，除錯與新專案初始化直接用標準工具執行，可用 `code-review` Skill 做 PR 前程式碼審查。
 
 ---
 

@@ -259,11 +259,7 @@
 
 ## Skills（可呼叫的 Skill）
 
-| 指令 | 用途 | 何時用 |
-|------|------|--------|
-| `/taste-skill` | Anti-slop 品牌調性保護 | 每次開始做 UI 設計前，先 Design Read |
-| `/redesign-skill` | 網站改版流程 | 既有頁面改版時，保品牌 + 升質感 |
-| `/ui-ux-pro-max` | 161 條設計智慧規則 | 需要精準設計決策、設計系統建構時 |
+> 2026-07-02 校正：原列的 `/taste-skill`、`/redesign-skill`、`/ui-ux-pro-max` 在本專案 Skill 市集中不存在，已移除。目前珠恩沒有對應的專屬 Skill，UI 設計工作可搭配 `frontend-design`、`web-design` Skill（員瑛/楚然共用）確保質感與規範。
 
 ---
 

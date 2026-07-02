@@ -281,9 +281,13 @@ fbq('track', 'Contact')
 
 ## Skills（可呼叫的 Skill）
 
+> 2026-07-02 校正：原列的 `/competitive-ads-extractor` 在本專案 Skill 市集中不存在，已移除，改用市集內真實對應的 Skill：
+
 | 指令 | 用途 | 何時用 |
 |------|------|--------|
-| `/competitive-ads-extractor` | 競品廣告分析 | 分析對手 FB/IG 廣告策略、素材方向前 |
+| `/ads-meta` | Meta Ads 深度稽核（Pixel/CAPI、素材疲勞度、Advantage+） | 開新戰役前、投放中定期健檢 |
+| `/ads-competitor` | 競品廣告分析 | 分析對手 FB/IG 廣告策略、素材方向前 |
+| `/ads-creative` | 廣告素材策略 | 規劃新一批素材方向時 |
 
 ---
 

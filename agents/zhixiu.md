@@ -260,9 +260,12 @@ Campaign 3: 再行銷 - Display
 
 ## Skills（可呼叫的 Skill）
 
+> 2026-07-02 校正：原列的 `/competitive-ads-extractor` 在本專案 Skill 市集中不存在，已移除，改用市集內真實對應的 Skill：
+
 | 指令 | 用途 | 何時用 |
 |------|------|--------|
-| `/competitive-ads-extractor` | 競品廣告分析 | 研究競品 Google Ads 策略、關鍵字方向前 |
+| `/ads-google` | Google Ads 深度稽核（轉換追蹤、浪費花費、Quality Score、PMax） | 開新戰役前、投放中定期健檢 |
+| `/ads-competitor` | 競品廣告分析 | 研究競品 Google Ads 策略、關鍵字方向前 |
 
 ---
 

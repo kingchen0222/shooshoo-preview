@@ -31,9 +31,50 @@
 - WordPress REST API：`WP_SITE_URL` / `WP_APP_PASSWORD`（.env）
 - Google Search Console：OAuth2 refresh token（.env）
 
-## 發文 SOP
-1. `/ai-seo` 確認關鍵字與 GEO 結構
-2. `/copywriting` 撰寫文章主體
-3. 員瑛腳本（`publish_post.py`）發布至 WordPress
-4. `/seo-audit` 稽核新文章技術項目
-5. 楚然生成文章 hero 圖 → 員瑛更新文章圖片
+## 發文 SOP（官網電商新聞 / 部落格文章）
+
+### 完整流程：圖 → 文 → SEO → 圖 Alt → GSC
+
+```
+STEP 1  SEO 規劃
+        /ai-seo 確認主關鍵字、H1/H2/H3 結構、Title、Meta Desc、Schema
+
+STEP 2  文案撰寫
+        /copywriting 撰寫文章主體（含 intro、各段落、CTA）
+
+STEP 3  圖片生成
+        楚然 用 KIE API 生成 Hero 圖（16:9, 2K）
+        工具：kie_with_refs.py
+        存放：social-cards/文章配圖/
+
+STEP 4  發布文章
+        publish_post.py 或 wp_publish_full.py
+        → 建立 WP post（draft or publish）
+        → 上傳圖片到 WP Media Library
+        → 設定 featured_media
+
+STEP 5  圖片 Alt SEO（必做）
+        更新 WP Media 四個欄位：
+        - alt_text    → 主關鍵字 ｜ 品牌名稱（50字內）
+        - title       → 關鍵字-品牌（檔名友好格式）
+        - caption     → 一句話說明圖片情境（內文圖可顯示）
+        - description → 圖片完整描述，補充關鍵字語義
+        工具：requests.post(WP/wp-json/wp/v2/media/{id})
+
+STEP 6  文章 SEO meta
+        /seo-audit 稽核技術 SEO 項目
+        確認 Yoast：focus keyword、SEO title、meta description
+
+STEP 7  GSC 提交索引
+        gsc_submit.py 送出新文章 URL
+        確認 Google Search Console → URL 審查 → 已收錄
+```
+
+### 驗收 Checklist
+
+- [ ] Featured image 已設定（非預設）
+- [ ] 圖片 alt_text、title、caption、description 全部填寫
+- [ ] 文章 Title 50-60 字元含主關鍵字
+- [ ] Meta Description 150-160 字元含 CTA
+- [ ] H1 唯一且含主關鍵字
+- [ ] GSC 提交完成，URL 已收到索引請求

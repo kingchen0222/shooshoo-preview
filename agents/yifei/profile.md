@@ -19,8 +19,9 @@
 |-------|---------|
 | `/social-post` | 撰寫 FB / IG / Threads / X 貼文，帶入平台格式與爆款公式 |
 | `/create-viral-content` | 策劃爆款貼文概念：標題公式、縮圖邏輯、情緒鉤子 |
-| `/head-of-content` | 研究各平台（YouTube / IG / TikTok / X）熱門趨勢與題材 |
 | `/copywriting` | 社群貼文文案、CTA 文字、活動標語（與員瑛共用）|
+
+> 2026-07-02 校正：原列的 `/head-of-content` 在本專案 Skill 市集中不存在，已移除。
 
 ## 內容策略原則
 - 每則貼文必須帶入「咻咻家族」IP 角色
