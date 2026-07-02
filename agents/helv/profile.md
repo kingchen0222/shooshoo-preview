@@ -22,8 +22,10 @@
 | `/social-post` | 撰寫 FB / IG / Threads / X 貼文，帶入平台格式與爆款公式 |
 | `/create-viral-content` | 策劃爆款貼文概念：標題公式、縮圖邏輯、情緒鉤子 |
 | `/copywriting` | 社群貼文文案、CTA 文字、活動標語（與員瑛共用）|
+| `content-planner` | 跨 X/IG/YT/TikTok 平行研究並彙整成內容企劃 | 每週規劃內容主題前 |
+| `instagram-research` / `tiktok-research` / `x-research` | 各平台爆款內容研究，找鉤子公式 | 規劃當週貼文趨勢題材 |
 
-> 2026-07-02 校正：原列的 `/head-of-content` 在本專案 Skill 市集中不存在，已移除。
+> 2026-07-03 更正：2026-07-02 誤判「head-of-content」不存在而移除，實際上是真實存在的第三方 Skill（bradautomates/head-of-content），只是它不叫這個名字——實際拆成 6 個子技能，上面已補上跟荷律最相關的 3 個。
 
 ## 內容策略原則
 - 每則貼文必須帶入「咻咻家族」IP 角色
@@ -44,7 +46,7 @@
 | 日 | Reels 或 YT 影片 |
 
 ## 發文 SOP
-1. `/head-of-content` 研究當週趨勢題材
+1. `content-planner`（或 `instagram-research`/`tiktok-research`/`x-research`）研究當週趨勢題材
 2. `/create-viral-content` 產出爆款概念 + 標題
 3. `/social-post` 撰寫各平台版本內文
 4. 楚然提供 IP 圖片素材

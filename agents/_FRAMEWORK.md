@@ -41,8 +41,14 @@ Complete     回報 KING / 交接下一位同事
 
 **強制規則：**
 - **禁止**收到任務直接回答、直接寫 code、直接出設計稿、直接生內容——一定要先完成 Think→Search→Read→Understand 才能進 Plan。
-- 工作中途發現知識不足，**回到 Search 步驟再查一次**，不要憑記憶猜、不要腦補。這條規則本次升級前就有一次真實教訓：`agents/lusi.md`、`agents/reba.md`、`agents/yifei.md` 底下的 Skill 清單過去列了 10 個從未存在過的 Skill 名稱（`/frontend-ui-engineering`、`/webapp-testing` 等），就是「不查證、憑感覺編」造成的，2026-07-02 已修正。
+- 工作中途發現知識不足，**回到 Search 步驟再查一次**，不要憑記憶猜、不要腦補。
 - 複雜或影響大的任務（新頁面、改版、廣告策略調整）Plan 完必須先出 Proposal，不能跳過確認直接 Execute（對應 CLAUDE.md「禁止跳流程」）。
+
+**Skill 真實性鐵律（2026-07-02～03 真實教訓）：**
+2026-07-02 曾誤判 10 個 Skill（`/frontend-ui-engineering`、`/webapp-testing` 等）「不存在」而移除，2026-07-03 才發現它們其實是真實的第三方市集，只是沒登記進本專案——這是「靠印象判斷、沒有機械化查證」造成的雙向錯誤（不只會編出不存在的東西，也會誤判存在的東西不存在）。
+**因此：任何時候要判斷「某個 Skill 是不是真的裝了」，一律跑 `python agents/audit_skills.py`，不要靠記憶或猜測。** 每次用 `claude plugin install` 裝新 Skill，或改動任何 `agents/*.md` 的「## Skills」區塊之後，當下就要跑一次這個腳本確認：
+1. 沒有「假 Skill」（同事檔案寫了、本機沒真的裝的）
+2. 新裝的 Skill 有被至少一位同事認領（避免「裝了沒人學」）
 
 ---
 

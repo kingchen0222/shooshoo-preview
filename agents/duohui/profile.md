@@ -19,8 +19,10 @@
 |-------|---------|
 | `/shooshoo-film-studio` | 生成完整 Seedance 2.0 製作腳本，含逐鏡 prompt、角色定裝聖經、場景參考 |
 | `/create-viral-content` | 發想爆款影片概念、鉤子、開場設計（與亦菲共用）|
+| `video-content-analyzer` | 用 Gemini AI 分析短影音，拆解鉤子、結構、可複製公式 | 分析競品/爆款影片時 |
+| `youtube-research` | YouTube 爆款影片研究，找出離群值影片與鉤子公式 | 規劃 YouTube 內容前 |
 
-> 2026-07-02 校正：原列的 `/head-of-content` 在本專案 Skill 市集中不存在，已移除。
+> 2026-07-03 更正：2026-07-02 誤判「head-of-content」不存在而移除，實際上是真實存在的第三方 Skill（bradautomates/head-of-content），只是它不叫這個名字——實際拆成 6 個子技能，上面已補上跟多慧最相關的 2 個。
 
 ## 影片製作完整流程
 ```
