@@ -96,7 +96,7 @@ h1.htitle{font-size:clamp(28px,3.8vw,48px);font-weight:900;line-height:1.18;colo
 .char-wrap img{height:260px;width:auto;filter:drop-shadow(0 20px 40px rgba(45,27,14,.15));animation:float 3.8s ease-in-out infinite;position:relative;z-index:1}
 /* APP DOWNLOAD SECTION */
 .app-row{display:grid;grid-template-columns:1.15fr 1fr;gap:60px;align-items:center}
-.app-vis img{width:100%;border-radius:20px;box-shadow:0 20px 60px rgba(45,27,14,.14)}
+.app-vis img{width:100%;border-radius:0;box-shadow:none}
 .app-lbl{font-size:12px;font-weight:800;color:var(--og);letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:8px}
 .app-h{font-size:clamp(26px,3.2vw,40px);font-weight:900;color:var(--br);margin-bottom:10px;line-height:1.2}
 .app-desc{font-size:15px;color:var(--brm);line-height:1.7;margin-bottom:6px}
@@ -738,44 +738,8 @@ footer{background:#FFF8ED;color:rgba(255,248,237,.8);padding:48px 20px 20px}
   </div>
 </div>
 
-<!-- FAQ -->
-<section class="sec sbg-w">
-  <div class="sec-in">
-    <div class="sec-hd">
-      <div class="slbl">常見問題</div>
-      <h2 class="stitle">WMS 系統 <span class="oc">常見問答</span></h2>
-    </div>
-    <div class="faq-list">
-      <div class="fqi" onclick="toggleFaq(this)">
-        <div class="fqq"><div class="fqq-inner"><div class="fqicon"><i data-lucide="help-circle"></i></div><span class="fqtext">我的平台不在串接清單，還可以使用 WMS 嗎？</span></div><div class="fqtog">+</div></div>
-        <div class="fqa"><div class="fqa-in">咻咻打包持續擴充串接平台，目前已支援 20+ 平台。若你使用的平台尚未列出，請直接 LINE 詢問，我們會評估開發可行性或提供替代方案。</div></div>
-      </div>
-      <div class="fqi" onclick="toggleFaq(this)">
-        <div class="fqq"><div class="fqq-inner"><div class="fqicon"><i data-lucide="help-circle"></i></div><span class="fqtext">WMS 系統費用怎麼計算？</span></div><div class="fqtog">+</div></div>
-        <div class="fqa"><div class="fqa-in">WMS 系統費用已涵蓋在倉儲服務費用內，無需額外付費。使用咻咻打包倉儲服務的客戶即可享有完整的 WMS 庫存管理功能，請聯繫我們了解詳細報價。</div></div>
-      </div>
-      <div class="fqi" onclick="toggleFaq(this)">
-        <div class="fqq"><div class="fqq-inner"><div class="fqicon"><i data-lucide="help-circle"></i></div><span class="fqtext">庫存資料安全嗎？會不會外洩？</span></div><div class="fqtog">+</div></div>
-        <div class="fqa"><div class="fqa-in">GOWAREHOUSE 採分權後台設計，每個帳號僅能存取被授權的資料範圍。你的庫存數據、訂單資料完全獨立，不會被其他客戶看到。</div></div>
-      </div>
-      <div class="fqi" onclick="toggleFaq(this)">
-        <div class="fqq"><div class="fqq-inner"><div class="fqicon"><i data-lucide="help-circle"></i></div><span class="fqtext">效期預警功能如何設定？</span></div><div class="fqtog">+</div></div>
-        <div class="fqa"><div class="fqa-in">入庫時系統會記錄每批商品的效期，你可以自訂預警天數（例如效期前 30 天提醒）。系統會自動鎖定即期品並優先出貨，搭配 FEFO 批號效期管理機制確保庫存零浪費。</div></div>
-      </div>
-      <div class="fqi" onclick="toggleFaq(this)">
-        <div class="fqq"><div class="fqq-inner"><div class="fqicon"><i data-lucide="help-circle"></i></div><span class="fqtext">WMS 系統如何避免超賣？</span></div><div class="fqtog">+</div></div>
-        <div class="fqa"><div class="fqa-in">GOWAREHOUSE 採「兩階段防超賣」機制：訂單建立時預扣庫存，確認出貨時正式扣減，同時即時回寫各電商平台庫存數字。即使在蝦皮、MOMO、自建官網同時熱賣，也不會發生超賣情況。</div></div>
-      </div>
-      <div class="fqi" onclick="toggleFaq(this)">
-        <div class="fqq"><div class="fqq-inner"><div class="fqicon"><i data-lucide="help-circle"></i></div><span class="fqtext">行動 APP 可以取代 PDA 掃描槍嗎？</span></div><div class="fqtog">+</div></div>
-        <div class="fqa"><div class="fqa-in">可以。GOWAREHOUSE 提供 iOS 和 Android 行動倉管 APP，員工用手機就能完成入庫上架、揀貨品檢、盤點調撥等所有作業，省去購買 PDA 掃描槍的數萬元硬體投資，新人平均 2 天即可上手。</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- 行動倉管 APP -->
-<section class="sec sbg-cr">
+<section class="sec sbg-w">
   <div class="sec-in">
     <div class="app-row">
       <!-- 左：雙手機圖 -->
@@ -814,6 +778,42 @@ footer{background:#FFF8ED;color:rgba(255,248,237,.8);padding:48px 20px 20px}
           <a href="https://gowarehouse.asia/download" target="_blank" rel="noopener" class="odl-btn"><i data-lucide="download"></i>安裝檔案 APK</a>
           <a href="https://chromewebstore.google.com" target="_blank" rel="noopener" class="odl-btn"><i data-lucide="chrome"></i>Chrome 線上應用程式商店</a>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec sbg-cr">
+  <div class="sec-in">
+    <div class="sec-hd">
+      <div class="slbl">常見問題</div>
+      <h2 class="stitle">WMS 系統 <span class="oc">常見問答</span></h2>
+    </div>
+    <div class="faq-list">
+      <div class="fqi" onclick="toggleFaq(this)">
+        <div class="fqq"><div class="fqq-inner"><div class="fqicon"><i data-lucide="help-circle"></i></div><span class="fqtext">我的平台不在串接清單，還可以使用 WMS 嗎？</span></div><div class="fqtog">+</div></div>
+        <div class="fqa"><div class="fqa-in">咻咻打包持續擴充串接平台，目前已支援 20+ 平台。若你使用的平台尚未列出，請直接 LINE 詢問，我們會評估開發可行性或提供替代方案。</div></div>
+      </div>
+      <div class="fqi" onclick="toggleFaq(this)">
+        <div class="fqq"><div class="fqq-inner"><div class="fqicon"><i data-lucide="help-circle"></i></div><span class="fqtext">WMS 系統費用怎麼計算？</span></div><div class="fqtog">+</div></div>
+        <div class="fqa"><div class="fqa-in">WMS 系統費用已涵蓋在倉儲服務費用內，無需額外付費。使用咻咻打包倉儲服務的客戶即可享有完整的 WMS 庫存管理功能，請聯繫我們了解詳細報價。</div></div>
+      </div>
+      <div class="fqi" onclick="toggleFaq(this)">
+        <div class="fqq"><div class="fqq-inner"><div class="fqicon"><i data-lucide="help-circle"></i></div><span class="fqtext">庫存資料安全嗎？會不會外洩？</span></div><div class="fqtog">+</div></div>
+        <div class="fqa"><div class="fqa-in">GOWAREHOUSE 採分權後台設計，每個帳號僅能存取被授權的資料範圍。你的庫存數據、訂單資料完全獨立，不會被其他客戶看到。</div></div>
+      </div>
+      <div class="fqi" onclick="toggleFaq(this)">
+        <div class="fqq"><div class="fqq-inner"><div class="fqicon"><i data-lucide="help-circle"></i></div><span class="fqtext">效期預警功能如何設定？</span></div><div class="fqtog">+</div></div>
+        <div class="fqa"><div class="fqa-in">入庫時系統會記錄每批商品的效期，你可以自訂預警天數（例如效期前 30 天提醒）。系統會自動鎖定即期品並優先出貨，搭配 FEFO 批號效期管理機制確保庫存零浪費。</div></div>
+      </div>
+      <div class="fqi" onclick="toggleFaq(this)">
+        <div class="fqq"><div class="fqq-inner"><div class="fqicon"><i data-lucide="help-circle"></i></div><span class="fqtext">WMS 系統如何避免超賣？</span></div><div class="fqtog">+</div></div>
+        <div class="fqa"><div class="fqa-in">GOWAREHOUSE 採「兩階段防超賣」機制：訂單建立時預扣庫存，確認出貨時正式扣減，同時即時回寫各電商平台庫存數字。即使在蝦皮、MOMO、自建官網同時熱賣，也不會發生超賣情況。</div></div>
+      </div>
+      <div class="fqi" onclick="toggleFaq(this)">
+        <div class="fqq"><div class="fqq-inner"><div class="fqicon"><i data-lucide="help-circle"></i></div><span class="fqtext">行動 APP 可以取代 PDA 掃描槍嗎？</span></div><div class="fqtog">+</div></div>
+        <div class="fqa"><div class="fqa-in">可以。GOWAREHOUSE 提供 iOS 和 Android 行動倉管 APP，員工用手機就能完成入庫上架、揀貨品檢、盤點調撥等所有作業，省去購買 PDA 掃描槍的數萬元硬體投資，新人平均 2 天即可上手。</div></div>
       </div>
     </div>
   </div>
