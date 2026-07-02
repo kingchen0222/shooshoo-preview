@@ -278,7 +278,17 @@ assets/images/
 
 ## Skills（可呼叫的 Skill）
 
-> 2026-07-02 校正：原列的 `/canvas-design`、`/taste-skill` 在本專案 Skill 市集中不存在，已移除。真實可用的 Skill 請見 `agents/churan/profile.md`：`/shooshoo-packing-brand`（品牌規範）、`/frontend-design`（視覺質感把關）。
+> 2026-07-03 更正：2026-07-02 誤判 `/canvas-design`、`/taste-skill` 不存在而移除，實際上這兩個是真實存在的第三方 Skill（ComposioHQ/awesome-claude-skills、Leonxlnx/taste-skill），只是當時沒有登記進本專案。已重新加入並安裝確認可用。
+
+| 指令 | 用途 | 何時用 |
+|------|------|--------|
+| `/canvas-design` | 用設計哲學生成 PNG/PDF 視覺作品 | 生成社群圖卡、廣告素材構圖前 |
+| `/taste-skill` | 防 slop 美感校準，避免 AI 通用風格 | 確保圖像輸出不落入 AI 通用風格 |
+| `marketing-visual-content` | 視覺內容策略 | 規劃整體視覺素材方向 |
+| `marketing-image-optimization` | 圖片 SEO/效能優化 | 上圖前優化檔案大小、alt 文字（與芝炫協作）|
+| `canva-bulk-create` / `canva-edit-design` / `canva-resize-for-social-media` | Canva 批次設計、快速調整尺寸 | 需要多平台尺寸變體時 |
+
+另外真實可用的 Skill 請見 `agents/churan/profile.md`：`/shooshoo-packing-brand`（品牌規範）、`/frontend-design`（視覺質感把關）。
 
 ---
 

@@ -209,7 +209,24 @@
 
 ## Skills（可呼叫的 Skill）
 
-> 2026-07-02 校正：原列的 `/brand-guidelines` 在本專案 Skill 市集中不存在，已移除。真實可用的 Skill 請見 `agents/yuanying/profile.md`：`/ai-seo`、`/seo-audit`、`/copywriting`、`/cro`、`/web-design`、`/frontend-design`。
+> 2026-07-03 更正：2026-07-02 誤判 `/brand-guidelines` 不存在而移除，實際上是真實存在的第三方 Skill（ComposioHQ/awesome-claude-skills），已重新加入並安裝確認可用。同步認領 `kostja94/marketing-skills` 市集裡品牌相關 Skill。真實可用的核心 Skill 請見 `agents/yuanying/profile.md`：`/ai-seo`、`/seo-audit`、`/copywriting`、`/cro`、`/web-design`、`/frontend-design`。
+
+| 指令 | 用途 | 何時用 |
+|------|------|--------|
+| `/brand-guidelines` | 品牌色彩、字型視覺規範套用 | 輸出品牌文件、對外提案、素材製作把關 |
+| `marketing-branding` | 品牌策略、故事、定位 | 品牌策略規劃 |
+| `marketing-brand-visual` | 視覺識別系統 | 設計系統、色彩字體規劃 |
+| `marketing-brand-monitoring` / `marketing-brand-protection` | 品牌監測、防仿冒 | 定期品牌聲量監控 |
+| `marketing-rebranding` | 品牌改版流程 | 大幅度品牌調整時 |
+| `marketing-logo` | LOGO 設計規範 | LOGO 相關產出 |
+| `marketing-media-kit` | 媒體資料包製作 | 對外提案、媒體合作 |
+| `marketing-public-relations` / `marketing-press-coverage` | 公關與媒體報導 | 對外發布、媒體聯繫 |
+
+**來自 `coreyhaines31/marketingskills`（35.8k star，已加入市集）：**
+| `competitor-profiling` / `competitors` | 競品全面分析 | 深度競品研究 |
+| `content-strategy` | 內容策略規劃 | 規劃長期內容方向 |
+| `product-marketing` | 產品行銷定位 | 服務定位與價值主張 |
+| `launch` | 產品/服務發布策略 | 新服務上線規劃 |
 
 ---
 

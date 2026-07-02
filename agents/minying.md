@@ -307,7 +307,17 @@ export function SchemaOrg({ type, data }: SchemaOrgProps) {
 
 ## Skills（可呼叫的 Skill）
 
-> 2026-07-02 校正：原列的 `/frontend-ui-engineering`、`/ui-ux-pro-max` 在本專案 Skill 市集中不存在，已移除。目前敏英沒有對應的專屬 Skill，做前端工作時直接用標準工具（Read/Edit/Bash）執行，可參考 `frontend-design` Skill（員瑛/楚然共用）確保視覺質感。
+> 2026-07-03 更正：2026-07-02 誤判 `/frontend-ui-engineering`、`/ui-ux-pro-max` 不存在而移除，實際上這兩個是真實存在的第三方 Skill 市集（addyosmani/agent-skills、nextlevelbuilder/ui-ux-pro-max-skill），只是當時沒有登記進本專案。已重新加入市集並安裝確認可用。
+
+| 指令 | 用途 | 何時用 |
+|------|------|--------|
+| `/frontend-ui-engineering` | 元件架構、設計系統、狀態管理、響應式設計、WCAG 2.1 AA 無障礙 | 寫元件、架構規劃、PR 前自我 check |
+| `/ui-ux-pro-max` | 84 種風格、161 組色票、73 組字體配對、25 種圖表、17 種技術棧設計智慧 | 實作設計稿時確認間距、色彩、響應式細節 |
+| `/webapp-testing` | Playwright 測試本地 Web App | 自我測試（與亦菲共用）|
+| `frontend-design` / `web-design` | 視覺質感把關 | 實作階段確保無 AI 平庸感 |
+| `marketing-core-web-vitals` / `marketing-rendering-strategies` / `marketing-mobile-friendly` | 效能與渲染策略 | 效能優化、行動版適配 |
+| `marketing-grid` / `marketing-masonry` / `marketing-carousel` / `marketing-card` / `marketing-navigation-menu` / `marketing-footer` / `marketing-sidebar` / `marketing-tab-accordion` / `marketing-signup-login` | 各類元件實作規格 | 開發對應元件時（與珠恩協作）|
+| `elementor-claude-skill` / `claude-wordpress-skills` | Elementor / WordPress 開發輔助 | 涉及 WordPress 站台開發時 |
 
 ---
 

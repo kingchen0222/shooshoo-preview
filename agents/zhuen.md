@@ -265,7 +265,20 @@
 
 ## Skills（可呼叫的 Skill）
 
-> 2026-07-02 校正：原列的 `/taste-skill`、`/redesign-skill`、`/ui-ux-pro-max` 在本專案 Skill 市集中不存在，已移除。目前珠恩沒有對應的專屬 Skill，UI 設計工作可搭配 `frontend-design`、`web-design` Skill（員瑛/楚然共用）確保質感與規範。
+> 2026-07-03 更正：2026-07-02 誤判 `/taste-skill`、`/redesign-skill`、`/ui-ux-pro-max` 不存在而移除，實際上都是真實存在的第三方 Skill（Leonxlnx/taste-skill、nextlevelbuilder/ui-ux-pro-max-skill），只是當時沒有登記進本專案。已重新加入並安裝確認可用。
+
+| 指令 | 用途 | 何時用 |
+|------|------|--------|
+| `/taste-skill` | 防 slop 美感校準，每次開始做 UI 設計前先 Design Read | 每次開始做 UI 設計前 |
+| `/redesign-skill` | 既有頁面改版流程，保品牌 + 升質感 | 既有頁面改版時 |
+| `/ui-ux-pro-max` | 84 種風格、161 組色票、73 組字體配對等設計智慧 | 需要精準設計決策、設計系統建構時 |
+| `frontend-design` / `web-design` | 視覺質感把關、頁面規格產出 | 出 Wireframe/Mockup、確保無 AI 平庸感 |
+| `design-for-ai` | AI 時代視覺設計原則 | 建立獨特設計語言、避免 AI 通用感 |
+| `marketing-hero` / `marketing-grid` / `marketing-masonry` / `marketing-carousel` / `marketing-card` | 各版面元件設計 | 設計首頁/服務頁區塊時 |
+| `marketing-navigation-menu` / `marketing-footer` / `marketing-sidebar` / `marketing-tab-accordion` | 導覽與版面結構元件 | 設計網站骨架時 |
+| `marketing-signup-login` / `marketing-popup` / `marketing-newsletter-signup` | 表單與轉換元件設計 | 設計互動元件時（與露思協作文案）|
+| `marketing-showcase` / `marketing-template-page` | 展示型頁面設計 | 設計案例展示頁時 |
+| `canva-bulk-create` / `canva-edit-design` / `canva-get-design-feedback` / `canva-implement-feedback` / `canva-resize-for-social-media` / `canva-brand-check` | Canva 設計稿製作與品牌檢查 | 快速產出社群/簡報視覺稿時 |
 
 ---
 

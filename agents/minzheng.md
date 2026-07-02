@@ -287,13 +287,20 @@ fbq('track', 'Contact')
 
 ## Skills（可呼叫的 Skill）
 
-> 2026-07-02 校正：原列的 `/competitive-ads-extractor` 在本專案 Skill 市集中不存在，已移除，改用市集內真實對應的 Skill：
+> 2026-07-03 更正：2026-07-02 誤判 `/competitive-ads-extractor` 不存在而移除，實際上是真實存在的第三方 Skill（ComposioHQ/awesome-claude-skills），已重新加入並安裝確認可用。同步認領 `kostja94/marketing-skills` 市集裡 Meta 相關廣告 Skill。
 
 | 指令 | 用途 | 何時用 |
 |------|------|--------|
 | `/ads-meta` | Meta Ads 深度稽核（Pixel/CAPI、素材疲勞度、Advantage+） | 開新戰役前、投放中定期健檢 |
 | `/ads-competitor` | 競品廣告分析 | 分析對手 FB/IG 廣告策略、素材方向前 |
 | `/ads-creative` | 廣告素材策略 | 規劃新一批素材方向時 |
+| `/competitive-ads-extractor` | 從廣告庫（Facebook/LinkedIn等）擷取分析競品廣告 | 研究競品訊息角度、素材方向前 |
+| `marketing-meta-ads` | Meta Ads 專門策略指引 | 規劃 Meta 廣告投放策略時 |
+| `marketing-tiktok-ads` / `marketing-reddit-ads` / `marketing-linkedin-ads` / `marketing-youtube-ads` | 其他社群平台廣告格式 | 拓展廣告平台時 |
+| `marketing-directory-listing-ads` | 目錄型廣告投放 | 拓展目錄類廣告管道時 |
+
+**來自 `coreyhaines31/marketingskills`（35.8k star，已加入市集）：**
+| `ads` / `ad-creative` | 廣告投放通用框架、廣告素材設計 | 規劃廣告素材與投放邏輯 |
 
 ---
 

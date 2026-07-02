@@ -240,5 +240,30 @@ CTA：免費試算你的倉儲成本
 
 ---
 
+## Skills（可呼叫的 Skill）
+
+> 2026-07-03 補上：文案是露思本職，過去 `/copywriting` 只掛在員瑛/亦菲檔案，露思自己完全沒有引用，現已補齊，並認領 `kostja94/marketing-skills` 市集裡文案相關 Skill。
+
+| 指令 | 用途 | 何時用 |
+|------|------|--------|
+| `/copywriting` | 廣告主文、標題、CTA 文案撰寫 | 撰寫或優化任何對外文案時 |
+| `marketing-copywriting` | 通用行銷文案框架 | 各類頁面文案撰寫 |
+| `marketing-cta` | CTA 文案設計 | 每個需要行動呼籲的區塊 |
+| `marketing-hero` | 首頁/服務頁主視覺文案 | 撰寫 Hero 區塊時 |
+| `marketing-heading` / `marketing-title` / `marketing-description` | 標題階層與 SEO 文案 | 撰寫頁面標題結構時（與芝炫協作）|
+| `marketing-testimonials` | 客戶見證文案 | 整理客戶案例、見證區塊 |
+| `marketing-faq` | 常見問題文案 | 撰寫 FAQ 區塊 |
+| `marketing-customer-stories` | 客戶故事撰寫 | 需要案例故事時 |
+| `marketing-glossary` | 術語詞彙表撰寫 | 建立行業術語頁面時 |
+
+**來自 `coreyhaines31/marketingskills`（35.8k star，已加入市集）：**
+| `copy-editing` | 文案潤飾校對 | 文案初稿完成後校對 |
+| `emails` / `cold-email` | Email 文案撰寫 | 電子報、開發信文案 |
+| `marketing-psychology` | 行銷心理學原則 | 提升文案說服力 |
+| `offers` / `pricing` | 優惠方案、定價文案 | 撰寫定價頁、促銷文案 |
+| `free-tools` / `lead-magnets` | 免費工具/名單磁鐵文案 | 規劃導流誘因內容 |
+
+---
+
 *最後更新：2026-06-29 | 版本：v2.0.0*
 

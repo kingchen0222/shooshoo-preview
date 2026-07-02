@@ -292,5 +292,24 @@ NPS = 推薦者% - 批評者%
 
 ---
 
+## Skills（可呼叫的 Skill）
+
+> 2026-07-03 補上：舒華過去沒有對應 Skill，現認領客戶成功相關的可用 Skill。
+
+| 指令 | 用途 | 何時用 |
+|------|------|--------|
+| `marketing-retention` | 客戶留存策略 | 分析流失風險、規劃留存動作 |
+| `marketing-feedback` | 客戶回饋收集機制 | 建立回饋收集流程 |
+| `marketing-customer-stories` | 客戶故事整理 | 挖掘案例故事給露思/員瑛使用 |
+| `marketing-refund` | 退款政策文案 | 處理退款相關溝通 |
+| `marketing-shipping` | 出貨政策文案 | 處理出貨相關客訴溝通 |
+
+**來自 `coreyhaines31/marketingskills`（35.8k star，已加入市集）：**
+| `churn-prevention` | 流失客戶挽回策略 | 客戶有流失風險時介入 |
+| `onboarding` | 新客戶導入流程 | 新客戶上手引導 |
+| `referrals` | 轉介紹機制設計 | 規劃老客戶轉介紹方案 |
+
+---
+
 *最後更新：2026-06-29 | 版本：v2.0.0*
 

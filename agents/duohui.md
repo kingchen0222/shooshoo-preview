@@ -273,5 +273,19 @@ YYYY-MM-DD_[類型]_[平台]_[時長]_[版本].[格式]
 
 ---
 
+## Skills（可呼叫的 Skill）
+
+> 2026-07-03 補上：多慧主檔案過去沒有 Skills 區塊（真實清單掛在 `agents/duohui/profile.md`），現統一補齊。
+
+| 指令 | 用途 | 何時用 |
+|------|------|--------|
+| `/shooshoo-film-studio` | 生成完整 Seedance 2.0 製作腳本，含逐鏡 prompt、角色定裝聖經、場景參考 | 生成影片腳本時 |
+| `/create-viral-content` | 發想爆款影片概念、鉤子、開場設計（與亦菲/荷律共用）| 規劃高互動影片內容時 |
+| `marketing-video` | 影片內容策略 | 規劃影片主題與方向 |
+| `marketing-video-optimization` | 影片 SEO/效能優化 | 上傳影片前優化標籤、縮圖、描述 |
+| `marketing-youtube` | YouTube 平台策略 | 規劃 YouTube 專屬內容（與荷律協作）|
+
+---
+
 *最後更新：2026-06-29 | 版本：v2.0.0*
 

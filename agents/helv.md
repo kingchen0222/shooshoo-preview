@@ -244,5 +244,26 @@
 
 ---
 
+## Skills（可呼叫的 Skill）
+
+> 2026-07-03 補上：荷律主檔案過去沒有 Skills 區塊（真實清單掛在 `agents/helv/profile.md`），現統一補齊並認領 `kostja94/marketing-skills` 市集裡社群相關 Skill。
+
+| 指令 | 用途 | 何時用 |
+|------|------|--------|
+| `/social-post` | 撰寫 FB / IG / Threads / X 貼文，帶入平台格式與爆款公式 | 日常發文 |
+| `/create-viral-content` | 策劃爆款貼文概念：標題公式、縮圖邏輯、情緒鉤子 | 規劃高互動內容時 |
+| `marketing-tiktok` / `marketing-linkedin` / `marketing-reddit` / `marketing-x` / `marketing-pinterest` / `marketing-medium` / `marketing-youtube` | 各平台專屬經營策略 | 拓展新平台或優化現有平台表現 |
+| `marketing-community-forum` | 社群/論壇經營（如 Dcard、PTT）| 拓展論壇聲量 |
+| `marketing-influencer-marketing` | 網紅合作策略（與熱巴協作）| 規劃網紅合作案 |
+| `marketing-social-share` | 社群分享機制優化 | 提高內容自然擴散 |
+| `marketing-employee-generated-content` | 員工/團隊內容策略 | 規劃團隊出鏡內容 |
+
+**來自 `coreyhaines31/marketingskills`（35.8k star，已加入市集）：**
+| `community-marketing` | 社群經營深度策略 | 建立/維護品牌社群 |
+| `social` | 整體社群行銷框架 | 跨平台社群策略總覽 |
+| `aso` | App Store 優化 | 若未來有 App 上架需求 |
+
+---
+
 *最後更新：2026-06-29 | 版本：v2.0.0*
 

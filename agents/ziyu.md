@@ -238,5 +238,25 @@
 
 ---
 
+## Skills（可呼叫的 Skill）
+
+> 2026-07-03 補上：子瑜過去沒有對應 Skill，現認領數據/追蹤相關的可用 Skill。
+
+| 指令 | 用途 | 何時用 |
+|------|------|--------|
+| `marketing-ai-traffic` / `marketing-traffic` | AI 搜尋與整體流量分析 | 分析流量來源、AI 引薦流量時 |
+| `marketing-seo-monitoring` | SEO 排名監控 | 定期排名追蹤（與芝炫協作）|
+| `marketing-growth-funnel` | 成長漏斗分析 | 分析轉換漏斗瓶頸 |
+| `marketing-pmf` | Product-Market Fit 分析 | 評估產品服務市場契合度 |
+| `marketing-retention` | 留存分析 | 分析客戶續約/回購數據（與舒華協作）|
+| `marketing-google-search-console` | GSC 數據查詢 | 查詢搜尋表現數據（與芝炫共用）|
+
+**來自 `coreyhaines31/marketingskills`（35.8k star，已加入市集）：**
+| `analytics` | 數據分析框架 | 建立分析儀表板、解讀數據 |
+| `ab-testing` | A/B 測試設計 | 設計與分析對照實驗 |
+| `revops` | 營收維運分析 | 跨部門營收數據整合 |
+
+---
+
 *最後更新：2026-06-29 | 版本：v2.0.0*
 

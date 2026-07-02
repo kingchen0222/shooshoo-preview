@@ -219,6 +219,26 @@
 
 ---
 
+## Skills（可呼叫的 Skill）
+
+> 2026-07-03 補上：SEO 是芝炫本職，但過去 `/ai-seo`、`/seo-audit` 只掛在員瑛檔案上，芝炫自己完全沒有引用，是明顯缺口，現已補齊。同步認領 `kostja94/marketing-skills` 市集裡所有 SEO 相關 Skill（190+ 個 `marketing-*` Skill 中屬於 SEO 領域的部分）。
+
+**核心：**
+| 指令 | 用途 | 何時用 |
+|------|------|--------|
+| `/ai-seo` | 優化文章讓 ChatGPT / Perplexity / Google AI Overview 引用；設定 llms.txt、schema | 發布新內容、規劃 GEO/AIO 策略時 |
+| `/seo-audit` | 全站 SEO 健檢、Core Web Vitals、meta 標籤、alt 文字 | 定期健檢、診斷排名下滑時 |
+
+**技術 SEO（`marketing-*`）：** `marketing-seo`、`marketing-seo-audit`、`marketing-seo-monitoring`、`marketing-crawlability`、`marketing-indexing`、`marketing-indexnow`、`marketing-canonical`、`marketing-core-web-vitals`、`marketing-rendering-strategies`、`marketing-mobile-friendly`、`marketing-sitemap`、`marketing-robots`、`marketing-schema`
+
+**策略 / 內容 SEO：** `marketing-keyword-research`、`marketing-entity-seo`、`marketing-geo`、`marketing-programmatic-seo`、`marketing-featured-snippet`、`marketing-serp-features`、`marketing-eeat-signals`、`marketing-backlink-analysis`、`marketing-competitor-research`、`marketing-internal-links`、`marketing-parasite-seo`、`marketing-grokipedia`
+
+**站台結構 / Metadata：** `marketing-url-structure`、`marketing-url-slug`、`marketing-breadcrumb`、`marketing-metadata`、`marketing-open-graph`、`marketing-twitter-cards`、`marketing-title`、`marketing-description`、`marketing-heading`、`marketing-favicon`、`marketing-domain-selection`、`marketing-domain-architecture`、`marketing-multi-domain-brand-seo`、`marketing-local`、`marketing-localization`、`marketing-translation`、`marketing-google-search-console`（與子瑜共用）、`marketing-image-optimization`、`marketing-video-optimization`、`marketing-ai-traffic`
+
+**來自 `coreyhaines31/marketingskills`（35.8k star，已加入市集）：** `site-architecture`（站台架構規劃）、`aso`（App Store 優化，若未來有 App）、`programmatic-seo`（規模化 SEO 頁面生成）
+
+---
+
 ## Quality Standard — 我的領域
 
 ### SEO 黃金守則（Preview 階段）

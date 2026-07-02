@@ -303,7 +303,15 @@ test.describe('詢價表單流程', () => {
 
 ## Skills（可呼叫的 Skill）
 
-> 2026-07-02 校正：原列的 `/webapp-testing`、`/debugging-and-error-recovery` 在本專案 Skill 市集中不存在，已移除。目前技術 QA 沒有對應的專屬 Skill，測試流程直接用標準工具（瀏覽器自動化、Bash 跑測試指令）執行；社群/內容類 QA 是荷律的職責，請見 `agents/helv/profile.md` 的真實 Skill 清單（`/social-post`、`/create-viral-content`、`/copywriting`）。
+> 2026-07-03 更正：2026-07-02 誤判 `/webapp-testing`、`/debugging-and-error-recovery` 不存在而移除，實際上這兩個是真實存在的第三方 Skill（ComposioHQ/awesome-claude-skills、addyosmani/agent-skills），只是當時沒有登記進本專案。已重新加入並安裝確認可用。
+
+| 指令 | 用途 | 何時用 |
+|------|------|--------|
+| `/webapp-testing` | 用 Playwright 測試本地 Web App，驗證前端功能、除錯 UI 行為、截圖、看 console log | 每次功能上線前的 QA checklist |
+| `/debugging-and-error-recovery` | 五步驟排查：重現、定位、縮小範圍、修復、防護 | 測試失敗、發現 bug、無法重現問題時 |
+| `marketing-core-web-vitals` / `marketing-mobile-friendly` | 效能與行動裝置驗收標準 | 上線前效能驗收（與敏英交叉確認）|
+
+社群/內容類 QA 是荷律的職責，請見 `agents/helv/profile.md` 的真實 Skill 清單（`/social-post`、`/create-viral-content`、`/copywriting`）。
 
 ---
 

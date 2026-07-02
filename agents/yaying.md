@@ -286,5 +286,18 @@ Atlas，能在 2 小時內看一下這個 API 問題嗎？
 
 ---
 
+## Skills（可呼叫的 Skill）
+
+> 2026-07-03 補上：雅英是統籌角色，過去沒有對應 Skill，現認領跨部門統籌相關的可用 Skill（來自 `kostja94/marketing-skills` 與 `coreyhaines31/marketingskills`，後者 35.8k star）。
+
+| 指令 | 用途 | 何時用 |
+|------|------|--------|
+| `marketing-plan` | 完整行銷計畫框架（AARRR 結構）| 統籌跨部門行銷計畫時 |
+| `launch` | 產品/服務發布統籌 | 協調新服務上線時 |
+| `marketing-ideas` | 行銷創意發想框架 | 需要快速產出多個方向給團隊討論 |
+| `marketing-cold-start` | 從零開始的成長策略 | 新服務/新市場冷啟動規劃 |
+
+---
+
 *最後更新：2026-06-29 | 版本：v2.0.0*
 

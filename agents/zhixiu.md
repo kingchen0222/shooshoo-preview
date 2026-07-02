@@ -266,12 +266,19 @@ Campaign 3: 再行銷 - Display
 
 ## Skills（可呼叫的 Skill）
 
-> 2026-07-02 校正：原列的 `/competitive-ads-extractor` 在本專案 Skill 市集中不存在，已移除，改用市集內真實對應的 Skill：
+> 2026-07-03 更正：2026-07-02 誤判 `/competitive-ads-extractor` 不存在而移除，實際上是真實存在的第三方 Skill（ComposioHQ/awesome-claude-skills），已重新加入並安裝確認可用。同步認領 `kostja94/marketing-skills` 市集裡 Google 相關廣告 Skill。
 
 | 指令 | 用途 | 何時用 |
 |------|------|--------|
 | `/ads-google` | Google Ads 深度稽核（轉換追蹤、浪費花費、Quality Score、PMax） | 開新戰役前、投放中定期健檢 |
 | `/ads-competitor` | 競品廣告分析 | 研究競品 Google Ads 策略、關鍵字方向前 |
+| `/competitive-ads-extractor` | 從廣告庫（Facebook/LinkedIn等）擷取分析競品廣告 | 研究競品訊息角度、素材方向前 |
+| `marketing-google-ads` | Google Ads 專門策略指引 | 規劃 Google 廣告投放策略時 |
+| `marketing-app-ads` / `marketing-display-ads` / `marketing-native-ads` / `marketing-ctv-ads` | 各類型 Google 廣告格式（App/多媒體/原生/電視）| 拓展廣告格式時 |
+| `marketing-paid-ads` | 付費廣告總體策略 | 規劃整體付費媒體預算配置 |
+
+**來自 `coreyhaines31/marketingskills`（35.8k star，已加入市集）：**
+| `ads` / `ad-creative` | 廣告投放通用框架、廣告素材設計 | 規劃廣告素材與投放邏輯 |
 
 ---
 

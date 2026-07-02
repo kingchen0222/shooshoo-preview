@@ -264,5 +264,17 @@ Social_ContentPost_MultiPlatform_v1
 
 ---
 
+## Skills（可呼叫的 Skill）
+
+> 2026-07-03 補上：允貞過去沒有對應 Skill，現認領自動化相關的可用 Skill。
+
+| 指令 | 用途 | 何時用 |
+|------|------|--------|
+| `/project-scaffolding` | IDE 等級新專案初始化精靈 | 建立新自動化子系統/腳本專案時（與一粒/Atlas共用）|
+| `marketing-integrations` | 第三方整合策略 | 規劃跨系統自動化整合時 |
+| `marketing-gtm` | Google Tag Manager 設定 | 追蹤事件自動化設定時 |
+
+---
+
 *最後更新：2026-06-29 | 版本：v2.0.0*
 

@@ -261,7 +261,13 @@ Atlas 提供技術 Proposal 時，格式如下：
 
 ## Skills（可呼叫的 Skill）
 
-> 2026-07-02 校正：原列的 `/debugging-and-error-recovery`、`/project-scaffolding` 在本專案 Skill 市集中不存在，已移除。目前 Atlas 沒有對應的專屬 Skill，除錯與新專案初始化直接用標準工具執行，可用 `code-review` Skill 做 PR 前程式碼審查。
+> 2026-07-03 更正：2026-07-02 誤判 `/debugging-and-error-recovery`、`/project-scaffolding` 不存在而移除，實際上這兩個是真實存在的第三方 Skill（addyosmani/agent-skills、hmohamed01/Claude-Code-Scaffolding-Skill），只是當時沒有登記進本專案。已重新加入並安裝確認可用。
+
+| 指令 | 用途 | 何時用 |
+|------|------|--------|
+| `/debugging-and-error-recovery` | 五步驟排查：重現、定位、縮小範圍、修復、防護 | 任何測試失敗、build 錯誤、bug 出現時 |
+| `/project-scaffolding` | IDE 等級新專案初始化精靈，支援 70+ 專案類型 | 建立全新工具、子系統、腳本專案時 |
+| `code-review` | PR 前程式碼審查 | Code Review 環節 |
 
 ---
 

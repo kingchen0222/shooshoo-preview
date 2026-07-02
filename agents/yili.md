@@ -302,5 +302,19 @@ const { data } = await response.json()
 
 ---
 
+## Skills（可呼叫的 Skill）
+
+> 2026-07-03 補上：一粒過去沒有對應 Skill，現認領後端工程相關的可用 Skill（與 Atlas 共用工程類 Skill）。
+
+| 指令 | 用途 | 何時用 |
+|------|------|--------|
+| `/debugging-and-error-recovery` | 五步驟排查：重現、定位、縮小範圍、修復、防護 | API 錯誤、資料庫問題排查時 |
+| `/project-scaffolding` | IDE 等級新專案初始化精靈 | 建立新的後端服務/腳本專案時 |
+| `marketing-domain-architecture` | 網域架構規劃 | 多網域/子網域規劃時 |
+| `marketing-migration` | 網站/系統遷移策略 | 資料或系統遷移時 |
+| `marketing-integrations` | 第三方整合策略 | 新增第三方 API 整合時 |
+
+---
+
 *最後更新：2026-06-29 | 版本：v2.0.0*
 
