@@ -233,6 +233,9 @@ h2.stitle{font-size:clamp(24px,3.5vw,42px);font-weight:900;color:var(--br);line-
 .btype-em{font-size:28px;display:block;margin-bottom:6px}
 .btype-n{font-size:14px;font-weight:800;color:var(--br)}
 .btype-d{font-size:12px;color:var(--gy);margin-top:3px}
+.wms-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:44px;align-items:center}
+.wms-feats{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:900px){.wms-grid{grid-template-columns:1fr;gap:28px}}
 
 /* INFLUENCER */
 .inf-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
@@ -672,7 +675,7 @@ h2.stitle{font-size:clamp(24px,3.5vw,42px);font-weight:900;color:var(--br);line-
       <div class="htags">
         <span class="htag"><i data-lucide="warehouse"></i>3PL 三方倉儲</span>
         <span class="htag"><i data-lucide="link-2"></i>API 訂單串接</span>
-        <span class="htag"><i data-lucide="package"></i>紙箱批發</span>
+        <span class="htag"><i data-lucide="monitor"></i>WMS 智慧倉管</span>
         <span class="htag"><i data-lucide="tag"></i>加工貼標</span>
         <span class="htag"><i data-lucide="container"></i>貨櫃拆裝</span>
         <span class="htag"><i data-lucide="store"></i>超商代寄</span>
@@ -754,36 +757,6 @@ h2.stitle{font-size:clamp(24px,3.5vw,42px);font-weight:900;color:var(--br);line-
     <div class="stc reveal d3"><div class="stc-icon"><i data-lucide="truck"></i></div><div class="stc-n"><span class="cnt" data-t="4">0</span><span class="stc-sfx">台</span></div><div class="stc-l">自有車隊</div></div>
   </div>
 </div>
-
-<!-- ========== ABOUT ========== -->
-<section class="sec sbg-cr" id="about">
-  <div class="sec-in">
-    <div class="about-grid">
-      <div class="reveal">
-        <div class="wh-photo">
-          <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/b01-ho.png" alt="咻咻打包倉庫全景">
-        </div>
-        <div class="wh-photo-row">
-          <div class="wh-photo-sm"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/b02-ah.png" alt="揀貨效率"></div>
-          <div class="wh-photo-sm"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/B06-EEm.png" alt="叉車作業"></div>
-        </div>
-      </div>
-      <div class="about-text reveal d2">
-        <div class="slbl">關於咻咻打包</div>
-        <h2>台南電商賣家的<br><span>出貨後勤夥伴</span></h2>
-        <p>咻咻打包（翰鮮運營企業有限公司）成立於台南安定區，從在地小倉庫一路成長，現有 1,000+ 坪倉儲空間、自有車隊四台，每天幫助數百位電商賣家準時出貨。</p>
-        <p>我們懂蝦皮賣家的痛、也懂品牌電商的需求。不管你是剛起步的新手賣家，還是旺季爆單的中大型品牌，咻咻都能陪你出貨咻一下！</p>
-        <div class="about-pills">
-          <span class="about-pill">台南安定區在地倉庫</span>
-          <span class="about-pill">無最低訂單限制</span>
-          <span class="about-pill">自有車隊 4 台</span>
-          <span class="about-pill">多平台 API 串接</span>
-          <span class="about-pill">常溫 + 恆溫倉儲</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ========== SERVICES ========== -->
 <section class="sec sbg-cl" id="services">
@@ -914,18 +887,45 @@ h2.stitle{font-size:clamp(24px,3.5vw,42px);font-weight:900;color:var(--br);line-
   </div>
 </section>
 
+<!-- ========== WMS ========== -->
+<section class="sec sbg-cr" id="wms">
+  <div class="sec-in">
+    <div class="sec-hd">
+      <div class="slbl reveal">智慧倉儲系統</div>
+      <h2 class="stitle reveal">WMS 讓庫存<span class="oc">看得見</span>，出貨不出錯</h2>
+      <p class="sdesc reveal d1">合作即開通雲端 WMS 後台與行動 APP，人在台北也能即時掌握台南倉的每一件庫存。</p>
+    </div>
+    <div class="wms-grid">
+      <div class="reveal">
+        <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/07/shooshoo-wms-dual-hero-v4-crop-scaled.png" alt="GoWarehouse WMS 行動倉管系統" style="width:100%">
+      </div>
+      <div class="wms-feats reveal d2">
+        <div class="btype"><div class="btype-em"><i data-lucide="bar-chart-2"></i></div><div class="btype-n">即時庫存查詢</div><div class="btype-d">多平台庫存一眼掌握，杜絕超賣</div></div>
+        <div class="btype"><div class="btype-em"><i data-lucide="refresh-ccw"></i></div><div class="btype-n">訂單自動拋轉</div><div class="btype-d">平台訂單自動進系統，免手動匯入</div></div>
+        <div class="btype"><div class="btype-em"><i data-lucide="smartphone"></i></div><div class="btype-n">行動倉管 APP</div><div class="btype-d">手機隨時查庫存、看出貨進度</div></div>
+        <div class="btype"><div class="btype-em"><i data-lucide="video"></i></div><div class="btype-n">出貨全程錄影</div><div class="btype-d">每筆訂單可調閱，糾紛大幅減少</div></div>
+        <div class="btype"><div class="btype-em"><i data-lucide="route"></i></div><div class="btype-n">智慧揀貨導引</div><div class="btype-d">系統排最佳路徑，99.8% 準確率</div></div>
+        <div class="btype"><div class="btype-em"><i data-lucide="file-bar-chart"></i></div><div class="btype-n">報表自動生成</div><div class="btype-d">出貨與庫存數據，隨時匯出分析</div></div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:36px" class="reveal">
+      <a href="wms/" class="btn btn-og"><i data-lucide="monitor"></i>查看 WMS 完整功能</a>
+    </div>
+  </div>
+</section>
+
 <!-- ========== INTEGRATION (compact) ========== -->
 <section class="sec sbg-w2" id="integration">
   <div class="sec-in">
     <div class="sec-hd">
       <div class="slbl reveal">平台串接</div>
       <h2 class="stitle reveal">你賣哪裡，<span class="oc">咻咻就在哪裡</span></h2>
-      <p class="sdesc reveal d1">支援 23+ 電商平台、20+ 物流系統全自動串接，訂單進倉→揀貨→出貨，一條龍不漏接。</p>
+      <p class="sdesc reveal d1">支援 24+ 電商平台、22+ 物流與 ERP 系統全自動串接，訂單進倉→揀貨→出貨，一條龍不漏接。</p>
     </div>
     <div class="integ-stats reveal">
-      <div class="is-item"><div class="is-num">23+</div><div class="is-lbl">電商平台串接</div></div>
+      <div class="is-item"><div class="is-num">24+</div><div class="is-lbl">電商平台串接</div></div>
       <div class="is-sep"></div>
-      <div class="is-item"><div class="is-num">20+</div><div class="is-lbl">物流系統串接</div></div>
+      <div class="is-item"><div class="is-num">22+</div><div class="is-lbl">物流 / ERP 串接</div></div>
       <div class="is-sep"></div>
       <div class="is-item"><div class="is-num">全自動</div><div class="is-lbl">訂單同步</div></div>
       <div class="is-sep"></div>
@@ -971,81 +971,6 @@ h2.stitle{font-size:clamp(24px,3.5vw,42px);font-weight:900;color:var(--br);line-
     <div class="integ-ctas reveal d2">
       <a href="api/" class="btn btn-og"><i data-lucide="link-2"></i>查看完整串接清單</a>
       <a href="#contact" class="btn btn-bdr"><i data-lucide="message-circle"></i>申請 API 串接</a>
-    </div>
-  </div>
-</section>
-
-<!-- ========== BOXES ========== -->
-<section class="sec sbg-cl" id="boxes">
-  <div class="sec-in">
-    <div class="boxes-grid">
-      <div class="reveal">
-        <div class="slbl">紙箱訂製</div>
-        <h2 class="stitle" style="text-align:left;margin-bottom:14px">品牌感包裝，<span class="oc">從紙箱開始</span></h2>
-        <p style="font-size:15px;color:var(--brm);line-height:1.75;margin-bottom:20px">咻咻倉庫現貨供應各尺寸瓦楞紙箱與膠帶，也可以幫你訂製印有品牌 LOGO 的客製包裝，讓每個包裹都是品牌露出的機會。</p>
-        <div class="box-types">
-          <div class="btype"><div class="btype-em"><i data-lucide="package"></i></div><div class="btype-n">公版紙箱</div><div class="btype-d">現貨各尺寸</div></div>
-          <div class="btype"><div class="btype-em"><i data-lucide="tag"></i></div><div class="btype-n">品牌訂製箱</div><div class="btype-d">LOGO 印刷</div></div>
-          <div class="btype"><div class="btype-em"><i data-lucide="shield"></i></div><div class="btype-n">氣泡袋填充</div><div class="btype-d">保護商品</div></div>
-          <div class="btype"><div class="btype-em"><i data-lucide="lock"></i></div><div class="btype-n">破壞袋</div><div class="btype-d">防拆封設計</div></div>
-        </div>
-        <div style="margin-top:20px;background:rgba(255,107,53,.08);border:2px solid rgba(255,107,53,.2);border-radius:var(--r2);padding:14px 18px;font-size:13px;font-weight:700;color:var(--ogd)">
-          簽約客戶享公板紙箱 9 折優惠！
-        </div>
-        <div style="margin-top:16px"><a href="custom-boxes-tainan/" class="btn btn-og"><i data-lucide="package"></i>了解紙箱方案</a></div>
-      </div>
-      <div class="reveal d2">
-        <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/shooshoo-char-tape.png" alt="咚咚膠帶" style="height:140px;width:auto;margin:0 auto;filter:drop-shadow(0 8px 20px rgba(45,27,14,.12))">
-        <div class="boxes-photos">
-          <div class="bphoto"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/02/官網紙箱1.png" alt="公版瓦楞紙箱"><div class="bphoto-lbl">公版瓦楞紙箱</div></div>
-          <div class="bphoto"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/box-branded-custom.png" alt="品牌訂製箱"><div class="bphoto-lbl">品牌訂製箱</div></div>
-          <div class="bphoto"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/02/官網果盒2.png" alt="果盒包裝"><div class="bphoto-lbl">果盒包裝</div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== INFLUENCER ========== -->
-<section class="sec sbg-cr" id="influencer">
-  <div class="sec-in">
-    <div class="inf-grid">
-      <div class="reveal">
-        <div class="slbl" style="margin-bottom:14px">合作網紅 / 達人</div>
-        <div class="inf-photos">
-          <div class="inf-photo"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/八點檔演員-陳詩縈.jpg" alt="八點檔演員陳詩縈"><div class="inf-photo-nm">八點檔演員 陳詩縈</div></div>
-          <div class="inf-photo"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/台語歌手余曼曼.jpg" alt="台語歌手余曼曼"><div class="inf-photo-nm">台語歌手 余曼曼</div></div>
-          <div class="inf-photo"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/直播主團主-推薦-菟爺.jpg" alt="直播主菟爺"><div class="inf-photo-nm">直播主 菟爺</div></div>
-          <div class="inf-photo"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/美食團主推薦-謝子芯.jpg" alt="美食團主謝子芯"><div class="inf-photo-nm">美食團主 謝子芯</div></div>
-          <div class="inf-photo"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/親子部落客-金貝貝推薦.jpg" alt="親子部落客金貝貝"><div class="inf-photo-nm">親子部落客 金貝貝</div></div>
-          <div class="inf-photo"><img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/01/兒童服飾品牌-品艾Abby推薦.jpg" alt="品艾Abby"><div class="inf-photo-nm">兒童服飾 品艾Abby</div></div>
-        </div>
-      </div>
-      <div class="reveal d2">
-        <div class="slbl">網紅 / 直播主合作</div>
-        <h2 class="stitle" style="text-align:left;margin-bottom:14px">直播帶貨爆單？<span class="oc">咻咻接住你</span></h2>
-        <div class="inf-points">
-          <div class="inf-pt">
-            <div class="inf-pi"><i data-lucide="smartphone"></i></div>
-            <div><div class="inf-ph">直播訂單快速消化</div><p class="inf-pp">直播結束後訂單量暴增，咻咻提前備料、加班出貨，不讓粉絲等太久。</p></div>
-          </div>
-          <div class="inf-pt">
-            <div class="inf-pi"><i data-lucide="gift"></i></div>
-            <div><div class="inf-ph">客製禮盒 / 組合包裝</div><p class="inf-pp">幫你設計開箱體驗，粉絲收到包裹就會想拍開箱 Reels，自然帶流量。</p></div>
-          </div>
-          <div class="inf-pt">
-            <div class="inf-pi"><i data-lucide="bar-chart-2"></i></div>
-            <div><div class="inf-ph">庫存即時掌握不超賣</div><p class="inf-pp">WMS 庫存同步直播間數字，售完自動停售，不用擔心超賣被罵。</p></div>
-          </div>
-          <div class="inf-pt">
-            <div class="inf-pi"><i data-lucide="refresh-ccw"></i></div>
-            <div><div class="inf-ph">退換貨快速處理</div><p class="inf-pp">粉絲退換貨咻咻代收處理，你只要專注內容，售後的事不用擔心。</p></div>
-          </div>
-        </div>
-        <div style="margin-top:20px">
-          <a href="influencer/" class="btn btn-og"><i data-lucide="handshake"></i>了解合作方案</a>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -1110,62 +1035,6 @@ h2.stitle{font-size:clamp(24px,3.5vw,42px);font-weight:900;color:var(--br);line-
           <div><div class="tc-name">謝子芯 / 美食團主</div><div class="tc-role">Shopify・台北品牌放台南</div></div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== BLOG ========== -->
-<section class="sec sbg-cr" id="blog">
-  <div class="sec-in">
-    <div class="sec-hd">
-      <div class="slbl reveal">電商新聞 / 知識庫</div>
-      <h2 class="stitle reveal">電商賣家必讀，<span class="oc">出貨省錢攻略</span></h2>
-      <p class="sdesc reveal d1">咻咻整理實用出貨知識、電商趨勢，讓你少走冤枉路。</p>
-    </div>
-    <div class="blog-grid">
-      <div class="blog-card reveal">
-        <div class="blog-img" style="padding:0;height:160px;position:relative">
-          <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/blog-shipping-cost-comparison-scaled.png" alt="運費比較指南" style="width:100%;height:100%;object-fit:cover;object-position:center top">
-          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(45,27,14,.72) 0%,rgba(45,27,14,.1) 60%,transparent 100%)"></div>
-          <div style="position:absolute;bottom:8px;left:10px;right:10px">
-            <div style="font-size:13px;font-weight:900;color:#fff;line-height:1.3;margin-bottom:5px;text-shadow:0 1px 4px rgba(0,0,0,.5)">運費比較指南</div>
-            <div style="display:flex;gap:4px;flex-wrap:wrap">
-              <span style="background:rgba(255,107,53,.9);color:#fff;font-size:10px;font-weight:800;padding:2px 7px;border-radius:20px">宅配到府</span>
-              <span style="background:rgba(255,107,53,.9);color:#fff;font-size:10px;font-weight:800;padding:2px 7px;border-radius:20px">超商取件</span>
-            </div>
-          </div>
-        </div>
-        <div class="blog-body">
-          <div class="blog-meta">2026/06/20 · 5 分鐘閱讀</div>
-          <div class="blog-title">蝦皮賣家必看！2026 出貨費用完整比較（宅配 vs 超商）</div>
-          <div class="blog-desc">宅配到府 vs 超商取件，不同重量尺寸哪個最划算？咻咻幫你全部算好了。</div>
-        </div>
-      </div>
-      <div class="blog-card reveal d1">
-        <div class="blog-img" style="padding:0;height:160px">
-          <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/blog-double11-prep-scaled.png" alt="雙11備戰" style="width:100%;height:100%;object-fit:cover;object-position:center top">
-          <div class="blog-cat">旺季攻略</div>
-        </div>
-        <div class="blog-body">
-          <div class="blog-meta">2026/06/10 · 4 分鐘閱讀</div>
-          <div class="blog-title">雙11備戰清單：怎麼提前備貨、控庫存，才能旺季不崩潰？</div>
-          <div class="blog-desc">提前 4 週該做什麼？備貨量怎麼抓？這篇讓你有備無患。</div>
-        </div>
-      </div>
-      <div class="blog-card reveal d2">
-        <div class="blog-img" style="padding:0;height:160px">
-          <img src="https://www.shooshoo.com.tw/wp-content/uploads/2026/06/blog-what-is-3pl-scaled.png" alt="什麼是3PL" style="width:100%;height:100%;object-fit:cover;object-position:center top">
-          <div class="blog-cat">倉儲入門</div>
-        </div>
-        <div class="blog-body">
-          <div class="blog-meta">2026/05/28 · 6 分鐘閱讀</div>
-          <div class="blog-title">什麼是 3PL？電商新手完整入門：三方倉儲真的適合我嗎？</div>
-          <div class="blog-desc">費用怎麼算、什麼時候才該外包出貨？一篇文章搞懂 3PL。</div>
-        </div>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:32px" class="reveal">
-      <a href="blog" class="btn btn-gh">看更多電商知識 →</a>
     </div>
   </div>
 </section>
