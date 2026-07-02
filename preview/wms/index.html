@@ -117,8 +117,9 @@ h1.htitle{font-size:clamp(28px,3.8vw,48px);font-weight:900;line-height:1.18;colo
 .sb-sub{font-size:7.5px;color:var(--gy);line-height:1;margin-bottom:2px;letter-spacing:0;white-space:nowrap}
 .sb-main{font-size:12px;font-weight:900;color:var(--br);line-height:1;white-space:nowrap}
 .odl-lbl{font-size:12px;font-weight:800;color:var(--brm);margin-bottom:10px;letter-spacing:.05em}
-.odl-wrap{display:flex;gap:8px;flex-wrap:wrap}
-.odl-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:var(--rf);border:1.5px solid rgba(45,27,14,.12);font-size:13px;font-weight:700;color:var(--brm);background:#fff;transition:all .2s;white-space:nowrap}
+.odl-wrap{display:grid;grid-template-columns:1fr 1fr;gap:8px;width:330px}
+.odl-btn{display:flex;align-items:center;justify-content:center;gap:6px;padding:10px 14px;border-radius:var(--rf);border:1.5px solid rgba(45,27,14,.12);font-size:13px;font-weight:700;color:var(--brm);background:#fff;transition:all .2s;white-space:nowrap;box-sizing:border-box}
+.odl-btn:last-child{grid-column:1/-1}
 .odl-btn:hover{border-color:var(--og);color:var(--og)}
 .odl-btn [data-lucide]{width:13px;height:13px;flex-shrink:0}
 .char-badge{position:absolute;background:#fff;border:2px solid var(--crd);border-radius:var(--r2);padding:10px 14px;box-shadow:var(--s3);display:flex;align-items:center;gap:8px;white-space:nowrap;border:1.5px solid rgba(45,27,14,.08)}
